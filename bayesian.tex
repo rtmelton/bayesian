@@ -154,7 +154,7 @@ label=#1}
 % Be sure that xy-pic is loaded after all other graphics packages.
 \usepackage[all,cmtip]{xy}
 %\xyoption{import}
-\CompileMatrices
+%\CompileMatrices %--- an option that did not speed anything up really
 %
 %***************************************
 %Documentation says load hyperref last of all packages.
@@ -164,7 +164,7 @@ label=#1}
 %Showlabels needs loading after math environment.
 %Documentation says {showlabels} should come LAST of all
 %the packages you include with \usepackage.
-%\usepackage[outer]{showlabels}
+\usepackage[outer]{showlabels}
 %\usepackage{showlabels}
 %***************************************
 % Environment Section
@@ -1074,13 +1074,7 @@ defines a measure on $\sigmaalgebraii$.
 
 
 \begin{defn}\label{induced_measure}
-The measure $\measure\circ\preimage{\function}$ on the \textsigma-algebra of the codomain of $\function$ in Proposition~\ref{function_induces_measure} is the \textbf{measure induced by $\function$}.\index{measure induced by a function}  Expect a result this fundamental to get used without much fanfare. The notation 
-$\measure_\function$\nomenclature[mu sub f]{$\measure_\function$}{same as $\measure\circ\preimage{\function}$}
-may be used as shorthand for
-$\measure\circ\preimage{\function}$:
-\[
-\measure_\function\definedby \measure\circ\preimage{\function}
-\]
+The measure $\measure\circ\preimage{\function}$ on the \textsigma-algebra of the codomain of $\function$ in Proposition~\ref{function_induces_measure} is the \textbf{measure induced by $\function$}.\index{measure induced by a function}
 \end{defn}
 
 
