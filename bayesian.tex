@@ -48,7 +48,7 @@ overfullrule,
 \usepackage[refpage]{nomencl}
 \makenomenclature
 %Do \nomenclature[prefix]{symbol}{description}
-%where prefix is used to order the symbol in the Nomeclature list.
+%where prefix is used to order the symbol in the Nomenclature list.
 %
 %
 % The equation numbers will go on the left hand side by default, 
@@ -4585,12 +4585,15 @@ $\textsigma$-algebra, as opposed to merely a semi-ring.
 \begin{defnboldnote}[Conditional Mathematical Expectation]
 \label{cme_sigma_algebra}
 \index{conditional expectation with respect to a sigma algebra@conditional expectation with respect to a $\textsigma$-algebra}
+%Do \nomenclature[prefix]{symbol}{description}
+%where prefix is used to order the symbol in the Nomenclature list.
+\nomenclature[conditional expectation a]{$\condexpsub{{\lebclass{\funcf}}}{\sigmaalgebraii}$}{conditional expectation in $L_1(\measurespace, \sigmaalgebra,\measure)$}
 Let $(\measurespace, \sigmaalgebra,\measure)$ be a probability space, and let
 $\lebclass{\function} \in L_1(\measurespace, \sigmaalgebra,\measure)$.
-The \emph{conditional mathematical expectation
+The \textbf{conditional mathematical expectation}
 $\condexpsub{{\lebclass{\funcf}}}{\sigmaalgebraii}$
 of the class $\lebclass{\funcf}$ with respect to the
-\textsigma-algebra}
+\textsigma-algebra
 $\sigmaalgebraii$, or simply the \emph{conditional expectation} of
 $\lebclass{\function}$ with respect to $\sigmaalgebraii$,
 is the unique class in
@@ -4658,8 +4661,11 @@ which completes the proof.
 
 
 \begin{defn}\label{cme_sigmaalgebra}
-\index{conditional expectation with respect to a sigma algebra@conditional expectation with respect to a 
-$\textsigma$-algebra}
+%Do \nomenclature[prefix]{symbol}{description}
+%where prefix is used to order the symbol in the Nomenclature list.
+\nomenclature[conditional expectation b]
+{$\kondexpsub{{\lebclass{\funcf}}}{\sigmaalgebraii}$}
+{conditional expectation in $L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$}
 Let $(\measurespace, \sigmaalgebra,\measure)$ be a probability space, and let
 $\ellclass{\function}{\measure}\in L_1(\measurespace, \sigmaalgebra,\measure)$.
 By Theorem~\ref{existence_of_conditional},
@@ -4667,7 +4673,8 @@ for each $\textsigma$-sub\-algebra $\sigmaalgebraii$ of $\sigmaalgebra$ there is
 which may be denoted by 
 $\kondexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}$ or 
 $\kondexpgvn{\ellclass{\function}{\measure}}{\sigmaalgebraii}$,
-in $L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$ such that
+in $L_1\bigl(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii}\bigr)$
+such that
 %
 \begin{equation}\label{cme}
 \int_B \function\, d\measure 
@@ -4676,13 +4683,16 @@ in $L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$ 
 \quad\text{for all $B \in \sigmaalgebraii$.}
 \end{equation}
 The class $\kondexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}$, having a $(\sigmaalgebraii, \borel_\R)$\hyp{}measurable representative, is the 
-\emph{conditional mathematical expectation of} $\ellclass{\function}{\measure}$ \emph{with respect to the} $\textsigma$-algebra $\sigmaalgebraii$, or simply the \emph{conditional expectation} of 
-$\ellclass{\function}{\measure}$ with respect to $\sigmaalgebraii$. This defines an operator:
+\textbf{conditional expectation} of
+$\ellclass{\function}{\measure}$
+in
+$L_1\bigl(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii}\bigr)$
+with respect to the $\textsigma$-algebra $\sigmaalgebraii$. This defines an operator:
 \[
 \kondexpop\nolimits_{\sigmaalgebraii}
 :
 L_1(\measurespace, \sigmaalgebra,\measure) \to
-L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii}):
+L_1\bigl(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii}\bigr):
 \ellclass{\function}{\measure}\mapsto \kondexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}.
 \]
 The fact that
@@ -4853,7 +4863,7 @@ $\ellclass{\function}{\measure}$ with respect to the \textsigma-algebra $\sigalg
 %
 
 \begin{defn}\label{conditional_expectation_operator}
-Let $\sigmaalgebraii$ be a \textsigma-subalgebra of $\sigmaalgebra$. The conditional mathematical expectation defines a contractive operator:
+Let $\sigmaalgebraii$ be a \textsigma-subalgebra of $\sigmaalgebra$. The following defines a contractive operator:
 \[
 \kondexpop\nolimits_{\sigmaalgebraii}
 :
