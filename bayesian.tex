@@ -164,7 +164,7 @@ label=#1}
 %Showlabels needs loading after math environment.
 %Documentation says {showlabels} should come LAST of all
 %the packages you include with \usepackage.
-\usepackage[outer]{showlabels}
+%\usepackage[outer]{showlabels}
 %\usepackage{showlabels}
 %***************************************
 % Environment Section
@@ -4248,14 +4248,16 @@ It means
 
 
 \begin{prop}\label{independent_compositions}
-If
-$\funch_1,\funch_2: (\measurespace,\sigmaalgebra) \to (\measurespaceii,\sigmaalgebraii)$ 
-are independent functions, and 
+If functions
+$\funch : (\measurespace,\sigmaalgebra) \to (\measurespaceii,\sigmaalgebraii)$
+and
+$\funck : (\measurespace,\sigmaalgebra) \to (\measurespaceii,\sigmaalgebraii)$
+are independent, and
 $\funcg: (\measurespaceii,\sigmaalgebraii) \to (\measurespaceiii,\sigmaalgebraiii)$
 is measurable, then 
-$\funcg\circ\funch_1$
+$\funcg\circ\funch$
 and
-$\funcg\circ\funch_2$
+$\funcg\circ\funck$
 are independent.
 \end{prop}
 
@@ -7668,8 +7670,10 @@ be measurable:
 \]
 Say that $\function$ and $\functionii$ are conditionally independent
 given $\functioniii$ if
-$\condindep{\preimage{\function}(\sigmaalgebra)}{\preimage{\functionii}(\sigmaalgebraii)}
-{\preimage{\functioniii}(\sigmaalgebraiii)}$.
+\[
+\condindep{\preimage{\function}(\sigmaalgebra)}{\preimage{\functionii}(\sigmaalgebraii)}
+{\preimage{\functioniii}(\sigmaalgebraiii)}.
+\]
 The notation 
 $\condindep{\function}{\functionii}{\functioniii}$ may be used.
 \end{notn}
