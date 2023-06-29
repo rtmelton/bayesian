@@ -65,7 +65,7 @@ overfullrule,
 %To get bold math symbols:
 %\usepackage{bm}
 %It's not real clear whether bold math symbols are a good idea.
-%[Edit] It's now REAL clear. NOT a good idea. Just don't.
+%[Edit] It is now REAL clear. NOT a good idea. NO bold face math. Just no.
 %
 %
 \usepackage{mathrsfs}
@@ -633,7 +633,7 @@ What is the difference between these notes and other texts?
 We will not make topological assumptions when it comes to regular conditional distributions.
 We will not confuse classes in $\Lone$ with functions in
 $\cali{L}_1(\measurespace,\sigmaalgebra, \measmu)$.
-We will not expect the reader to ``keep this, that, and the other thing in mind.'' We spell it out instead.
+We will not expect the reader to ``keep this, that, and the other thing in mind.'' We spell it out instead. But the main difference is that the measure theory here is based upon semi-rings as opposed to \textsigma\hyp{}algebras, to be explained further in the next few paragraphs.
 
 
 These notes exist in part because of the way I had learned measure theory. After learning measure theory, I was trying to learn statistics, and I mean the level of statistics that begins with the Radon-Nikodym theorem, and  Kolmogorov's conditional mathematical expectation, and goes from there. In all  the statistics books that I looked, the Lebesgue integral was defined in terms of a measure on a  \textsigma\hyp{}algebra.
@@ -666,9 +666,9 @@ Regression models are nothing but projections.
 And there is a decomposition of  conditional expectation into a conditional variance and a squared conditional bias because conditional mathematical expectation is a so-called averaging operator.
 Not that I was disappointed.
 
-Statistical models only started making sense after learning Bayesian statistical models, so that is all you will find here. All of the material regarding frequentist statistics has been edited out, like when a cocoon is left behind.
+Statistical models only started making sense after learning Bayesian statistical models.  That is all you will find here. All of the material regarding frequentist statistics has been edited out, like when a cocoon is left behind.
 
-The notes that follow  might be described as more of a measure-theoretic companion to something  comprehensive and explanatory on Bayesian statistical models.  I strongly recommend Richard McElreath's \textsl{Statistical Rethinking}~\cite{sr_mcelreath_2020}.
+The notes that follow  might be described as more of a measure-theoretic companion to something  comprehensive and explanatory on applied Bayesian statistical models.  I strongly recommend Richard McElreath's \textsl{Statistical Rethinking}~\cite{sr_mcelreath_2020}.
 
 Decisions to be made over notation favor cumbersome-but-clear over cheap or ambiguous.
 The proofs of some of the propositions are wildly over-detailed, especially on paths which are thought to be critical.
@@ -3543,12 +3543,12 @@ By hypothesis,
 \[
 \measonprod(\seti\times\measurespaceii)
 =
-\int_{\seti\times\measurespaceii} \function \, d(\prior\times\measureii).
+\int_{\seti\times\measurespaceii} \function \, d(\measure\times\measureii).
 \]
 By Fubini's,
 \[
 \int_{\seti\times\measurespaceii} \function 
-\, d(\prior\times\measureii)
+\, d(\measure\times\measureii)
 = \int_{\seti} \funcj \,d\measure.
 \]
 By transitivity of equality, 
@@ -7839,13 +7839,62 @@ this is saying nothing but
 for all $\seti\in\sigmaalgebra$ and for all $\setii\in\sigmaalgebraii$.
 This equality can be written as
 \begin{equation}\label{conditional_distributions}
-(\condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)})
+\bigl(\condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)} \bigr)
 (\seti\times\setii)
 =
 (\condprobop{\sigalg{H}}\circ \preimage{\funcf})(\seti)
 \cdot
 (\condprobop{\sigalg{H}}\circ \preimage{\funcg})(\setii).
 \end{equation}
+
+\noindent
+\textbf{(2) implies (3)}
+
+By Proposition~\ref{conditional_density},
+\begin{align*}
+\mkernel{\measureiii}{\funcf,\funcg}{\preimage{\funch}(\mspaceeltiii)}
+(\seti\times\setii)
+= &
+\int_{\seti\times\setii}
+p(\mspaceelt,\mspaceeltii\mid\mspaceeltiii)
+\,d(\measmu\times\measnu)(\mspaceelt,\mspaceeltii),
+\\
+\mkernel{\measlambda}{\funcf}{\preimage{\funch}}(\mspaceeltiii)
+(\seti)
+= &
+\int_\seti p(\mspaceelt\mid\mspaceeltiii)
+\, d\measmu(\mspaceelt),
+\\
+\mkernel{\measlambda}{\funcg}{\preimage{\funch}}(\mspaceeltiii)
+(\setii)
+= &
+\int_\setii p(\mspaceeltii\mid\mspaceeltiii)
+\, d\measnu(\mspaceeltii).
+\\
+\end{align*}
+By (2) then,
+\begin{align*}
+\int_{\seti\times\setii}
+p(\mspaceelt,\mspaceeltii\mid\mspaceeltiii)
+\,d(\measmu\times\measnu)(\mspaceelt,\mspaceeltii)
+= &
+\int_\seti p(\mspaceelt\mid\mspaceeltiii)
+\, d\measmu(\mspaceelt)
+\int_\setii p(\mspaceeltii\mid\mspaceeltiii)
+\, d\measnu(\mspaceeltii)
+\\
+= &
+\int_{\seti\times\setii}
+p(\mspaceelt\mid\mspaceeltiii)\cdot
+p(\mspaceeltii\mid\mspaceeltiii)
+\, d(\measmu\times\measnu)(\mspaceelt,\mspaceeltii).
+\end{align*}
+
+\noindent
+\textbf{(3) implies (4)}
+
+Divide both sides of (3) by $p(\mspaceeltii\mid\mspaceeltiii)$.
+
 
 \end{proof}
 
