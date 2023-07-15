@@ -4104,18 +4104,47 @@ $(\sigmaalgebra, \borel_{\R^n})$\hyp{}measurable function, then $\function$ migh
 \end{defn}
 
 \begin{rmk}\label{semiring_to_sigmaalgebra}
-Why change structure from measure spaces
+When it comes to probability spaces, why change structure from measure spaces
 $(\measurespace,\semiring,\measure)$, where $\semiring$ is only assumed to be a semiring,
 to
 $(\measurespace,\sigmaalgebra,\measure)$, where $\sigmaalgebra$ is assumed to be a
 \textsigma\hyp{}algebra?
-One reason might be the use of \emph{density} functions, which represent a Radon-Nikodym derivative.
+One reason may be the use of \emph{density} functions, which represent Radon-Nikodym derivatives.
 Recall that the Radon-Nikodym Theorem~\ref{radon-nikodym} applies to measures on a measurable space
 $(\measurespace, \sigmaalgebra)$, in which case $\sigmaalgebra$ is supposed to be a \textsigma\hyp{}algebra.  Density functions are described further in Notation~\ref{density_functions}.
-A consequence of this change of structure is that the measure $\measmu\times\measnu$ on the semiring
-$\productsemiring{\sigmaalgebra}{\sigmaalgebraii}$ need no longer be a measure on
-$\productsig{\sigmaalgebra}{\sigmaalgebraii}$, so we will use its unique extension
-$(\measmu\times\measnu)^*$.
+
+Even for probability spaces
+$(\measurespace,\sigmaalgebra,\measmu)$
+and
+$(\measurespaceii,\sigmaalgebraii,\measnu)$
+the measure $\measmu\times\measnu$ on the semiring
+$\productsemiring{\sigmaalgebra}{\sigmaalgebraii}$ need not be a measure on
+$\productsig{\sigmaalgebra}{\sigmaalgebraii}$, unless possibly
+$\productsig{\sigmaalgebra}{\sigmaalgebraii}$
+happens to equal
+$\productsemiring{\sigmaalgebra}{\sigmaalgebraii}$.
+But its unique extension
+$(\measmu\times\measnu)^*$ restricts to a measure on
+$\productsig{\sigmaalgebra}{\sigmaalgebraii}$.
+This was described in Notation~\ref{extension_to_sigmaalgebra}, and is reproduced here:
+Let us apply Proposition~\ref{extension_measure} to the inclusion
+\[
+\productsemiring{\semiring}{\semiringii}
+\subseteq
+\productsig{\semiring}{\semiringii}
+\subseteq
+\measurable{(\measure\times\measureii)^\kernast}.
+\]
+The proposition says that if a measure agrees with $\measmu\times\measnu$ on
+$\productsemiring{\semiring}{\semiringii}$, then that measure agrees with
+$(\measmu\times\measnu)^*$ on
+$\productsig{\semiring}{\semiringii}$.
+We will let $(\measmu\times\measnu)^*$ denote both the measure
+$(\measmu\times\measnu)^*$ on $\measurable{(\measure\times\measureii)^\kernast}$
+and its restriction
+$(\measmu\times\measnu)^*\restrictedto{\productsig{\semiring}{\semiringii}}$
+to $\productsig{\semiring}{\semiringii}$.
+We will always make the domain clear.
 \end{rmk}
 
 
