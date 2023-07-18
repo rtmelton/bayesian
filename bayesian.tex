@@ -920,6 +920,15 @@ $\measure^* : \measurable{\measure^\kernast} \to\ [0, \infty]$
 is the unique extension of the measure $\measure$ from the semiring $\semiring$ 
 to the \textsigma\hyp{}algebra 
 $\measurable{\measure^\kernast}$.
+\[
+\xymatrix@R=-2pt{
+\measurable{\measure^\kernast} \ar[r]^{\measmu^*} & [0, \infty ] \\
+\subsetequp & \\
+\semiringii \ar[r]^\measnu & [0, \infty ] \\
+\subsetequp & \\
+\semiring   \ar[r]^\measmu & [0, \infty ] \\
+}
+\]
 \end{prop}
 
 
@@ -2867,8 +2876,20 @@ We will let $(\measmu\times\measnu)^*$ denote both the measure
 $(\measmu\times\measnu)^*$ on $\measurable{(\measure\times\measureii)^\kernast}$
 and its restriction
 $(\measmu\times\measnu)^*\restrictedto{\productsig{\semiring}{\semiringii}}$
-to $\productsig{\semiring}{\semiringii}$.
-We will always make the domain clear.
+to $\productsig{\semiring}{\semiringii}$,
+but we will always make the domain clear.
+\[
+\xymatrix@R=-2pt@C=50pt{
+\measurable{(\measmu\times\measnu)^\kernast}
+\ar[r]^{(\measmu\times\measnu)^*} & [0, \infty ] \\
+\subsetequp & \\
+\productsig{\semiring}{\semiringii}
+\ar[r]^{(\measmu\times\measnu)^*} & [0, \infty ] \\
+\subsetequp & \\
+\productsemiring{\semiring}{\semiringii}
+\ar[r]^{\measmu\times\measnu} & [0, \infty ] \\
+}
+\]
 \end{notn}
 
 
@@ -4116,7 +4137,7 @@ $(\measurespace, \sigmaalgebra)$, in which case $\sigmaalgebra$ is supposed to b
 Even for probability spaces
 $(\measurespace,\sigmaalgebra,\measmu)$
 and
-$(\measurespaceii,\sigmaalgebraii,\measnu)$
+$(\measurespaceii,\sigmaalgebraii,\measnu)$,
 the measure $\measmu\times\measnu$ on the semiring
 $\productsemiring{\sigmaalgebra}{\sigmaalgebraii}$ need not be a measure on
 $\productsig{\sigmaalgebra}{\sigmaalgebraii}$, unless possibly
@@ -4126,7 +4147,7 @@ $\productsemiring{\sigmaalgebra}{\sigmaalgebraii}$.
 But its unique extension
 $(\measmu\times\measnu)^*$ restricts to a measure on
 $\productsig{\sigmaalgebra}{\sigmaalgebraii}$.
-This was described in Notation~\ref{extension_to_sigmaalgebra}, and is reproduced here:
+This was described in Notation~\ref{extension_to_sigmaalgebra}, and is reproduced somewhat here:
 Let us apply Proposition~\ref{extension_measure} to the inclusion
 \[
 \productsemiring{\semiring}{\semiringii}
@@ -4145,6 +4166,18 @@ and its restriction
 $(\measmu\times\measnu)^*\restrictedto{\productsig{\semiring}{\semiringii}}$
 to $\productsig{\semiring}{\semiringii}$.
 We will always make the domain clear.
+\[
+\xymatrix@R=-2pt@C=50pt{
+\measurable{(\measmu\times\measnu)^\kernast}
+\ar[r]^{(\measmu\times\measnu)^*} & [0, \infty] \\
+\subsetequp & \\
+\productsig{\semiring}{\semiringii}
+\ar[r]^{(\measmu\times\measnu)^*} & [0, \infty] \\
+\subsetequp & \\
+\productsemiring{\semiring}{\semiringii}
+\ar[r]^{\measmu\times\measnu} & [0, \infty] \\
+}
+\]
 \end{rmk}
 
 
@@ -4192,7 +4225,7 @@ For example, suppose an author writes
 \[
 \function\sim \text{Normal}(m,s),
 \]
-or maybe $\function\sim \cali{N}(m,s)$.
+or alternately $\function\sim \cali{N}(m,s)$.
 There is an underlying probability space
 $(\measurespace,\sigmaalgebra,\measmu)$, where 
 $\funcf:\measurespace\to\R$
@@ -7318,7 +7351,7 @@ L_1(\uspace, \uspacesig, \measureiii) \ar[r]^{\condexpop{\sigalg{H}}}
 \]
 
 For each set $\seti\in\sigmaalgebra$, the function 
-$(\mkernel{\measureiii}{\function}{\functioniii})^\seti$ factors as some regression function $r$ composed with $\functioniii$,
+$(\mkernel{\measureiii}{\function}{\functioniii})^\seti$ factors as some function $r$ composed with $\functioniii$,
 that is, $(\mkernel{\measureiii}{\function}{\functioniii})^\seti= r \circ \functioniii$,
 which was the heart of Proposition~\ref{factoring_functions}:
 \[
@@ -7335,7 +7368,7 @@ $(\mkernel{\measureiii}{\function}{\functioniii})^\seti$
 on the preimage 
 $\preimage{\functioniii}(\mspaceeltiii)$
 is constant and is equal to $r(\mspaceeltiii)$, as was just shown in Proposition~\ref{constant_on_preimage}.
-And by the very definition of the Markov kernel itself:  
+And by the definition of the Markov kernel itself:
 \[
 (\mkernel{\measureiii}{\function}{\functioniii})_\uspaceelt (\seti)
 = \mkernel{\measureiii}{\function}{\functioniii}(\uspaceelt,\seti)
@@ -7353,7 +7386,7 @@ $\mkernel{\measureiii}{\function}{\preimage{\functioniii}(\mspaceeltiii)}$ on $\
 (\mkernel{\measureiii}{\function}{\functioniii})_\uspaceelt
 \quad\text{if $\uspaceelt\in\preimage{\functioniii}(\mspaceeltiii)$}.
 \] 
-The value of this measure on $\seti\in\sigmaalgebra$ relates to the regression function:
+The value of this measure on $\seti\in\sigmaalgebra$ relates to the function $r$:
 \[
 \mkernel{\measureiii}{\function}{\preimage{\functioniii}(\mspaceeltiii)}(\seti)
 =
@@ -7681,7 +7714,7 @@ as required.
 
 
 
-\begin{defnboldnote}\label{conditionally_independent}
+\begin{defnboldnote}[Conditional independence]\label{conditionally_independent}
 Let
 $(\measurespace,\sigmaalgebra,\measure)$
 be a probability space, and let $\sigmaalgebraii$ be a  $\textsigma$-subalgebra of 
@@ -7855,7 +7888,7 @@ $\sigmaalgebra$, $\sigmaalgebraii$, and $\sigmaalgebraiii$.
 Also let
 $\measureiii_{\function,\functionii,\functioniii}
 \abscont
-\measure\times\measureii\times\measureiv$.
+(\measure\times\measureii\times\measureiv)^*$.
 The following are equivalent:
 \begin{enumerate}
 \item
@@ -7894,7 +7927,7 @@ $\sigalg{H}=\preimage{\funch}(\sigmaalgebraiii)$.
 
 Let
 $\condindep{\function}{\functionii}{\functioniii}$. 
-By the very definition of conditionally independent \textsigma\hyp{}subalgebras,
+By the very Definition~\ref{conditionally_independent} of conditionally independent \textsigma\hyp{}subalgebras,
 this is saying nothing but
 \begin{equation}\label{conditional_probabilities}
 \condprobsub{\lilstrut\preimage{\funcf}(\seti) \meets \preimage{\funcg}(\setii)}{\sigalg{H}}
@@ -8808,7 +8841,7 @@ p(\theta \mid y)
 {p(y)}.
 \end{equation}
 Understand that expressions like these are only heuristic.
-Is there any way to interpret these symbols so that they make mathematical sense?
+Is there any way to interpret these symbols so that they make honest mathematical sense?
 
 We suppose that the symbols indicate Bayes' theorem.
 Let us substitute $\theta$ for $\pspaceelt$:
