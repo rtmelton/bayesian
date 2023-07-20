@@ -444,6 +444,7 @@ label=#1}
 \newcommand{\oneonomega}{1_\measurespace}
 \newcommand{\sigalgb}{\sigmaalgebraii}
 \newcommand{\Prob}{\mathfrak{Prob}}
+\newcommand{\funca}{a}
 \newcommand{\funcf}{f}
 \newcommand{\funcg}{g}
 \newcommand{\funch}{h}
@@ -7341,8 +7342,6 @@ $\sigmaalgebra$ given $\sigalg{G}$ is regular, as required.
 
 \section{Conditional Independence}
 
-The sole purpose for this section is to support Proposition~\ref{conditional_independence_equivalence}.
-
 \begin{prop}\label{constant_on_preimage}
 Let a function
 $\function:\measurespace\to\measurespaceii$
@@ -7377,111 +7376,6 @@ $\function(\mspaceelt)
 \end{proof}
 
 
-\textbf{This discussion can come out.}
-
-\begin{discussion}\label{decomposition_measure}
-The idea here is to identify a particular probablity measure, to be denoted
-$\mkernel{\measureiii}{\function}{\preimage{\functioniii}(\mspaceeltiii)}$, given a Markov kernel.
-Let 
-$(\uspace, \uspacesig, \measureiii)$ 
-be a probability space, with functions
-$\function:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$ 
-and
-$\functioniii:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
-both measurable. We will set
-$\sigalg{H} = \preimage{\functioniii}(\sigmaalgebraiii)$ because
-subscripts do not suffer symbols like 
-$\preimage{\functioniii}(\sigmaalgebraiii)$ or $\sagb(\functioniii)$
-well.
-Also let the conditional distribution 
-\[
-\condprobop{\sigalg{H}}\circ\, \preimage{\function}:
-\sigmaalgebra \to L_1(\uspace,\uspacesig,\measureiii)
-\]
-of $\function$ on $\sigmaalgebra$ given $\sigalg{H}$ 
-be regular, and let
-$\funck$
-denote the corresponding Markov kernel given
-$(\uspace,\sigalg{H})$ and $(\measurespace,\sigmaalgebra)$, as illustrated:
-\[
-\xymatrix@R=16pt@C=30pt{ 
-L_1(\uspace, \uspacesig, \measureiii) \ar[r]^{\condexpop{\sigalg{H}}}
-& L_1(\uspace, \uspacesig, \measureiii) 
-& \uspace 
-\ar[d]_-{\fixinthesecond{\seti}} 
-\ar[dr]^{\funck^\seti}
-\\
-& 
-& \uspace\times\sigmaalgebra \ar[r]^{\funck}
-& [0,1] 
-\\
-\uspacesig 
-\ar[uu]^{Q\,\circ\,\charfunction{}} 
-\ar[uur]_{\condprobop{\sigalg{H}}} 
-& \sigmaalgebra 
-\ar[uu]_{\condprobop{\sigalg{H}}\circ \preimage{\function}} 
-\ar[l]_{\preimage{\function}}
-& \sigmaalgebra 
-\ar[u]^{\fixinthefirst{\uspaceelt}}
-\ar[ur]_{\funck_\uspaceelt}
-& 
-\\
-}
-\]
-
-For each set $\seti\in\sigmaalgebra$, the function 
-$\funck^\seti$ factors as some function $r$ composed with $\functioniii$,
-that is, $\funck^\seti= r \circ \functioniii$,
-which was the heart of Proposition~\ref{factoring_functions}:
-\[
-\xymatrix@R=14pt@C=30pt{
-(\uspace,\sigalg{H}) 
-\ar[r]^-{\funck^\seti}
-\ar[dr]_{\functioniii}
-& \bigl([0,1],\borel_{[0,1]}\bigr) \\
- & (\measurespaceiii,\sigmaalgebraiii) \ar@{.>}[u]_{r}\\
-}
-\]
-So for any $\mspaceeltiii \in\measurespaceiii$, the value of the function
-$\funck^\seti$
-on the preimage 
-$\preimage{\functioniii}(\mspaceeltiii)$
-is constant and is equal to $r(\mspaceeltiii)$, as was just shown in Proposition~\ref{constant_on_preimage}.
-And by the definition of the Markov kernel itself:
-\[
-\funck_\uspaceelt (\seti)
-= \funck(\uspaceelt,\seti)
-= \funck^\seti(\uspaceelt).
-\]
-This implies  that the value of the measure
-$\funck_\uspaceelt$
-at $\seti$ is the same for all 
-$\uspaceelt\in\uspace$ in the preimage $\preimage{\functioniii}(\mspaceeltiii)$.
-We identify the measure
-$\mkernel{\measureiii}{\function}{\preimage{\functioniii}(\mspaceeltiii)}$ on $\sigmaalgebra$ by
-\[
-\mkernel{\measureiii}{\function}{\preimage{\functioniii}(\mspaceeltiii)}
-\definedby
-(\mkernel{\measureiii}{\function}{\functioniii})_\uspaceelt
-\quad\text{if $\uspaceelt\in\preimage{\functioniii}(\mspaceeltiii)$}.
-\] 
-The value of this measure on $\seti\in\sigmaalgebra$ relates to the function $r$:
-\[
-\mkernel{\measureiii}{\function}{\preimage{\functioniii}(\mspaceeltiii)}(\seti)
-=
-r(\mspaceeltiii)
-\quad\text{if $\functioniii(\uspaceelt) = \mspaceeltiii$}.
-\]
-There has just got to be better notation than 
-$\mkernel{\measureiii}{\function}{\preimage{\functioniii}(\mspaceeltiii)}$.
-Worse would be 
-$\mkernel{\measureiii}{\function}{\functioniii = \mspaceeltiii}$, 
-so we are not going in that direction.
-\end{discussion}
-
-
-
-
 
 
 \begin{propboldnote}[Joint decomposition]\label{joint_decomposition}
@@ -7499,34 +7393,109 @@ If the conditional distribution
 \sigmaalgebra \to L_1(\uspace,\uspacesig,\measureiii)
 \]
 of $\function$ on $\sigmaalgebra$ given $\sigalg{H}$ 
-is regular, and if
+is regular, with
+$\funck$
+denoting the corresponding Markov kernel given
+$(\uspace,\sigalg{H})$ and $(\measurespace,\sigmaalgebra)$,
+and if
 \[
-\functioniv\in
+\funcj \in
 L_1\bigl(\measurespace\times\measurespaceiii,
 \productsig{\sigmaalgebra}{\sigmaalgebraiii},
-\measureiii_{\function,\functioniii}\bigr),
+\measureiii \circ \preimage{(\function,\functioniii)} \bigr),
 \]
 then 
 \[
-\int_{\measurespace\times\measurespaceiii} \functioniv\,
-d \measureiii_{\function,\functioniii}
+\int_{\measurespace\times\measurespaceiii} \funcj \,
+d \bigl( \measureiii \circ \preimage{(\function,\functioniii)} \bigr)
 =
 \int_\measurespaceiii\int_\measurespace
-\functioniv(\mspaceelt,\mspaceeltiii) \,
-d \measureiii_{\function\mid\preimage{\functioniii}(\mspaceeltiii)}(\mspaceelt)\,
-d \measureiii_{\functioniii}(\mspaceeltiii).
+\funcj(\mspaceelt,\mspaceeltiii) \,
+d \funck_\uspaceelt(\mspaceelt)\,
+d \bigl( \measureiii \circ \preimage{\functioniii} \bigr)(\mspaceeltiii),
 \]
+where $\uspaceelt$ is such that $\funch(\uspaceelt) = \mspaceeltiii$.
 \end{propboldnote}
 
 
 \begin{proof}
-Let us show that equality  holds for the function
-$\functioniv = \charfunction{\seti\times\setiii}$,
+We have set
+$\sigalg{H} = \preimage{\functioniii}(\sigmaalgebraiii)$ because
+subscripts do not suffer symbols like
+$\preimage{\functioniii}(\sigmaalgebraiii)$ or $\sagb(\functioniii)$
+well.
+Let the conditional distribution
+\[
+\condprobop{\sigalg{H}}\circ\, \preimage{\function}:
+\sigmaalgebra \to L_1(\uspace,\uspacesig,\measureiii)
+\]
+of $\function$ on $\sigmaalgebra$ given $\sigalg{H}$
+be regular, and let
+$\funck$
+denote the corresponding Markov kernel given
+$(\uspace,\sigalg{H})$ and $(\measurespace,\sigmaalgebra)$, as illustrated:
+\[
+\xymatrix@R=16pt@C=30pt{
+L_1(\uspace, \uspacesig, \measureiii) \ar[r]^{\condexpop{\sigalg{H}}}
+& L_1(\uspace, \uspacesig, \measureiii)
+& \uspace
+\ar[d]_-{\fixinthesecond{\seti}}
+\ar[dr]^{\funck^\seti}
+\\
+&
+& \uspace\times\sigmaalgebra \ar[r]^{\funck}
+& [0,1]
+\\
+\uspacesig
+\ar[uu]^{Q\,\circ\,\charfunction{}}
+\ar[uur]_{\condprobop{\sigalg{H}}}
+& \sigmaalgebra
+\ar[uu]_{\condprobop{\sigalg{H}}\circ \preimage{\function}}
+\ar[l]_{\preimage{\function}}
+& \sigmaalgebra
+\ar[u]^{\fixinthefirst{\uspaceelt}}
+\ar[ur]_{\funck_\uspaceelt}
+&
+\\
+}
+\]
+
+For each set $\seti\in\sigmaalgebra$, the function
+$\funck^\seti$ factors as some function $\funca$ composed with $\funch$,
+that is, $\funck^\seti= \funca \circ \funch$,
+which was the heart of Proposition~\ref{factoring_functions}:
+\[
+\xymatrix@R=14pt@C=30pt{
+(\uspace,\sigalg{H})
+\ar[r]^-{\funck^\seti}
+\ar[dr]_{\functioniii}
+& \bigl([0,1],\borel_{[0,1]}\bigr) \\
+ & (\measurespaceiii,\sigmaalgebraiii) \ar@{.>}[u]_{\funca}\\
+}
+\]
+So for any $\mspaceeltiii \in\measurespaceiii$, the value of the function
+$\funck^\seti$
+on the preimage
+$\preimage{\functioniii}(\mspaceeltiii)$
+is constant and is equal to $\funca(\mspaceeltiii)$, as was shown in Proposition~\ref{constant_on_preimage}.
+And by the definition of the Markov kernel itself:
+\[
+\funck_\uspaceelt (\seti)
+= \funck(\uspaceelt,\seti)
+= \funck^\seti(\uspaceelt).
+\]
+This implies  that the value of the measure
+$\funck_\uspaceelt$
+at $\seti$ is the same for all
+$\uspaceelt\in\uspace$ in the preimage $\preimage{\functioniii}(\mspaceeltiii)$.
+
+Let us show that required equality  holds for the function
+$\funcj = \charfunction{\seti\times\setiii}$,
 where $\seti\in\sigmaalgebra$ and $\setiii\in\sigmaalgebraiii$:
 \begin{align*}
 & \int_{\measurespace\times\measurespaceiii}
 \charfunction{\seti\times\setiii}
-\, d \measureiii_{\function,\functioniii}
+\, d \bigl( \measureiii \circ \preimage{(\function,\functioniii)} \bigr)
 \\
 & = \measureiii( \preimage{\function}(\seti) \meets \preimage{\functioniii}(\setiii) )
 \\
@@ -7558,48 +7527,48 @@ where $\seti\in\sigmaalgebra$ and $\setiii\in\sigmaalgebraiii$:
 \\
 & = \int_\uspace
 \charfunction{\preimage{\functioniii}(\setiii)}\cdot
-(r\circ\functioniii)
+(\funca \circ\functioniii)
 \, d\measureiii
 & \text{$\condexpsub{\bigl(
 \ellclass{\charfunction{\preimage{\function}(\seti)}}{}
 \bigr)}
 {\sigalg{H}}
 =
-\ellclass{r\circ\functioniii}{}$}
+\ellclass{\funca \circ\functioniii}{}$}
 \\
 & = \int_\uspace
-\bigl( (\charfunction{\setiii}\cdot r)\circ \functioniii \bigr)
+\bigl( (\charfunction{\setiii}\cdot \funca)\circ \functioniii \bigr)
 \, d\measureiii
 & \text{$\charfunction{\preimage{\functioniii}(\setiii)} = \charfunction{\setiii}\circ \functioniii$}
 \\
 & = \int_\measurespaceiii
-(\charfunction{\setiii}\cdot r) 
-\, d\measureiii_{\functioniii}
+(\charfunction{\setiii}\cdot \funca )
+\, d\bigl(\measureiii \circ \preimage{\functioniii} \bigr)
 & \text{change of variable}
 \\
 & = \int_\measurespaceiii
 \charfunction{\setiii}(\mspaceeltiii)\cdot 
-\mkernel{\measureiii}{\function}{\preimage{\functioniii}(\mspaceeltiii)}(\seti)
-\, d\measureiii_{\functioniii}(\mspaceeltiii)
+\funca(\mspaceeltiii)
+\, d\bigl( \measureiii \circ\preimage{\funch} \bigr)(\mspaceeltiii)
 &
-\makebox[0pt][r]{$\mkernel{\measureiii}{\function}{\preimage{\functioniii}(\mspaceeltiii)}(\seti) = r(\mspaceeltiii)$ if $\functioniii(\uspaceelt) = \mspaceeltiii$}
+\makebox[0pt][r]{$\funca(\mspaceeltiii) = \funck_\uspaceelt(\seti)$ if $\funch(\uspaceelt) = \mspaceeltiii$}
 \\
 & = \int_\measurespaceiii
 \charfunction{\setiii}(\mspaceeltiii)
 \left( 
 \int_\measurespace
 \charfunction{\seti}(\mspaceelt)
-\, d\mkernel{\measureiii}{\function}{\preimage{\functioniii}(\mspaceeltiii)}(\mspaceelt)
+\, d \funck_\uspaceelt(\mspaceelt)
 \right)
-\, d\measureiii_{\functioniii}(\mspaceeltiii)
-& 
+d\bigl( \measureiii \circ \preimage{\functioniii} \bigr)(\mspaceeltiii)
+& \funch(\uspaceelt) = \mspaceeltiii
 \\
 & = \int_\measurespaceiii
 \int_\measurespace
 \charfunction{\seti}(\mspaceelt)\cdot
 \charfunction{\setiii}(\mspaceeltiii)
-\, d\mkernel{\measureiii}{\function}{\preimage{\functioniii}(\mspaceeltiii)}(\mspaceelt)
-\, d\measureiii_{\functioniii}(\mspaceeltiii),
+\, d\funck_\uspaceelt(\mspaceelt)
+\, d\bigl( \measureiii \circ \preimage{\functioniii}\bigr) (\mspaceeltiii),
 \end{align*}
 as required.
 \end{proof}
