@@ -164,7 +164,7 @@ label=#1}
 %Showlabels needs loading after math environment.
 %Documentation says {showlabels} should come LAST of all
 %the packages you include with \usepackage.
-%\usepackage[outer]{showlabels}
+\usepackage[outer]{showlabels}
 %\usepackage{showlabels}
 %***************************************
 % Environment Section
@@ -4704,12 +4704,12 @@ any representative function
 $\funcg \in\cali{L}_1(\measurespace, \sigmaalgebra,\measure)$
 satisfies the equation
 %
-\begin{equation}\label{cme_functional_equation}
+\[
 \int_\setii \function\, d\measure 
 = 
 \int_\setii \functionii\, d\measure 
 \quad\text{for all $\setii \in \sigmaalgebraii$}.
-\end{equation}
+\]
 Such a representative function
 $\funcg$ from the class
 $\condexpsub{{\lebclass{\function}}}{\sigmaalgebraii}$
@@ -4728,10 +4728,10 @@ $\ellclass{\functionii}{\measure\restrictedto{\sigmaalgebraii}}
 \in
 L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$ such that
 %
-\begin{equation}
+\[
 \int_B \function\, d\measure = \int_B \functionii\, d\measure\restrictedto{\sigmaalgebraii} 
 \quad\text{for all $B \in \sigmaalgebraii$,}
-\end{equation}
+\]
 %
 where we may suppose the representative function 
 $\functionii\in\cali{L}_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$
@@ -4778,12 +4778,12 @@ $\kondexpgvn{\ellclass{\function}{\measure}}{\sigmaalgebraii}$,
 in $L_1\bigl(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii}\bigr)$
 such that
 %
-\begin{equation}\label{cme}
+\[
 \int_B \function\, d\measure 
 = 
 \inducedint_B \kondexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}\, d\measure\restrictedto{\sigmaalgebraii} 
 \quad\text{for all $B \in \sigmaalgebraii$.}
-\end{equation}
+\]
 The class $\kondexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}$, having a $(\sigmaalgebraii, \borel_\R)$\hyp{}measurable representative, is the 
 \textbf{conditional expectation} of
 $\ellclass{\function}{\measure}$
@@ -5078,26 +5078,23 @@ Let my early and admittedly naive attempts to try to simply throw a monotone con
 \begin{prop}\label{equality_of_expected_values}
 If $\sigmaalgebraii$ is a $\textsigma$-subalgebra of $\sigmaalgebra$, then
 \[
-\expval{\ellclass{\function}{\measure}}
+\int_\measurespace \funcf \, d\measure
 = 
-\expvalof{\condexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}}
+\inducedint_\measurespace \condexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}\,d\measure
 \]
 for all classes $\ellclass{\function}{\measure}\in L_1(\measurespace, \sigmaalgebra,\measure)$.
-%
+Alternately,
+\[
+\expval{\ellclass{\function}{\measure}}
+=
+\expvalof{\condexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}}.
+\]
 \end{prop}
 
 
 \begin{proof}
-Let $\sigmaalgebraii$ be a \textsigma-subalgebra of $\sigmaalgebra$.
+Let $\sigmaalgebraii$ be a \textsigma\hyp{}subalgebra of $\sigmaalgebra$.
 Let $\ellclass{\function}{\measure}\in L_1(\measurespace, \sigmaalgebra,\measure)$.
-By definition, 
-$\expval{\ellclass{\function}{\measure}} = \int_\measurespace \function \, d\measure$.
-Also by definition, 
-$\expvalof{\condexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}}
-= \inducedint_\measurespace \condexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}
-\, d\measure.$
-We will show that these two integrals are equal.
-
 By definition of conditional mathematical expectation, we know that 
 \[
 \int_B \function\, d\measure 
@@ -5722,88 +5719,123 @@ L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})\Lilst
 
 
 \begin{prop} \label{measurable_functions_factor_out}
+Let $(\measurespace, \sigmaalgebra,\measure)$ be a probability space.
 Let $\sigmaalgebraii$ be a $\textsigma$-subalgebra of $\sigmaalgebra$, and let the class
 $\ellclass{\functionii}{\measure}
 \in L_1(\measurespace, \sigmaalgebra,\measure)$.
 If $\function:\measurespace\to\R$ is a
 $(\sigmaalgebraii, \borel_\R)$\hyp{}measurable function and $\function$ is bounded 
 $\Pstar$-almost everywhere on $\measurespace$,  and if the class
-$\ellclass{\function}{\measure}\ellclass{\functionii}{\measure}
+$\ellclass{\function}{\measure} \cdot \ellclass{\functionii}{\measure}
 \in L_1(\measurespace, \sigmaalgebra,\measure)$, then
 \[
-\kondexpsub{\bigl(\ellclass{\function}{\measure}\ellclass{\functionii}{\measure}\bigr)}{\sigmaalgebraii} 
+\kondexpsub{\bigl(\ellclass{\function}{\measure} \cdot \ellclass{\functionii}{\measure}\bigr)}{\sigmaalgebraii}
 = 
 \ellclass{\function}{\measure\restrictedto{\sigmaalgebraii}}
+\cdot
 \kondexpsub{\ellclass{\functionii}{\measure}}{\sigmaalgebraii}
 ,\]
 and consequently
 \[
-\condexpsub{\bigl(\ellclass{\function}{\measure}\ellclass{\functionii}{\measure}\bigr)}{\sigmaalgebraii} 
+\condexpsub{\bigl(\ellclass{\function}{\measure} \cdot \ellclass{\functionii}{\measure}\bigr)}{\sigmaalgebraii}
 = 
 \ellclass{\function}{\measure}
+\cdot
 \condexpsub{\ellclass{\functionii}{\measure}}{\sigmaalgebraii}
 .\]
 \end{prop}
 
 
 \begin{proof}
-Let the function
-$e\in\cali{L}_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$
+For notational purposes, let a function
+$e$
+in
+$\cali{L}_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$
 represent the class 
-$\kondexpsub{\ellclass{\functionii}{\measure}}{B}
-\in
-L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$, 
-so that 
-$\ellclass{e}{\measure\restrictedto{\sigmaalgebraii}}=\kondexpsub{\ellclass{\functionii}{\measure}}{B}$,
-and let the set 
-$C\in\measurable{\Psubstar{\sigmaalgebraii}}
-\subseteq
-\measurable{\measure^\kernast}$.
+$\kondexpsub{\ellclass{\functionii}{\measure}}{B}$
+of the quotient space
+$L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$.
+It means that the equivalence classes
+$\ellclass{e}{\measure\restrictedto{\sigmaalgebraii}}$
+and
+$\kondexpsub{\ellclass{\functionii}{\measure}}{B}$ of
+$L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$
+are the same.
+Let the set
+$C\in\measurable{\Psubstar{\sigmaalgebraii}}$,
+and so by Proposition~\ref{measurable_inclusion}, $C$ is also in
+$\measurable{\measure^\kernast}$.
+It means that if a set $B$ is in
+$\sigmaalgebraii$, and so $B$ is also in $\measurable{\Psubstar{\sigmaalgebraii}}$,
+then
+$B\meets C$ is in $\measurable{\Psubstar{\sigmaalgebraii}}$,
+so expressions like
+$\inducedint_B \ellclass{\charfunction{C}\cdot e}{\measure\restrictedto{\sigmaalgebraii}}\, d\measure\restrictedto{\sigmaalgebraii}$ make sense. And
+$B\meets C$ is also in $\measurable{\measure^\kernast}$, so expressions like
+$\int_B\charfunction{C} \cdot \functionii \, d\measure$ make sense.
+See Definition~\ref{integrable} for integration over a subset.
+
 We will show that 
-$\int_B\charfunction{C} \functionii\, d\measure
+\[
+\int_B\charfunction{C} \cdot \functionii \, d\measure
 =
-\inducedint_B \ellclass{\charfunction{C}e}{\measure\restrictedto{\sigmaalgebraii}}\, d\measure\restrictedto{\sigmaalgebraii}$ for all $B\in\sigmaalgebraii$, which implies, by the uniqueness of conditional mathematical expectation of 
-$\ellclass{\charfunction{C} \functionii}{\measure}$ with respect to $\sigmaalgebraii$, that 
-$\kondexpsub{\ellclass{\charfunction{C} \functionii}{\measure}}{\sigmaalgebraii}
+\inducedint_B \ellclass{\charfunction{C}\cdot e}{\measure\restrictedto{\sigmaalgebraii}}\, d\measure\restrictedto{\sigmaalgebraii}
+\]
+for all $B\in\sigmaalgebraii$, which implies, by the uniqueness of conditional mathematical expectation of
+$\ellclass{\charfunction{C} \cdot \functionii}{\measure}$ with respect to $\sigmaalgebraii$, that
+\[
+\kondexpsub{\ellclass{\charfunction{C} \cdot \functionii}{\measure}}{\sigmaalgebraii}
 =
-\ellclass{\charfunction{C}e}{\measure\restrictedto{\sigmaalgebraii}}$.
+\ellclass{\charfunction{C}\cdot e}{\measure\restrictedto{\sigmaalgebraii}}.
+\]
 See that
 \begin{align*}
-\int_B\charfunction{C} \functionii\, d\measure
+\int_B\charfunction{C} \cdot \functionii\, d\measure
 & =
 \int_{B\meets C} \functionii\, d\measure
+&& \charfunction{B}\cdot\charfunction{C} = \charfunction{B\meets C}
 \\
 & =
 \inducedint_{B\meets C}
 \kondexpsub{\ellclass{\functionii}{\measure}}{\sigmaalgebraii}\, d\measure\restrictedto{\sigmaalgebraii}
+&& \text{Theorem~\ref{existence_of_conditional}}
 \\
 & =
 \int_{B\meets C} e \,d\measure\restrictedto{\sigmaalgebraii}
+&& e\in \kondexpsub{\ellclass{\functionii}{\measure}}{\sigmaalgebraii}
 \\
 & =
-\int_B \charfunction{C}e\, d\measure\restrictedto{\sigmaalgebraii}
+\int_B \charfunction{C} \cdot e\, d\measure\restrictedto{\sigmaalgebraii}
+&&\charfunction{B\meets C} =  \charfunction{B}\cdot\charfunction{C}
 \\
 & =
-\inducedint_B \ellclass{\charfunction{C}e}{\measure\restrictedto{\sigmaalgebraii}}\, d\measure\restrictedto{\sigmaalgebraii}\,.
+\inducedint_B \ellclass{\charfunction{C} \cdot e}{\measure\restrictedto{\sigmaalgebraii}}\, d\measure\restrictedto{\sigmaalgebraii}
+&& \text{Definition~\ref{Lp}.}
 \end{align*}
-This shows that
+This implies that
 \[
-\kondexpsub{\ellclass{\charfunction{C} \functionii}{\measure}}{\sigmaalgebraii}
+\kondexpsub{\ellclass{\charfunction{C} \cdot \functionii}{\measure}}{\sigmaalgebraii}
 =
-\ellclass{\charfunction{C}e}{\measure\restrictedto{\sigmaalgebraii}},\]
-and since the equivalence class $\ellclass{\charfunction{C}e}{\measure\restrictedto{\sigmaalgebraii}}$
+\ellclass{\charfunction{C} \cdot e}{\measure\restrictedto{\sigmaalgebraii}},\]
+and since the equivalence class
+$\ellclass{\charfunction{C} \cdot e}{\measure\restrictedto{\sigmaalgebraii}}$
 can be expressed as 
 \begin{align*}
-\ellclass{\charfunction{C}e}{\measure\restrictedto{\sigmaalgebraii}}
+\ellclass{\charfunction{C} \cdot e}{\measure\restrictedto{\sigmaalgebraii}}
 & =
-\ellclass{\charfunction{C}}{\measure\restrictedto{\sigmaalgebraii}}\ellclass{e}{\measure\restrictedto{\sigmaalgebraii}}
+\ellclass{\charfunction{C}}{\measure\restrictedto{\sigmaalgebraii}}
+\cdot
+\ellclass{e}{\measure\restrictedto{\sigmaalgebraii}}
 \\
 & =
 \ellclass{\charfunction{C}}{\measure\restrictedto{\sigmaalgebraii}}\kondexpsub{\ellclass{\functionii}{\measure}}{\sigmaalgebraii},
 \end{align*}
 it follows that 
 \[
-\kondexpsub{\bigr(\ellclass{\charfunction{C}}{\measure}\ellclass{\functionii}{\measure}\bigr)}
+\kondexpsub{
+\bigl(
+\ellclass{\charfunction{C}}{\measure} \cdot \ellclass{\functionii}{\measure}
+\bigr)}
 {\sigmaalgebraii}
 =
 \ellclass{\charfunction{C}}{\measure\restrictedto{\sigmaalgebraii}}\kondexpsub{\ellclass{\functionii}{\measure}}{\sigmaalgebraii}.
@@ -5812,7 +5844,69 @@ This last equality holds for all
 $C\in\measurable{\Psubstar{\sigmaalgebraii}}$, and so by linearity for all equivalence classes of 
 $(\measurable{\Psubstar{\sigmaalgebraii}},\borel_\R)$\hyp{}measurable step functions. 
 
-The result follows by a continuity argument, which fortunately works well in a normed space.  Not so well in a semi-normed space.
+The conditions on $\function$ put it within the limits of linear combinations of functions like
+$\charfunction{C}$.
+The result then follows by a continuity argument, which fortunately works well in a normed space.  Not so well in a semi-normed space.
+
+To obtain the result
+\[
+\condexpsub{\bigl(\ellclass{\function}{\measure} \cdot \ellclass{\functionii}{\measure}\bigr)}{\sigmaalgebraii}
+=
+\ellclass{\function}{\measure}
+\cdot
+\condexpsub{\ellclass{\functionii}{\measure}}{\sigmaalgebraii},
+\]
+we will apply the  the embedding $\L1embedding$ to both sides of the equality which we have shown:
+\[
+\kondexpsub{\ellclass{\charfunction{C} \cdot \functionii}{\measure}}{\sigmaalgebraii}
+=
+\ellclass{\charfunction{C} \cdot e}{\measure\restrictedto{\sigmaalgebraii}},
+\]
+to get:
+\[
+\L1embedding
+\kondexpsub{\ellclass{\charfunction{C} \cdot \functionii}{\measure}}{\sigmaalgebraii}
+=
+\L1embedding
+\ellclass{\charfunction{C} \cdot e}{\measure\restrictedto{\sigmaalgebraii}}.
+\]
+See that
+\[
+\L1embedding
+\kondexpsub{\ellclass{\charfunction{C} \cdot \functionii}{\measure}}{\sigmaalgebraii}
+=
+\condexpsub{\ellclass{\charfunction{C} \cdot \functionii}{\measure}}{\sigmaalgebraii}
+=
+\condexpsub{\bigl(
+\ellclass{\charfunction{C}}{\measure} \cdot \ellclass{\functionii}{\measure}
+\bigr)}
+{\sigmaalgebraii}
+\]
+and
+\[
+\L1embedding
+\ellclass{\charfunction{C} \cdot e}{\measure\restrictedto{\sigmaalgebraii}}
+=
+\ellclass{\charfunction{C} \cdot e}{\measure}
+=
+\ellclass{\charfunction{C}}{\measure} \cdot \ellclass{e}{\measure}
+=
+\ellclass{\charfunction{C}}{\measure}
+\cdot
+\condexpsub{\ellclass{\funcg}{\measure}}{\sigmaalgebraii}.
+\]
+It follows that
+\[
+\condexpsub{\bigl(
+\ellclass{\charfunction{C}}{\measure} \cdot \ellclass{\function}{\measure}
+\bigr)}
+{\sigmaalgebraii}
+=
+\ellclass{\charfunction{C}}{\measure}
+\cdot
+\condexpsub{\ellclass{\funcg}{\measure}}{\sigmaalgebraii}.
+\]
+Again, the result follows by a continuity argument.
 \end{proof}
 
 
@@ -7247,19 +7341,7 @@ $\sigmaalgebra$ given $\sigalg{G}$ is regular, as required.
 
 \section{Conditional Independence}
 
-The sole purpose for this section is to support Proposition~\ref{conditional_independence_equivalence}. Unfortunately, the notation I am trying to use here has gotten so bad that I just cannot stand it.  It causes mental instability. Just look at it:
-\begin{itemize}
-\item
-$\mkernel{\measureiii}{\function}{\functioniii}$
-\item
-$\mkernel{\measureiii}{\function}{\preimage{\functioniii}(\mspaceeltiii)}$
-\item
-$\mkernel{\measureiii}{\function}{\functioniii = \mspaceeltiii}$
-\end{itemize}
-Whenever you get that much garbage in a subscript, you need to seriously take a long break and rethink what you are trying to do. There is plenty of therapeutic reading on how to deal with truly gross subscripts.
-
-This whole section needs a going over.
-
+The sole purpose for this section is to support Proposition~\ref{conditional_independence_equivalence}.
 
 \begin{prop}\label{constant_on_preimage}
 Let a function
@@ -7295,6 +7377,7 @@ $\function(\mspaceelt)
 \end{proof}
 
 
+\textbf{This discussion can come out.}
 
 \begin{discussion}\label{decomposition_measure}
 The idea here is to identify a particular probablity measure, to be denoted
@@ -7317,20 +7400,19 @@ Also let the conditional distribution
 \]
 of $\function$ on $\sigmaalgebra$ given $\sigalg{H}$ 
 be regular, and let
-$\mkernel{\measureiii}{\function}{\functioniii}$
-denote the corresponding Markov kernel, as illustrated:
+$\funck$
+denote the corresponding Markov kernel given
+$(\uspace,\sigalg{H})$ and $(\measurespace,\sigmaalgebra)$, as illustrated:
 \[
 \xymatrix@R=16pt@C=30pt{ 
 L_1(\uspace, \uspacesig, \measureiii) \ar[r]^{\condexpop{\sigalg{H}}}
 & L_1(\uspace, \uspacesig, \measureiii) 
 & \uspace 
 \ar[d]_-{\fixinthesecond{\seti}} 
-\ar[dr]^{(\mkernel{\measureiii}{\function}{\functioniii})^\seti 
-\rlap{\scriptsize $\in \condprobop{\sigalg{H}}\circ \preimage{\function}(\seti)$}
-}
+\ar[dr]^{\funck^\seti}
 \\
 & 
-& \uspace\times\sigmaalgebra \ar[r]^{\mkernel{\measureiii}{\function}{\functioniii}} 
+& \uspace\times\sigmaalgebra \ar[r]^{\funck}
 & [0,1] 
 \\
 \uspacesig 
@@ -7341,41 +7423,38 @@ L_1(\uspace, \uspacesig, \measureiii) \ar[r]^{\condexpop{\sigalg{H}}}
 \ar[l]_{\preimage{\function}}
 & \sigmaalgebra 
 \ar[u]^{\fixinthefirst{\uspaceelt}}
-\ar[ur]_{(\mkernel{\measureiii}{\function}{\functioniii})_\uspaceelt 
-\rlap{\scriptsize $\defines
-\mkernel{\measureiii}{\function}{\preimage{\functioniii}(\mspaceeltiii)}$ if $\functioniii(\uspaceelt)=\mspaceeltiii$}
-} 
+\ar[ur]_{\funck_\uspaceelt}
 & 
 \\
 }
 \]
 
 For each set $\seti\in\sigmaalgebra$, the function 
-$(\mkernel{\measureiii}{\function}{\functioniii})^\seti$ factors as some function $r$ composed with $\functioniii$,
-that is, $(\mkernel{\measureiii}{\function}{\functioniii})^\seti= r \circ \functioniii$,
+$\funck^\seti$ factors as some function $r$ composed with $\functioniii$,
+that is, $\funck^\seti= r \circ \functioniii$,
 which was the heart of Proposition~\ref{factoring_functions}:
 \[
 \xymatrix@R=14pt@C=30pt{
 (\uspace,\sigalg{H}) 
-\ar[r]^-{(\mkernel{\measureiii}{\function}{\functioniii})^\seti} 
+\ar[r]^-{\funck^\seti}
 \ar[dr]_{\functioniii}
 & \bigl([0,1],\borel_{[0,1]}\bigr) \\
  & (\measurespaceiii,\sigmaalgebraiii) \ar@{.>}[u]_{r}\\
 }
 \]
 So for any $\mspaceeltiii \in\measurespaceiii$, the value of the function
-$(\mkernel{\measureiii}{\function}{\functioniii})^\seti$ 
+$\funck^\seti$
 on the preimage 
 $\preimage{\functioniii}(\mspaceeltiii)$
 is constant and is equal to $r(\mspaceeltiii)$, as was just shown in Proposition~\ref{constant_on_preimage}.
 And by the definition of the Markov kernel itself:
 \[
-(\mkernel{\measureiii}{\function}{\functioniii})_\uspaceelt (\seti)
-= \mkernel{\measureiii}{\function}{\functioniii}(\uspaceelt,\seti)
-= (\mkernel{\measureiii}{\function}{\functioniii})^\seti(\uspaceelt).
+\funck_\uspaceelt (\seti)
+= \funck(\uspaceelt,\seti)
+= \funck^\seti(\uspaceelt).
 \]
 This implies  that the value of the measure
-$(\mkernel{\measureiii}{\function}{\functioniii})_\uspaceelt$ 
+$\funck_\uspaceelt$
 at $\seti$ is the same for all 
 $\uspaceelt\in\uspace$ in the preimage $\preimage{\functioniii}(\mspaceeltiii)$.
 We identify the measure
@@ -7457,26 +7536,36 @@ where $\seti\in\sigmaalgebra$ and $\setiii\in\sigmaalgebraiii$:
 \, d\measureiii
 &
 \\
-& = \int_\uspace 
-\condexpsub{\bigl(\charfunction{\preimage{\function}(\seti)}\cdot 
-\charfunction{\preimage{\functioniii}(\setiii)}\bigr)}
+& = \inducedint_\uspace
+\condexpsub{\bigl(
+\ellclass{\charfunction{\preimage{\function}(\seti)}}{}
+\cdot
+\ellclass{\charfunction{\preimage{\functioniii}(\setiii)}}{}
+\bigr)}
 {\sigalg{H}}
 \, d\measureiii
-&
+& \text{Proposition~\ref{equality_of_expected_values}}
 \\
-& = \int_\uspace
-\charfunction{\preimage{\functioniii}(\setiii)}\cdot
-\condexpsub{\bigl(\charfunction{\preimage{\function}(\seti)}\bigr)}
+& = \inducedint_\uspace
+\ellclass{\charfunction{\preimage{\functioniii}(\setiii)}}{}
+\cdot
+\condexpsub{\bigl(
+\ellclass{\charfunction{\preimage{\function}(\seti)}}{}
+\bigr)}
 {\sigalg{H}}
 \, d\measureiii
-& \text{$(\sigalg{H},\borel_\R)$\hyp{}measurable}
+& \text{Proposition~\ref{measurable_functions_factor_out}}
 \\
 & = \int_\uspace
 \charfunction{\preimage{\functioniii}(\setiii)}\cdot
 (r\circ\functioniii)
 \, d\measureiii
-& \text{$\condexpsub{\bigl(\charfunction{\preimage{\function}(\seti)}\bigr)}
-{\sigalg{H}}=r\circ\functioniii$}
+& \text{$\condexpsub{\bigl(
+\ellclass{\charfunction{\preimage{\function}(\seti)}}{}
+\bigr)}
+{\sigalg{H}}
+=
+\ellclass{r\circ\functioniii}{}$}
 \\
 & = \int_\uspace
 \bigl( (\charfunction{\setiii}\cdot r)\circ \functioniii \bigr)
