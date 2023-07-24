@@ -521,6 +521,7 @@ label=#1}
 \newcommand{\marginaltwo}{\beta}% marginal measure 2nd component
 %\newcommand{\marginalone}{\measonprod_{\kern-2pt 1}}% marginal measure
 %\newcommand{\marginaltwo}{\measonprod_{\kern-2pt 2}}% marginal measure
+\newcommand{\marginalthree}{\gamma}
 \newcommand{\postonprod}{\Pi}
 %\newcommand{\prior}{\measure}
 %\newcommand{\predictive}{P}
@@ -7489,7 +7490,7 @@ $\funck_\uspaceelt$
 at $\seti$ is the same for all
 $\uspaceelt\in\uspace$ in the preimage $\preimage{\functioniii}(\mspaceeltiii)$.
 
-Let us show that required equality  holds for the function
+Let us show that the required equality  holds for the function
 $\funcj = \charfunction{\seti\times\setiii}$,
 where $\seti\in\sigmaalgebra$ and $\setiii\in\sigmaalgebraiii$:
 \begin{align*}
@@ -7591,34 +7592,26 @@ $\functioniii:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
 measurable. 
 Let $\measure$ and $\measureiv$ be \textsigma-finite measures on respective \textsigma-algebras
 $\sigmaalgebra$ and $\sigmaalgebraiii$.
-Also let
-$\measureiii_{\function,\functioniii} \abscont \measure\times\measureiv$ on 
-$\productsig{\sigmaalgebra}{\sigmaalgebraiii}$, 
-and set
-\[
-m_{\function,\functioniii} 
-=
-\frac{d \measureiii_{\function,\functioniii}}
-{d(\measure\times\measureiv)^*}
-\]
-and
-\[
-m_\functioniii
-=
-\frac{d \measureiii_\functioniii}
-{d \measureiv}.
-\]
-Then the measure
-$\measureiii_{\function\mid\preimage{\functioniii}(\mspaceeltiii)}$
+Set the joint $\measonprod = \measureiii\circ\preimage{(\function,\functioniii)}$,
+and set the marginal $\marginalthree = \measlambda\circ\preimage{\funch}$.
+If\, $\measonprod \abscont
+(\measure\times\measureiv)^*$ on
+$\productsig{\sigmaalgebra}{\sigmaalgebraiii}$,
+then the measure
+$\funck_\uspaceelt$
 on $\sigmaalgebra$ has the following density function with respect to the measure 
 $\measure$:
 \[
-\frac{d \measureiii_{\function\mid\preimage{\functioniii}(\mspaceeltiii)}}{d \measure}
+\frac{d \funck_\uspaceelt}{d \measure}
 :\measurespace\to\R
 :\mspaceelt\mapsto
 %
-\frac{m_{\function,\functioniii}(\mspaceelt,\mspaceeltiii)}
-{m_\functioniii (\mspaceeltiii)}.
+\dfrac{
+\dfrac{d\, \joint}
+{d(\measure\times\measureiv)^*}(\mspaceelt,\mspaceeltiii)
+}{
+\dfrac{d \marginalthree}{d \measrho}(\mspaceeltiii)
+}.
 \]
 \end{propboldnote}
 
