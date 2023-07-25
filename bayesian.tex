@@ -3194,150 +3194,11 @@ Maybe a slight understatement.
 \end{rmk}
 
 
+
 \section{Applications}\label{product_integration_applications}
+%*********************************************************
+%*********************************************************
 
-The following proposition was used in
-\textsl{Elements of Bayesian Statistics},
-\textbf{1.2.3 Theorem}
-therein, to show that if a joint measure is absolutely continuous with respect to a product of a marginal measure with a reference measure, then the joint measure is absolutely continuous with respect to the product of the marginal measures.  Here, rather than prove absolute continuity, we produce the Radon-Nikodym derivative.  Although this proposition might not be needed, we will leave it here for now.
-
-\begin{prop}\label{integral_of_product}
-Let 
-$(\measurespace, \semiring, \measure)$
-and
-$(\measurespaceii, \semiringii, \measureii)$
-be \textsigma-finite measure spaces, and let
-$\function:\measurespace\times\measurespaceii\to\R$ and
-$\functionii:\measurespace\times\measurespaceii\to\R$ be
-non-negative functions, where $\function\functionii$ is
-$(\measure\times\measureii)^\kernast$\hyp{}measurable.
-If functions
-$\function^\mspaceeltii$ and $\functionii^\mspaceeltii$
-are integrable with respect to $\measure$, and if
-\[
-\int_\measurespaceii
-\left( \int_\measurespace\function(\mspaceelt,\mspaceeltii)\,d\measure(\mspaceelt) \right)
-\left( \int_\measurespace\functionii(\mspaceelt,\mspaceeltii)\,d\measure(\mspaceelt) \right)
-\,d\measureii(\mspaceeltii)
-= 0,
-\]
-then \[
-\int_{\measurespace\times\measurespaceii}\function\functionii
-\, d(\measure\times\measureii)
-= 0.
-\]
-\end{prop}
-
-\begin{proof}
-This will be a simple application of Tonelli's. 
-Let 
-functions
-$\function^\mspaceeltii$ and $\functionii^\mspaceeltii$
-be integrable with respect to $\measure$, and let
-\[
-\int_\measurespaceii
-\left( \int_\measurespace\function(\mspaceelt,\mspaceeltii)\,d\measure(\mspaceelt) \right)
-\left( \int_\measurespace\functionii(\mspaceelt,\mspaceeltii)\,d\measure(\mspaceelt) \right)
-\,d\measureii(\mspaceeltii)
-= 0.
-\]
-We need to show that 
-$\int_{\measurespace\times\measurespaceii}\function\functionii
-\, d(\measure\times\measureii)
-= 0$.
-
-Let us show that
-$\int_\measurespace\function^\mspaceeltii \functionii^\mspaceeltii
-\,d\measure = 0$ for $\measureii^\kernast$\hyp{}almost all $\mspaceeltii\in\measurespaceii$.
-By Proposition~\ref{integral_absolute_zero}, since the integral of the function
-\[
-\measurespaceii \to \R:
-\mspaceeltii \mapsto
-\left( \int_\measurespace\function(\mspaceelt,\mspaceeltii)\,d\measure(\mspaceelt) \right)
-\left( \int_\measurespace\functionii(\mspaceelt,\mspaceeltii)\,d\measure(\mspaceelt) \right)
-\]
-with respect to $\measureii$ equals zero, it follows that the function itself is equal to zero 
-$\measureii^\kernast$\hyp{}almost everywhere on $\measurespaceii$, which in turn says that the product of integrals
-\begin{equation}\label{product}
-\left( \int_\measurespace\function(\mspaceelt,\mspaceeltii)\,d\measure(\mspaceelt) \right)
-\left( \int_\measurespace\functionii(\mspaceelt,\mspaceeltii)\,d\measure(\mspaceelt) \right)
-\end{equation}
-equals zero $\measureii^\kernast$\hyp{}almost everywhere on $\measurespaceii$.
-The product~{(\ref{product})} can fail to be zero on a 
-$\measureii^\kernast$\hyp{}null set;
-let $N$ be the 
-$\measureii^\kernast$\hyp{}null subset of $\measurespaceii$ on which equality fails.
-It means that the product~{(\ref{product})} equals zero everywhere on $\measurespaceii\setminus N$.
-Choose one of the factors, say the first, and split
-$\measurespaceii\setminus N$ 
-into disjoint subsets on which the first factor is either strictly positive or not; set 
-\[
-\seti = 
-\left\{ 
-\mspaceeltii \in \measurespaceii\setminus N : 
-\int_\measurespace \function(\mspaceelt,\mspaceeltii) 
-\,d \measure(\mspaceelt) > 0 
-\right\},
-\]
-\[
-\setii = 
-\left\{ 
-\mspaceeltii \in \measurespaceii\setminus N : 
-\int_\measurespace \function(\mspaceelt,\mspaceeltii) 
-\,d \measure(\mspaceelt) = 0 
-\right\}.
-\]
-If $\mspaceeltii\in\seti$, then the second factor  
-$\int_\measurespace\functionii(\mspaceelt,\mspaceeltii)\,d\measure(\mspaceelt)$
-of (\ref{product}) must equal zero, so
-again by Proposition~\ref{integral_absolute_zero}, the function 
-$\functionii^\mspaceeltii = 0$ $\measure^\kernast$\hyp{}almost everywhere on $\measurespace$. 
-Likewise, if
-$\mspaceeltii\in\setii$, 
-then 
-$\function^\mspaceeltii = 0$ $\measure^\kernast$\hyp{}almost everywhere on $\measurespace$.
-This shows that the product of functions
-$\function^\mspaceeltii \functionii^\mspaceeltii$ equals zero  
-$\measure^\kernast$\hyp{}almost everywhere on $\measurespace$
-for all $\mspaceeltii$ in the disjoint union 
-$\seti\cup\setii = \measurespaceii\setminus N$.
-Consequently, 
-$\int_\measurespace\function^\mspaceeltii \functionii^\mspaceeltii
-\,d\measure = 0$ for $\measureii^\kernast$\hyp{}almost all $\mspaceeltii\in\measurespaceii$.
-
-We can say then 
-that the iterated integral
-$\int_\measurespaceii \int_\measurespace 
-\function^\mspaceeltii \functionii^\mspaceeltii
-\,d\measure\, d\measureii$ exists
-since for
-$\measureii^\kernast$-almost all 
-$\mspaceeltii\in\measurespaceii$, as we have just shown, the function
-\[
-\function^\mspaceeltii \functionii^\mspaceeltii:\measurespace \to \R 
-:\mspaceelt\mapsto\function(\mspaceelt,\mspaceeltii)\functionii(\mspaceelt,\mspaceeltii)
-\]
-is integrable over $\measurespace$ with respect to $\measure$ having integral zero, and the function
-\[ 
-\measurespaceii\to\R:
-\mspaceeltii\mapsto 
-\int_\measurespace \function^\mspaceeltii\functionii^\mspaceeltii\, d\measure 
-\]
-defines an integrable function over $\measurespaceii$ with respect to $\measureii$ because, as we have also just shown, it is the zero function $\measureii^\kernast$\hyp{}almost everywhere. 
-By Tonelli's Theorem~\ref{tonelli} then, the function $\function\functionii$ is $\measure\times\measureii$\hyp{}integrable, and
-\[
-\int_{\measurespace\times\measurespaceii}\function\functionii\,d(\measure\times\measureii)
-=
-\int_\measurespaceii \int_\measurespace 
-\function^\mspaceeltii \functionii^\mspaceeltii
-\,d\measure\, d\measureii
-=
-\int_\measurespaceii 0 \, d\measureii
-=
-0,
-\]
-as required.
-\end{proof}
 
 
 
@@ -3347,17 +3208,19 @@ Let $(\measurespace,\sigmaalgebra)$ and
 $(\measurespaceii,\sigmaalgebraii)$ be measurable spaces.
 Let $\measonprod$ be any measure on
 $\productsig{\sigmaalgebra}{\sigmaalgebraii}$.
-Define
+Set
 \[
-\marginalone\definedby
+\marginalone
+=
 \measonprod \circ \preimage{\projectionone}
 \quad
 \text{on }
 \sigmaalgebra
 \]
-and
+and set
 \[
-\marginaltwo\definedby
+\marginaltwo
+=
 \measonprod \circ \preimage{\projectiontwo}
 \quad
 \text{on }
@@ -3412,6 +3275,8 @@ $\preimage{\projectiontwo}(\setii) = \measurespace\times\setii$.
 In case  $(\measurespace,\sigmaalgebra,\measmu)$ and
 $(\measurespaceii,\sigmaalgebraii,\measnu)$ are already measure spaces, we might refer to the measures
 $\measmu$ and $\measnu$ as \textbf{reference}\index{reference measure} measures, with the understanding that the reference measures are usually not the same as the marginal measures.
+
+The remaining propositions in this chapter are all stated in terms of \textbf{joint}, \textbf{marginal}, and \textbf{reference} measures.
 \end{defn}
 
 
@@ -3423,15 +3288,15 @@ $(\funcf,\funcg):\uspace\to \measurespace  \times \measurespaceii $
 be a
 $\bigl(\uspacesig,\productsig{\sigmaalgebra}{\sigmaalgebraii}\bigr)$\hyp{}measurable
 function.
-Define the joint
+Let the joint
 $\measonprod 
-\definedby
+=
 \measlambda\circ\preimage{(\funcf,\funcg)}$,
-with marginal
+and let the marginal
 $\marginalone
 =
 \measonprod\circ\preimage{\projectionone}$
-and marginal
+and the marginal
 $\marginaltwo
 =
 \measonprod\circ\preimage{\projectiontwo}$.
@@ -3533,11 +3398,12 @@ and
 
 
 \begin{proof}
-Let
+Set
 $\function = d\measonprod / d(\measure\times\measureii)^*$.
-We will only show
-$d \marginalone / d \measure
-: \measurespace\to\R:
+We will only show that the Radon-Nikodym derivative
+$d \marginalone / d \measure$
+is the map
+$\measurespace\to\R:
 \mspaceelt\mapsto
 \int_{\measurespaceii}\function(\mspaceelt,\mspaceeltii)\,d\measureii(\mspaceeltii)$.
 This is just an application of Fubini's theorem.
@@ -3577,7 +3443,7 @@ $\measure$, with
 \, d\measureii(\mspaceeltii)
 \right) \, d\measure(\mspaceelt).
 \]
-For $\seti\in\sigmaalgebra$, 
+For each set $\seti\in\sigmaalgebra$,
 we know 
 \[
 \marginalone(\seti) 
@@ -4021,7 +3887,7 @@ and
 $(\measurespaceii, \sigmaalgebraii)$
 be measurable spaces, and let  $\measonprod$ be a finite measure on
 $\productsig{\sigmaalgebra}{\sigmaalgebraii}$.
-If $\measonprod \abscont (\marginalone\times\marginaltwo)^*$, then
+If\, $\measonprod \abscont (\marginalone\times\marginaltwo)^*$, then
 \[
 \measurespace\to\R
 :\mspaceelt\mapsto
