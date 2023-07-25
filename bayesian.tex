@@ -3276,7 +3276,7 @@ In case  $(\measurespace,\sigmaalgebra,\measmu)$ and
 $(\measurespaceii,\sigmaalgebraii,\measnu)$ are already measure spaces, we might refer to the measures
 $\measmu$ and $\measnu$ as \textbf{reference}\index{reference measure} measures, with the understanding that the reference measures are usually not the same as the marginal measures.
 
-The remaining propositions in this chapter are all stated in terms of \textbf{joint}, \textbf{marginal}, and \textbf{reference} measures.
+The remaining propositions in this chapter are all stated in terms of joint, marginal, and reference measures.
 \end{defn}
 
 
@@ -7297,7 +7297,7 @@ Let the conditional distribution
 \sigmaalgebra \to L_1(\uspace,\uspacesig,\measureiii)
 \]
 of $\function$ on $\sigmaalgebra$ given $\sigalg{H}$
-be regular, and let
+be regular, and we let
 $\funck$
 denote the corresponding Markov kernel given
 $(\uspace,\sigalg{H})$ and $(\measurespace,\sigmaalgebra)$, as illustrated:
@@ -7485,7 +7485,7 @@ $\measure$:
 \begin{proof}
 It is sufficient to show that
 \[
-\measureiii_{\function\mid\preimage{\functioniii}(\mspaceeltiii)}(\seti)
+\funck_\uspaceelt(\seti)
 =
 \int_\seti 
 \frac{m_{\function,\functioniii}(\mspaceelt,\mspaceeltiii)}
@@ -7522,7 +7522,7 @@ for then by Proposition~\ref{joint_decomposition}, it will follow that
 =
 \int_\measurespace
 \functioniv(\mspaceelt,\mspaceeltiii)
-\,d\measureiii_{\function\mid\preimage{\functioniii}(\mspaceeltiii)}(\mspaceelt),
+\,d\funck_\uspaceelt(\mspaceelt),
 \]
 and by setting $\functioniv(\mspaceelt,\mspaceeltiii)=\charfunction{\seti}(\mspaceelt)$, 
 we will obtain the result.
@@ -7581,7 +7581,7 @@ d \measureiii_{\function,\functioniii}
 =
 \int_\measurespaceiii\int_\measurespace
 \functioniv(\mspaceelt,\mspaceeltiii) \,
-d \measureiii_{\function\mid\preimage{\functioniii}(\mspaceeltiii)}(\mspaceelt)\,
+d \funck_\uspaceelt(\mspaceelt)\,
 d \measureiii_{\functioniii}(\mspaceeltiii).
 \]
 By transitivity of equality,
@@ -7596,7 +7596,7 @@ By transitivity of equality,
 =
 \int_\measurespaceiii\int_\measurespace
 \functioniv(\mspaceelt,\mspaceeltiii) \,
-d \measureiii_{\function\mid\preimage{\functioniii}(\mspaceeltiii)}(\mspaceelt)\,
+d \funck_\uspaceelt(\mspaceelt)\,
 d \measureiii_{\functioniii}(\mspaceeltiii).
 \]
 It follows that
@@ -7609,7 +7609,7 @@ It follows that
 =
 \int_\measurespace
 \functioniv(\mspaceelt,\mspaceeltiii) \,
-d \measureiii_{\function\mid\preimage{\functioniii}(\mspaceeltiii)}(\mspaceelt).
+d \funck_\uspaceelt(\mspaceelt).
 \]
 Set
 $\functioniv (\mspaceelt,\mspaceeltiii)
@@ -7622,9 +7622,9 @@ $\functioniv (\mspaceelt,\mspaceeltiii)
 \,d\measure (\mspaceelt)
 =
 \int_\seti
-\,d \measureiii_{\function\mid\preimage{\functioniii}(\mspaceeltiii)}(\mspaceelt)
+\,d \funck_\uspaceelt(\mspaceelt)
 =
-\measureiii_{\function\mid\preimage{\functioniii}(\mspaceeltiii)}(\seti),
+\funck_\uspaceelt(\seti),
 \]
 as required.
 \end{proof}
