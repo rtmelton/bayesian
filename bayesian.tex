@@ -7453,28 +7453,23 @@ as required.
 \end{proof}
 
 
-
-
-
-
-
-
-
-\begin{propboldnote}\label{conditional_density}
-Let 
-$(\uspace, \uspacesig, \measureiii)$ 
+\begin{prop}\label{conditional_density}
+Let
+$(\uspace, \uspacesig, \measureiii)$
 be a probability space, with functions
-$\function:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$ 
+$\function:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$
 and
 $\functioniii:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
-measurable. 
-Let $\measure$ and $\measureiv$ be \textsigma-finite measures on respective \textsigma-algebras
-$\sigmaalgebra$ and $\sigmaalgebraiii$.
-Set the joint $\measonprod = \measureiii\circ\preimage{(\function,\functioniii)}$,
+measurable, and set
+$\sigalg{H} = \preimage{\functioniii}(\sigmaalgebraiii)$.
+Let $\measmu$ and $\measrho$ be \textsigma\hyp{}finite measures on respective \textsigma\hyp{}algebras $\sigmaalgebra$ and $\sigmaalgebraiii$.
+Also, set the joint $\measonprod = \measureiii\circ\preimage{(\function,\functioniii)}$,
 and set the marginal $\marginalthree = \measlambda\circ\preimage{\funch}$.
-If\, $\measonprod \abscont
-(\measure\times\measureiv)^*$ on
-$\productsig{\sigmaalgebra}{\sigmaalgebraiii}$,
+If the joint
+$\measonprod\abscont (\measmu\times\measrho)^*$, with
+$\funck$
+denoting the corresponding Markov kernel given
+$(\uspace,\sigalg{H})$ and $(\measurespace,\sigmaalgebra)$,
 then the measure
 $\funck_\uspaceelt$
 on $\sigmaalgebra$, where $\uspaceelt$ is such that $\funch(\uspaceelt)=\mspaceeltiii$,
@@ -7492,10 +7487,49 @@ $\measure$:
 \dfrac{d \marginalthree}{d \measrho}(\mspaceeltiii)
 }.
 \]
-\end{propboldnote}
+\end{prop}
 
 
 \begin{proof}
+Let
+$\measonprod\abscont (\measmu\times\measrho)^*$.
+By Proposition~\ref{joint_abscont} and Proposition~\ref{absolute_continuity_regular}, the conditional distribution
+\[
+\condprobop{\sigalg{H}}\circ\, \preimage{\function}:
+\sigmaalgebra \to L_1(\uspace,\uspacesig,\measureiii)
+\]
+of $\function$ on $\sigmaalgebra$ given $\sigalg{H}$
+is regular. We are letting
+$\funck$
+denote the corresponding Markov kernel given
+$(\uspace,\sigalg{H})$ and $(\measurespace,\sigmaalgebra)$, as illustrated:
+\[
+\xymatrix@R=16pt@C=30pt{
+L_1(\uspace, \uspacesig, \measureiii) \ar[r]^{\condexpop{\sigalg{H}}}
+& L_1(\uspace, \uspacesig, \measureiii)
+& \uspace
+\ar[d]_-{\fixinthesecond{\seti}}
+\ar[dr]^{\funck^\seti}
+\\
+&
+& \uspace\times\sigmaalgebra \ar[r]^{\funck}
+& [0,1]
+\\
+\uspacesig
+\ar[uu]^{Q\,\circ\,\charfunction{}}
+\ar[uur]_{\condprobop{\sigalg{H}}}
+& \sigmaalgebra
+\ar[uu]_{\condprobop{\sigalg{H}}\circ \preimage{\function}}
+\ar[l]_{\preimage{\function}}
+& \sigmaalgebra
+\ar[u]^{\fixinthefirst{\uspaceelt}}
+\ar[ur]_{\funck_\uspaceelt}
+&
+\\
+}
+\]
+By Proposition~\ref{marginal_abscont}, the marginal
+$\marginalthree \abscont \measrho$.
 It is sufficient to show that if $\seti\in\sigmaalgebra$, then
 \[
 \funck_\uspaceelt(\seti)
@@ -7531,23 +7565,68 @@ with respect to the joint $\measonprod$, then
 \,d\marginalthree (\mspaceeltiii).
 \]
 
-Let
-$\measonprod \abscont (\measmu\times\measrho)^*$ on
-$\productsig{\sigmaalgebra}{\sigmaalgebraiii}$, 
-and let $\funcj$ be integrable over
+Let $\funcj$ be integrable over
 $\measurespace\times\measurespaceiii$
 with respect to $\measonprod$.
-Then
-\begin{align*}
+By Proposition~\ref{radon_nikodym_corollary},
+\[
 \int_{\measurespace\times\measurespaceiii}
 \funcj \,d\measonprod
-& = 
+=
 \int_{\measurespace\times\measurespaceiii}
+\funcj \cdot
+\dfrac{d\, \joint}
+{d(\measure\times\measureiv)^*}
+\,d(\measure\times\measureiv).
+\]
+Since
+$\funcj \cdot
+\dfrac{d\, \joint}
+{d(\measure\times\measureiv)^*}$ is integrable with respect to
+$\measure\times\measureiv$, we can apply Fubini's Theorem~\ref{fubini}:
+\[
+\int_{\measurespace\times\measurespaceiii}
+\funcj \cdot
+\dfrac{d\, \joint}
+{d(\measure\times\measureiv)^*}
+\,d(\measure\times\measureiv)
+=
+\int_{\measurespaceiii}
+\int_{\measurespace}
+\funcj
+\cdot
+\dfrac{d\, \joint}
+{d(\measure\times\measureiv)^*}
+\,d\measure
+\,d\measureiv .
+\]
+Multiply by a well-chosen one:
+\[
+\int_{\measurespaceiii}
+\int_{\measurespace}
+\funcj
+\cdot
+\dfrac{d\, \joint}
+{d(\measure\times\measureiv)^*}
+\,d\measure
+\,d\measureiv
+=
+\int_{\measurespaceiii}
+\int_{\measurespace}
 \funcj(\mspaceelt,\mspaceeltiii)
+\dfrac{
 \dfrac{d\, \joint}
 {d(\measure\times\measureiv)^*}(\mspaceelt,\mspaceeltiii)
-\,d(\measure\times\measureiv)(\mspaceelt,\mspaceeltiii)
-\\
+}{
+\dfrac{d \marginalthree}{d \measrho}(\mspaceeltiii)
+}
+\dfrac{d \marginalthree}{d \measrho}(\mspaceeltiii)
+\,d\measure (\mspaceelt)
+\,d\measureiv (\mspaceeltiii).
+\]
+
+
+\begin{align*}
 & =
 \int_{\measurespaceiii}
 \int_{\measurespace}
