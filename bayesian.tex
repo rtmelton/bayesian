@@ -7207,45 +7207,12 @@ $\sigmaalgebra$ given $\sigalg{G}$ is regular, as required.
 \end{proof}
 
 
+
 \section{Conditional Independence}
+%*********************************************************
+%*********************************************************
 
-\begin{prop}\label{constant_on_preimage}
-Let a function
-$\function:\measurespace\to\measurespaceii$
-factor as 
-$\functionii\circ\functioniii$, 
-with
-$\functioniii:\measurespace\to\measurespaceiii$
-and
-$\functionii:\measurespaceiii\to\measurespaceii$,
-as illustrated:
-\[
-\xymatrix@R=16pt{
-\measurespace 
-\ar[r]^\function 
-\ar[dr]_\functioniii
-& \measurespaceii \\
- & \measurespaceiii \ar[u]_\functionii \\
-}
-\]
-For any $\mspaceeltiii\in\measurespaceiii$, the value of $\function$ on the preimage
-$\preimage{\functioniii}(\mspaceeltiii)$ is constant, and is equal to
-$\functionii(\mspaceeltiii)$.
-\end{prop}
-
-\begin{proof}
-Let $\mspaceelt \in \preimage{\functioniii}(\mspaceeltiii)$. 
-Then $\functioniii(\mspaceelt)=\mspaceeltiii$, so
-$\function(\mspaceelt)
-= (\functionii\circ\functioniii)(\mspaceelt)
-= \functionii(\functioniii(\mspaceelt))
-= \functionii(\mspaceeltiii)$.
-\end{proof}
-
-
-
-
-\begin{propboldnote}[Joint decomposition]\label{joint_decomposition}
+\begin{propboldnote}\label{joint_decomposition}
 Let 
 $(\uspace, \uspacesig, \measureiii)$ 
 be a probability space, with functions
@@ -7254,6 +7221,8 @@ and
 $\functioniii:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
 measurable, and set 
 $\sigalg{H} = \preimage{\functioniii}(\sigmaalgebraiii)$. 
+Also, set the joint $\measonprod = \measureiii\circ\preimage{(\function,\functioniii)}$,
+and set the marginal $\marginalthree = \measlambda\circ\preimage{\funch}$.
 If the conditional distribution 
 \[
 \condprobop{\sigalg{H}}\circ\, \preimage{\function}:
@@ -7264,22 +7233,20 @@ is regular, with
 $\funck$
 denoting the corresponding Markov kernel given
 $(\uspace,\sigalg{H})$ and $(\measurespace,\sigmaalgebra)$,
-and if
-\[
-\funcj \in
-L_1\bigl(\measurespace\times\measurespaceiii,
-\productsig{\sigmaalgebra}{\sigmaalgebraiii},
-\measureiii \circ \preimage{(\function,\functioniii)} \bigr),
-\]
+and if a function
+$j:\measurespace\times\measurespaceiii \to \R$
+is integrable over
+$\measurespace\times\measurespaceiii$
+with respect to the joint $\measonprod$,
 then 
 \[
 \int_{\measurespace\times\measurespaceiii} \funcj \,
-d \bigl( \measureiii \circ \preimage{(\function,\functioniii)} \bigr)
+d \measonprod
 =
 \int_\measurespaceiii\int_\measurespace
 \funcj(\mspaceelt,\mspaceeltiii) \,
 d \funck_\uspaceelt(\mspaceelt)\,
-d \bigl( \measureiii \circ \preimage{\functioniii} \bigr)(\mspaceeltiii),
+d \marginalthree(\mspaceeltiii),
 \]
 where $\uspaceelt$ is such that $\funch(\uspaceelt) = \mspaceeltiii$.
 \end{propboldnote}
@@ -7340,103 +7307,148 @@ which was the heart of Proposition~\ref{factoring_functions}:
  & (\measurespaceiii,\sigmaalgebraiii) \ar@{.>}[u]_{\funca}\\
 }
 \]
-So for any $\mspaceeltiii \in\measurespaceiii$, the value of the function
-$\funck^\seti$
-on the preimage
-$\preimage{\functioniii}(\mspaceeltiii)$
-is constant and is equal to $\funca(\mspaceeltiii)$, as was shown in Proposition~\ref{constant_on_preimage}.
-And by the definition of the Markov kernel itself:
-\[
-\funck_\uspaceelt (\seti)
-= \funck(\uspaceelt,\seti)
-= \funck^\seti(\uspaceelt).
-\]
-This implies  that the value of the measure
-$\funck_\uspaceelt$
-at $\seti$ is the same for all
-$\uspaceelt\in\uspace$ in the preimage $\preimage{\functioniii}(\mspaceeltiii)$.
-
-Let us show that the required equality  holds for the function
-$\funcj = \charfunction{\seti\times\setiii}$,
-where $\seti\in\sigmaalgebra$ and $\setiii\in\sigmaalgebraiii$:
-\begin{align*}
-& \int_{\measurespace\times\measurespaceiii}
-\charfunction{\seti\times\setiii}
-\, d \bigl( \measureiii \circ \preimage{(\function,\functioniii)} \bigr)
-\\
-& = \measureiii( \preimage{\function}(\seti) \meets \preimage{\functioniii}(\setiii) )
-\\
-& = \int_\uspace 
-\charfunction{\preimage{\function}(\seti)}\cdot 
-\charfunction{\preimage{\functioniii}(\setiii)}
-\, d\measureiii
-&
-\\
-& = \inducedint_\uspace
-\condexpsub{\bigl(
-\ellclass{\charfunction{\preimage{\function}(\seti)}}{}
-\cdot
-\ellclass{\charfunction{\preimage{\functioniii}(\setiii)}}{}
-\bigr)}
-{\sigalg{H}}
-\, d\measureiii
-& \text{Proposition~\ref{equality_of_expected_values}}
-\\
-& = \inducedint_\uspace
-\ellclass{\charfunction{\preimage{\functioniii}(\setiii)}}{}
-\cdot
-\condexpsub{\bigl(
-\ellclass{\charfunction{\preimage{\function}(\seti)}}{}
-\bigr)}
-{\sigalg{H}}
-\, d\measureiii
-& \text{Proposition~\ref{measurable_functions_factor_out}}
-\\
-& = \int_\uspace
-\charfunction{\preimage{\functioniii}(\setiii)}\cdot
-(\funca \circ\functioniii)
-\, d\measureiii
-& \text{$\condexpsub{\bigl(
-\ellclass{\charfunction{\preimage{\function}(\seti)}}{}
-\bigr)}
-{\sigalg{H}}
+The evaluation
+$\funck^\seti(\uspaceelt)
 =
-\ellclass{\funca \circ\functioniii}{}$}
-\\
-& = \int_\uspace
-\bigl( (\charfunction{\setiii}\cdot \funca)\circ \functioniii \bigr)
-\, d\measureiii
-& \text{$\charfunction{\preimage{\functioniii}(\setiii)} = \charfunction{\setiii}\circ \functioniii$}
-\\
-& = \int_\measurespaceiii
-(\charfunction{\setiii}\cdot \funca )
-\, d\bigl(\measureiii \circ \preimage{\functioniii} \bigr)
-& \text{change of variable}
-\\
-& = \int_\measurespaceiii
-\charfunction{\setiii}(\mspaceeltiii)\cdot 
-\funca(\mspaceeltiii)
-\, d\bigl( \measureiii \circ\preimage{\funch} \bigr)(\mspaceeltiii)
-&
-\makebox[0pt][r]{$\funca(\mspaceeltiii) = \funck_\uspaceelt(\seti)$ if $\funch(\uspaceelt) = \mspaceeltiii$}
-\\
-& = \int_\measurespaceiii
-\charfunction{\setiii}(\mspaceeltiii)
-\left( 
+a\bigl(\funch(\uspaceelt)\bigr)$
+may be restated as
+$\funck^\seti(\uspaceelt)
+=
+a\bigl(\mspaceeltiii)$
+if
+$\funch(\uspaceelt)
+=
+\mspaceeltiii$.
+
+It is sufficient to show that the required equality holds for characteristic functions of the form
+$\funcj
+=
+\charfunction{\seti\times\setiii}$
+with
+$\seti\in\sigmaalgebra$
+and
+$\setiii\in\sigmaalgebraiii$.
+Set
+$\funcj
+=
+\charfunction{\seti\times\setiii}$,
+so
+\[
+\int_{\measurespace\times\measurespaceiii}
+\funcj
+\, d\measonprod
+=
+\measlambda\bigl(\preimage{\funcf}(\seti)\meets \preimage{\funch}(\setiii)\bigr).
+\]
+By Proposition~\ref{conditional_probability_of_a_set},
+\[
+\measlambda\bigl(\preimage{\funcf}(\seti)\meets \preimage{\funch}(\setiii)\bigr)
+=
+\inducedint_{\preimage{\funch}(\setiii)}
+\condprobop{\sigalg{H}}\circ\, \preimage{\function}(\seti)
+\, d\measlambda.
+\]
+The hypothesis that the conditional distribution
+\[
+\condprobop{\sigalg{H}}\circ\, \preimage{\function}:
+\sigmaalgebra \to L_1(\uspace,\uspacesig,\measureiii)
+\]
+of $\function$ on $\sigmaalgebra$ given $\sigalg{H}$
+is regular means that
+$\funck^\seti
+\in
+\condprobop{\sigalg{H}}\circ\, \preimage{\function}(\seti),$
+so
+\[
+\inducedint_{\preimage{\funch}(\setiii)}
+\condprobop{\sigalg{H}}\circ\, \preimage{\function}(\seti)
+\, d\measlambda
+=
+\int_{\preimage{\funch}(\setiii)}
+\funck^\seti \, d\measlambda,
+\]
+and with $\funck^\seti = a\circ \funch$,
+\[
+\int_{\preimage{\funch}(\setiii)}
+\funck^\seti \, d\measlambda
+=
+\int_{\preimage{\funch}(\setiii)}
+( a\circ\funch ) \, d\measlambda.
+\]
+Use the fact that
+\[
+\charfunction{\preimage{\funch}(\setiii)}\cdot(a\circ\funch)
+=
+(\charfunction{\setiii}\circ \funch)\cdot(a\circ\funch)
+=
+(\charfunction{\setiii}\cdot a)\circ \funch
+\]
+and write
+\[
+\int_{\preimage{\funch}(\setiii)}
+( a\circ\funch ) \, d\measlambda
+=
+\int_\uspace
+(\charfunction{\setiii}\cdot a)\circ \funch
+\, d\measlambda.
+\]
+Apply a change of variable:
+\[
+\int_\uspace
+(\charfunction{\setiii}\cdot a)\circ \funch
+\, d\measlambda
+=
+\int_\measurespaceiii
+(\charfunction{\setiii}\cdot a)\, d\marginalthree.
+\]
+We know that
+\[
+a(\mspaceeltiii)
+=
+\funck_\uspaceelt(\seti)
+=
 \int_\measurespace
-\charfunction{\seti}(\mspaceelt)
-\, d \funck_\uspaceelt(\mspaceelt)
-\right)
-d\bigl( \measureiii \circ \preimage{\functioniii} \bigr)(\mspaceeltiii)
-& \funch(\uspaceelt) = \mspaceeltiii
-\\
-& = \int_\measurespaceiii
-\int_\measurespace
-\charfunction{\seti}(\mspaceelt)\cdot
+\charfunction{\seti} (\mspaceelt)
+\, d\funck_\uspaceelt (\mspaceelt)
+\]
+for $\mspaceeltiii = \funch(\uspaceelt)$.
+By substitution,
+\begin{align*}
+\int_\measurespaceiii
+(\charfunction{\setiii}\cdot a)\, d\marginalthree
+& =
+\int_\measurespaceiii
 \charfunction{\setiii}(\mspaceeltiii)
-\, d\funck_\uspaceelt(\mspaceelt)
-\, d\bigl( \measureiii \circ \preimage{\functioniii}\bigr) (\mspaceeltiii),
+\left(\int_\measurespace
+\charfunction{\seti} (\mspaceelt)
+\, d\funck_\uspaceelt (\mspaceelt)\right)
+   d\marginalthree (\mspaceeltiii) \\
+& =
+\int_\measurespaceiii
+\int_\measurespace
+\charfunction{\seti} (\mspaceelt)
+\charfunction{\setiii}(\mspaceeltiii)
+\, d\funck_\uspaceelt (\mspaceelt)
+\, d\marginalthree (\mspaceeltiii) \\
+& =
+\int_\measurespaceiii
+\int_\measurespace
+\funcj (\mspaceelt,\mspaceeltiii)
+\, d\funck_\uspaceelt (\mspaceelt)
+\, d\marginalthree (\mspaceeltiii).
 \end{align*}
+By transitivity of equality then,
+\[
+\int_{\measurespace\times\measurespaceiii}
+\funcj
+\, d\measonprod
+=
+\int_\measurespaceiii
+\int_\measurespace
+\funcj (\mspaceelt,\mspaceeltiii)
+\, d\funck_\uspaceelt (\mspaceelt)
+\, d\marginalthree (\mspaceeltiii),
+\]
 as required.
 \end{proof}
 
@@ -7448,7 +7460,7 @@ as required.
 
 
 
-\begin{propboldnote}[Conditional density]\label{conditional_density}
+\begin{propboldnote}\label{conditional_density}
 Let 
 $(\uspace, \uspacesig, \measureiii)$ 
 be a probability space, with functions
@@ -7465,7 +7477,8 @@ If\, $\measonprod \abscont
 $\productsig{\sigmaalgebra}{\sigmaalgebraiii}$,
 then the measure
 $\funck_\uspaceelt$
-on $\sigmaalgebra$ has the following density function with respect to the measure 
+on $\sigmaalgebra$, where $\uspaceelt$ is such that $\funch(\uspaceelt)=\mspaceeltiii$,
+has the following density function with respect to the measure
 $\measure$:
 \[
 \frac{d \funck_\uspaceelt}{d \measure}
@@ -7483,142 +7496,143 @@ $\measure$:
 
 
 \begin{proof}
-It is sufficient to show that
+It is sufficient to show that if $\seti\in\sigmaalgebra$, then
 \[
 \funck_\uspaceelt(\seti)
 =
 \int_\seti 
-\frac{m_{\function,\functioniii}(\mspaceelt,\mspaceeltiii)}
-{m_\functioniii (\mspaceeltiii)}
-\,d\measure(\mspaceelt)
-\quad\text{for all $\seti\in\sigmaalgebra$.}
+\dfrac{
+\dfrac{d\, \joint}
+{d(\measure\times\measureiv)^*}(\mspaceelt,\mspaceeltiii)
+}{
+\dfrac{d \marginalthree}{d \measrho}(\mspaceeltiii)
+}
+\,d\measure(\mspaceelt),
 \]
-We will start by showing that if
-\[
-\functioniv\in
-L_1\bigl(\measurespace\times\measurespaceiii,
-\productsig{\sigmaalgebra}{\sigmaalgebraiii},
-\measureiii_{\function,\functioniii}\bigr),
-\]
-then
+where $\mspaceeltiii=\funch(\uspaceelt)$.
+
+We will start by showing that if a function
+$\funcj:\measurespace\times\measurespaceiii \to \R$ is integrable over
+$\measurespace\times\measurespaceiii$
+with respect to the joint $\measonprod$, then
 \[
 \int_{\measurespace\times\measurespaceiii}
-\functioniv \,d\measureiii_{\function,\functioniii}
+\funcj \,d\measonprod
 = 
 \int_\measurespaceiii \int_\measurespace
-\functioniv(\mspaceelt,\mspaceeltiii)
-\frac{m_{\function,\functioniii}(\mspaceelt,\mspaceeltiii)}
-{m_\functioniii (\mspaceeltiii)}
+\funcj(\mspaceelt,\mspaceeltiii)
+\dfrac{
+\dfrac{d\, \joint}
+{d(\measure\times\measureiv)^*}(\mspaceelt,\mspaceeltiii)
+}{
+\dfrac{d \marginalthree}{d \measrho}(\mspaceeltiii)
+}
 \,d\measure (\mspaceelt)
-\,d\measureiii_\functioniii (\mspaceeltiii),
+\,d\marginalthree (\mspaceeltiii).
 \]
-for then by Proposition~\ref{joint_decomposition}, it will follow that
-\[
-\int_\measurespace
-\functioniv(\mspaceelt,\mspaceeltiii)
-\frac{m_{\function,\functioniii}(\mspaceelt,\mspaceeltiii)}
-{m_\functioniii (\mspaceeltiii)}
-\,d\measure (\mspaceelt)
-=
-\int_\measurespace
-\functioniv(\mspaceelt,\mspaceeltiii)
-\,d\funck_\uspaceelt(\mspaceelt),
-\]
-and by setting $\functioniv(\mspaceelt,\mspaceeltiii)=\charfunction{\seti}(\mspaceelt)$, 
-we will obtain the result.
 
 Let
-$\measureiii_{\function,\functioniii} \abscont \measure\times\measureiv$ on 
+$\measonprod \abscont (\measmu\times\measrho)^*$ on
 $\productsig{\sigmaalgebra}{\sigmaalgebraiii}$, 
-and let
-$\functioniv\in
-L_1\bigl(\measurespace\times\measurespaceiii,
-\productsig{\sigmaalgebra}{\sigmaalgebraiii},
-\measureiii_{\function,\functioniii}\bigr)$.
+and let $\funcj$ be integrable over
+$\measurespace\times\measurespaceiii$
+with respect to $\measonprod$.
 Then
 \begin{align*}
-&\int_{\measurespace\times\measurespaceiii}
-\functioniv \,d\measureiii_{\function,\functioniii}
-\\
+\int_{\measurespace\times\measurespaceiii}
+\funcj \,d\measonprod
 & = 
 \int_{\measurespace\times\measurespaceiii}
-\functioniv(\mspaceelt,\mspaceeltiii) 
-m_{\function,\functioniii}(\mspaceelt,\mspaceeltiii)
+\funcj(\mspaceelt,\mspaceeltiii)
+\dfrac{d\, \joint}
+{d(\measure\times\measureiv)^*}(\mspaceelt,\mspaceeltiii)
 \,d(\measure\times\measureiv)(\mspaceelt,\mspaceeltiii)
-& m_{\function,\functioniii} 
-=
-\frac{d \measureiii_{\function,\functioniii}}
-{d(\measure\times\measureiv)} 
 \\
 & =
 \int_{\measurespaceiii}
 \int_{\measurespace}
-\functioniv(\mspaceelt,\mspaceeltiii)
-\frac{m_{\function,\functioniii}(\mspaceelt,\mspaceeltiii)}
-{m_\functioniii (\mspaceeltiii)}
-m_\functioniii (\mspaceeltiii)
+\funcj(\mspaceelt,\mspaceeltiii)
+\dfrac{
+\dfrac{d\, \joint}
+{d(\measure\times\measureiv)^*}(\mspaceelt,\mspaceeltiii)
+}{
+\dfrac{d \marginalthree}{d \measrho}(\mspaceeltiii)
+}
+\dfrac{d \marginalthree}{d \measrho}(\mspaceeltiii)
 \,d\measure (\mspaceelt)
 \,d\measureiv (\mspaceeltiii)
-& \text{well-chosen one}
 \\
 & =
 \int_{\measurespaceiii}
 \int_{\measurespace}
-\functioniv(\mspaceelt,\mspaceeltiii)
-\frac{m_{\function,\functioniii}(\mspaceelt,\mspaceeltiii)}
-{m_\functioniii (\mspaceeltiii)}
+\funcj(\mspaceelt,\mspaceeltiii)
+\dfrac{
+\dfrac{d\, \joint}
+{d(\measure\times\measureiv)^*}(\mspaceelt,\mspaceeltiii)
+}{
+\dfrac{d \marginalthree}{d \measrho}(\mspaceeltiii)
+}
 \,d\measure (\mspaceelt)
-\,d \measureiii_\functioniii (\mspaceeltiii)
-& m_\functioniii =
-\frac{d \measureiii_\functioniii}
-{d \measureiv}
+\,d \marginalthree (\mspaceeltiii)
 \\
 \end{align*}
 By Proposition~\ref{joint_decomposition},
 \[
-\int_{\measurespace\times\measurespaceiii} \functioniv\,
-d \measureiii_{\function,\functioniii}
+\int_{\measurespace\times\measurespaceiii} \funcj\,
+d \measonprod
 =
 \int_\measurespaceiii\int_\measurespace
-\functioniv(\mspaceelt,\mspaceeltiii) \,
+\funcj(\mspaceelt,\mspaceeltiii) \,
 d \funck_\uspaceelt(\mspaceelt)\,
-d \measureiii_{\functioniii}(\mspaceeltiii).
+d \marginalthree(\mspaceeltiii).
 \]
 By transitivity of equality,
 \[
 \int_{\measurespaceiii}
 \int_{\measurespace}
-\functioniv(\mspaceelt,\mspaceeltiii)
-\frac{m_{\function,\functioniii}(\mspaceelt,\mspaceeltiii)}
-{m_\functioniii (\mspaceeltiii)}
+\funcj(\mspaceelt,\mspaceeltiii)
+\dfrac{
+\dfrac{d\, \joint}
+{d(\measure\times\measureiv)^*}(\mspaceelt,\mspaceeltiii)
+}{
+\dfrac{d \marginalthree}{d \measrho}(\mspaceeltiii)
+}
 \,d\measure (\mspaceelt)
-\,d \measureiii_\functioniii (\mspaceeltiii)
+\,d \marginalthree (\mspaceeltiii)
 =
 \int_\measurespaceiii\int_\measurespace
-\functioniv(\mspaceelt,\mspaceeltiii) \,
+\funcj(\mspaceelt,\mspaceeltiii) \,
 d \funck_\uspaceelt(\mspaceelt)\,
-d \measureiii_{\functioniii}(\mspaceeltiii).
+d \marginalthree (\mspaceeltiii).
 \]
 It follows that
 \[
 \int_{\measurespace}
-\functioniv(\mspaceelt,\mspaceeltiii)
-\frac{m_{\function,\functioniii}(\mspaceelt,\mspaceeltiii)}
-{m_\functioniii (\mspaceeltiii)}
+\funcj(\mspaceelt,\mspaceeltiii)
+\dfrac{
+\dfrac{d\, \joint}
+{d(\measure\times\measureiv)^*}(\mspaceelt,\mspaceeltiii)
+}{
+\dfrac{d \marginalthree}{d \measrho}(\mspaceeltiii)
+}
 \,d\measure (\mspaceelt)
 =
 \int_\measurespace
-\functioniv(\mspaceelt,\mspaceeltiii) \,
+\funcj(\mspaceelt,\mspaceeltiii) \,
 d \funck_\uspaceelt(\mspaceelt).
 \]
 Set
-$\functioniv (\mspaceelt,\mspaceeltiii)
+$\funcj (\mspaceelt,\mspaceeltiii)
 =
 \charfunction{\seti}(\mspaceelt)$ and apply:
 \[
 \int_{\seti}
-\frac{m_{\function,\functioniii}(\mspaceelt,\mspaceeltiii)}
-{m_\functioniii (\mspaceeltiii)}
+\dfrac{
+\dfrac{d\, \joint}
+{d(\measure\times\measureiv)^*}(\mspaceelt,\mspaceeltiii)
+}{
+\dfrac{d \marginalthree}{d \measrho}(\mspaceeltiii)
+}
 \,d\measure (\mspaceelt)
 =
 \int_\seti
@@ -7697,98 +7711,7 @@ $\condindep{\function}{\functionii}{\functioniii}$ may be used.
 
 
 
-\begin{notn}\label{densities}
-Let 
-$(\uspace, \uspacesig, \measureiii)$ 
-be a probability space, with functions
-$\funcf:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$,
-$\funcg:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$
-and
-$\funch:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
-measurable.
-Let $\measmu$, $\measnu$, and $\measrho$ be \textsigma\hyp{}finite measures on 
-$\sigmaalgebra$, $\sigmaalgebraii$, and $\sigmaalgebraiii$, respectively, and let
-$\measureiii_{\function,\functionii,\functioniii} \abscont
-(\measure\times\measureii\times\measureiv)^*$ on 
-$\textsigma(\sigmaalgebra,\sigmaalgebraii,\sigmaalgebraiii)$.
-Set:
-\begin{align*}
-j
-& =
-\frac{d \measureiii_{\function,\functionii,\functioniii}}
-{d(\measure\times\measureii\times\measureiv)^*}
-:
-\measurespace\times\measurespaceii\times\measurespaceiii\to\R,
-\\
-m_{\function,\functioniii} 
-& =
-\frac{d \measureiii_{\function,\functioniii}}
-{d(\measure\times\measureiv)^*}:\measurespace\times\measurespaceiii\to\R,
-\\
-m_{\functionii,\functioniii} 
-& =
-\frac{d \measureiii_{\functionii,\functioniii}}
-{d(\measureii\times\measureiv)^*}:\measurespaceii\times\measurespaceiii\to\R,
-\\
-m_\functioniii
-& =
-\frac{d \measureiii_\functioniii}
-{d \measureiv}:\measurespaceiii\to\R.
-\\
-\end{align*}
-The letter `$j$' was intended to roughly correspond with `joint density,' and likewise the letter  
-`$m$' with `marginal density.' 
-It was shown back in Proposition~\ref{marginal_abscont} that if 
-$\measureiii_{\function,\functionii,\functioniii} \abscont
-\measure\times\measureii\times\measureiv$,
-then all four Radon-Nikodym derivatives displayed here exist. Actually, that was shown for the case where only two functions $\function$ and $\functionii$ were involved. Same proof.
-Recall
-\begin{align*}
-m_{\function,\functioniii} (\mspaceelt,\mspaceeltiii)
-& =
-\int_\measurespaceii
-\funcj(\mspaceelt,\mspaceeltii,\mspaceeltiii)\,
-d \measnu(\mspaceeltii),
-\\
-m_{\functionii,\functioniii} (\mspaceeltii,\mspaceeltiii)
-& =
-\int_\measurespace
-\funcj(\mspaceelt,\mspaceeltii,\mspaceeltiii)\,
-d \measmu(\mspaceelt),
-\\
-m_\funch(\mspaceeltiii)
-& =
-\int_{\measurespace\times\measurespaceii}
-\funcj(\mspaceelt,\mspaceeltii,\mspaceeltiii)\,
-d(\measmu\times\measnu)(\mspaceelt,\mspaceeltii)
-\\
-\end{align*}
 
-Also, for the following ratios of Radon-Nikodym derivatives, let: 
-\begin{align*}
-p(\mspaceelt,\mspaceeltii\mid\mspaceeltiii) 
-& = 
-\frac{j(\mspaceelt,\mspaceeltii,\mspaceeltiii)}
-{m_{\functioniii} (\mspaceeltiii)},
-\\
-p(\mspaceelt\mid\mspaceeltiii)
-& =
-\frac{m_{\function,\functioniii}(\mspaceelt,\mspaceeltiii)}
-{m_{\functioniii} (\mspaceeltiii)},
-\\
-p(\mspaceeltii\mid\mspaceeltiii)
-& =
-\frac{m_{\functionii,\functioniii}(\mspaceeltii,\mspaceeltiii)}
-{m_{\functioniii} (\mspaceeltiii)},
-\\
-p(\mspaceelt\mid \mspaceeltii,\mspaceeltiii)
-& =
-\frac{ j( \mspaceelt, \mspaceeltii, \mspaceeltiii) }
-{m_{\functionii, \functioniii} ( \mspaceeltii,\mspaceeltiii ) },
-\\
-\end{align*}
-and so forth. 
-\end{notn}
 
 
 \begin{prop}\label{conditional_independence_equivalence}
@@ -7911,9 +7834,102 @@ p(\mspaceeltii\mid\mspaceeltiii)
 \textbf{(3) $\Leftrightarrow$ (4)}
 
 Divide both sides of (3) by $p(\mspaceeltii\mid\mspaceeltiii)$.
-
-
 \end{proof}
+
+\section{Colloquial Density Notation}
+\begin{notn}\label{densities}
+Let
+$(\uspace, \uspacesig, \measureiii)$
+be a probability space, with functions
+$\funcf:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$,
+$\funcg:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$
+and
+$\funch:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
+measurable.
+Let $\measmu$, $\measnu$, and $\measrho$ be \textsigma\hyp{}finite measures on
+$\sigmaalgebra$, $\sigmaalgebraii$, and $\sigmaalgebraiii$, respectively, and let
+$\measureiii_{\function,\functionii,\functioniii} \abscont
+(\measure\times\measureii\times\measureiv)^*$ on
+$\textsigma(\sigmaalgebra,\sigmaalgebraii,\sigmaalgebraiii)$.
+Set:
+\begin{align*}
+j
+& =
+\frac{d \measureiii_{\function,\functionii,\functioniii}}
+{d(\measure\times\measureii\times\measureiv)^*}
+:
+\measurespace\times\measurespaceii\times\measurespaceiii\to\R,
+\\
+m_{\function,\functioniii}
+& =
+\frac{d \measureiii_{\function,\functioniii}}
+{d(\measure\times\measureiv)^*}:\measurespace\times\measurespaceiii\to\R,
+\\
+m_{\functionii,\functioniii}
+& =
+\frac{d \measureiii_{\functionii,\functioniii}}
+{d(\measureii\times\measureiv)^*}:\measurespaceii\times\measurespaceiii\to\R,
+\\
+m_\functioniii
+& =
+\frac{d \measureiii_\functioniii}
+{d \measureiv}:\measurespaceiii\to\R.
+\\
+\end{align*}
+The letter `$j$' was intended to roughly correspond with `joint density,' and likewise the letter
+`$m$' with `marginal density.'
+It was shown back in Proposition~\ref{marginal_abscont} that if
+$\measureiii_{\function,\functionii,\functioniii} \abscont
+\measure\times\measureii\times\measureiv$,
+then all four Radon-Nikodym derivatives displayed here exist. Actually, that was shown for the case where only two functions $\function$ and $\functionii$ were involved. Same proof.
+Recall
+\begin{align*}
+m_{\function,\functioniii} (\mspaceelt,\mspaceeltiii)
+& =
+\int_\measurespaceii
+\funcj(\mspaceelt,\mspaceeltii,\mspaceeltiii)\,
+d \measnu(\mspaceeltii),
+\\
+m_{\functionii,\functioniii} (\mspaceeltii,\mspaceeltiii)
+& =
+\int_\measurespace
+\funcj(\mspaceelt,\mspaceeltii,\mspaceeltiii)\,
+d \measmu(\mspaceelt),
+\\
+m_\funch(\mspaceeltiii)
+& =
+\int_{\measurespace\times\measurespaceii}
+\funcj(\mspaceelt,\mspaceeltii,\mspaceeltiii)\,
+d(\measmu\times\measnu)(\mspaceelt,\mspaceeltii)
+\\
+\end{align*}
+
+Also, for the following ratios of Radon-Nikodym derivatives, let:
+\begin{align*}
+p(\mspaceelt,\mspaceeltii\mid\mspaceeltiii)
+& =
+\frac{j(\mspaceelt,\mspaceeltii,\mspaceeltiii)}
+{m_{\functioniii} (\mspaceeltiii)},
+\\
+p(\mspaceelt\mid\mspaceeltiii)
+& =
+\frac{m_{\function,\functioniii}(\mspaceelt,\mspaceeltiii)}
+{m_{\functioniii} (\mspaceeltiii)},
+\\
+p(\mspaceeltii\mid\mspaceeltiii)
+& =
+\frac{m_{\functionii,\functioniii}(\mspaceeltii,\mspaceeltiii)}
+{m_{\functioniii} (\mspaceeltiii)},
+\\
+p(\mspaceelt\mid \mspaceeltii,\mspaceeltiii)
+& =
+\frac{ j( \mspaceelt, \mspaceeltii, \mspaceeltiii) }
+{m_{\functionii, \functioniii} ( \mspaceeltii,\mspaceeltiii ) },
+\\
+\end{align*}
+and so forth.
+\end{notn}
+
 
 
 
