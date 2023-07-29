@@ -1194,10 +1194,11 @@ $f$, $g$, $h$, $k:\measurespace\to\measurespaceii$
 be $(\measurable{\measure^\kernast}, \sigmaalgebraii)$\hyp{}measurable functions such that 
 $f = h$ $\measure^\kernast$-almost everywhere on $\measurespace$ and
 $g = k$ $\measure^\kernast$-almost everywhere on $\measurespace$.
+
 If $\measure^*(A\meets B) =\measure^*(A)\measure^*(B)$ for all $A\in\preimage{f}(\sigmaalgebraii)$ and 
 all $B\in\preimage{g}(\sigmaalgebraii)$, then
 $\measure^*(C\meets D) =\measure^*(C)\measure^*(D)$ for all $C\in\preimage{h}(\sigmaalgebraii)$ and 
-all $D\in\preimage{k}(\sigmaalgebraii)$
+all $D\in\preimage{k}(\sigmaalgebraii)$.
 \end{prop}
 
 \begin{proof}
@@ -7223,6 +7224,7 @@ measurable, and set
 $\sigalg{H} = \preimage{\functioniii}(\sigmaalgebraiii)$. 
 Also, set the joint $\measonprod = \measureiii\circ\preimage{(\function,\functioniii)}$,
 and set the marginal $\marginalthree = \measlambda\circ\preimage{\funch}$.
+
 If the conditional distribution 
 \[
 \condprobop{\sigalg{H}}\circ\, \preimage{\function}:
@@ -7248,7 +7250,7 @@ d \measonprod
 d \funck_\uspaceelt(\mspaceelt)\,
 d \marginalthree(\mspaceeltiii),
 \]
-where $\uspaceelt$ is such that $\funch(\uspaceelt) = \mspaceeltiii$.
+where $\mspaceeltiii$ is such that $\funch(\uspaceelt) = \mspaceeltiii$.
 \end{propboldnote}
 
 
@@ -7393,14 +7395,19 @@ and write
 \, d\measlambda.
 \]
 Apply a change of variable:
-\[
+\begin{align*}
 \int_\uspace
 (\charfunction{\setiii}\cdot a)\circ \funch
 \, d\measlambda
-=
+& =
 \int_\measurespaceiii
-(\charfunction{\setiii}\cdot a)\, d\marginalthree.
-\]
+(\charfunction{\setiii}\cdot a)\, d\marginalthree \\
+& =
+\int_\measurespaceiii
+\charfunction{\setiii}(\mspaceeltiii)
+\cdot
+a(\mspaceeltiii)\, d\marginalthree(\mspaceeltiii).
+\end{align*}
 We know that
 \[
 a(\mspaceeltiii)
@@ -7412,22 +7419,53 @@ a(\mspaceeltiii)
 \, d\funck_\uspaceelt (\mspaceelt)
 \]
 for $\mspaceeltiii = \funch(\uspaceelt)$.
-By substitution,
-\begin{align*}
+By substitution for $a(\mspaceeltiii)$:
+\[
 \int_\measurespaceiii
-(\charfunction{\setiii}\cdot a)\, d\marginalthree
-& =
+\charfunction{\setiii}(\mspaceeltiii)
+\cdot
+a(\mspaceeltiii)\, d\marginalthree(\mspaceeltiii)
+=
 \int_\measurespaceiii
 \charfunction{\setiii}(\mspaceeltiii)
 \left(\int_\measurespace
 \charfunction{\seti} (\mspaceelt)
 \, d\funck_\uspaceelt (\mspaceelt)\right)
-   d\marginalthree (\mspaceeltiii) \\
-& =
+   d\marginalthree (\mspaceeltiii).
+\]
+By linearity of the integral, we can rewrite:
+\[
+\int_\measurespaceiii
+\charfunction{\setiii}(\mspaceeltiii)
+\left(\int_\measurespace
+\charfunction{\seti} (\mspaceelt)
+\, d\funck_\uspaceelt (\mspaceelt)\right)
+   d\marginalthree (\mspaceeltiii)
+=
 \int_\measurespaceiii
 \int_\measurespace
 \charfunction{\seti} (\mspaceelt)
 \charfunction{\setiii}(\mspaceeltiii)
+\, d\funck_\uspaceelt (\mspaceelt)
+\, d\marginalthree (\mspaceeltiii).
+\]
+And since
+$\charfunction{\seti} (\mspaceelt)
+\charfunction{\setiii}(\mspaceeltiii)
+=
+\charfunction{\seti\times\setiii}(\mspaceelt,\mspaceeltiii)$:
+\begin{align*}
+\int_\measurespaceiii
+\int_\measurespace
+\charfunction{\seti} (\mspaceelt)
+\charfunction{\setiii}(\mspaceeltiii)
+\, d\funck_\uspaceelt (\mspaceelt)
+\, d\marginalthree (\mspaceeltiii)
+& =
+\int_\measurespaceiii
+\int_\measurespace
+\charfunction{\seti\times\setiii}
+(\mspaceelt,\mspaceeltiii)
 \, d\funck_\uspaceelt (\mspaceelt)
 \, d\marginalthree (\mspaceeltiii) \\
 & =
@@ -7465,6 +7503,7 @@ $\sigalg{H} = \preimage{\functioniii}(\sigmaalgebraiii)$.
 Let $\measmu$ and $\measrho$ be \textsigma\hyp{}finite measures on respective \textsigma\hyp{}algebras $\sigmaalgebra$ and $\sigmaalgebraiii$.
 Also, set the joint $\measonprod = \measureiii\circ\preimage{(\function,\functioniii)}$,
 and set the marginal $\marginalthree = \measlambda\circ\preimage{\funch}$.
+
 If the joint
 $\measonprod\abscont (\measmu\times\measrho)^*$, with
 $\funck$
@@ -7472,7 +7511,7 @@ denoting the corresponding Markov kernel given
 $(\uspace,\sigalg{H})$ and $(\measurespace,\sigmaalgebra)$,
 then the measure
 $\funck_\uspaceelt$
-on $\sigmaalgebra$, where $\uspaceelt$ is such that $\funch(\uspaceelt)=\mspaceeltiii$,
+on $\sigmaalgebra$, where $\mspaceeltiii$ is such that $\funch(\uspaceelt)=\mspaceeltiii$,
 has the following density function with respect to the measure
 $\measure$:
 \[
@@ -7480,12 +7519,17 @@ $\measure$:
 :\measurespace\to\R
 :\mspaceelt\mapsto
 %
-\dfrac{
-\dfrac{d\, \joint}
-{d(\measure\times\measureiv)^*}(\mspaceelt,\mspaceeltiii)
-}{
-\dfrac{d \marginalthree}{d \measrho}(\mspaceeltiii)
-}.
+\frac{d\measonprod}{d(\measure\times\marginalthree)^*}
+(\mspaceelt,\mspaceeltiii),
+\]
+or alternately,
+\[
+\frac{d \funck_\uspaceelt}{d \measure}
+:\measurespace\to\R
+:\mspaceelt\mapsto
+%
+\frac{d\measonprod}{d(\measure\times\marginalthree)^*}
+(\mspaceelt,\funch(\uspaceelt)).
 \]
 \end{prop}
 
@@ -7915,7 +7959,7 @@ p(\mspaceeltii\mid\mspaceeltiii)
 Divide both sides of (3) by $p(\mspaceeltii\mid\mspaceeltiii)$.
 \end{proof}
 
-\section{Colloquial Density Notation}
+\section{Conditional Density Notation}
 \begin{notn}\label{densities}
 Let
 $(\uspace, \uspacesig, \measureiii)$
