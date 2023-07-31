@@ -1,7 +1,7 @@
 \documentclass[
 twoside=true,
 paper=letter,
-fontsize=11pt,
+fontsize=10pt,
 pagesize=auto,
 leqno,
 openany,
@@ -7250,7 +7250,7 @@ d \measonprod
 d \funck_\uspaceelt(\mspaceelt)\,
 d \marginalthree(\mspaceeltiii),
 \]
-where $\mspaceeltiii$ is such that $\funch(\uspaceelt) = \mspaceeltiii$.
+where  $\funch(\uspaceelt) = \mspaceeltiii$.
 \end{propboldnote}
 
 
@@ -7505,29 +7505,19 @@ Also, set the joint $\measonprod = \measureiii\circ\preimage{(\function,\functio
 and set the marginal $\marginalthree = \measlambda\circ\preimage{\funch}$.
 
 If the joint
-$\measonprod\abscont (\measmu\times\measrho)^*$, with
+$\measonprod\abscont (\measmu\times\marginalthree)^*$, with
 $\funck$
 denoting the corresponding Markov kernel given
 $(\uspace,\sigalg{H})$ and $(\measurespace,\sigmaalgebra)$,
-then the measure
+then for $\measlambda^*$\hyp{}almost all $\uspaceelt\in\uspace$, the measure
 $\funck_\uspaceelt$
-on $\sigmaalgebra$, where $\mspaceeltiii$ is such that $\funch(\uspaceelt)=\mspaceeltiii$,
+on $\sigmaalgebra$,
 has the following density function with respect to the measure
 $\measure$:
 \[
 \frac{d \funck_\uspaceelt}{d \measure}
 :\measurespace\to\R
 :\mspaceelt\mapsto
-%
-\frac{d\measonprod}{d(\measure\times\marginalthree)^*}
-(\mspaceelt,\mspaceeltiii),
-\]
-or alternately,
-\[
-\frac{d \funck_\uspaceelt}{d \measure}
-:\measurespace\to\R
-:\mspaceelt\mapsto
-%
 \frac{d\measonprod}{d(\measure\times\marginalthree)^*}
 (\mspaceelt,\funch(\uspaceelt)).
 \]
@@ -7536,14 +7526,8 @@ or alternately,
 
 \begin{proof}
 Let
-$\measonprod\abscont (\measmu\times\measrho)^*$.
-By Proposition~\ref{joint_abscont} and Proposition~\ref{absolute_continuity_regular}, the conditional distribution
-\[
-\condprobop{\sigalg{H}}\circ\, \preimage{\function}:
-\sigmaalgebra \to L_1(\uspace,\uspacesig,\measureiii)
-\]
-of $\function$ on $\sigmaalgebra$ given $\sigalg{H}$
-is regular. We are letting
+$\measonprod\abscont (\measmu\times\marginalthree)^*$.
+We are letting
 $\funck$
 denote the corresponding Markov kernel given
 $(\uspace,\sigalg{H})$ and $(\measurespace,\sigmaalgebra)$, as illustrated:
@@ -7572,198 +7556,143 @@ L_1(\uspace, \uspacesig, \measureiii) \ar[r]^{\condexpop{\sigalg{H}}}
 \\
 }
 \]
-By Proposition~\ref{marginal_abscont}, the marginal
-$\marginalthree \abscont \measrho$.
-It is sufficient to show that if $\seti\in\sigmaalgebra$, then
+We will show that for $\seti\in\sigmaalgebra$,
 \[
 \funck_\uspaceelt(\seti)
 =
-\int_\seti 
-\dfrac{
-\dfrac{d\, \joint}
-{d(\measure\times\measureiv)^*}(\mspaceelt,\mspaceeltiii)
-}{
-\dfrac{d \marginalthree}{d \measrho}(\mspaceeltiii)
-}
-\,d\measure(\mspaceelt),
+\int_\seti
+\frac{d\measonprod}{d(\measure\times\marginalthree)^*}
+(\mspaceelt,\funch(\uspaceelt))
+\,d\measmu(\mspaceelt),
 \]
-where $\mspaceeltiii=\funch(\uspaceelt)$.
+for $\measlambda^*$\hyp{}almost all $\uspaceelt\in\uspace$.
 
-We will start by showing that if a function
-$\funcj:\measurespace\times\measurespaceiii \to \R$ is integrable over
-$\measurespace\times\measurespaceiii$
-with respect to the joint $\measonprod$, then
-\[
-\int_{\measurespace\times\measurespaceiii}
-\funcj \,d\measonprod
-= 
-\int_\measurespaceiii \int_\measurespace
-\funcj(\mspaceelt,\mspaceeltiii)
-\dfrac{
-\dfrac{d\, \joint}
-{d(\measure\times\measureiv)^*}(\mspaceelt,\mspaceeltiii)
-}{
-\dfrac{d \marginalthree}{d \measrho}(\mspaceeltiii)
-}
-\,d\measure (\mspaceelt)
-\,d\marginalthree (\mspaceeltiii).
-\]
-
-Let $\funcj$ be integrable over
-$\measurespace\times\measurespaceiii$
-with respect to $\measonprod$.
-By Proposition~\ref{radon_nikodym_corollary},
-\[
-\int_{\measurespace\times\measurespaceiii}
-\funcj \,d\measonprod
-=
-\int_{\measurespace\times\measurespaceiii}
-\funcj \cdot
-\dfrac{d\, \joint}
-{d(\measure\times\measureiv)^*}
-\,d(\measure\times\measureiv).
-\]
+Let
+$\seti\in\sigmaalgebra$
+and
+$\setiii\in\sigmaalgebraiii$.
+Then
+$\charfunction{\seti\times\setiii}$
+is integrable with respect to the joint
+$\measonprod$.
 Since
-$\funcj \cdot
-\dfrac{d\, \joint}
-{d(\measure\times\measureiv)^*}$ is integrable with respect to
-$\measure\times\measureiv$, we can apply Fubini's Theorem~\ref{fubini}:
+$\measonprod \abscont (\measmu\times\marginalthree)^*$,
+it follows by Proposition~\ref{radon_nikodym_corollary} that
 \[
 \int_{\measurespace\times\measurespaceiii}
-\funcj \cdot
-\dfrac{d\, \joint}
-{d(\measure\times\measureiv)^*}
-\,d(\measure\times\measureiv)
+\charfunction{\seti\times\setiii}
+\, d\measonprod
+=
+\int_{\measurespace\times\measurespaceiii}
+\charfunction{\seti\times\setiii}
+\frac{d\measonprod}{d(\measure\times\marginalthree)^*}
+d(\measmu\times\marginalthree).
+\]
+By Fubini's Theorem~\ref{fubini},
+\[
+\int_{\measurespace\times\measurespaceiii}
+\charfunction{\seti\times\setiii}
+\frac{d\measonprod}{d(\measure\times\marginalthree)^*}
+d(\measmu\times\marginalthree)
 =
 \int_{\measurespaceiii}
 \int_{\measurespace}
-\funcj
-\cdot
-\dfrac{d\, \joint}
-{d(\measure\times\measureiv)^*}
-\,d\measure
-\,d\measureiv .
+\charfunction{\seti\times\setiii}
+\frac{d\measonprod}{d(\measure\times\marginalthree)^*}
+d \measmu
+\, d \marginalthree .
 \]
-Multiply by a well-chosen one:
+But also, by Proposition~\ref{joint_decomposition},
 \[
-\int_{\measurespaceiii}
-\int_{\measurespace}
-\funcj
-\cdot
-\dfrac{d\, \joint}
-{d(\measure\times\measureiv)^*}
-\,d\measure
-\,d\measureiv
-=
-\int_{\measurespaceiii}
-\int_{\measurespace}
-\funcj(\mspaceelt,\mspaceeltiii)
-\dfrac{
-\dfrac{d\, \joint}
-{d(\measure\times\measureiv)^*}(\mspaceelt,\mspaceeltiii)
-}{
-\dfrac{d \marginalthree}{d \measrho}(\mspaceeltiii)
-}
-\dfrac{d \marginalthree}{d \measrho}(\mspaceeltiii)
-\,d\measure (\mspaceelt)
-\,d\measureiv (\mspaceeltiii).
-\]
-
-
-\begin{align*}
-& =
-\int_{\measurespaceiii}
-\int_{\measurespace}
-\funcj(\mspaceelt,\mspaceeltiii)
-\dfrac{
-\dfrac{d\, \joint}
-{d(\measure\times\measureiv)^*}(\mspaceelt,\mspaceeltiii)
-}{
-\dfrac{d \marginalthree}{d \measrho}(\mspaceeltiii)
-}
-\dfrac{d \marginalthree}{d \measrho}(\mspaceeltiii)
-\,d\measure (\mspaceelt)
-\,d\measureiv (\mspaceeltiii)
-\\
-& =
-\int_{\measurespaceiii}
-\int_{\measurespace}
-\funcj(\mspaceelt,\mspaceeltiii)
-\dfrac{
-\dfrac{d\, \joint}
-{d(\measure\times\measureiv)^*}(\mspaceelt,\mspaceeltiii)
-}{
-\dfrac{d \marginalthree}{d \measrho}(\mspaceeltiii)
-}
-\,d\measure (\mspaceelt)
-\,d \marginalthree (\mspaceeltiii)
-\\
-\end{align*}
-By Proposition~\ref{joint_decomposition},
-\[
-\int_{\measurespace\times\measurespaceiii} \funcj\,
-d \measonprod
+\int_{\measurespace\times\measurespaceiii}
+\charfunction{\seti\times\setiii}
+\, d \measonprod
 =
 \int_\measurespaceiii\int_\measurespace
-\funcj(\mspaceelt,\mspaceeltiii) \,
-d \funck_\uspaceelt(\mspaceelt)\,
-d \marginalthree(\mspaceeltiii).
+\charfunction{\seti\times\setiii}
+(\mspaceelt,\mspaceeltiii)
+\, d \funck_\uspaceelt(\mspaceelt)
+\, d \marginalthree(\mspaceeltiii),
 \]
-By transitivity of equality,
+where  $\funch(\uspaceelt) = \mspaceeltiii$.
+By transitivity of equality, this shows that
 \[
 \int_{\measurespaceiii}
 \int_{\measurespace}
-\funcj(\mspaceelt,\mspaceeltiii)
-\dfrac{
-\dfrac{d\, \joint}
-{d(\measure\times\measureiv)^*}(\mspaceelt,\mspaceeltiii)
-}{
-\dfrac{d \marginalthree}{d \measrho}(\mspaceeltiii)
-}
-\,d\measure (\mspaceelt)
-\,d \marginalthree (\mspaceeltiii)
+\charfunction{\seti\times\setiii}
+\frac{d\measonprod}{d(\measure\times\marginalthree)^*}
+d \measmu
+\, d \marginalthree
 =
-\int_\measurespaceiii\int_\measurespace
-\funcj(\mspaceelt,\mspaceeltiii) \,
-d \funck_\uspaceelt(\mspaceelt)\,
-d \marginalthree (\mspaceeltiii).
-\]
-It follows that
-\[
-\int_{\measurespace}
-\funcj(\mspaceelt,\mspaceeltiii)
-\dfrac{
-\dfrac{d\, \joint}
-{d(\measure\times\measureiv)^*}(\mspaceelt,\mspaceeltiii)
-}{
-\dfrac{d \marginalthree}{d \measrho}(\mspaceeltiii)
-}
-\,d\measure (\mspaceelt)
-=
+\int_\measurespaceiii
 \int_\measurespace
-\funcj(\mspaceelt,\mspaceeltiii) \,
-d \funck_\uspaceelt(\mspaceelt).
+\charfunction{\seti\times\setiii}
+(\mspaceelt,\mspaceeltiii)
+\, d \funck_\uspaceelt(\mspaceelt)
+\, d \marginalthree(\mspaceeltiii),
 \]
-Set
-$\funcj (\mspaceelt,\mspaceeltiii)
+where  $\funch(\uspaceelt) = \mspaceeltiii$.
+We can rewrite this as integration over sets:
+\[
+\int_{\setiii}
+\int_{\seti}
+\frac{d\measonprod}{d(\measure\times\marginalthree)^*}
+d \measmu
+\, d \marginalthree
 =
-\charfunction{\seti}(\mspaceelt)$ and apply:
+\int_\setiii
+\int_\seti
+1_\measurespace
+(\mspaceelt)
+\, d \funck_\uspaceelt(\mspaceelt)
+\, d \marginalthree(\mspaceeltiii),
+\]
+where  $\funch(\uspaceelt) = \mspaceeltiii$.
+Since this is true for all $\setiii\in\sigmaalgebraiii$, it follows by Proposition~\ref{equal_function_test} that
 \[
 \int_{\seti}
-\dfrac{
-\dfrac{d\, \joint}
-{d(\measure\times\measureiv)^*}(\mspaceelt,\mspaceeltiii)
-}{
-\dfrac{d \marginalthree}{d \measrho}(\mspaceeltiii)
-}
-\,d\measure (\mspaceelt)
+\frac{d\measonprod}{d(\measure\times\marginalthree)^*}
+(\mspaceelt,\mspaceeltiii)
+d \measmu(\mspaceelt)
 =
 \int_\seti
-\,d \funck_\uspaceelt(\mspaceelt)
-=
-\funck_\uspaceelt(\seti),
+1_\measurespace
+\, d \funck_\uspaceelt
 \]
-as required.
+for $\marginalthree^*$\hyp{}almost all $\mspaceeltiii\in\measurespaceiii$, and where
+$\funch(\uspaceelt)=\mspaceeltiii$.
+See that
+\[
+\int_\seti
+1_\measurespace
+\, d \funck_\uspaceelt
+=
+\funck_\uspaceelt(\seti).
+\]
+This means we have shown that
+\[
+\funck_\uspaceelt(\seti)
+=
+\int_{\seti}
+\frac{d\measonprod}{d(\measure\times\marginalthree)^*}
+(\mspaceelt,\mspaceeltiii)
+d \measmu(\mspaceelt)
+\]
+for $\marginalthree^*$\hyp{}almost all $\mspaceeltiii\in\measurespaceiii$, and where
+$\funch(\uspaceelt)=\mspaceeltiii$.
+By Proposition~\ref{preimage_of_a_null_set}, the preimage under $\funch$ of a
+$\marginalthree^\kernast$\hyp{}null set of $\measurespaceiii$ is a
+$\measlambda^\kernast$\hyp{}null set of $\uspace$.
+It means that we have shown, making the substitution of $\funch(u)$ for $\mspaceeltiii$, that
+\[
+\funck_\uspaceelt(\seti)
+=
+\int_{\seti}
+\frac{d\measonprod}{d(\measure\times\marginalthree)^*}
+\bigl(\mspaceelt,\funch(\uspaceelt)\bigr)
+d \measmu(\mspaceelt)
+\]
+for $\measlambda^\kernast$\hyp{}almost all $\uspaceelt\in\uspace$, as required.
 \end{proof}
 
 
