@@ -1,7 +1,7 @@
 \documentclass[
 twoside=true,
 paper=letter,
-fontsize=10pt,
+fontsize=9pt,
 pagesize=auto,
 leqno,
 openany,
@@ -448,8 +448,10 @@ label=#1}
 \newcommand{\funcf}{f}
 \newcommand{\funcg}{g}
 \newcommand{\funch}{h}
-\newcommand{\funck}{k}
 \newcommand{\funcj}{j}
+\newcommand{\funck}{k}
+\newcommand{\funcl}{l}
+\newcommand{\funcm}{m}
 \newcommand{\function}{f}
 \newcommand{\functionii}{g}
 \newcommand{\functioniii}{h}
@@ -3704,7 +3706,7 @@ Applying Tonelli's Theorem~\ref{tonelli} then,
 \, d\measureii(\mspaceeltii).
 \end{align*}
 By Proposition~\ref{radon_nikodym_corollary}, we can change measures, after
-$d\marginalone = \funcj d\measure$:
+$d\marginalone = \funcj \, d\measure$:
 \begin{align*}
 \int_\measurespace 
 \frac{
@@ -3768,7 +3770,7 @@ $\functioniii
 =
 d\measonprod / d(\marginalone\times\marginaltwo)^*$.
 Use the fact shown earlier that 
-$\funcg\in L_1(\marginalone)$ and so 
+$\funcg$ is integrable with respect to $\marginalone$ and so
 \[
 \int_\measurespace\funcg(\mspaceelt,\mspaceeltii)\,d\marginalone(\mspaceelt)
 =
@@ -4148,7 +4150,7 @@ and $\measlambda$ is Lebesgue measure.
 The function 
 $\functionii \in\cali{L}_1(\R,\borel_\R,\lambda)$
 in this case represents the Radon-Nikodym derivative of the probability measure
-$\measlambda \circ \preimage{\function}$ 
+$\measmu \circ \preimage{\function}$
 with respect to Lebesgue measure $\lambda$ on $\borel_\R$.
 Should an author write 
 \[\text{Normal}(\function\mid m,s),\] they are likely referring to the function $\functionii$ itself, and might call it the \term{density} of $\function$. 
@@ -4163,7 +4165,6 @@ To be sure:
 \item A \emph{probability distribution} is a probability measure induced on a \textsigma-algebra of the codomain of a measurable function.
 \end{itemize}
 There is no intelligible sense in which the terms \emph{density} and \emph{probability distribution} are interchangeable.
-Still, there are some authors that will confuse them.
 \end{rmk}
 
 
@@ -4553,7 +4554,7 @@ We are supposing that the `$\sigmaalgebra$' in any probability space $(\measures
 $\textsigma$-algebra, as opposed to merely a semi-ring.
 
 
-\begin{defnboldnote}[Conditional Mathematical Expectation]
+\begin{defnboldnote}
 \label{cme_sigma_algebra}
 \index{conditional expectation with respect to a sigma algebra@conditional expectation with respect to a $\textsigma$-algebra}
 %Do \nomenclature[prefix]{symbol}{description}
@@ -5810,7 +5811,7 @@ However, as shown in Proposition~\ref{equivalent_definition_regular_distribution
 \section{Conditional Probability}
 %*********************************************************
 %*********************************************************
-\begin{defnboldnote}[Conditional probability]\label{conditional_probability}
+\begin{defnboldnote}\label{conditional_probability}
 Let
 $(\measurespace, \sigmaalgebra, \measure)$
 be a probability space, and let $\sigmaalgebraii$ be a $\textsigma$-subalgebra of 
@@ -5964,10 +5965,17 @@ $(\measurespace, \sigmaalgebra)$ and
 $(\measurespaceii, \sigmaalgebraii)$ 
 is also called a \term{transition} from
 $(\measurespace, \sigmaalgebra)$ to
-$(\measurespaceii, \sigmaalgebraii)$, possibly using the notation 
-$\markovkernel:(\measurespace, \sigmaalgebra)\transition
-(\measurespaceii, \sigmaalgebraii)$ in place of specifying
-$\markovkernel:\measurespace\times\sigmaalgebraii\to [0,1]$.
+$(\measurespaceii, \sigmaalgebraii)$. We may use the notation
+\[
+\markovkernel:(\measurespace, \sigmaalgebra)\transition
+(\measurespaceii, \sigmaalgebraii)
+\]
+instead of saying that $\funck$ is a Markov kernel given
+$(\measurespace, \sigmaalgebra)$ and
+$(\measurespaceii, \sigmaalgebraii)$.
+%Do \nomenclature[prefix]{symbol}{description}
+%where prefix is used to order the symbol in the Nomenclature list.
+\nomenclature[Markov kernel]{$(\measurespace,\sigmaalgebra)\transition (\measurespaceii,\sigmaalgebraii)$}{Markov kernel given $(\measurespace, \sigmaalgebra)$ and $(\measurespaceii, \sigmaalgebraii)$}
 \end{defn}
 
 
@@ -6232,7 +6240,7 @@ $\markovkernelii\circ\fixinthefirst{(\mspaceelt,\mspaceeltii)}
 %*********************************************************
 %*********************************************************
 \section{Regular Version}
-\begin{defnboldnote}[Version]\label{version}
+\begin{defnboldnote}\label{version}
 Let $(\measurespace,\sigmaalgebra,\measure)$ be a measure space.
 Let 
 $\regular$ be a function $\Lone\to\caliLone$ which selects a representative from each equivalence class.  
@@ -6248,7 +6256,7 @@ S \ar[ur]_-{\ \regular\circ\selection} \ar[u]^{\selection} & \\
 \end{defnboldnote}
 
 
-\begin{defnboldnote}[Regular conditional probability]\label{regular_version}
+\begin{defnboldnote}\label{regular_version}
 Let the collection
 $(\regular\circ\condprobop{\sigmaalgebraii})(\sigmaalgebra)$ of $\caliLone$ functions be a version of the conditional probability
 $\condprobop{\sigmaalgebraii}$ on $\sigmaalgebra$ given $\sigmaalgebraii$:
@@ -6512,7 +6520,7 @@ This shows that $\markovkernel$ is a Markov kernel given measurable spaces $(\me
 \section{Conditional Distributions}
 %*********************************************************
 %*********************************************************
-\begin{defnboldnote}[Conditional distribution]\label{conditional_distribution}
+\begin{defnboldnote}\label{conditional_distribution}
 Let $(\measurespace, \sigmaalgebra, \measure)$ be a probability space, and let $\sigmaalgebraii$ be a $\textsigma$-subalgebra of $\sigmaalgebra$. Also let $(\measurespaceii, \sigmaalgebraiii)$ be a measurable space, and let 
 $\function:\measurespace\to\measurespaceii$ be an
 $(\sigmaalgebra, \sigmaalgebraiii)$\hyp{}measurable function, with
@@ -6611,7 +6619,7 @@ If $\setii\in\sigmaalgebraii$ and $\setiii\in\sigmaalgebraiii$, then
 
 
 
-\begin{defnboldnote}[Regular conditional distribution]\label{regular_conditional_distribution}
+\begin{defnboldnote}\label{regular_conditional_distribution}
 Let the collection
 $(\regular\circ\condprobop{\sigmaalgebraii}\circ\preimage{\function})
 (\sigmaalgebraiii)$ of $\caliLone$ functions be a version of the conditional distribution
@@ -7110,7 +7118,7 @@ is defined in accordance with the function $\funck^\seti$ by
 \funck: \uspace\times \sigmaalgebra \to [0,1] :
 (\uspaceelt,\seti) \mapsto \funcj\bigl(\funcg(\uspaceelt),\seti\bigr),
 \]
-and consequently,
+and so
 $\funck_\uspaceelt(\seti)=\funcj_{\funcg(\uspaceelt)}(\seti)$.
 The required collection of $\bigl( \sigalg{G}, \borel_{[0,1]} \bigr)$\hyp{}measurable
 functions is the set $\{\funck^\seti : \seti\in\sigmaalgebra\}$.
@@ -7206,6 +7214,7 @@ Therefore, the conditional distribution
 $\condprobop{\sigalg{G}}\circ \preimage{\funcf}$ of $\funcf$ on
 $\sigmaalgebra$ given $\sigalg{G}$ is regular, as required.
 \end{proof}
+
 
 
 
@@ -7500,9 +7509,10 @@ and
 $\functioniii:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
 measurable, and set
 $\sigalg{H} = \preimage{\functioniii}(\sigmaalgebraiii)$.
-Let $\measmu$ and $\measrho$ be \textsigma\hyp{}finite measures on respective \textsigma\hyp{}algebras $\sigmaalgebra$ and $\sigmaalgebraiii$.
 Also, set the joint $\measonprod = \measureiii\circ\preimage{(\function,\functioniii)}$,
 and set the marginal $\marginalthree = \measlambda\circ\preimage{\funch}$.
+Let $\measmu$ be a \textsigma\hyp{}finite measure on
+$\sigmaalgebra$.
 
 If the joint
 $\measonprod\abscont (\measmu\times\marginalthree)^*$, with
@@ -7519,7 +7529,7 @@ $\measure$:
 :\measurespace\to\R
 :\mspaceelt\mapsto
 \frac{d\measonprod}{d(\measure\times\marginalthree)^*}
-(\mspaceelt,\funch(\uspaceelt)).
+\bigl(\mspaceelt,\funch(\uspaceelt)\bigr).
 \]
 \end{prop}
 
@@ -7562,7 +7572,7 @@ We will show that for $\seti\in\sigmaalgebra$,
 =
 \int_\seti
 \frac{d\measonprod}{d(\measure\times\marginalthree)^*}
-(\mspaceelt,\funch(\uspaceelt))
+\bigl(\mspaceelt,\funch(\uspaceelt)\bigr)
 \,d\measmu(\mspaceelt),
 \]
 for $\measlambda^*$\hyp{}almost all $\uspaceelt\in\uspace$.
@@ -7697,26 +7707,28 @@ for $\measlambda^\kernast$\hyp{}almost all $\uspaceelt\in\uspace$, as required.
 
 
 
-\begin{defnboldnote}[Conditional independence]\label{conditionally_independent}
+\begin{defnboldnote}\label{conditionally_independent}
 Let
 $(\measurespace,\sigmaalgebra,\measure)$
 be a probability space, and let $\sigmaalgebraii$ be a  $\textsigma$-subalgebra of 
 $\sigmaalgebra$.
 Also, let $\sigmaalgebraiii$ and $\sigmaalgebraiv$ be \textsigma-subalgebras of $\sigmaalgebra$.
 Then $\sigmaalgebraiii$ and $\sigmaalgebraiv$ are 
-\term{conditionally independent \textsigma-subalgebras} given $\sigmaalgebraii$ 
+\term{conditionally independent \textsigma\hyp{}subalgebras} given $\sigmaalgebraii$
 if 
-$\condprobsub{\setiii\meets\setiv}{\sigmaalgebraii}
+\[
+\condprobsub{\setiii\meets\setiv}{\sigmaalgebraii}
 =
 \condprobsub{\setiii}{\sigmaalgebraii}
-\condprobsub{\setiv}{\sigmaalgebraii}$ 
+\condprobsub{\setiv}{\sigmaalgebraii}
+\]
 for all $\setiii\in\sigmaalgebraiii$ and for all $\setiv\in\sigmaalgebraiv$.
 The notation
 $\condindep{\sigmaalgebraiii}{\sigmaalgebraiv}{\sigmaalgebraii}$ 
 may be used.
 \nomenclature[conditionally independent]
 {$\condindep{\sigmaalgebraiii}{\sigmaalgebraiv}{\sigmaalgebraii}$,}
-{the \textsigma-algebras $\sigmaalgebraiii$ and $\sigmaalgebraiv$ are conditionally independent given $\sigmaalgebraii$}
+{the \textsigma\hyp{}algebras $\sigmaalgebraiii$ and $\sigmaalgebraiv$ are conditionally independent given $\sigmaalgebraii$}
 \end{defnboldnote}
 
 
@@ -7763,9 +7775,7 @@ $\condindep{\function}{\functionii}{\functioniii}$ may be used.
 
 
 
-
-
-
+\textbf{Some of the qualifiers need to be updated. Both the almost-everywhere and the absolute continuity condition. Check whether the absolute continuity condition can be relaxed.}
 \begin{prop}\label{conditional_independence_equivalence}
 Let
 $(\uspace,\uspacesig,\measureiii)$
@@ -7777,23 +7787,34 @@ $\functioniii:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
 be measurable, with \textsigma-finite measures
 $\measure$, $\measureii$, and $\measureiv$ on respective \textsigma-algebras
 $\sigmaalgebra$, $\sigmaalgebraii$, and $\sigmaalgebraiii$.
-Also let
-$\measureiii_{\function,\functionii,\functioniii}
+Let
+$\funck:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$,
+$\funcl:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$,
+and
+$\funcm:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
+be Markov kernels.
+If
+$\measureiii\circ\preimage{(\function,\functionii,\functioniii)}
 \abscont
-(\measure\times\measureii\times\measureiv)^*$.
-The following are equivalent:
+(\measure\times\measureii\times\measureiv)^*$,
+then following are equivalent:
 \begin{enumerate}
 \item
 $\condindep{\function}{\functionii}{\functioniii}$, 
 \item
-$\mkernel{\measureiii}{\function,\functionii}{\preimage{\functioniii}(\mspaceeltiii)}
+$\funcm_\uspaceelt
 (\seti\times\setii)
 =
-\mkernel{\measureiii}{\function}{\preimage{\functioniii}(\mspaceeltiii)}(\seti)
+\funck_\uspaceelt(\seti)
 \cdot
-\mkernel{\measureiii}{\functionii}{\preimage{\functioniii}(\mspaceeltiii)}(\setii)$
-for all $\seti\in\sigmaalgebra$, $\setii\in\sigmaalgebraii$, and $\measureiv$\hyp{}almost all 
-$\mspaceeltiii\in\measurespaceiii$,
+\funcl_\uspaceelt(\setii)$\quad
+for all $\seti\in\sigmaalgebra$, $\setii\in\sigmaalgebraii$, and $\measlambda^\kernast$\hyp{}almost all
+$\uspaceelt\in\uspace$,
+\item
+$\funcm_\uspaceelt(\setiii)
+=
+(\funck_\uspaceelt \times\funcl_\uspaceelt) (\setiii)$
+\quad for all $\setiii\in\productsig{\sigmaalgebra}{\sigmaalgebraii}$,
 \item
 $p(\mspaceelt,\mspaceeltii\mid\mspaceeltiii)
 = 
@@ -7821,7 +7842,7 @@ Let
 $\condindep{\function}{\functionii}{\functioniii}$. 
 By the very Definition~\ref{conditionally_independent} of conditionally independent \textsigma\hyp{}subalgebras,
 this is saying nothing but
-\begin{equation}\label{conditional_probabilities}
+\begin{equation}
 \condprobsub{\lilstrut\preimage{\funcf}(\seti) \meets \preimage{\funcg}(\setii)}{\sigalg{H}}
 =
 \condprobsub{\lilstrut\preimage{\funcf}(\seti)}{\sigalg{H}}
@@ -7830,7 +7851,7 @@ this is saying nothing but
 \end{equation}
 for all $\seti\in\sigmaalgebra$ and for all $\setii\in\sigmaalgebraii$.
 This equality can be written as
-\begin{equation}\label{conditional_distributions}
+\begin{equation}
 \bigl(\condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)} \bigr)
 (\seti\times\setii)
 =
@@ -7844,20 +7865,20 @@ This equality can be written as
 
 By Proposition~\ref{conditional_density},
 \begin{align*}
-\mkernel{\measureiii}{\funcf,\funcg}{\preimage{\funch}(\mspaceeltiii)}
+\funcm_\uspaceelt
 (\seti\times\setii)
 = &
 \int_{\seti\times\setii}
 p(\mspaceelt,\mspaceeltii\mid\mspaceeltiii)
 \,d(\measmu\times\measnu)(\mspaceelt,\mspaceeltii),
 \\
-\mkernel{\measlambda}{\funcf}{\preimage{\funch}}(\mspaceeltiii)
+\funck_\uspaceelt
 (\seti)
 = &
 \int_\seti p(\mspaceelt\mid\mspaceeltiii)
 \, d\measmu(\mspaceelt),
 \\
-\mkernel{\measlambda}{\funcg}{\preimage{\funch}}(\mspaceeltiii)
+\funcl_\uspaceelt
 (\setii)
 = &
 \int_\setii p(\mspaceeltii\mid\mspaceeltiii)
@@ -7888,7 +7909,15 @@ p(\mspaceeltii\mid\mspaceeltiii)
 Divide both sides of (3) by $p(\mspaceeltii\mid\mspaceeltiii)$.
 \end{proof}
 
+
 \section{Conditional Density Notation}
+\textbf{This section is largely orphaned by the fact that
+\[
+p(x,y\mid z)
+=
+\dfrac{d \Pi}{d(\measmu\times\measnu\times\marginalthree)^*}(x,y,z),
+\]
+for example. Just explain the colloquial notation in a sentence or two, and move on.}
 \begin{notn}\label{densities}
 Let
 $(\uspace, \uspacesig, \measureiii)$
@@ -7985,12 +8014,13 @@ and so forth.
 
 
 
-
 \chapter{Bayesian Statistics}\label{bayesian_statistics}
 %*********************************************************
 %*********************************************************
 %*********************************************************
 %*********************************************************
+\textbf{You have split the details off from the main body of work.  This is not your style, and you have seen no examples of this having been done successfully in statistics.  Integrate the Preface and Details.}
+
 \lettrine{S}{tatistics} is a mathematical analysis of guesswork. This kind of guesswork is called inductive inference.
 Its purpose is to identify a probability distribution or a conditional distribution. The particular kind of guesswork we will use is considered \emph{Bayesian} since it involves a parameter that induces a  probability distribution. A parameter here is just a measurable function.
 
@@ -10580,7 +10610,7 @@ Most of the measure and integration theory came from
 The conditional distribution material started with Loeve,
 \textsl{Probability Theory}~\cite{pt_loeve_1960}.
 \item
-The Bayesian statistics here started as an elaboration of sections 1.2.1 and 1.2.2 in
+The Bayesian statistics here began as an elaboration of sections 1.2.1 and 1.2.2 in
 \textsl{Elements of Bayesian Statistics}~\cite{eobs_florens_1990}, Florens, Mouchart, and Rolin.
 \item
 The Bayesian statistics examples largely came from
