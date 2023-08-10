@@ -630,53 +630,36 @@ Feel free to contact me. I am willing to share ideas.
 \epigraph{\textit{Many readers will have noticed the recent trend toward quotations at the beginnings of chapters in scientific books.  Often these quotes are sappy, dippy little things as if the authors of the book were struggling for profundity.}}
 {{Heterochrony: The Evolution of Ontogeny}\\ \textsc{--- M. L. McKinney}}
 
-\lettrine{T}{\,he} real reason these notes exist is so I could remember what progress I had made. As a mathematician, I was trying to make headway into statistics.
+\lettrine{T}{\,he} real reason these notes exist is so I could remember what progress I had made while learning statistics.
 I am putting these notes online, thinking  they may help another mathematician trying to do the same.
 
-What is the difference between these notes and other texts?
-We will not make topological assumptions when it comes to regular conditional distributions.
-We will not confuse classes in $\Lone$ with functions in
-$\cali{L}_1(\measurespace,\sigmaalgebra, \measmu)$.
-We will not expect the reader to ``keep this, that, and the other thing in mind.'' We spell it out instead. But the main difference is that the measure theory here is based upon semi-rings as opposed to \textsigma\hyp{}algebras, to be explained further in the next few paragraphs.
-
-
-These notes exist in part because of the way I had learned measure theory. After learning measure theory, I was trying to learn statistics, and I mean the level of statistics that begins with the Radon-Nikodym theorem, and  Kolmogorov's conditional mathematical expectation, and goes from there. In all  the statistics books that I looked, the Lebesgue integral was defined in terms of a measure on a  \textsigma\hyp{}algebra.
-But the measure theory I had learned was based upon a measure on a  semi-ring, with the corresponding Lebesgue integral defined in terms of the restriction of a certain outer measure, namely the Carath\'{e}odory extension.
-What is the difference between the theory that results from each of the two approaches?
-
-One main difference: In the case of a measure on a  \textsigma\hyp{}algebra and the consequent Lebesgue integral, say as developed in Loeve~\cite{pt_loeve_1960}, the resulting conditional mathematical expectation is a class of functions, where each function in the class is measurable with respect to a
-\textsigma\hyp{}subalgebra, but in the case of a measure on a semi-ring, as developed in Aliprantis \& Burkinshaw~\cite{pora_aliprantis_1990}, the consequent conditional mathematical expectation is a class of functions from which we can select a representative function which is measurable with respect to the  \textsigma\hyp{}subalgebra.  Not a big difference, but you still need to make the selection. Then again, you always need to make a selection with a regular conditional probability. Right?
-
-
-
-These notes also exist in part because I wanted to see clearly which \textsigma\hyp{}algebras were involved in the statistical models. Making the domain and codomain of each function clear is simply a matter of course for any real mathematician.  There are expositions of probability theory where random variables are considered primitive in the sense that no mention of the domain of such measurable functions are thought needed.  This is not one of those kinds of exposition.
-The struggle to have a probability theory where random variables are primitive reaches back through time immemorial.
-Topological assumptions in probability theory are always the sign of a struggle.
-Like the struggle a mathematician might put themselves through, mistakenly thinking that they always have to be working in a category.
-
-Initially, when trying to learn statistics, I had been trying to understand regression models, and had a background in functional analysis and operator theory, but little in the way of statistics.
-The hopeful outcomes at the start were:
-\begin{enumerate}
+What is the difference between these notes and other texts on statistics?
+The main difference is that the integration theory here is based upon semi-rings as opposed to \textsigma\hyp{}algebras, to be explained further in the next few paragraphs.
+Also,
+\begin{itemize}
 \item
-Understand Kolmogorov's \emph{conditional mathematical expectation.}
+We do not confuse equivalence classes of functions with the functions themselves.
 \item
-Explain regression models to myself in a clear way.
+We do not make topological assumptions when it comes to regular conditional distributions.
 \item
-Make real mathematical sense out of the bias-variance tradeoff.
-\end{enumerate}
-It turns out that
-conditional mathematical expectation is an application of the Radon-Nikodym theorem.
-Regression models are nothing but projections.
-And there is a decomposition of  conditional expectation into a conditional variance and a squared conditional bias because conditional mathematical expectation is a so-called averaging operator.
-Not that I was disappointed.
+We make clear which \textsigma\hyp{}algebras are involved in statistical models.
+\end{itemize}
+
+
+In all  the statistics books that I looked, the Lebesgue integral was defined in terms of a measure on a  \textsigma\hyp{}algebra.
+But the integration theory I had learned was based upon a measure on a  semi-ring.
+What is the difference?
+
+One main difference: In the case of a measure on a  \textsigma\hyp{}algebra and the consequent Lebesgue integral, say as developed in \textsl{Probability Theory,} Loeve~\cite{pt_loeve_1960}, the resulting conditional mathematical expectation is a class of functions, where each function in the class is measurable with respect to a
+\textsigma\hyp{}subalgebra, but in the case of a measure on a semi-ring, as developed in
+\textsl{Principles of Real Analysis,} Aliprantis \& Burkinshaw~\cite{pora_aliprantis_1990}, the consequent conditional mathematical expectation is a class of functions from which we can select a representative function which is measurable with respect to the  \textsigma\hyp{}subalgebra.  Not a big difference, but you still need to make the selection. Then again, you always need to make a selection with a regular conditional probability. Sorry about the pun.
+
+
+
+
 
 Statistical models only started making sense after learning Bayesian statistical models.  That is all you will find here. All of the material regarding frequentist statistics has been edited out, like when a cocoon is left behind.
-
-The notes that follow  might be described as more of a measure-theoretic companion to something  comprehensive and explanatory on applied Bayesian statistical models.  I strongly recommend Richard McElreath's \textsl{Statistical Rethinking}~\cite{sr_mcelreath_2020}.
-
-Decisions to be made over notation favor cumbersome-but-clear over cheap or ambiguous.
-The proofs of some of the propositions are wildly over-detailed, especially on paths which are thought to be critical.
-Material comes from multiple sources, some of which might be listed in the references.
+For mathematicians, this is more of a measure-theoretic companion to something  comprehensive and explanatory on applied Bayesian statistical models.  I strongly recommend Richard McElreath's \textsl{Statistical Rethinking}~\cite{sr_mcelreath_2020}.
 
 
 One more thing.
@@ -10605,7 +10588,7 @@ as required.
 \begin{itemize}
 \item
 Most of the measure and integration theory came from
-\textsl{Principle of Real Analysis}~\cite{pora_aliprantis_1990}, Aliprantis and Burkinshaw.
+\textsl{Principles of Real Analysis}~\cite{pora_aliprantis_1990}, Aliprantis and Burkinshaw.
 \item
 The conditional distribution material started with Loeve,
 \textsl{Probability Theory}~\cite{pt_loeve_1960}.
@@ -10621,6 +10604,21 @@ The abstract algebra can be found in any elementary algebra text. Hungerford, sa
 
 
 \chapter{Afterword}
+Initially, when trying to learn statistics, I had been trying to understand regression models, and had a background in functional analysis and operator theory, but little in the way of statistics.
+The hopeful outcomes at the start were:
+\begin{enumerate}
+\item
+Understand Kolmogorov's \emph{conditional mathematical expectation.}
+\item
+Explain regression models to myself in a clear way.
+\item
+Make real mathematical sense out of the bias-variance tradeoff.
+\end{enumerate}
+It turns out that
+conditional mathematical expectation is an application of the Radon-Nikodym theorem.
+Regression models are nothing but projections.
+And there is a decomposition of  conditional expectation into a conditional variance and a squared conditional bias because conditional mathematical expectation is a so-called averaging operator.
+Not that I was disappointed.
 
 
 \backmatter
