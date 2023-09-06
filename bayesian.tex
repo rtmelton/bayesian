@@ -6979,7 +6979,7 @@ $\bigl(\sigalg{G}, \borel_{[0,1]}\bigr)$\hyp{}measurable functions,
 \]
 which will be a two-step process.
 
-First, define a map
+First step, define a map
 $\funcj:\measurespaceii\times\sigmaalgebra\to \R$ as follows:
 \[
 \funcj
@@ -7057,7 +7057,7 @@ $\bigl( \sigmaalgebraii, \borel_{[0,1]} \bigr)$\hyp{}measurable,
 and the corresponding $\funcj_\mspaceeltii$ are still probability measures for all
 $\mspaceeltii\in N\comp$.
 
-Second, we will work towards defining a map
+Second step, we will work towards defining a map
 $\funck: \uspace\times \sigmaalgebra \to [0,1]$.
 The function $\funcg$ is
 $(\sigalg{G},\sigmaalgebraii)$\hyp{}measurable just by the very fact that
@@ -7208,30 +7208,30 @@ $\sigmaalgebra$ given $\sigalg{G}$ is regular, as required.
 \begin{propboldnote}\label{joint_decomposition}
 Let 
 $(\uspace, \uspacesig, \measureiii)$ 
-be a probability space, with functions
+be a probability space, and let the functions
 $\function:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$ 
 and
 $\functioniii:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
-measurable, and set 
+be measurable. Set
 $\sigalg{H} = \preimage{\functioniii}(\sigmaalgebraiii)$. 
-Also, set the joint $\measonprod = \measureiii\circ\preimage{(\function,\functioniii)}$,
-and set the marginal $\marginalthree = \measlambda\circ\preimage{\funch}$.
-
-If the conditional distribution 
+Let $\measonprod$ denote the joint measure  $\measureiii\circ\preimage{(\function,\functioniii)}$,
+and let $\marginalthree$ denote the marginal measure $\measlambda\circ\preimage{\funch}$.
+Let the conditional distribution
 \[
 \condprobop{\sigalg{H}}\circ\, \preimage{\function}:
 \sigmaalgebra \to L_1(\uspace,\uspacesig,\measureiii)
 \]
 of $\function$ on $\sigmaalgebra$ given $\sigalg{H}$ 
-is regular, with
+be regular, and let
 $\funck$
-denoting the corresponding Markov kernel given
-$(\uspace,\sigalg{H})$ and $(\measurespace,\sigmaalgebra)$,
-and if a function
+denote the corresponding Markov kernel given
+$(\uspace,\sigalg{H})$ and $(\measurespace,\sigmaalgebra)$.
+
+If a function
 $j:\measurespace\times\measurespaceiii \to \R$
 is integrable over
 $\measurespace\times\measurespaceiii$
-with respect to the joint $\measonprod$,
+with respect to the joint measure $\measonprod$,
 then 
 \[
 \int_{\measurespace\times\measurespaceiii} \funcj \,
@@ -7313,6 +7313,11 @@ if
 $\funch(\uspaceelt)
 =
 \mspaceeltiii$.
+Since $\funck^\seti(\uspaceelt) = \funck_\uspaceelt(\seti),$
+we can write
+\[
+a(\mspaceeltiii)=\funck_\uspaceelt(\seti) \text{ for } \mspaceeltiii = \funch(\uspaceelt).
+\]
 
 It is sufficient to show that the required equality holds for characteristic functions of the form
 $\funcj
@@ -7370,13 +7375,13 @@ and with $\funck^\seti = a\circ \funch$,
 ( a\circ\funch ) \, d\measlambda.
 \]
 Use the fact that
-\[
+\begin{align*}
 \charfunction{\preimage{\funch}(\setiii)}\cdot(a\circ\funch)
-=
-(\charfunction{\setiii}\circ \funch)\cdot(a\circ\funch)
-=
-(\charfunction{\setiii}\cdot a)\circ \funch
-\]
+& =
+(\charfunction{\setiii}\circ \funch)\cdot(a\circ\funch) \\
+& =
+(\charfunction{\setiii}\cdot a)\circ \funch \\
+\end{align*}
 and write
 \[
 \int_{\preimage{\funch}(\setiii)}
@@ -7486,25 +7491,26 @@ as required.
 \begin{prop}\label{conditional_density}
 Let
 $(\uspace, \uspacesig, \measureiii)$
-be a probability space, with functions
+be a probability space, and let functions
 $\function:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$
 and
 $\functioniii:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
-measurable, and set
+be measurable. Set
 $\sigalg{H} = \preimage{\functioniii}(\sigmaalgebraiii)$.
-Also, set the joint $\measonprod = \measureiii\circ\preimage{(\function,\functioniii)}$,
-and set the marginal $\marginalthree = \measlambda\circ\preimage{\funch}$.
-Let $\measmu$ be a \textsigma\hyp{}finite measure on
+Let $\measonprod$ denote the joint measure $\measureiii\circ\preimage{(\function,\functioniii)}$,
+and let $\marginalthree$ denote the marginal measure $\measlambda\circ\preimage{\funch}$.
+Let $\measmu$ be a \textsigma\hyp{}finite reference measure on
 $\sigmaalgebra$.
 
-If the joint
-$\measonprod\abscont (\measmu\times\marginalthree)^*$, with
+If the joint measure
+$\measonprod\abscont (\measmu\times\marginalthree)^*$, where
 $\funck$
-denoting the corresponding Markov kernel given
+denotes the corresponding Markov kernel given
 $(\uspace,\sigalg{H})$ and $(\measurespace,\sigmaalgebra)$,
-then for $\measlambda^*$\hyp{}almost all $\uspaceelt\in\uspace$, the measure
+then
+for $\marginalthree^*$\hyp{}almost all $\mspaceeltiii\in\measurespaceiii$, any measure
 $\funck_\uspaceelt$
-on $\sigmaalgebra$,
+on $\sigmaalgebra$ such that $\funch(\uspaceelt) = \mspaceeltiii$
 has the following density function with respect to the measure
 $\measure$:
 \[
@@ -7512,14 +7518,15 @@ $\measure$:
 :\measurespace\to\R
 :\mspaceelt\mapsto
 \frac{d\measonprod}{d(\measure\times\marginalthree)^*}
-\bigl(\mspaceelt,\funch(\uspaceelt)\bigr).
+( \mspaceelt,\mspaceeltiii ).
 \]
 \end{prop}
 
 
 \begin{proof}
 Let
-$\measonprod\abscont (\measmu\times\marginalthree)^*$.
+$\measonprod\abscont (\measmu\times\marginalthree)^*$, with a gentle reminder that $\measmu$ is a reference measure on $\sigmaalgebra$, and $\marginalthree$ is a marginal measure on
+$\sigmaalgebraiii$.
 We are letting
 $\funck$
 denote the corresponding Markov kernel given
@@ -7549,16 +7556,19 @@ L_1(\uspace, \uspacesig, \measureiii) \ar[r]^{\condexpop{\sigalg{H}}}
 \\
 }
 \]
-We will show that for $\seti\in\sigmaalgebra$,
+It is sufficient to show that
+for $\marginalthree^*$\hyp{}almost all $\mspaceeltiii\in\measurespaceiii$,
+if $\seti\in\sigmaalgebra$, and
+$\mspaceeltiii = \funch(\uspaceelt)$,
+then
 \[
 \funck_\uspaceelt(\seti)
 =
 \int_\seti
 \frac{d\measonprod}{d(\measure\times\marginalthree)^*}
-\bigl(\mspaceelt,\funch(\uspaceelt)\bigr)
-\,d\measmu(\mspaceelt),
+( \mspaceelt, \mspaceeltiii )
+\,d\measmu(\mspaceelt).
 \]
-for $\measlambda^*$\hyp{}almost all $\uspaceelt\in\uspace$.
 
 Let
 $\seti\in\sigmaalgebra$
@@ -7566,7 +7576,7 @@ and
 $\setiii\in\sigmaalgebraiii$.
 Then
 $\charfunction{\seti\times\setiii}$
-is integrable with respect to the joint
+is integrable with respect to the joint measure
 $\measonprod$.
 Since
 $\measonprod \abscont (\measmu\times\marginalthree)^*$,
@@ -7672,20 +7682,7 @@ This means we have shown that
 d \measmu(\mspaceelt)
 \]
 for $\marginalthree^*$\hyp{}almost all $\mspaceeltiii\in\measurespaceiii$, and where
-$\funch(\uspaceelt)=\mspaceeltiii$.
-By Proposition~\ref{preimage_of_a_null_set}, the preimage under $\funch$ of a
-$\marginalthree^\kernast$\hyp{}null set of $\measurespaceiii$ is a
-$\measlambda^\kernast$\hyp{}null set of $\uspace$.
-It means that we have shown, making the substitution of $\funch(u)$ for $\mspaceeltiii$, that
-\[
-\funck_\uspaceelt(\seti)
-=
-\int_{\seti}
-\frac{d\measonprod}{d(\measure\times\marginalthree)^*}
-\bigl(\mspaceelt,\funch(\uspaceelt)\bigr)
-d \measmu(\mspaceelt)
-\]
-for $\measlambda^\kernast$\hyp{}almost all $\uspaceelt\in\uspace$, as required.
+$\funch(\uspaceelt)=\mspaceeltiii$, as required.
 \end{proof}
 
 
