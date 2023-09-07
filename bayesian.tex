@@ -5870,7 +5870,7 @@ $\condprobsub{\measurespace}{\sigmaalgebraii} = \ellclass{1_\measurespace}{\meas
 %*********************************************************
 \begin{notn}
 Let 
-$\measurespace$ be a space and 
+$\measurespace$ be a space and let
 $\sigmaalgebraii$ be a \textsigma-algebra.
 For each set $\setii$ in the \textsigma-algebra $\sigmaalgebraii$, define the function
 \[
@@ -5913,34 +5913,34 @@ $\mspaceelt\in\measurespace$, the map
 \]
 is a probability measure on
 $\sigmaalgebraii$. 
-It means given an $\mspaceelt\in\measurespace$ and a 
+The map
+$\markovkernel\circ\fixinthesecond{\setii}$
+may be denoted by
+$\markovkernel^{\setii}$,
+and likewise the map
+$\markovkernel\circ\fixinthefirst{\mspaceelt}$
+may be denoted by
+$\markovkernel_{\mspaceelt}$.
+It means that for each $\mspaceelt\in\measurespace$ and
 $\setii\in\sigmaalgebraii$ there is a commutative diagram, only one of which will be illustrated without quantification: 
 \[
 \xymatrix@R=16pt@C=30pt{ 
 \measurespace \ar[d]_-{\fixinthesecond{\setii}} 
-\ar[dr]^{\qquad\text{ $\bigl(\sigmaalgebra, \borel_{[0,1]}\bigr)$\hyp{}measurable}}\\
+\ar[dr]^-{\makebox[0pt][l]
+{\scriptsize{$\markovkernel^\setii$
+\quad $\bigl(\sigmaalgebra, \borel_{[0,1]}\bigr)$\hyp{}measurable}}}\\
 \measurespace\times\sigmaalgebraii \ar[r]^{\markovkernel} & [0,1] \\
 \sigmaalgebraii 
-\ar[ur]_{\qquad\text{probability measure}} \ar[u]^{\fixinthefirst{\mspaceelt}} & \\
+\ar[ur]_-{\makebox[0pt][l]
+{\scriptsize{$\markovkernel_\uspaceelt$
+\quad probability measure}}}
+\ar[u]^{\fixinthefirst{\mspaceelt}} & \\
 }
 \]
-The given measurable spaces
-$(\measurespace, \sigmaalgebra)$ and
-$(\measurespaceii, \sigmaalgebraii)$
-need not be distinct, which may be apparent by the domain of
-$\markovkernel$. 
-A subscript indicating a domain, such as 
-$\fixinthesecond{\setii}_\measurespace$, 
+A subscript indicating a domain, such as
+$\fixinthesecond{\setii}_\measurespace$,
 could be used in case more than one kernel
 is involved.
-The map
-$\markovkernel\circ\fixinthesecond{\setii}$
-may be denoted with something like
-$\markovkernel^{\setii}$,
-and likewise the map
-$\markovkernel\circ\fixinthefirst{\mspaceelt}$
-may be denoted with something like 
-$\markovkernel_{\mspaceelt}$.
 
 
 A Markov kernel given measurable spaces 
@@ -6014,10 +6014,6 @@ $\markovkernel\circ\fixinthefirst{\mspaceelt}$ further defines a probability mea
 $\sigmaalgebraii$. 
 This shows that $\markovkernel$ is a Markov kernel by the very definition of Markov kernel.
 \end{example}
-
-\begin{rmk}
-The following proposition could be stated using a Markov kernel.
-\end{rmk}
 
 
 
@@ -6324,7 +6320,7 @@ Loeve continues on saying that a \emph{regular} conditional probability is just 
 
 
 \begin{discussion}\label{regular_version_equivalence}
-Let us compare the conditional probability $P^{\sigalg{B}}$ from Loeve in Remark~\ref{quote_loeve} with the conditional probability $\condprobop{\sigmaalgebraii}$ in Definition~\ref{regular_version}.  The conditional probability
+Let us compare the conditional probability $P^{\sigalg{B}}$ quoted from Loeve in Remark~\ref{quote_loeve} with the conditional probability $\condprobop{\sigmaalgebraii}$ in Definition~\ref{regular_version}.  The conditional probability
 $P^{\sigalg{B}}$ quoted from Loeve in Remark~\ref{quote_loeve} refers to the restriction of the operator
 \[
 \kondexpop\nolimits_{\sigmaalgebraii}
@@ -6714,10 +6710,10 @@ $(\sigmaalgebra, \sigmaalgebraiii)$\hyp{}measurable function, with
 $\preimage{\function} : \sigmaalgebraiii \to \sigmaalgebra$.
 If, given $(\measurespace, \sigmaalgebraii)$ and $(\measurespaceii, \sigmaalgebraiii)$, 
 there is a Markov kernel $\markovkernel:\measurespace\times\sigmaalgebraiii\to [0,1]$ with 
-$\markovkernel\circ\fixinthesecond{\setiii} \in \condprobop{\sigmaalgebraii}\circ \preimage{\function}(\setiii)$ for each 
+$\markovkernel^{\setiii} \in \condprobop{\sigmaalgebraii}\circ \preimage{\function}(\setiii)$ for each
 $\setiii\in\sigmaalgebraiii$, then the collection 
 $\{ 
-\markovkernel\circ\fixinthesecond{\setiii} 
+\markovkernel^{\setiii}
 : 
 \setiii\in\sigmaalgebraiii
 \}$
@@ -6730,7 +6726,7 @@ $\function$ on $\sigmaalgebraiii$ given $\sigmaalgebraii$, as illustrated:
 & \Lone 
 & \measurespace 
 \ar[d]_-{\fixinthesecond{\setiii}} 
-\ar[dr]^{\qquad\text{$\markovkernel\circ\fixinthesecond{\setiii} \in \condprobop{\sigmaalgebraii}\circ \preimage{\function}(\setiii)$}}
+\ar[dr]^{\qquad\text{$\markovkernel^{\setiii} \in \condprobop{\sigmaalgebraii}\circ \preimage{\function}(\setiii)$}}
 \\
 & 
 & \measurespace\times\sigmaalgebraiii \ar[r]^{\markovkernel} 
@@ -6751,7 +6747,7 @@ of
 $\function$ on $\sigmaalgebraiii$ given $\sigmaalgebraii$, then
 given $(\measurespace, \sigmaalgebraii)$ and $(\measurespaceii, \sigmaalgebraiii)$ 
 there is a Markov kernel $k:\measurespace\times\sigmaalgebraiii\to [0,1]$ with 
-$k\circ\fixinthesecond{\setiii} \in 
+$k^{\setiii} \in
 \condprobop{\sigmaalgebraii}\circ \preimage{\function}(\setiii)$ for each 
 $\setiii\in\sigmaalgebraiii$.
 \end{prop}
@@ -6761,20 +6757,20 @@ $\setiii\in\sigmaalgebraiii$.
 Let 
 $\markovkernel:\measurespace\times\sigmaalgebraiii\to [0,1]$ 
 be a Markov kernel given $(\measurespace, \sigmaalgebraii)$ and $(\measurespaceii, \sigmaalgebraiii)$, with each
-$\markovkernel\circ\fixinthesecond{\setiii} \in \condprobop{\sigmaalgebraii}\circ \preimage{\function}(\setiii)$.
+$\markovkernel^{\setiii} \in \condprobop{\sigmaalgebraii}\circ \preimage{\function}(\setiii)$.
 To show that the collection 
-$\{ \markovkernel\circ\fixinthesecond{\setiii} :
+$\{ \markovkernel^{\setiii} :
 \setiii\in\sigmaalgebraiii\}$ 
 is a regular version of the conditional distribution 
 ${\condprobop{\sigmaalgebraii}}\circ \preimage{\function}$ of 
 $\function$ on $\sigmaalgebraiii$ given $\sigmaalgebraii$, see that we can 
 use the hypothesis that 
-$\markovkernel\circ\fixinthesecond{\setiii} \in \condprobop{\sigmaalgebraii}\circ \preimage{\function}(\setiii)$ 
+$\markovkernel^{\setiii} \in \condprobop{\sigmaalgebraii}\circ \preimage{\function}(\setiii)$
 to specify the selection function:
 \[
 \regular:\Lone\to\caliLone:
 \condprobop{\sigmaalgebraii}\circ \preimage{\function}(\setiii) \mapsto
-\markovkernel\circ\fixinthesecond{\setiii}. 
+\markovkernel^{\setiii}.
 \]
 By the hypothesis that
 $\markovkernel:\measurespace\times\sigmaalgebraiii\to [0,1]$ 
@@ -6785,7 +6781,7 @@ $\setiii\in\sigmaalgebraiii$, the map
 \measurespace\to [0,1] : \mspaceelt\mapsto
 \bigl[ (\regular\circ\condprobop{\sigmaalgebraii}\circ\preimage{\function}) (\setiii)\bigr](\mspaceelt) 
 =
-\markovkernel\circ\fixinthesecond{\setiii} (\mspaceelt)
+\markovkernel^{\setiii} (\mspaceelt)
 \]
 is $\bigl(\sigmaalgebraii, \borel_{[0,1]}\bigr)$\hyp{}measurable, and for each 
 $\mspaceelt\in\measurespace$ the  map
@@ -6796,7 +6792,7 @@ $\mspaceelt\in\measurespace$ the  map
 \]
 is a probability measure on $\sigmaalgebraiii$, 
 showing that 
-$\{ \markovkernel\circ\fixinthesecond{\setiii} :
+$\{ \markovkernel^{\setiii} :
 \setiii\in\sigmaalgebraiii\}$ 
 is a regular version of the conditional distribution 
 ${\condprobop{\sigmaalgebraii}}\circ \preimage{\function}$ of 
@@ -6837,22 +6833,17 @@ By definition, the selection function has the property that
 (\condprobop{\sigmaalgebraii}\circ\preimage{\function}) (\setiii)
 \]
 and since 
-$k\circ\fixinthesecond{\setiii} 
+$k^{\setiii}
 =
 \regular
 \bigl((\condprobop{\sigmaalgebraii}\circ\preimage{\function}) (\setiii)\bigr)$,
 it follows that
-$k\circ\fixinthesecond{\setiii} \in 
+$k^{\setiii} \in
 \condprobop{\sigmaalgebraii}\circ \preimage{\function}(\setiii)$ for each 
 $\setiii\in\sigmaalgebraiii$, as required.
 \end{proof}
 
 
-
-\begin{rmk}
-It turns out that the proof of the following proposition using the Markov kernel approach of Proposition~\ref{equivalent_definition_regular_distribution}
-is just as simple, or just as tedious,  as using the definition of a regular conditional distribution. So we use the definition.
-\end{rmk}
 
 \begin{prop}\label{absolute_continuity_regular}
 Let
@@ -6863,13 +6854,11 @@ and
 $\funcg:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$
 measurable.
 Set
-$\sigalg{G} = \preimage{\funcg}(\sigmaalgebraii)$,
-and set the joint
-$\measonprod = \measlambda\circ\preimage{({\funcf,\funcg})}$,
-with marginal
-$\marginalone = \measonprod\circ \preimage{\projectionone}$
-and marginal
-$\marginaltwo = \measonprod\circ \preimage{\projectiontwo}$.
+$\sigalg{G} = \preimage{\funcg}(\sigmaalgebraii)$.
+Let $\measonprod$ denote the joint measure
+$\measlambda\circ\preimage{({\funcf,\funcg})}$,
+and let $\marginalone$  denote the marginal measure $\measonprod\circ \preimage{\projectionone}$,
+and let $\marginaltwo$ denote the marginal measure $\measonprod\circ \preimage{\projectiontwo}$.
 If\,
 $\measonprod \abscont (\marginalone\times\marginaltwo)^*$
 on
@@ -7225,7 +7214,10 @@ of $\function$ on $\sigmaalgebra$ given $\sigalg{H}$
 be regular, and let
 $\funck$
 denote the corresponding Markov kernel given
-$(\uspace,\sigalg{H})$ and $(\measurespace,\sigmaalgebra)$.
+$(\uspace,\sigalg{H})$ and $(\measurespace,\sigmaalgebra)$ such that
+$\funck^\seti\in
+\condprobop{\sigalg{H}}\circ\, \preimage{\function}(\seti)$
+for all $\seti\in\sigmaalgebra$.
 
 If a function
 $j:\measurespace\times\measurespaceiii \to \R$
@@ -7506,7 +7498,10 @@ If the joint measure
 $\measonprod\abscont (\measmu\times\marginalthree)^*$, where
 $\funck$
 denotes the corresponding Markov kernel given
-$(\uspace,\sigalg{H})$ and $(\measurespace,\sigmaalgebra)$,
+$(\uspace,\sigalg{H})$ and $(\measurespace,\sigmaalgebra)$ such that
+$\funck^\seti\in
+\condprobop{\sigalg{H}}\circ\, \preimage{\function}(\seti)$
+for all $\seti\in\sigmaalgebra$,
 then
 for $\marginalthree^*$\hyp{}almost all $\mspaceeltiii\in\measurespaceiii$, any measure
 $\funck_\uspaceelt$
@@ -7755,7 +7750,7 @@ $\condindep{\function}{\functionii}{\functioniii}$ may be used.
 
 
 
-\textbf{Some of the qualifiers need to be updated. Both the almost-everywhere and the absolute continuity condition. Check whether the absolute continuity condition can be relaxed.}
+\textbf{The Markov kernels correspond to regular conditional distributions.  Clarify that.  Check whether the absolute continuity condition can be relaxed.}
 \begin{prop}\label{conditional_independence_equivalence}
 Let
 $(\uspace,\uspacesig,\measureiii)$
@@ -7764,7 +7759,7 @@ $\function:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$,
 $\functionii:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$,
 and
 $\functioniii:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
-be measurable, with \textsigma-finite measures
+be measurable, with \textsigma-finite reference measures
 $\measure$, $\measureii$, and $\measureiv$ on respective \textsigma-algebras
 $\sigmaalgebra$, $\sigmaalgebraii$, and $\sigmaalgebraiii$.
 Let
