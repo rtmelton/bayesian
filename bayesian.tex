@@ -4535,6 +4535,7 @@ completing the proof.
 
 We are supposing that the `$\sigmaalgebra$' in any probability space $(\measurespace, \sigmaalgebra,\measure)$ is a
 $\textsigma$-algebra, as opposed to merely a semi-ring.
+The reason for supposing this is because the Radon-Nikodym theorem applies to measurable spaces.
 
 
 \begin{defnboldnote}
@@ -5082,7 +5083,8 @@ Let $(\measurespace, \semiring, \measure)$ be a measure space.  A $\measure^\ker
 
 
 \begin{prop}\label{atom}
-Let $(\measurespace, \semiring, \measure)$ be a finite measure space.  A $\measure^\kernast$-measurable set $A$ with $\measure^*(A)>0$ is an atom of $(\measurespace, \semiring, \measure)$ if for every $\measure^\kernast$-measurable subset $B$ of $A$ either $\measure^*(B) = \measure^*(A)$, or $\measure^*(A\meets B\comp)= \measure^*(A)$. 
+Let $(\measurespace, \semiring, \measure)$ be a finite measure space.  A
+$\measure^\kernast$\hyp{}measurable set $A$ with $\measure^*(A)>0$ is an atom of $(\measurespace, \semiring, \measure)$ if for every $\measure^\kernast$-measurable subset $B$ of $A$ either $\measure^*(B) = \measure^*(A)$, or $\measure^*(A\meets B\comp)= \measure^*(A)$.
 \end{prop}
 
 
@@ -5838,7 +5840,11 @@ $\seti\in\sigmaalgebra$,
 \right)
 \ellclass{\charfunction{\setii_i}}{\measure}.
 \end{align*}
-This reminds us of the symbols in the very elementary definition of conditional probability: 
+The coefficient
+\[
+\dfrac{\measure(\seti \meets \setii_i)}{\measure(\setii_i)}
+\]
+reminds us of the symbols in the very elementary definition of conditional probability:
 \[
 P(A\mid B) = \frac{P(A\meets B)}{P(B)}.
 \]
@@ -7772,7 +7778,7 @@ If
 $\measureiii\circ\preimage{(\function,\functionii,\functioniii)}
 \abscont
 (\measure\times\measureii\times\measureiv)^*$,
-then following are equivalent:
+then the following are equivalent:
 \begin{enumerate}
 \item
 $\condindep{\function}{\functionii}{\functioniii}$, 
