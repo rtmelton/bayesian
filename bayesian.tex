@@ -5518,7 +5518,8 @@ $\condexpsub{\ellclass{\function}{\measure}}{\sigma(\oneonomega)}
 =  
 \bigl(\expval{\ellclass{\function}{\measure}}\bigr)
 \bigl(\ellclass{\oneonomega}{\measure}\bigr)$ for every
-$\ellclass{\function}{\measure}\in L_1(\measurespace, \sigmaalgebra,\measure)$. This means that any equation involving conditional mathematical expectation which holds for all 
+$\ellclass{\function}{\measure}\in L_1(\measurespace, \sigmaalgebra,\measure)$.
+This means that any equation involving conditional mathematical expectation which holds for all
 $\textsigma$-subalgebras of $\sigmaalgebra$ must hold for expected values as well.  You may argue that this is logically backwards since the conditional mathematical expectation is a generalization of the expected value.
 \end{discussion}
 
@@ -7200,6 +7201,198 @@ $\sigmaalgebra$ given $\sigalg{G}$ is regular, as required.
 %*********************************************************
 %*********************************************************
 
+
+\begin{defnboldnote}\label{conditionally_independent}
+Let
+$(\measurespace,\sigmaalgebra,\measure)$
+be a probability space, and let $\sigmaalgebraii$ be a  $\textsigma$-subalgebra of
+$\sigmaalgebra$.
+Also, let $\sigmaalgebraiii$ and $\sigmaalgebraiv$ be \textsigma-subalgebras of $\sigmaalgebra$.
+Then $\sigmaalgebraiii$ and $\sigmaalgebraiv$ are
+\term{conditionally independent \textsigma\hyp{}subalgebras} given $\sigmaalgebraii$
+if
+\[
+\condprobsub{\setiii\meets\setiv}{\sigmaalgebraii}
+=
+\condprobsub{\setiii}{\sigmaalgebraii}
+\condprobsub{\setiv}{\sigmaalgebraii}
+\]
+for all $\setiii\in\sigmaalgebraiii$ and for all $\setiv\in\sigmaalgebraiv$.
+The notation
+$\condindep{\sigmaalgebraiii}{\sigmaalgebraiv}{\sigmaalgebraii}$
+may be used.
+\nomenclature[conditionally independent]
+{$\condindep{\sigmaalgebraiii}{\sigmaalgebraiv}{\sigmaalgebraii}$,}
+{the \textsigma\hyp{}algebras $\sigmaalgebraiii$ and $\sigmaalgebraiv$ are conditionally independent given $\sigmaalgebraii$}
+\end{defnboldnote}
+
+\begin{example}
+Let
+$(\measurespace,\sigmaalgebra,\measure)$
+be a probability space, and let $\sigmaalgebraii$ be a  $\textsigma$-subalgebra of
+$\sigmaalgebra$.
+Also, let $\sigmaalgebraiii$ and $\sigmaalgebraiv$ be \textsigma-subalgebras of $\sigmaalgebra$.
+Since $\sigmaalgebraii$ is supposed to be a \textsigma\hyp{}subalgebra of $\sigmaalgebra$, it means that $\sigmaalgebraii$ lies somewhere in the lattice of \textsigma\hyp{}subalgebras of $\sigmaalgebra$ between the smallest and the largest, that is
+\[
+\{\measurespace, \mtset\}
+\leq \sigmaalgebraii
+\leq
+\sigmaalgebra.
+\]
+Let us try to understand conditional independence in the two cases
+$\sigmaalgebraii
+=
+\{\measurespace, \mtset\}$
+and
+$\sigmaalgebraii
+=
+\sigmaalgebra$.
+We will see that in the case
+$\sigmaalgebraii
+=
+\{\measurespace, \mtset\}$,
+conditional independence given
+$\sigmaalgebraii$ is equivalent to independence with respect to $\measure^*$, and in the case
+$\sigmaalgebraii
+=
+\sigmaalgebra$,
+all \textsigma\hyp{}subalgebras of $\sigmaalgebra$ are conditionally independent given
+$\sigmaalgebraii$.
+
+Let
+$\sigmaalgebraii
+=
+\{\measurespace, \mtset\}$.
+Verify that $\{\measurespace, \mtset\}$ is independent of every
+$\textsigma$\hyp{}subalgebra of $\sigmaalgebra$ with respect to
+$\measure^*$, for if $\sigalg{T}$ were another \textsigma\hyp{}subalgebra, we see that
+\[
+\measure^*(\seti\meets\setii)
+=
+\measure^*(\seti) \cdot \measure^*(\setii)
+\quad
+\text{for all $\seti\in \sigalg{T}$ and all $\setii\in \{\measurespace, \mtset\}$.}
+\]
+It follows then by Proposition~\ref{conditional_is_expected} that
+\[
+\condexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}
+=
+\bigl(\expval{\ellclass{\function}{\measure}}\bigr)
+\bigl(\ellclass{1}{\measure}\bigr)
+\]
+for every
+$\ellclass{\function}{\measure}\in L_1(\measurespace, \sigmaalgebra,\measure)$.
+For
+$\setiii\in\sigmaalgebraiii$ and for $\setiv\in\sigmaalgebraiv$,
+the condition
+\[
+\condprobsub{\setiii\meets\setiv}{\sigmaalgebraii}
+=
+\condprobsub{\setiii}{\sigmaalgebraii}
+\condprobsub{\setiv}{\sigmaalgebraii}
+\]
+is equivalent by definition to
+\[
+\condexpsub{\ellclass{\charfunction{\setiii\meets\setiv}}{\measure}}{\sigmaalgebraii}
+=
+\condexpsub{\ellclass{\charfunction{\setiii}}{\measure}}{\sigmaalgebraii}
+\condexpsub{\ellclass{\charfunction{\setiv}}{\measure}}{\sigmaalgebraii},
+\]
+which in turn is equivalent to
+\[
+\bigl(\expval{\ellclass{\charfunction{\setiii\meets\setiv}}{\measure}}\bigr)
+\bigl(\ellclass{1}{\measure}\bigr)
+=
+\bigl(\expval{\ellclass{\charfunction{\setiii}}{\measure}}\bigr)
+\bigl(\expval{\ellclass{\charfunction{\setiv}}{\measure}}\bigr)
+\bigl(\ellclass{1}{\measure}\bigr),
+\]
+implying that
+\[
+\measure^*(\setiii\meets\setiv) = \measure^*(\setiii)\cdot\measure^*(\setiv).
+\]
+This shows that conditional independence given
+$\sigmaalgebraii = \{\measurespace, \mtset\}$ is equivalent to independence with respect to
+$\measure^*$.
+
+Let $\sigmaalgebraii = \sigmaalgebra$.
+Then for all $\setiii\in\sigmaalgebraiii$ and for all $\setiv\in\sigmaalgebraiv$,
+the functions
+$\charfunction{\setiii\meets\setiv}$, $\charfunction{\setiii}$,
+and $\charfunction{\setiv}$ are
+$\bigl( \sigmaalgebraii, \borel_\R \bigr)$\hyp{}measureable.
+It follows by Proposition~\ref{subalgebra_fixed} that the condition
+\[
+\condexpsub{\ellclass{\charfunction{\setiii\meets\setiv}}{\measure}}{\sigmaalgebraii}
+=
+\condexpsub{\ellclass{\charfunction{\setiii}}{\measure}}{\sigmaalgebraii}
+\condexpsub{\ellclass{\charfunction{\setiv}}{\measure}}{\sigmaalgebraii}
+\]
+is equivalent to
+\[
+\ellclass{\charfunction{\setiii\meets\setiv}}{\measure}
+=
+\ellclass{\charfunction{\setiii}}{\measure}
+\ellclass{\charfunction{\setiv}}{\measure},
+\]
+which is equivalent to
+\[
+\charfunction{\setiii\meets\setiv}
+=
+\charfunction{\setiii}
+\charfunction{\setiv}
+\quad\text{$\measure^\kernast$\hyp{}almost everywhere on $\measurespace$.}
+\]
+This is always true.
+This shows that all \textsigma\hyp{}subalgebras of $\sigmaalgebra$ are conditionally independent given $\sigmaalgebraii$.
+\end{example}
+
+
+\begin{notn}\label{conditionally_independent_functions}
+Let
+$(\uspace,\uspacesig,\measureiii)$
+be a probability space, and let functions
+$\function:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$,
+$\functionii:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$,
+and
+$\functioniii:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
+be measurable:
+\[
+\xymatrix@R=14pt@C=30pt{
+ & \measurespace \\
+ \uspace
+ \ar[ur]^\function
+ \ar[r]^\functionii
+ \ar[dr]_\functioniii
+ & \measurespaceii\\
+ & \measurespaceiii \\
+}
+%
+\qquad
+%
+\xymatrix@R=14pt@C=30pt{
+ & \sigmaalgebra \ar[dl]_{\preimage{\function}} \\
+ \uspacesig & \sigmaalgebraii \ar[l]_-{\quad \preimage{\functionii}}\\
+ & \sigmaalgebraiii \ar[ul]^{\preimage{\functioniii}}\\
+}
+\]
+Say that $\function$ and $\functionii$ are conditionally independent
+given $\functioniii$ if
+\[
+\condindep{\preimage{\function}(\sigmaalgebra)}{\preimage{\functionii}(\sigmaalgebraii)}
+{\preimage{\functioniii}(\sigmaalgebraiii)}.
+\]
+The notation
+$\condindep{\function}{\functionii}{\functioniii}$ may be used.
+\end{notn}
+
+
+\begin{rmk}
+The following two propositions are really supporting lemmas for the conditional independence equivalences given in Proposition~\ref{conditional_independence_equivalence}.
+\end{rmk}
+
+
+
 \begin{propboldnote}\label{joint_decomposition}
 Let 
 $(\uspace, \uspacesig, \measureiii)$ 
@@ -7688,75 +7881,9 @@ $\funch(\uspaceelt)=\mspaceeltiii$, as required.
 
 
 
-\begin{defnboldnote}\label{conditionally_independent}
-Let
-$(\measurespace,\sigmaalgebra,\measure)$
-be a probability space, and let $\sigmaalgebraii$ be a  $\textsigma$-subalgebra of 
-$\sigmaalgebra$.
-Also, let $\sigmaalgebraiii$ and $\sigmaalgebraiv$ be \textsigma-subalgebras of $\sigmaalgebra$.
-Then $\sigmaalgebraiii$ and $\sigmaalgebraiv$ are 
-\term{conditionally independent \textsigma\hyp{}subalgebras} given $\sigmaalgebraii$
-if 
-\[
-\condprobsub{\setiii\meets\setiv}{\sigmaalgebraii}
-=
-\condprobsub{\setiii}{\sigmaalgebraii}
-\condprobsub{\setiv}{\sigmaalgebraii}
-\]
-for all $\setiii\in\sigmaalgebraiii$ and for all $\setiv\in\sigmaalgebraiv$.
-The notation
-$\condindep{\sigmaalgebraiii}{\sigmaalgebraiv}{\sigmaalgebraii}$ 
-may be used.
-\nomenclature[conditionally independent]
-{$\condindep{\sigmaalgebraiii}{\sigmaalgebraiv}{\sigmaalgebraii}$,}
-{the \textsigma\hyp{}algebras $\sigmaalgebraiii$ and $\sigmaalgebraiv$ are conditionally independent given $\sigmaalgebraii$}
-\end{defnboldnote}
 
 
-
-
-
-\begin{notn}\label{conditionally_independent_functions}
-Let
-$(\uspace,\uspacesig,\measureiii)$
-be a probability space, and let functions
-$\function:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$,
-$\functionii:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$,
-and
-$\functioniii:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
-be measurable:
-\[
-\xymatrix@R=14pt@C=30pt{
- & \measurespace \\
- \uspace 
- \ar[ur]^\function
- \ar[r]^\functionii
- \ar[dr]_\functioniii
- & \measurespaceii\\
- & \measurespaceiii \\
-}
-%
-\qquad
-%
-\xymatrix@R=14pt@C=30pt{
- & \sigmaalgebra \ar[dl]_{\preimage{\function}} \\
- \uspacesig & \sigmaalgebraii \ar[l]_-{\quad \preimage{\functionii}}\\
- & \sigmaalgebraiii \ar[ul]^{\preimage{\functioniii}}\\
-}
-\]
-Say that $\function$ and $\functionii$ are conditionally independent
-given $\functioniii$ if
-\[
-\condindep{\preimage{\function}(\sigmaalgebra)}{\preimage{\functionii}(\sigmaalgebraii)}
-{\preimage{\functioniii}(\sigmaalgebraiii)}.
-\]
-The notation 
-$\condindep{\function}{\functionii}{\functioniii}$ may be used.
-\end{notn}
-
-
-
-\textbf{The Markov kernels correspond to regular conditional distributions.  Clarify that.  Check whether the absolute continuity condition can be relaxed.}
+\textbf{The Markov kernels below correspond to regular conditional distributions.  Clarify that.  Check whether the absolute continuity condition can be relaxed.}
 \begin{prop}\label{conditional_independence_equivalence}
 Let
 $(\uspace,\uspacesig,\measureiii)$
