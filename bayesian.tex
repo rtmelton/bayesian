@@ -1686,9 +1686,10 @@ The integral symbol `$\inducedint$' with the overbar was chosen to somewhat dist
 \left(\int\abs{f}^p\,d\measure\right)^{1/p}.
 \]
 
-The quotient space $L_p(\measurespace, \semiring, \measure)$ need not form an algebra with respect to pointwise multiplication. Still, for classes $\ellclass{f}{\measure}$ and $\ellclass{g}{\measure}$ in $L_p(\measurespace, \semiring, \measure)$, if the function $\abs{fg}^p$ is integrable, then we can define the product 
+The quotient space $L_p(\measurespace, \semiring, \measure)$ need not form an algebra with respect to pointwise multiplication. Still, for classes $\ellclass{f}{\measure}$ and $\ellclass{g}{\measure}$ in $L_p(\measurespace, \semiring, \measure)$, if the function $\abs{fg}^p$ is integrable with respect to the measure $\measure$, then we can define the product
 $\ellclass{f}{\measure}\ellclass{g}{\measure}$ of classes to be the class $\ellclass{fg}{\measure}$. In this case, verify that if $h\in\ellclass{f}{\measure}$, and $k\in\ellclass{g}{\measure}$, then $\ellclass{hk}{\measure} = \ellclass{fg}{\measure}$.
 \index{product of classes in $L_1$}
+
 \end{defn}
 
 
@@ -5929,7 +5930,7 @@ $\markovkernel\circ\fixinthefirst{\mspaceelt}$
 may be denoted by
 $\markovkernel_{\mspaceelt}$.
 It means that for each $\mspaceelt\in\measurespace$ and
-$\setii\in\sigmaalgebraii$ there is a commutative diagram, only one of which will be illustrated without quantification: 
+$\setii\in\sigmaalgebraii$ there is a commutative diagram, only one of which will be illustrated, without quantification:
 \[
 \xymatrix@R=16pt@C=30pt{ 
 \measurespace \ar[d]_-{\fixinthesecond{\setii}} 
@@ -7215,6 +7216,7 @@ if
 \condprobsub{\setiii\meets\setiv}{\sigmaalgebraii}
 =
 \condprobsub{\setiii}{\sigmaalgebraii}
+\cdot
 \condprobsub{\setiv}{\sigmaalgebraii}
 \]
 for all $\setiii\in\sigmaalgebraiii$ and for all $\setiv\in\sigmaalgebraiv$.
@@ -7227,18 +7229,6 @@ may be used.
 \end{defnboldnote}
 
 \begin{example}
-Let
-$(\measurespace,\sigmaalgebra,\measure)$
-be a probability space, and let $\sigmaalgebraii$ be a  $\textsigma$-subalgebra of
-$\sigmaalgebra$.
-Also, let $\sigmaalgebraiii$ and $\sigmaalgebraiv$ be \textsigma-subalgebras of $\sigmaalgebra$.
-Since $\sigmaalgebraii$ is supposed to be a \textsigma\hyp{}subalgebra of $\sigmaalgebra$, it means that $\sigmaalgebraii$ lies somewhere in the lattice of \textsigma\hyp{}subalgebras of $\sigmaalgebra$ between the smallest and the largest, that is
-\[
-\{\measurespace, \mtset\}
-\leq \sigmaalgebraii
-\leq
-\sigmaalgebra.
-\]
 Let us try to understand conditional independence in the two cases
 $\sigmaalgebraii
 =
@@ -7289,6 +7279,7 @@ the condition
 \condprobsub{\setiii\meets\setiv}{\sigmaalgebraii}
 =
 \condprobsub{\setiii}{\sigmaalgebraii}
+\cdot
 \condprobsub{\setiv}{\sigmaalgebraii}
 \]
 is equivalent by definition to
@@ -7296,17 +7287,24 @@ is equivalent by definition to
 \condexpsub{\ellclass{\charfunction{\setiii\meets\setiv}}{\measure}}{\sigmaalgebraii}
 =
 \condexpsub{\ellclass{\charfunction{\setiii}}{\measure}}{\sigmaalgebraii}
+\cdot
 \condexpsub{\ellclass{\charfunction{\setiv}}{\measure}}{\sigmaalgebraii},
 \]
 which in turn is equivalent to
-\[
+\begin{align*}
 \bigl(\expval{\ellclass{\charfunction{\setiii\meets\setiv}}{\measure}}\bigr)
 \bigl(\ellclass{1}{\measure}\bigr)
-=
+& =
+\bigl(\expval{\ellclass{\charfunction{\setiii}}{\measure}}\bigr)
+\bigl(\ellclass{1}{\measure}\bigr)
+\cdot
+\bigl(\expval{\ellclass{\charfunction{\setiv}}{\measure}}\bigr)
+\bigl(\ellclass{1}{\measure}\bigr)\\
+& =
 \bigl(\expval{\ellclass{\charfunction{\setiii}}{\measure}}\bigr)
 \bigl(\expval{\ellclass{\charfunction{\setiv}}{\measure}}\bigr)
-\bigl(\ellclass{1}{\measure}\bigr),
-\]
+\bigl(\ellclass{1}{\measure}\bigr),\\
+\end{align*}
 implying that
 \[
 \measure^*(\setiii\meets\setiv) = \measure^*(\setiii)\cdot\measure^*(\setiv).
@@ -7320,7 +7318,7 @@ Then for all $\setiii\in\sigmaalgebraiii$ and for all $\setiv\in\sigmaalgebraiv$
 the functions
 $\charfunction{\setiii\meets\setiv}$, $\charfunction{\setiii}$,
 and $\charfunction{\setiv}$ are
-$\bigl( \sigmaalgebraii, \borel_\R \bigr)$\hyp{}measureable.
+$\bigl( \sigmaalgebraii, \borel_\R \bigr)$\hyp{}measurable.
 It follows by Proposition~\ref{subalgebra_fixed} that the condition
 \[
 \condexpsub{\ellclass{\charfunction{\setiii\meets\setiv}}{\measure}}{\sigmaalgebraii}
@@ -7344,7 +7342,7 @@ which is equivalent to
 \quad\text{$\measure^\kernast$\hyp{}almost everywhere on $\measurespace$.}
 \]
 This is always true.
-This shows that all \textsigma\hyp{}subalgebras of $\sigmaalgebra$ are conditionally independent given $\sigmaalgebraii$.
+This shows that all \textsigma\hyp{}subalgebras of $\sigmaalgebra$ are conditionally independent given $\sigmaalgebra$.
 \end{example}
 
 
@@ -7886,7 +7884,7 @@ $\funch(\uspaceelt)=\mspaceeltiii$, as required.
 \textbf{The Markov kernels below correspond to regular conditional distributions.  Clarify that.  Check whether the absolute continuity condition can be relaxed.}
 \begin{prop}\label{conditional_independence_equivalence}
 Let
-$(\uspace,\uspacesig,\measureiii)$
+$(\uspace,\uspacesig,\measlambda)$
 be a probability space, and let functions
 $\function:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$,
 $\functionii:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$,
@@ -7946,6 +7944,7 @@ $\sigalg{H}=\preimage{\funch}(\sigmaalgebraiii)$.
 \noindent
 \textbf{(1) $\Leftrightarrow$ (2)}
 
+$(\Rightarrow)$
 Let
 $\condindep{\function}{\functionii}{\functioniii}$. 
 By the very Definition~\ref{conditionally_independent} of conditionally independent \textsigma\hyp{}subalgebras,
@@ -7958,19 +7957,119 @@ this is saying nothing but
 \condprobsub{\lilstrut\preimage{\funcg}(\setii)}{\sigalg{H}}
 \end{equation}
 for all $\seti\in\sigmaalgebra$ and for all $\setii\in\sigmaalgebraii$.
-This equality can be written as
+This is an equality of classes in
+$L_1(\uspace,\uspacesig,\measureiii)$, and can be written as
 \begin{equation}
-\bigl(\condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)} \bigr)
+\condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)}
 (\seti\times\setii)
 =
-(\condprobop{\sigalg{H}}\circ \preimage{\funcf})(\seti)
+\condprobop{\sigalg{H}}\circ \preimage{\funcf}(\seti)
 \cdot
-(\condprobop{\sigalg{H}}\circ \preimage{\funcg})(\setii).
+\condprobop{\sigalg{H}}\circ \preimage{\funcg}(\setii).
 \end{equation}
+By the ``regularity'' hypothesis (spell this out better),
+\[
+\funcm^{\seti\times\setii} \in
+\condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)}
+(\seti\times\setii),
+\]
+\[
+\funck^\seti \in
+\condprobop{\sigalg{H}}\circ \preimage{\funcf}(\seti),
+\]
+and
+\[
+\funcl^\setii \in
+\condprobop{\sigalg{H}}\circ \preimage{\funcg}(\setii).
+\]
+It follows that
+\[
+\funcm^{\seti\times\setii}(\uspaceelt)
+=
+\funck^\seti(\uspaceelt)
+\cdot
+\funcl^\setii(\uspaceelt),
+\]
+and consequently
+\[
+\funcm_\uspaceelt(\seti\times\setii)
+=
+\funck_\uspaceelt(\seti)
+\cdot
+\funcl_\uspaceelt(\setii)
+\]
+for all $\seti\in\sigmaalgebra$, $\setii\in\sigmaalgebraii$, and
+$\measlambda^\kernast$\hyp{}almost all $\uspaceelt\in\uspace$.
+
+$(\Leftarrow)$
+Let
+\[
+\funcm_\uspaceelt(\seti\times\setii)
+=
+\funck_\uspaceelt(\seti)
+\cdot
+\funcl_\uspaceelt(\setii)
+\]
+for all $\seti\in\sigmaalgebra$, $\setii\in\sigmaalgebraii$, and
+$\measlambda^\kernast$\hyp{}almost all $\uspaceelt\in\uspace$.
+Then
+\[
+\funcm^{\seti\times\setii}(\uspaceelt)
+=
+\funck^\seti(\uspaceelt)
+\cdot
+\funcl^\setii(\uspaceelt),
+\]
+for
+$\measlambda^\kernast$\hyp{}almost all $\uspaceelt\in\uspace$.
+Since
+$\funcm^{\seti\times\setii}$
+is integrable with respect to $\measlambda$, it follows that
+$\funck^\seti\cdot\funcl^\setii$
+is integrable with respect to $\measlambda$.
+Then according to the definition of the product of classes,
+\begin{align*}
+\ellclass{\funck^\seti}{}
+\cdot
+\ellclass{\funcl^\setii}{}
+& \definedby
+\ellclass{\funck^\seti\cdot\funcl^\setii}{} \\
+& =
+\ellclass{\funcm^{\seti\times\setii}}{}. \\
+\end{align*}
+By the regularity hypothesis, this says
+\[
+\condprobop{\sigalg{H}}\circ \preimage{\funcf}(\seti)
+\cdot
+\condprobop{\sigalg{H}}\circ \preimage{\funcg}(\setii)
+=
+\condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)}
+(\seti\times\setii)
+\]
+which is equivalent to
+$\condindep{\function}{\functionii}{\functioniii}$,
+as required.
+
 
 \noindent
 \textbf{(2) $\Leftrightarrow$ (3)}
 
+$(\Rightarrow )$
+Let
+\[
+\funcm_\uspaceelt
+(\seti\times\setii)
+=
+\funck_\uspaceelt(\seti)
+\cdot
+\funcl_\uspaceelt(\setii)
+\]
+for all $\seti\in\sigmaalgebra$, $\setii\in\sigmaalgebraii$, and $\measlambda^\kernast$\hyp{}almost all
+$\uspaceelt\in\uspace$.
+
+
+
+\textbf{Errant part of early sketch:}
 By Proposition~\ref{conditional_density},
 \begin{align*}
 \funcm_\uspaceelt
@@ -8127,14 +8226,14 @@ and so forth.
 %*********************************************************
 %*********************************************************
 %*********************************************************
-\textbf{You have split the details off from the main body of work.  This is not your style, and you have seen no examples of this having been done successfully in statistics.  Integrate the Preface and Details.}
+\textbf{You have split the details off from the main body of work.  This is not your style, and you have seen no examples of this having been done well in statistics.  Integrate the Preface and Details.}
 
 \lettrine{S}{tatistics} is a mathematical analysis of guesswork. This kind of guesswork is called inductive inference.
 Its purpose is to identify a probability distribution or a conditional distribution. The particular kind of guesswork we will use is considered \emph{Bayesian} since it involves a parameter that induces a  probability distribution. A parameter here is just a measurable function.
 
 There are no topological restrictions imposed on the objects in this chapter. No Borel space conditions, no separable conditions.  We rely instead upon measure-theoretic conditions.
 
-The following preface provides the smallest possible glimpse of Bayesian statistics. It is more an article of faith.
+The following preface provides the smallest possible glimpse of Bayesian statistics.
 The details can be found in \textsf{\ref{bayesian_details} Details}.
 
 
