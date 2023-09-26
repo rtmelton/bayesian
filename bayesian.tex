@@ -1609,14 +1609,26 @@ The collection of real functions on $\measurespace$ that can be written as the d
 \begin{prop}\label{dominated_by_integrable}
 If $\function:\measurespace \to \R$ be an integrable function,
 and if $\functionii:\measurespace \to \R$ is a $(\measurable{\measure^\kernast},\borel_\R)$\hyp{}measurable function with
-$0\leq \functionii \leq \function$ $\measure^\kernast$-almost everywhere, then $\functionii$ is an integrable function.
+$0\leq \functionii \leq \function$ $\measure^\kernast$\hyp{}almost everywhere, then $\functionii$ is an integrable function.
 \end{prop}
 
 
 
 \begin{prop}\label{integral_absolute_zero}
 Let $f:\measurespace\to\R$ be a function integrable over $\measurespace$ with respect to $\measure$.  
-Then $\int \abs{f} \,d\measure = 0$ if and only if $f=0$ $\measure^\kernast$-almost everywhere.
+Then $\int \abs{f} \,d\measure = 0$ if and only if $f=0$ $\measure^\kernast$\hyp{}almost everywhere.
+\end{prop}
+
+
+\begin{prop}\label{uniqueness_radon_nikodym}
+Let
+$(\measurespace,\semiring,\measure)$
+be a measure space, and let $\funcf:\measurespace\to\R$ be integrable over
+$\measurespace$
+with respect to $\measure$.
+If
+$\int_\seti f\, d\measmu = 0$ for all $\seti\in\semiring$, then
+$f = 0$ $\measure^\kernast$\hyp{}almost everywhere.
 \end{prop}
 
 
@@ -2339,7 +2351,7 @@ then there exists a unique class $\ellclass{f}{\measure}$ in $L_1(\measurespace,
 \measureii(A) = \int_A f\,d\measure
 \quad\text{for all $A\in \sigmaalgebra$.}
 \]
-Furthermore, we may suppose the representative function $f$ to be 
+Furthermore, we may suppose the representative function $f$ is
 $(\sigmaalgebra, \borel_\R)$\hyp{}measurable.
 \end{thmboldnote}
 
@@ -7904,9 +7916,11 @@ $\measureiii\circ\preimage{(\function,\functionii,\functioniii)}
 \abscont
 (\measure\times\measureii\times\measureiv)^*$,
 then the following are equivalent:
+%
 \begin{enumerate}
 \item
 $\condindep{\function}{\functionii}{\functioniii}$, 
+%
 \item
 $\funcm_\uspaceelt
 (\seti\times\setii)
@@ -7916,17 +7930,22 @@ $\funcm_\uspaceelt
 \funcl_\uspaceelt(\setii)$\quad
 for all $\seti\in\sigmaalgebra$, $\setii\in\sigmaalgebraii$, and $\measlambda^\kernast$\hyp{}almost all
 $\uspaceelt\in\uspace$,
+%
 \item
 $\funcm_\uspaceelt(\setiii)
 =
 (\funck_\uspaceelt \times\funcl_\uspaceelt) (\setiii)$
 \quad for all $\setiii\in\productsig{\sigmaalgebra}{\sigmaalgebraii}$,
+and $\measlambda^\kernast$\hyp{}almost all
+$\uspaceelt\in\uspace$,
+%
 \item
 $p(\mspaceelt,\mspaceeltii\mid\mspaceeltiii)
 = 
 p(\mspaceelt\mid\mspaceeltiii)
 \cdot
 p(\mspaceeltii\mid\mspaceeltiii)$,
+%
 \item
 $p(\mspaceelt\mid \mspaceeltii,\mspaceeltiii)
 = 
