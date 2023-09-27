@@ -7406,7 +7406,7 @@ $\condindep{\function}{\functionii}{\functioniii}$ may be used.
 
 
 \begin{rmk}
-The following two propositions are really supporting lemmas for the conditional independence equivalences given in Proposition~\ref{conditional_independence_equivalence}.
+The following two propositions are supporting lemmas for the conditional independence equivalences given in Proposition~\ref{conditional_independence_equivalence}.
 \end{rmk}
 
 
@@ -7940,14 +7940,6 @@ for all $\seti\in\sigmaalgebra$, $\setii\in\sigmaalgebraii$, and $\measlambda^\k
 $\uspaceelt\in\uspace$,
 %
 \item
-$\funcm_\uspaceelt(\setiii)
-=
-(\funck_\uspaceelt \times\funcl_\uspaceelt) (\setiii)$
-\quad for all $\setiii\in\productsig{\sigmaalgebra}{\sigmaalgebraii}$,
-and $\measlambda^\kernast$\hyp{}almost all
-$\uspaceelt\in\uspace$,
-%
-\item
 $p(\mspaceelt,\mspaceeltii\mid\mspaceeltiii)
 = 
 p(\mspaceelt\mid\mspaceeltiii)
@@ -8054,7 +8046,7 @@ $\funcm^{\seti\times\setii}$
 is integrable with respect to $\measlambda$, it follows that
 $\funck^\seti\cdot\funcl^\setii$
 is integrable with respect to $\measlambda$.
-Then according to the definition of the product of classes,
+According to the definition of the product of classes,
 \begin{align*}
 \ellclass{\funck^\seti}{}
 \cdot
@@ -8093,10 +8085,6 @@ Let
 \]
 for all $\seti\in\sigmaalgebra$, $\setii\in\sigmaalgebraii$, and $\measlambda^\kernast$\hyp{}almost all
 $\uspaceelt\in\uspace$.
-
-
-
-\textbf{Errant part of early sketch:}
 By Proposition~\ref{conditional_density},
 \begin{align*}
 \funcm_\uspaceelt
@@ -8119,23 +8107,63 @@ p(\mspaceelt,\mspaceeltii\mid\mspaceeltiii)
 \, d\measnu(\mspaceeltii).
 \\
 \end{align*}
-By (2) then,
-\begin{align*}
+Since
+$\funcm_\uspaceelt
+(\seti\times\setii)
+=
+\funck_\uspaceelt(\seti)
+\cdot
+\funcl_\uspaceelt(\setii)$, it follows by substitution that
+\[
 \int_{\seti\times\setii}
 p(\mspaceelt,\mspaceeltii\mid\mspaceeltiii)
 \,d(\measmu\times\measnu)(\mspaceelt,\mspaceeltii)
-= &
+=
 \int_\seti p(\mspaceelt\mid\mspaceeltiii)
 \, d\measmu(\mspaceelt)
+\cdot
 \int_\setii p(\mspaceeltii\mid\mspaceeltiii)
 \, d\measnu(\mspaceeltii)
-\\
-= &
+\]
+And by one of Fubini's or Tonelli's,
+\[
+\int_\seti p(\mspaceelt\mid\mspaceeltiii)
+\, d\measmu(\mspaceelt)
+\cdot
+\int_\setii p(\mspaceeltii\mid\mspaceeltiii)
+\, d\measnu(\mspaceeltii)
+=
 \int_{\seti\times\setii}
 p(\mspaceelt\mid\mspaceeltiii)\cdot
 p(\mspaceeltii\mid\mspaceeltiii)
 \, d(\measmu\times\measnu)(\mspaceelt,\mspaceeltii).
-\end{align*}
+\]
+By transitivity of equality,
+\[
+\int_{\seti\times\setii}
+p(\mspaceelt,\mspaceeltii\mid\mspaceeltiii)
+\,d(\measmu\times\measnu)(\mspaceelt,\mspaceeltii)
+=
+\int_{\seti\times\setii}
+p(\mspaceelt\mid\mspaceeltiii)\cdot
+p(\mspaceeltii\mid\mspaceeltiii)
+\, d(\measmu\times\measnu)(\mspaceelt,\mspaceeltii)
+\]
+for all $\seti\times\setii$ in the semiring
+$\productsig{\sigmaalgebra}{\sigmaalgebraii}$, and so
+by Proposition~\ref{uniqueness_radon_nikodym},
+\[
+p(\mspaceelt,\mspaceeltii\mid\mspaceeltiii)
+=
+p(\mspaceelt\mid\mspaceeltiii)\cdot
+p(\mspaceeltii\mid\mspaceeltiii)
+\]
+for $(\measmu\times\measnu)^\kernast$\hyp{}almost all $(\mspaceelt,\mspaceeltii)$ in
+$\measurespace\times\measurespaceii$.
+(But what is the qualifier on $\mspaceeltiii$?)
+Although it is true that
+$\productsig{\sigmaalgebra}{\sigmaalgebraii}$
+is a \textsigma\hyp{}algebra, it is regarded here as a semiring, for that is all the structure which is actually needed.
 
 \noindent
 \textbf{(3) $\Leftrightarrow$ (4)}
