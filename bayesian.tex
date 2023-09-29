@@ -6872,6 +6872,12 @@ $\setiii\in\sigmaalgebraiii$, as required.
 \end{proof}
 
 
+\begin{defn}
+Proposition~\ref{equivalent_definition_regular_distribution} says that to each regular conditional distribution there corresponds a particular Markov kernel. We will call such a kernel the
+\term{corresponding Markov kernel}.
+\end{defn}
+
+
 
 \begin{prop}\label{absolute_continuity_regular}
 Let
@@ -7249,11 +7255,11 @@ may be used.
 \end{defnboldnote}
 
 \begin{example}
-Let us try to understand conditional independence in the two cases
+Let us try to understand conditional independence in the case where
 $\sigmaalgebraii
 =
 \{\measurespace, \mtset\}$
-and
+and in the case where
 $\sigmaalgebraii
 =
 \sigmaalgebra$.
@@ -7901,7 +7907,7 @@ $\funch(\uspaceelt)=\mspaceeltiii$, as required.
 
 
 
-\textbf{The Markov kernels below correspond to regular conditional distributions.  Clarify that.  Check whether the absolute continuity condition can be relaxed.}
+
 \begin{prop}\label{conditional_independence_equivalence}
 Let
 $(\uspace,\uspacesig,\measlambda)$
@@ -7913,17 +7919,22 @@ $\functioniii:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
 be measurable, with \textsigma-finite reference measures
 $\measure$, $\measureii$, and $\measureiv$ on respective \textsigma-algebras
 $\sigmaalgebra$, $\sigmaalgebraii$, and $\sigmaalgebraiii$.
+Set $\sigalg{H}=\preimage{\funch}(\sigmaalgebraiii)$.
 Let
-$\funck:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$,
-$\funcl:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$,
-and
-$\funcm:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
-be Markov kernels.
-If
 $\measureiii\circ\preimage{(\function,\functionii,\functioniii)}
 \abscont
 (\measure\times\measureii\times\measureiv)^*$,
-then the following are equivalent:
+and let
+$\funck$,
+$\funcl$,
+and
+$\funcm$
+be Markov kernels corresponding to the respective regular conditional distributions
+$\condprobop{\sigalg{H}}\circ \preimage{\funcf}$,
+$\condprobop{\sigalg{H}}\circ \preimage{\funcg}$,
+and
+$\condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)}$.
+The following are equivalent:
 %
 \begin{enumerate}
 \item
@@ -7957,8 +7968,8 @@ p(\mspaceelt\mid\mspaceeltiii)$.
 \begin{proof}
 Set 
 $\sigalg{F}=\preimage{\funcf}(\sigmaalgebra)$, 
-$\sigalg{G}=\preimage{\funcg}(\sigmaalgebraii)$, and 
-$\sigalg{H}=\preimage{\funch}(\sigmaalgebraiii)$.
+$\sigalg{G}=\preimage{\funcg}(\sigmaalgebraii)$.
+
  
 \noindent
 \textbf{(1) $\Leftrightarrow$ (2)}
