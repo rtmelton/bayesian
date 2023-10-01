@@ -2677,7 +2677,7 @@ The idea of a product semiring generalizes in a clear way to the product of more
 $(\seti\times\setii)\times \setiii$
 and
 $\seti\times(\setii\times\setiii)$ as equivalent, and may (co)universally write 
-$\seti\times\setii\times\setiii$.
+$\seti\times\setii\times\setiii$. It means that if $\sigalg{U}$ were a semiring of subsets of a set $Z$, then expressions like $\productsemiring{\semiring}{\semiringii , \semiringiii}$ would make perfect sense.
 \end{defn}
  
 
@@ -7003,7 +7003,10 @@ $\bigl(\sigalg{G}, \borel_{[0,1]}\bigr)$\hyp{}measurable functions,
 which will be a two-step process.
 
 First step, define a map
-$\funcj:\measurespaceii\times\sigmaalgebra\to \R$ as follows:
+$\funcj:\measurespaceii\times\sigmaalgebra\to \R$. By hypothesis,
+$\measonprod \abscont (\marginalone\times\marginaltwo)^*$, and since
+$\measonprod$ is finite, and $(\marginalone\times\marginaltwo)^*$ also finite, and so \textsigma\hyp{}finite, we can take the Radon-Nikodym derivative
+$d\measonprod / d(\marginalone\times\marginaltwo)^*$, and define a map as follows:
 \[
 \funcj
 :\measurespaceii\times\sigmaalgebra\to \R
@@ -8171,7 +8174,8 @@ p(\mspaceeltii\mid\mspaceeltiii)
 \]
 for $(\measmu\times\measnu)^\kernast$\hyp{}almost all $(\mspaceelt,\mspaceeltii)$ in
 $\measurespace\times\measurespaceii$.
-(But what is the qualifier on $\mspaceeltiii$?)
+(But what is the qualifier on $\mspaceeltiii$? Likely $\marginalthree^\kernast$\hyp{}almost all
+$\mspaceeltiii\in\measurespaceiii$.)
 Although it is true that
 $\productsig{\sigmaalgebra}{\sigmaalgebraii}$
 is a \textsigma\hyp{}algebra, it is regarded here as a semiring, for that is all the structure which is actually needed.
