@@ -6873,7 +6873,7 @@ $\setiii\in\sigmaalgebraiii$, as required.
 
 
 \begin{defn}
-Proposition~\ref{equivalent_definition_regular_distribution} says that to each regular conditional distribution there corresponds a particular Markov kernel. We will call such a kernel the
+Proposition~\ref{equivalent_definition_regular_distribution} says that to each regular conditional distribution there corresponds a particular Markov kernel. We will call that kernel the
 \term{corresponding Markov kernel}.
 \end{defn}
 
@@ -6893,13 +6893,14 @@ Let $\measonprod$ denote the joint measure
 $\measlambda\circ\preimage{({\funcf,\funcg})}$,
 and let $\marginalone$  denote the marginal measure $\measonprod\circ \preimage{\projectionone}$,
 and let $\marginaltwo$ denote the marginal measure $\measonprod\circ \preimage{\projectiontwo}$.
+
 If\,
 $\measonprod \abscont (\marginalone\times\marginaltwo)^*$
 on
 $\productsig{\sigmaalgebra}{\sigmaalgebraii}$,
 then the conditional distribution
 $\condprobop{\sigalg{G}}\circ \preimage{\funcf}$ of $\funcf$ on
-$\sigmaalgebra$ given $\sigalg{G}$ is regular, and likewise, with
+$\sigmaalgebra$ given $\sigalg{G}$ is regular, and symmetrically, setting
 $\sigalg{F} = \preimage{\funcf}(\sigmaalgebra)$, the conditional distribution
 $\condprobop{\sigalg{F}}\circ \preimage{\funcg}$ of $\funcg$ on
 $\sigmaalgebraii$ given $\sigalg{F}$ is regular.
@@ -7922,11 +7923,14 @@ $\functioniii:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
 be measurable, with \textsigma-finite reference measures
 $\measure$, $\measureii$, and $\measureiv$ on respective \textsigma-algebras
 $\sigmaalgebra$, $\sigmaalgebraii$, and $\sigmaalgebraiii$.
-Set $\sigalg{H}=\preimage{\funch}(\sigmaalgebraiii)$.
+Let $\measmu\times\measnu$ be a \textsigma\hyp{}finite measure on
+$\productsig{\sigmaalgebra}{\sigmaalgebraii}$, and
+set $\sigalg{H}=\preimage{\funch}(\sigmaalgebraiii)$.
 Let
 $\measureiii\circ\preimage{(\function,\functionii,\functioniii)}
 \abscont
-(\measure\times\measureii\times\measureiv)^*$,
+(\measure\times\measureii\times\measureiv)^*$ on
+$\productsig{\productsig{\sigmaalgebra}{\sigmaalgebraii}}{\sigmaalgebraiii}$,
 and let
 $\funck$,
 $\funcl$,
