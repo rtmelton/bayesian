@@ -2867,6 +2867,23 @@ The notation $\semiring\otimes\semiringii$ might also be used,  but not here.
 The notation $\semiring\vee\semiringii$ is compelling.
 \end{defn}
 
+\begin{rmk}
+A consequence of the identification of
+$\seti\times\setii\times\setiii$
+with
+$(\seti\times\setii)\times\setiii$
+and
+$\seti\times(\setii\times\setiii)$
+is that
+\[
+\productsig{\sigmaalgebra}{\sigmaalgebraii,\sigmaalgebraiii}
+=
+\productsig{\productsig{\sigmaalgebra}{\sigmaalgebraii}}{\sigmaalgebraiii}
+=
+\productsig{\sigmaalgebra}{\productsig{\sigmaalgebraii}{\sigmaalgebraiii}}.
+\]
+\end{rmk}
+
 
 \begin{notn}\label{extension_to_sigmaalgebra}
 Let us apply Proposition~\ref{extension_measure} to the inclusion
@@ -7942,7 +7959,7 @@ Let
 $\measureiii\circ\preimage{(\function,\functionii,\functioniii)}
 \abscont
 (\measure\times\measureii\times\measureiv)^*$ on
-$\productsig{\productsig{\sigmaalgebra}{\sigmaalgebraii}}{\sigmaalgebraiii}$,
+$\productsig{\sigmaalgebra}{\sigmaalgebraii,\sigmaalgebraiii}$,
 and let
 $\funck$,
 $\funcl$,
@@ -7997,7 +8014,9 @@ Verify that if
 (\measmu\times\measnu\times\measrho)^*
 \]
 on
-$\productsig{\sigmaalgebra}{\productsig{\sigmaalgebraii}{\sigmaalgebraiii}}$,
+$\productsig{\sigmaalgebra}{\sigmaalgebraii,\sigmaalgebraiii}
+=
+\productsig{\sigmaalgebra}{\productsig{\sigmaalgebraii}{\sigmaalgebraiii}}$,
 then by applying the proof of Proposition~\ref{marginal_abscont}, you get
 \[
 \measlambda\circ \preimage{(\funcg,\funch)}
@@ -8044,7 +8063,9 @@ is regular is exceedingly similar: By Proposition~\ref{joint_abscont},
 (\measlambda\circ\preimage{\funch})\bigr)^*
 \]
 on
-$\productsig{\productsig{\sigmaalgebra}{\sigmaalgebraii}}{\sigmaalgebraiii}$,
+$\productsig{\sigmaalgebra}{\sigmaalgebraii,\sigmaalgebraiii}
+=
+\productsig{\productsig{\sigmaalgebra}{\sigmaalgebraii}}{\sigmaalgebraiii}$,
 and so by Proposition~\ref{absolute_continuity_regular},
 the conditional distribution
 $\condprobop{\sigalg{H}}\circ \preimage{(\funcf,\funcg)}$
