@@ -6254,13 +6254,13 @@ $\markovkernelii\circ\fixinthefirst{(\mspaceelt,\mspaceeltii)}
 Let $(\measurespace,\sigmaalgebra,\measure)$ be a measure space.
 Let 
 $\regular$ be a function $\Lone\to\caliLone$ which selects a representative from each equivalence class.  
-If $S$ is a set, and $\selection: S \to \Lone$ is a function, then
-the collection $(\regular\circ\selection)(S)$ of 
-$\caliLone$ functions is called a \term{version} of the function $\selection$.
+If $S$ is a set, and $\cali{F}: S \to \Lone$ is a function, then
+the collection $(\regular\circ\cali{F})(S)$ of
+$\caliLone$ functions is called a \term{version} of the function $\cali{F}$.
 \[
 \xymatrix@R=16pt@C=30pt{ 
 \Lone \ar[r]^{\regular} & \caliLone \\
-S \ar[ur]_-{\ \regular\circ\selection} \ar[u]^{\selection} & \\
+S \ar[ur]_-{\ \regular\circ\cali{F}} \ar[u]^{\cali{F}} & \\
 }
 \]
 \end{defnboldnote}
@@ -6372,7 +6372,7 @@ L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})
 \ar[ur]_{P^{\sigalg{B}}}
 }
 \]
-The conditional probability $\condprobop{\sigmaalgebraii}$ is defined in Definition~\ref{conditional_probability} as the composition
+The conditional probability $\condprobop{\sigmaalgebraii}$ in Definition~\ref{conditional_probability} is defined as the composition
 $\condprobop{\sigmaalgebraii} \circ\, Q \circ\chi$
 in the following diagram:
 \[
@@ -6385,7 +6385,7 @@ How do the regular versions of these  conditional probabilities compare? They ar
 There exists a regular version of
 $P^{\sigalg{B}}$ if and only if there exists a regular version of
 $\condprobop{\sigmaalgebraii}$.
-Briefly, say $\cali{S}$ and $\cali{R}$ are selection functions (they select representatives from equivalence classes, see Definition~\ref{version}) as in the following diagrams:
+Briefly, say $\cali{S}$ and $\cali{R}$ are the selection functions which select representatives from equivalence classes as  illustrated in the following diagrams:
 \[
 \xymatrix@R=16pt@C=30pt{
 L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})
@@ -6408,31 +6408,36 @@ L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})
 &
 }
 \]
-Proposition~\ref{integral_over_subalgebra} shows that if
-$\cali{S} \bigl( P^\sigmaalgebraii (\seti) \bigr)
-\in
-\cali{L}_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$,
+By Proposition~\ref{integral_over_subalgebra}, if the function
+$\cali{S} \bigl( P^\sigmaalgebraii (\seti) \bigr)$
+is in
+$\cali{L}_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$,
 then
-$\cali{S} \bigl( P^\sigmaalgebraii(\seti) \bigr)
-\in
-\Lone$,
+$\cali{S} \bigl( P^\sigmaalgebraii(\seti) \bigr)$
+is also in
+$\cali{L}_1(\measurespace, \sigmaalgebra,\measure)$,
 and we can take
-$\cali{R}\bigl( \condprobop{\sigmaalgebraii}(\seti)\bigr)
+\[
+\cali{R}\bigl( \condprobop{\sigmaalgebraii}(\seti)\bigr)
 =
-\cali{S} \bigl( P^\sigmaalgebraii(\seti) \bigr)$.
-Similarly, by Proposition~\ref{algebra_to_subalgebra}, if
-$\cali{R}\bigl( \condprobop{\sigmaalgebraii}(\seti)\bigr)
-\in
-\Lone$ and
+\cali{S} \bigl( P^\sigmaalgebraii(\seti) \bigr).
+\]
+And by Proposition~\ref{algebra_to_subalgebra}, if the function
+$\cali{R}\bigl( \condprobop{\sigmaalgebraii}(\seti)\bigr)$
+is in
+$\cali{L}_1(\measurespace, \sigmaalgebra,\measure)$, and if
+$\cali{R}\bigl( \condprobop{\sigmaalgebraii}(\seti)\bigr)$
 is $(\sigmaalgebraii,\borel_{[0,1]})$\hyp{}measurable,
 then
-$\cali{R}\bigl( \condprobop{\sigmaalgebraii}(\seti)\bigr)
-\in
-\cali{L}_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$
+$\cali{R}\bigl( \condprobop{\sigmaalgebraii}(\seti)\bigr)$
+is in
+$\cali{L}_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$
 and so we can take
-$\cali{S} \bigl( P^\sigmaalgebraii(\seti) \bigr)
+\[
+\cali{S} \bigl( P^\sigmaalgebraii(\seti) \bigr)
 =
-\cali{R}\bigl( \condprobop{\sigmaalgebraii}(\seti)\bigr)$.
+\cali{R}\bigl( \condprobop{\sigmaalgebraii}(\seti)\bigr).
+\]
 The version in both cases is the same family of functions, it just depends on whether they are considered as residing in
 $\cali{L}_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$
 or
@@ -6442,9 +6447,13 @@ $\cali{S} \bigl( P^\sigmaalgebraii(\seti) \bigr)
 =
 \cali{R}\bigl( \condprobop{\sigmaalgebraii}(\seti)\bigr)$
 and either of
-$\seti\mapsto \cali{R}\bigl( \condprobop{\sigmaalgebraii}(\seti)\bigr)(x)$
+\[
+\seti\mapsto \cali{R}\bigl( \condprobop{\sigmaalgebraii}(\seti)\bigr)(x)
+\]
 or
-$\seti\mapsto \cali{S} \bigl( P^\sigmaalgebraii(\seti) \bigr)(x)$
+\[
+\seti\mapsto \cali{S} \bigl( P^\sigmaalgebraii(\seti) \bigr)(x)
+\]
 is a probability measure on $\sigmaalgebra$, then so is the other.
 \end{discussion}
 
@@ -7978,9 +7987,69 @@ p(\mspaceelt\mid\mspaceeltiii)$.
 \begin{proof}
 Set 
 $\sigalg{F}=\preimage{\funcf}(\sigmaalgebra)$, 
-$\sigalg{G}=\preimage{\funcg}(\sigmaalgebraii)$.
+and $\sigalg{G}=\preimage{\funcg}(\sigmaalgebraii)$.
 
- 
+We first look at why the conditional distributions are regular.
+Verify that if
+\[
+\measlambda\circ\preimage{(\function,\functionii,\functioniii)}
+\abscont
+(\measmu\times\measnu\times\measrho)^*
+\]
+on
+$\productsig{\sigmaalgebra}{\productsig{\sigmaalgebraii}{\sigmaalgebraiii}}$,
+then by applying the proof of Proposition~\ref{marginal_abscont}, you get
+\[
+\measlambda\circ \preimage{(\funcg,\funch)}
+\abscont
+(\measnu\times\measrho)^*
+\]
+on
+$\productsig{\sigmaalgebraii}{\sigmaalgebraiii}$.
+In particular, by applying the proof, you show
+\[
+\frac{d(\measlambda\circ \preimage{(\funcg,\funch)})}{d(\measnu\times\measrho)^*}
+:\measurespaceii\times\measurespaceiii \to  \R
+:(\mspaceeltii,\mspaceeltiii)\mapsto
+\int_\measurespace
+\frac{d(\measlambda\circ\preimage{(\function,\functionii,\functioniii)})}
+{d(\measmu\times\measnu\times\measrho)^*}
+(\mspaceelt,\mspaceeltii,\mspaceeltiii)\,d\measmu(\mspaceelt).
+\]
+Then by Proposition~\ref{joint_abscont},
+\[
+\measlambda\circ \preimage{(\funcg,\funch)}
+\abscont
+\bigl((\measlambda\circ\preimage{\funcg})
+\times
+(\measlambda\circ\preimage{\funch})\bigr)^*,
+\]
+and so by Proposition~\ref{absolute_continuity_regular},
+the conditional distribution
+$\condprobop{\sigalg{H}}\circ \preimage{\funcg}$
+is regular.
+
+Similarly, the conditional distribution
+$\condprobop{\sigalg{H}}\circ \preimage{\funcf}$
+must also be regular.
+
+To show that
+$\condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)}$
+is regular is exceedingly similar: By Proposition~\ref{joint_abscont},
+\[
+\measlambda\circ \preimage{(\funcf, \funcg, \funch)}
+\abscont
+\bigl((\measlambda\circ\preimage{(\funcf,\funcg)})
+\times
+(\measlambda\circ\preimage{\funch})\bigr)^*
+\]
+on
+$\productsig{\productsig{\sigmaalgebra}{\sigmaalgebraii}}{\sigmaalgebraiii}$,
+and so by Proposition~\ref{absolute_continuity_regular},
+the conditional distribution
+$\condprobop{\sigalg{H}}\circ \preimage{(\funcf,\funcg)}$
+is regular.
+
 \noindent
 \textbf{(1) $\Leftrightarrow$ (2)}
 
