@@ -7937,7 +7937,96 @@ $\funch(\uspaceelt)=\mspaceeltiii$, as required.
 \end{proof}
 
 
+\begin{notn}\label{densities}
+Let
+$(\uspace,\uspacesig,\measlambda)$ be a probability space, with functions
+$\funcf:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$,
+$\funcg:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$
+and
+$\funch:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
+measurable.
+Let $\measmu$, $\measnu$, and $\measrho$ be \textsigma\hyp{}finite reference measures on
+$\sigmaalgebra$, $\sigmaalgebraii$, and $\sigmaalgebraiii$, respectively, and let
+$\measlambda\circ\preimage{(\funcf,\funcg,\funch)}
+\abscont
+(\measure\times\measureii\times\measureiv)^*$ on
+$\productsig{\sigmaalgebra,\sigmaalgebraii}{\sigmaalgebraiii}$.
 
+With a decision about notation that I am sure to regret, set:
+\begin{align*}
+j
+& =
+\frac{d (\measlambda\circ\preimage{(\funcf,\funcg,\funch)})}
+{d(\measmu\times\measnu\times\measrho)^*}
+:
+\measurespace\times\measurespaceii\times\measurespaceiii\to\R,
+\\
+m_{\funcf,\funch}
+& =
+\frac{d (\measlambda\circ\preimage{(\funcf,\funch)} )}
+{d(\measmu\times\measrho)^*}:\measurespace\times\measurespaceiii\to\R,
+\\
+m_{\funcg,\funch}
+& =
+\frac{d (\measlambda\circ\preimage{(\funcg,\funch)} )}
+{d(\measmu\times\measrho)^*}:\measurespaceii\times\measurespaceiii\to\R,
+\\
+m_\funch
+& =
+\frac{d (\measlambda\circ\preimage{\funch})}
+{d \measrho}:\measurespaceiii\to\R.
+\\
+\end{align*}
+Vaguely, these are the densities of the joint and some of the marginals.
+We are supposing that all Radon-Nikodym derivatives in sight here exist.
+By the proof of Proposition~\ref{marginal_abscont},
+\begin{align*}
+m_{\function,\functioniii} (\mspaceelt,\mspaceeltiii)
+& =
+\int_\measurespaceii
+\funcj(\mspaceelt,\mspaceeltii,\mspaceeltiii)\,
+d \measnu(\mspaceeltii),
+\\
+m_{\functionii,\functioniii} (\mspaceeltii,\mspaceeltiii)
+& =
+\int_\measurespace
+\funcj(\mspaceelt,\mspaceeltii,\mspaceeltiii)\,
+d \measmu(\mspaceelt),
+\\
+m_\funch(\mspaceeltiii)
+& =
+\int_{\measurespace\times\measurespaceii}
+\funcj(\mspaceelt,\mspaceeltii,\mspaceeltiii)\,
+d(\measmu\times\measnu)(\mspaceelt,\mspaceeltii),
+\\
+\end{align*}
+which supports offhanded statements like,
+`You can obtain the marginal by integrating out the joint.'
+
+Also, for the following ratios of Radon-Nikodym derivatives, set:
+\begin{align*}
+p(\mspaceelt,\mspaceeltii\mid\mspaceeltiii)
+& =
+\frac{j(\mspaceelt,\mspaceeltii,\mspaceeltiii)}
+{m_{\functioniii} (\mspaceeltiii)},
+\\
+p(\mspaceelt\mid\mspaceeltiii)
+& =
+\frac{m_{\function,\functioniii}(\mspaceelt,\mspaceeltiii)}
+{m_{\functioniii} (\mspaceeltiii)},
+\\
+p(\mspaceeltii\mid\mspaceeltiii)
+& =
+\frac{m_{\functionii,\functioniii}(\mspaceeltii,\mspaceeltiii)}
+{m_{\functioniii} (\mspaceeltiii)},
+\\
+p(\mspaceelt\mid \mspaceeltii,\mspaceeltiii)
+& =
+\frac{ j( \mspaceelt, \mspaceeltii, \mspaceeltiii) }
+{m_{\functionii, \functioniii} ( \mspaceeltii,\mspaceeltiii ) }.
+\\
+\end{align*}
+\end{notn}
 
 
 
@@ -8048,13 +8137,13 @@ the conditional distribution
 $\condprobop{\sigalg{H}}\circ \preimage{\funcg}$
 is regular.
 
-Similarly, the conditional distribution
+By a similar argument, the conditional distribution
 $\condprobop{\sigalg{H}}\circ \preimage{\funcf}$
 must also be regular.
 
 To show that
 $\condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)}$
-is regular is exceedingly similar: By Proposition~\ref{joint_abscont},
+is regular is also similar: By Proposition~\ref{joint_abscont},
 \[
 \measlambda\circ \preimage{(\funcf, \funcg, \funch)}
 \abscont
@@ -8097,7 +8186,7 @@ $L_1(\uspace,\uspacesig,\measureiii)$, and can be written as
 \cdot
 \condprobop{\sigalg{H}}\circ \preimage{\funcg}(\setii).
 \end{equation}
-By the ``regularity'' hypothesis (spell this out better),
+The corresponding Markov kernels have the property that:
 \[
 \funcm^{\seti\times\setii} \in
 \condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)}
@@ -8167,14 +8256,18 @@ According to the definition of the product of classes,
 & =
 \ellclass{\funcm^{\seti\times\setii}}{}. \\
 \end{align*}
-By the regularity hypothesis, this says
+Because these Markov kernels correspond to their regular conditional distributions, and so for example
+$\ellclass{\funck^\seti}{}
+=
+\condprobop{\sigalg{H}}\circ \preimage{\funcf}(\seti)$,
+it follows that
 \[
 \condprobop{\sigalg{H}}\circ \preimage{\funcf}(\seti)
 \cdot
 \condprobop{\sigalg{H}}\circ \preimage{\funcg}(\setii)
 =
 \condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)}
-(\seti\times\setii)
+(\seti\times\setii),
 \]
 which is equivalent to
 $\condindep{\function}{\functionii}{\functioniii}$,
@@ -8284,106 +8377,7 @@ Divide both sides of (3) by $p(\mspaceeltii\mid\mspaceeltiii)$.
 \end{proof}
 
 
-\section{Conditional Density Notation}
-\textbf{This section is largely orphaned by the fact that
-\[
-p(x,y\mid z)
-=
-\dfrac{d \Pi}{d(\measmu\times\measnu\times\marginalthree)^*}(x,y,z),
-\]
-for example. Just explain the colloquial notation in a sentence or two, and move on.}
-\begin{notn}\label{densities}
-Let
-$(\uspace, \uspacesig, \measureiii)$
-be a probability space, with functions
-$\funcf:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$,
-$\funcg:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$
-and
-$\funch:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
-measurable.
-Let $\measmu$, $\measnu$, and $\measrho$ be \textsigma\hyp{}finite measures on
-$\sigmaalgebra$, $\sigmaalgebraii$, and $\sigmaalgebraiii$, respectively, and let
-$\measureiii_{\function,\functionii,\functioniii} \abscont
-(\measure\times\measureii\times\measureiv)^*$ on
-$\textsigma(\sigmaalgebra,\sigmaalgebraii,\sigmaalgebraiii)$.
-Set:
-\begin{align*}
-j
-& =
-\frac{d \measureiii_{\function,\functionii,\functioniii}}
-{d(\measure\times\measureii\times\measureiv)^*}
-:
-\measurespace\times\measurespaceii\times\measurespaceiii\to\R,
-\\
-m_{\function,\functioniii}
-& =
-\frac{d \measureiii_{\function,\functioniii}}
-{d(\measure\times\measureiv)^*}:\measurespace\times\measurespaceiii\to\R,
-\\
-m_{\functionii,\functioniii}
-& =
-\frac{d \measureiii_{\functionii,\functioniii}}
-{d(\measureii\times\measureiv)^*}:\measurespaceii\times\measurespaceiii\to\R,
-\\
-m_\functioniii
-& =
-\frac{d \measureiii_\functioniii}
-{d \measureiv}:\measurespaceiii\to\R.
-\\
-\end{align*}
-The letter `$j$' was intended to roughly correspond with `joint density,' and likewise the letter
-`$m$' with `marginal density.'
-It was shown back in Proposition~\ref{marginal_abscont} that if
-$\measureiii_{\function,\functionii,\functioniii} \abscont
-\measure\times\measureii\times\measureiv$,
-then all four Radon-Nikodym derivatives displayed here exist. Actually, that was shown for the case where only two functions $\function$ and $\functionii$ were involved. Same proof.
-Recall
-\begin{align*}
-m_{\function,\functioniii} (\mspaceelt,\mspaceeltiii)
-& =
-\int_\measurespaceii
-\funcj(\mspaceelt,\mspaceeltii,\mspaceeltiii)\,
-d \measnu(\mspaceeltii),
-\\
-m_{\functionii,\functioniii} (\mspaceeltii,\mspaceeltiii)
-& =
-\int_\measurespace
-\funcj(\mspaceelt,\mspaceeltii,\mspaceeltiii)\,
-d \measmu(\mspaceelt),
-\\
-m_\funch(\mspaceeltiii)
-& =
-\int_{\measurespace\times\measurespaceii}
-\funcj(\mspaceelt,\mspaceeltii,\mspaceeltiii)\,
-d(\measmu\times\measnu)(\mspaceelt,\mspaceeltii)
-\\
-\end{align*}
 
-Also, for the following ratios of Radon-Nikodym derivatives, let:
-\begin{align*}
-p(\mspaceelt,\mspaceeltii\mid\mspaceeltiii)
-& =
-\frac{j(\mspaceelt,\mspaceeltii,\mspaceeltiii)}
-{m_{\functioniii} (\mspaceeltiii)},
-\\
-p(\mspaceelt\mid\mspaceeltiii)
-& =
-\frac{m_{\function,\functioniii}(\mspaceelt,\mspaceeltiii)}
-{m_{\functioniii} (\mspaceeltiii)},
-\\
-p(\mspaceeltii\mid\mspaceeltiii)
-& =
-\frac{m_{\functionii,\functioniii}(\mspaceeltii,\mspaceeltiii)}
-{m_{\functioniii} (\mspaceeltiii)},
-\\
-p(\mspaceelt\mid \mspaceeltii,\mspaceeltiii)
-& =
-\frac{ j( \mspaceelt, \mspaceeltii, \mspaceeltiii) }
-{m_{\functionii, \functioniii} ( \mspaceeltii,\mspaceeltiii ) },
-\\
-\end{align*}
-and so forth.
-\end{notn}
 
 
 
