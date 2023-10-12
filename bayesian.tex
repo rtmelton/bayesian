@@ -385,9 +385,11 @@ label=#1}
 %Use \boldsig in section headings for a little larger \sigma:
 \newcommand{\boldsig}{$\bm{\hbox{\Large{$\sigma$}}}$}
 %
-\newcommand{\charfunction}[1]{{\raisebox{2pt}{$\chi$}}_{#1}}
+%\newcommand{\charfunction}[1]{{\raisebox{2pt}{$\chi$}}_{#1}}
+\newcommand{\charfunction}[1]{\mathop{{\raisebox{2pt}{$\chi$}}_{#1}}}
 %
-\newcommand{\charoperator}{\raisebox{2pt}{$\chi$}}
+%\newcommand{\charoperator}{\raisebox{2pt}{$\chi$}}
+\newcommand{\charoperator}{\mathop{\raisebox{2pt}{$\chi$}}}
 %
 %\newcommand{\restrictedto}[1]{_{\vert#1}}
 \newcommand{\restrictedto}[1]{_{\lvert#1}\kern-1.5pt}
@@ -405,7 +407,8 @@ label=#1}
 \newcommand{\seqof}[2]{\left(#1_{#2}\right)_{#2=1}^{\infty}}
 \newcommand{\seq}[1]{\left(#1\right)}
 \newcommand{\image}[1]{\overrightarrow{#1}}
-\newcommand{\preimage}[1]{#1^{\leftarrow}}
+%\newcommand{\preimage}[1]{#1^{\leftarrow}}
+\newcommand{\preimage}[1]{\mathop{#1^{\leftarrow}}}
 %\newcommand{\preimage}[1]{\overset{\raisebox{-1pt}[0pt][0pt]{\footnotesize$\leftarrow$}}{#1}}
 \newcommand{\R}{\mathbb{R}}
 
@@ -484,8 +487,10 @@ label=#1}
 \newcommand{\setiii}{C}
 \newcommand{\setiv}{D}
 \newcommand{\setv}{E}
-\newcommand{\regular}{\cali{R}}
-\newcommand{\selection}{\cali{S}}
+%\newcommand{\regular}{\cali{R}}
+\newcommand{\regular}{\mathop{\cali{R}}}
+%\newcommand{\selection}{\cali{S}}
+\newcommand{\selection}{\mathop{\cali{S}}}
 \newcommand{\collectionoffunctions}{\mathfrak{Fncs}}
 \newcommand{\projectionone}{\pi_1}
 \newcommand{\projectiontwo}{\pi_2}
@@ -6407,16 +6412,16 @@ How do the regular versions of these  conditional probabilities compare? They ar
 There exists a regular version of
 $P^{\sigalg{B}}$ if and only if there exists a regular version of
 $\condprobop{\sigmaalgebraii}$.
-Briefly, say $\cali{S}$ and $\cali{R}$ are the selection functions which select representatives from equivalence classes as  illustrated in the following diagrams:
+Briefly, say $\selection$ and $\regular$ are the selection functions which select representatives from equivalence classes as  illustrated in the following diagrams:
 \[
 \xymatrix@R=16pt@C=30pt{
 L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})
-\ar[r]^{\cali{S}}
+\ar[r]^{\selection}
 & \cali{L}_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})
 \\
 \sigmaalgebra
 \ar[u]^{P^{\sigmaalgebraii}}
-\ar[ur]_{\cali{S}\circ P^{\sigmaalgebraii}}
+\ar[ur]_{\selection \circ \mathop{P^{\sigmaalgebraii}}}
 &
 }
 \quad
@@ -6431,50 +6436,50 @@ L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})
 }
 \]
 By Proposition~\ref{integral_over_subalgebra}, if the function
-$\cali{S} \bigl( P^\sigmaalgebraii (\seti) \bigr)$
+$\selection \bigl( P^\sigmaalgebraii (\seti) \bigr)$
 is in
 $\cali{L}_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$,
 then
-$\cali{S} \bigl( P^\sigmaalgebraii(\seti) \bigr)$
+$\selection \bigl( P^\sigmaalgebraii(\seti) \bigr)$
 is also in
 $\cali{L}_1(\measurespace, \sigmaalgebra,\measure)$,
 and we can take
 \[
-\cali{R}\bigl( \condprobop{\sigmaalgebraii}(\seti)\bigr)
+\regular\bigl( \condprobop{\sigmaalgebraii}(\seti)\bigr)
 =
-\cali{S} \bigl( P^\sigmaalgebraii(\seti) \bigr).
+\selection \bigl( P^\sigmaalgebraii(\seti) \bigr).
 \]
 And by Proposition~\ref{algebra_to_subalgebra}, if the function
-$\cali{R}\bigl( \condprobop{\sigmaalgebraii}(\seti)\bigr)$
+$\regular\bigl( \condprobop{\sigmaalgebraii}(\seti)\bigr)$
 is in
 $\cali{L}_1(\measurespace, \sigmaalgebra,\measure)$, and if
-$\cali{R}\bigl( \condprobop{\sigmaalgebraii}(\seti)\bigr)$
+$\regular\bigl( \condprobop{\sigmaalgebraii}(\seti)\bigr)$
 is $(\sigmaalgebraii,\borel_{[0,1]})$\hyp{}measurable,
 then
-$\cali{R}\bigl( \condprobop{\sigmaalgebraii}(\seti)\bigr)$
+$\regular\bigl( \condprobop{\sigmaalgebraii}(\seti)\bigr)$
 is in
 $\cali{L}_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$
 and so we can take
 \[
-\cali{S} \bigl( P^\sigmaalgebraii(\seti) \bigr)
+\selection \bigl( P^\sigmaalgebraii(\seti) \bigr)
 =
-\cali{R}\bigl( \condprobop{\sigmaalgebraii}(\seti)\bigr).
+\regular\bigl( \condprobop{\sigmaalgebraii}(\seti)\bigr).
 \]
 The version in both cases is the same family of functions, it just depends on whether they are considered as residing in
 $\cali{L}_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$
 or
 $\caliLone$.
 Verify that if
-$\cali{S} \bigl( P^\sigmaalgebraii(\seti) \bigr)
+$\selection \bigl( P^\sigmaalgebraii(\seti) \bigr)
 =
-\cali{R}\bigl( \condprobop{\sigmaalgebraii}(\seti)\bigr)$
+\regular\bigl( \condprobop{\sigmaalgebraii}(\seti)\bigr)$
 and either of
 \[
-\seti\mapsto \cali{R}\bigl( \condprobop{\sigmaalgebraii}(\seti)\bigr)(x)
+\seti\mapsto \regular\bigl( \condprobop{\sigmaalgebraii}(\seti)\bigr)(x)
 \]
 or
 \[
-\seti\mapsto \cali{S} \bigl( P^\sigmaalgebraii(\seti) \bigr)(x)
+\seti\mapsto \selection \bigl( P^\sigmaalgebraii(\seti) \bigr)(x)
 \]
 is a probability measure on $\sigmaalgebra$, then so is the other.
 \end{discussion}
@@ -7629,11 +7634,11 @@ and with $\funck^\seti = a\circ \funch$,
 \]
 Use the fact that
 \begin{align*}
-\charfunction{\preimage{\funch}(\setiii)}\cdot(a\circ\funch)
+\charfunction{\preimage{\funch}(\setiii)}{}\cdot{}(a\circ\funch)
 & =
-(\charfunction{\setiii}\circ \funch)\cdot(a\circ\funch) \\
+(\charfunction{\setiii}{}\circ{} \funch)\cdot(a\circ\funch) \\
 & =
-(\charfunction{\setiii}\cdot a)\circ \funch \\
+(\charfunction{\setiii}{}\cdot{} a)\circ \funch \\
 \end{align*}
 and write
 \[
@@ -7641,17 +7646,17 @@ and write
 ( a\circ\funch ) \, d\measlambda
 =
 \int_\uspace
-(\charfunction{\setiii}\cdot a)\circ \funch
+(\charfunction{\setiii}{}\cdot{} a)\circ \funch
 \, d\measlambda.
 \]
 Apply a change of variable:
 \begin{align*}
 \int_\uspace
-(\charfunction{\setiii}\cdot a)\circ \funch
+(\charfunction{\setiii}{}\cdot{} a)\circ \funch
 \, d\measlambda
 & =
 \int_\measurespaceiii
-(\charfunction{\setiii}\cdot a)\, d\marginalthree \\
+(\charfunction{\setiii}{}\cdot{} a)\, d\marginalthree \\
 & =
 \int_\measurespaceiii
 \charfunction{\setiii}(\mspaceeltiii)
@@ -8033,10 +8038,6 @@ p(\mspaceelt\mid \mspaceeltii,\mspaceeltiii)
 \end{align*}
 \end{notn}
 
-
-\textbf{In the proof of (1) $\Leftrightarrow$ (2), very clearly state exactly where the
-$\measlambda^\kernast$\hyp{}almost all $\uspaceelt\in\uspace$
-is used.}
 
 
 \begin{prop}\label{conditional_independence_equivalence}
