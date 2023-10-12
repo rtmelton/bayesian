@@ -4585,18 +4585,20 @@ The reason for supposing this is because the Radon-Nikodym theorem applies to me
 %Do \nomenclature[prefix]{symbol}{description}
 %where prefix is used to order the symbol in the Nomenclature list.
 \nomenclature[conditional expectation a]{$\condexpsub{{\lebclass{\funcf}}}{\sigmaalgebraii}$}{conditional expectation in $L_1(\measurespace, \sigmaalgebra,\measure)$}
-Let $(\measurespace, \sigmaalgebra,\measure)$ be a probability space, and let
-$\lebclass{\function} \in L_1(\measurespace, \sigmaalgebra,\measure)$.
-The \textbf{conditional mathematical expectation}
+Let $(\measurespace, \sigmaalgebra,\measure)$ be a probability space.
+For each class
+$\lebclass{\function}$ in $L_1(\measurespace, \sigmaalgebra,\measure)$,
+the \textbf{conditional mathematical expectation}
 $\condexpsub{{\lebclass{\funcf}}}{\sigmaalgebraii}$
-of the class $\lebclass{\funcf}$ with respect to the
-\textsigma-algebra
+of $\lebclass{\funcf}$
+with respect to the \textsigma-algebra
 $\sigmaalgebraii$, or simply the \emph{conditional expectation} of
 $\lebclass{\function}$ with respect to $\sigmaalgebraii$,
 is the unique class in
 $L_1(\measurespace, \sigmaalgebra,\measure)$ from which
 any representative function
-$\funcg \in\cali{L}_1(\measurespace, \sigmaalgebra,\measure)$
+$\funcg$
+%in $\cali{L}_1(\measurespace, \sigmaalgebra,\measure)$
 satisfies the equation
 %
 \[
@@ -4617,11 +4619,11 @@ can be chosen to be $(\sigmaalgebraii,\borel_\R)$\hyp{}measurable.
 
 
 \begin{thm}\label{existence_of_conditional}
-Let $(\measurespace, \sigmaalgebra,\measure)$ be a probability space, and let
+Let $(\measurespace, \sigmaalgebra,\measure)$ be a probability space, with
 $\ellclass{\function}{\measure}\in L_1(\measurespace, \sigmaalgebra,\measure)$. For every $\textsigma$-sub\-algebra $\sigmaalgebraii$ of $\sigmaalgebra$ there exists a unique class 
-$\ellclass{\functionii}{\measure\restrictedto{\sigmaalgebraii}}
-\in
-L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$ such that
+$\ellclass{\functionii}{\measure\restrictedto{\sigmaalgebraii}}$
+in
+$L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$ such that
 %
 \[
 \int_B \function\, d\measure = \int_B \functionii\, d\measure\restrictedto{\sigmaalgebraii} 
@@ -4854,10 +4856,6 @@ $\ellclass{\function}{\measure}$ with respect to the \textsigma-algebra $\sigalg
 
 
 
-%*********************************************************
-%*********************************************************
-\section{Fundamental Properties}
-%
 
 \begin{defn}\label{conditional_expectation_operator}
 Let $\sigmaalgebraii$ be a \textsigma-subalgebra of $\sigmaalgebra$. The following defines a contractive operator:
@@ -4899,6 +4897,12 @@ L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})\Lilst
 \]
 \end{defn}
 
+
+
+%*********************************************************
+%*********************************************************
+\section{Fundamental Properties}
+%
 
 
 \begin{prop}\label{L1embedding}
@@ -7433,14 +7437,14 @@ be measurable:
  & \sigmaalgebraiii \ar[ul]^{\preimage{\functioniii}}\\
 }
 \]
-Say that $\function$ and $\functionii$ are conditionally independent
-given $\functioniii$ if
+Say that $\funcf$ and $\funcg$ are conditionally independent
+given $\funch$ if
 \[
-\condindep{\preimage{\function}(\sigmaalgebra)}{\preimage{\functionii}(\sigmaalgebraii)}
-{\preimage{\functioniii}(\sigmaalgebraiii)}.
+\condindep{\preimage{\funcf}(\sigmaalgebra)}{\preimage{\funcg}(\sigmaalgebraii)}
+{\preimage{\funch}(\sigmaalgebraiii)}.
 \]
 The notation
-$\condindep{\function}{\functionii}{\functioniii}$ may be used.
+$\condindep{\funcf}{\funcg}{\funch}$ may be used.
 \end{notn}
 
 
@@ -8000,7 +8004,7 @@ m_\funch(\mspaceeltiii)
 d(\measmu\times\measnu)(\mspaceelt,\mspaceeltii),
 \\
 \end{align*}
-which supports offhanded statements like,
+which might lean in the direction of offhanded statements like,
 `You can obtain the marginal by integrating out the joint.'
 
 Also, for the following ratios of Radon-Nikodym derivatives, set:
@@ -8028,6 +8032,10 @@ p(\mspaceelt\mid \mspaceeltii,\mspaceeltiii)
 \end{align*}
 \end{notn}
 
+
+\textbf{In the proof of (1) $\Leftrightarrow$ (2), very clearly state exactly where the
+$\measlambda^\kernast$\hyp{}almost all $\uspaceelt\in\uspace$
+is used.}
 
 
 \begin{prop}\label{conditional_independence_equivalence}
@@ -8101,7 +8109,12 @@ Set
 $\sigalg{F}=\preimage{\funcf}(\sigmaalgebra)$, 
 and $\sigalg{G}=\preimage{\funcg}(\sigmaalgebraii)$.
 
-We first look at why the conditional distributions are regular.
+We first look at why the conditional distributions
+$\condprobop{\sigalg{H}}\circ \preimage{\funcf}$,
+$\condprobop{\sigalg{H}}\circ \preimage{\funcg}$,
+and
+$\condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)}$
+are regular.
 Verify that if
 \[
 \measlambda\circ\preimage{(\function,\functionii,\functioniii)}
@@ -8143,13 +8156,13 @@ the conditional distribution
 $\condprobop{\sigalg{H}}\circ \preimage{\funcg}$
 is regular.
 
-By a similar argument, the conditional distribution
+Similarly, the conditional distribution
 $\condprobop{\sigalg{H}}\circ \preimage{\funcf}$
 must also be regular.
 
 To show that
 $\condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)}$
-is regular is also similar: By Proposition~\ref{joint_abscont},
+is regular, again, by Proposition~\ref{joint_abscont},
 \[
 \measlambda\circ \preimage{(\funcf, \funcg, \funch)}
 \abscont
@@ -8170,7 +8183,14 @@ is regular.
 
 \textbf{(1) $\Rightarrow$ (2)}\quad
 Let
-$\condindep{\function}{\functionii}{\functioniii}$. 
+$\condindep{\function}{\functionii}{\functioniii}$, meaning
+$\condindep{\preimage{\funcf}(\sigmaalgebra)}{\preimage{\funcg}(\sigmaalgebraii)}
+{\preimage{\funch}(\sigmaalgebraiii)}$, or using $\sigalg{H}$ in place of
+$\preimage{\funch}(\sigmaalgebraiii)$,
+\[
+\condindep{\preimage{\funcf}(\sigmaalgebra)}{\preimage{\funcg}(\sigmaalgebraii)}
+{\sigalg{H}}.
+\]
 By the very Definition~\ref{conditionally_independent} of conditionally independent \textsigma\hyp{}subalgebras,
 this is saying nothing but
 \begin{equation}
@@ -8367,7 +8387,8 @@ p(\mspaceeltii\mid\mspaceeltiii)
 \]
 for $(\measmu\times\measnu)^\kernast$\hyp{}almost all $(\mspaceelt,\mspaceeltii)$ in
 $\measurespace\times\measurespaceii$.
-(But what is the qualifier on $\mspaceeltiii$? Likely $\marginalthree^\kernast$\hyp{}almost all
+(But what is the qualifier on $\mspaceeltiii$? Likely
+$\marginalthree^\kernast$\hyp{}almost all
 $\mspaceeltiii\in\measurespaceiii$.)
 Although it is true that
 $\productsig{\sigmaalgebra}{\sigmaalgebraii}$
@@ -8382,8 +8403,9 @@ p(\mspaceelt\mid\mspaceeltiii)\cdot
 p(\mspaceeltii\mid\mspaceeltiii)
 \]
 for $(\measmu\times\measnu)^\kernast$\hyp{}almost all $(\mspaceelt,\mspaceeltii)$ in
-$\measurespace\times\measurespaceii$.
-
+$\measurespace\times\measurespaceii$, and for
+$\marginalthree^\kernast$\hyp{}almost all
+$\mspaceeltiii\in\measurespaceiii$.
 
 \textbf{(3) $\Leftrightarrow$ (4)}\quad
 Divide both sides of (3) by $p(\mspaceeltii\mid\mspaceeltiii)$.
