@@ -1456,7 +1456,7 @@ Let $(\measurespace, \sigmaalgebra, \measure)$ be a $\textsigma$-finite measure 
 Roughly, we show the result holds for characteristic functions, then for simple functions, then for pointwise limits of simple functions. 
 Assume $f(x)\geq 0$ for all $x\in\measurespace$.
 
-Let $A$ be a  $\measure^\kernast$-measurable subset of $\measurespace$ with  $f=\charfunction{A}$, so $f$ is an \mbmeasurable\ characteristic function. By Proposition~\ref{approximation_sigma_finite}, there is a subset $C\subseteq\measurespace$ with $A\meets C =\mtset$ and  such that $\measure^*(C) = 0$ with $A\cup C\in \sigmaalgebra$.  
+Let $A$ be a  $\measure^\kernast$-measurable subset of $\measurespace$, and suppose $f=\charfunction{A}$, so $f$ is a \mbmeasurable\ characteristic function. By Proposition~\ref{approximation_sigma_finite}, there is a subset $C\subseteq\measurespace$ with $A\meets C =\mtset$ and  such that $\measure^*(C) = 0$ with $A\cup C\in \sigmaalgebra$.
 Take $g=\charfunction{A\cup C}$, so $g$ is an $(\sigmaalgebra,\borel_\R)$\hyp{}measurable characteristic function. Then $g-f = \charfunction{C}$, and $\measure^*(C) = 0$, which says that $f=g$ $\measure^\kernast$-almost everywhere.
 
 Now let $f$ be a $(\measurable{\measure^\kernast},\borel_\R)$-simple function, so by definition we can let the set $\{a_1,\ldots, a_n\}$ denote the range of $f$. Further, let $A_i = \preimage{f}(a_i)$, so each $A_i$ is a $\measure^\kernast$-measurable subset of $\measurespace$. We can write $f=\sum_{i=1}^n a_i\charfunction{A_i}$.
@@ -1476,7 +1476,8 @@ It follows that $\mspaceeltii_n(x) \uparrow f(x)$ for all $x$ in the complement 
 
 
 \begin{defn}\label{step_function}
-A $(\measurable{\measure^\kernast}, \borel_\R)$\hyp{}simple function is called a 
+Let us say that a
+$(\measurable{\measure^\kernast}, \borel_\R)$\hyp{}simple function is a
 $(\measurable{\measure^\kernast},\borel_\R)$\hyp{}\term{step function} if it can be expressed as a linear combination of characteristic functions of $\measure^\kernast$\hyp{}measurable sets of finite measure.  For example, $\phi=\sum_{i=1}^n a_i\charfunction{A_i}$, where each $A_i$ is a $\measure^\kernast$-measurable set with $\measure^*(A_i) < \infty$, where we can suppose the $A_i$ to be pairwise disjoint.
 \end{defn}
 
@@ -7084,7 +7085,7 @@ $\measurespaceii$ with respect to the measure $\marginaltwo$.
 By Proposition~\ref{sigma_algebra_measurable}, each $\funcj^\seti$ can also be taken
 $(\sigmaalgebraii,\borel_\R)$\hyp{}measurable.
 Let us show that we can redefine the codomain of each
-$\funcj^\seti$ to be $[0,1]$ rather than $\R$.
+$\funcj^\seti$ to be $[0,1]$ rather than all of $\R$.
 
 By Proposition~\ref{almost_a_measure},
 \[
@@ -8192,17 +8193,17 @@ $\preimage{\funch}(\sigmaalgebraiii)$,
 {\sigalg{H}}.
 \]
 By the very Definition~\ref{conditionally_independent} of conditionally independent \textsigma\hyp{}subalgebras,
-this is saying nothing but
-\begin{equation}
+this is equivalent to saying
+\[
 \condprobsub{\lilstrut\preimage{\funcf}(\seti) \meets \preimage{\funcg}(\setii)}{\sigalg{H}}
 =
 \condprobsub{\lilstrut\preimage{\funcf}(\seti)}{\sigalg{H}}
 \cdot
 \condprobsub{\lilstrut\preimage{\funcg}(\setii)}{\sigalg{H}}
-\end{equation}
+\]
 for all $\seti\in\sigmaalgebra$ and for all $\setii\in\sigmaalgebraii$.
 This is an equality of classes in
-$L_1(\uspace,\uspacesig,\measureiii)$, and can be written as
+$L_1(\uspace,\uspacesig,\measureiii)$, and can be rewritten as
 \begin{equation}
 \condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)}
 (\seti\times\setii)
@@ -8211,7 +8212,12 @@ $L_1(\uspace,\uspacesig,\measureiii)$, and can be written as
 \cdot
 \condprobop{\sigalg{H}}\circ \preimage{\funcg}(\setii).
 \end{equation}
-The corresponding Markov kernels have the property that:
+Recall that two classes in
+$L_1(\uspace,\uspacesig,\measureiii)$
+are equal precisely when they have representatives that are equal for
+$\measlambda^\kernast$\hyp{}almost all $\uspaceelt$ in  $\uspace$.
+Such representatives in this case are easy to find since
+the corresponding Markov kernels have the property that:
 \[
 \funcm^{\seti\times\setii} \in
 \condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)}
@@ -8232,9 +8238,11 @@ It follows that
 =
 \funck^\seti(\uspaceelt)
 \cdot
-\funcl^\setii(\uspaceelt),
+\funcl^\setii(\uspaceelt)
+\quad
+\text{for $\measlambda^\kernast$\hyp{}almost all $\uspaceelt\in\uspace$.}
 \]
-and consequently
+Since $\funck$, $\funcl$, and $\funcm$ are Markov kernels,
 \[
 \funcm_\uspaceelt(\seti\times\setii)
 =
@@ -8242,8 +8250,9 @@ and consequently
 \cdot
 \funcl_\uspaceelt(\setii)
 \]
-for all $\seti\in\sigmaalgebra$, $\setii\in\sigmaalgebraii$, and
-$\measlambda^\kernast$\hyp{}almost all $\uspaceelt\in\uspace$.
+for all $\seti\in\sigmaalgebra$, $\setii\in\sigmaalgebraii$, and for
+$\measlambda^\kernast$\hyp{}almost all $\uspaceelt\in\uspace$, as required.
+\hfill\qedsymbol
 
 \textbf{(1) $\Leftarrow$ (2)}\quad
 Let
@@ -8256,22 +8265,26 @@ Let
 \]
 for all $\seti\in\sigmaalgebra$, $\setii\in\sigmaalgebraii$, and
 $\measlambda^\kernast$\hyp{}almost all $\uspaceelt\in\uspace$.
-Then
+Since  $\funck$, $\funcl$, and $\funcm$ are Markov kernels,
 \[
 \funcm^{\seti\times\setii}(\uspaceelt)
 =
 \funck^\seti(\uspaceelt)
 \cdot
-\funcl^\setii(\uspaceelt),
+\funcl^\setii(\uspaceelt)
+\quad
+\text{for
+$\measlambda^\kernast$\hyp{}almost all $\uspaceelt\in\uspace$.}
 \]
-for
-$\measlambda^\kernast$\hyp{}almost all $\uspaceelt\in\uspace$.
-Since
+Check that the function
 $\funcm^{\seti\times\setii}$
-is integrable with respect to $\measlambda$, it follows that
+is bounded, and is
+$(\sigalg{H},\borel_\R)$\hyp{}measurable and so
+$\measlambda^\kernast$\hyp{}measurable, so by Proposition~\ref{dominated_by_integrable}
+is integrable with respect to $\measlambda$. It follows that the function
 $\funck^\seti\cdot\funcl^\setii$
-is integrable with respect to $\measlambda$.
-According to the definition of the product of classes,
+is integrable with respect to $\measlambda$, even by the very Definition~\ref{integrable} of integrability.
+According to the Definition~\ref{Lp} of the product of classes,
 \begin{align*}
 \ellclass{\funck^\seti}{}
 \cdot
@@ -8285,18 +8298,26 @@ Because these Markov kernels correspond to their regular conditional distributio
 $\ellclass{\funck^\seti}{}
 =
 \condprobop{\sigalg{H}}\circ \preimage{\funcf}(\seti)$,
-it follows that
+it follows from the equality
 \[
-\condprobop{\sigalg{H}}\circ \preimage{\funcf}(\seti)
+\ellclass{\funck^\seti}{}
 \cdot
-\condprobop{\sigalg{H}}\circ \preimage{\funcg}(\setii)
+\ellclass{\funcl^\setii}{}
+=
+\ellclass{\funcm^{\seti\times\setii}}{}
+\]
+that
+\[
+\condprobop{\sigalg{H}} \circ \preimage{\funcf}(\seti)
+\cdot
+\condprobop{\sigalg{H}} \circ \preimage{\funcg}(\setii)
 =
 \condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)}
 (\seti\times\setii),
 \]
 which is equivalent to
 $\condindep{\function}{\functionii}{\functioniii}$,
-as required.
+as required.\hfill\qedsymbol
 
 
 
