@@ -2683,7 +2683,7 @@ The idea of a product semiring generalizes in a clear way to the product of more
 $(\seti\times\setii)\times \setiii$
 and
 $\seti\times(\setii\times\setiii)$ as equivalent, and may (co)universally write 
-$\seti\times\setii\times\setiii$. It means that if $\sigalg{U}$ were a semiring of subsets of a set $Z$, then expressions like $\productsemiring{\semiring}{\semiringii , \semiringiii}$ would make perfect sense.
+$\seti\times\setii\times\setiii$. It means that if $\sigalg{U}$ were a semiring of subsets of a set $Z$, then expressions like $\productsemiring{\semiring}{\semiringii , \semiringiii}$, under the identification, are well-defined.
 \end{defn}
  
 
@@ -2795,7 +2795,7 @@ $(\measurespace, \semiring, \measure)$
 and
 $(\measurespaceii, \semiringii, \measureii)$ 
 are both \textsigma\hyp{}finite, then the measure
-$\measure^*\times\measureii^*$ agrees with the measure
+$\measure^*\times\measureii^*$ agrees with
 $(\measure\times\measureii)^*$ on the semiring
 $\productsemiring{\measurable{\measure^\kernast}}{\measurable{\measureii^\kernast}}$.
 \end{prop}
@@ -2824,12 +2824,12 @@ and by Proposition~\ref{semiring_inclusion}, it follows that
 \]
 By Proposition~\ref{product_measure_space}, the set function 
 $\measure^*\times\measureii^*$
-is a measure on 
+is a measure on the semiring
 $\productsemiring{\measurable{\measure^\kernast}}{\measurable{\measureii^\kernast}}$.
 Further, the measure 
 $\measure^*\times\measureii^*$
 agrees with the measure
-$\measure\times\measureii$ on 
+$\measure\times\measureii$ on the semiring
 $\productsemiring{\semiring}{\semiringii}$ for if 
 $\seti\in\semiring$ and $\setii\in\semiringii$, then 
 \begin{align*}
@@ -2900,7 +2900,9 @@ Let us apply Proposition~\ref{extension_measure} to the inclusion
 \subseteq
 \measurable{(\measure\times\measureii)^\kernast}.
 \]
-The proposition says that if a measure agrees with $\measmu\times\measnu$ on
+The proposition says that if a measure on
+$\productsig{\semiring}{\semiringii}$
+agrees with $\measmu\times\measnu$ on
 $\productsemiring{\semiring}{\semiringii}$, then that measure agrees with
 $(\measmu\times\measnu)^*$ on
 $\productsig{\semiring}{\semiringii}$.
@@ -3638,7 +3640,7 @@ $\measure\times\measureii$.
 By Fubini's Theorem~\ref{fubini} then, the corresponding iterated integral
 $\int_\measurespace\int_\measurespaceii \funcf \,d\measureii\,d\measure$
 exists.
-This implies that the function 
+This means that the function
 \[
 \function_\mspaceelt:\measurespaceii\to\R :
 \mspaceeltii\mapsto\function(\mspaceelt,\mspaceeltii)
@@ -7769,7 +7771,7 @@ $\funck^\seti\in
 \condprobop{\sigalg{H}}\circ\, \preimage{\function}(\seti)$
 for all $\seti\in\sigmaalgebra$,
 then
-for $\marginalthree^*$\hyp{}almost all $\mspaceeltiii\in\measurespaceiii$, any measure
+for $\marginalthree^*$\hyp{}almost all $\mspaceeltiii\in\measurespaceiii$, each measure
 $\funck_\uspaceelt$
 on $\sigmaalgebra$ such that $\funch(\uspaceelt) = \mspaceeltiii$
 has the following density function with respect to the measure
@@ -7989,7 +7991,7 @@ m_\funch
 \end{align*}
 Vaguely, these are the densities of the joint and some of the marginals.
 We are supposing that all Radon-Nikodym derivatives in sight here exist.
-By the proof of Proposition~\ref{marginal_abscont},
+Also, by the proof of Proposition~\ref{marginal_abscont},
 \begin{align*}
 m_{\function,\functioniii} (\mspaceelt,\mspaceeltiii)
 & =
@@ -8013,25 +8015,25 @@ d(\measmu\times\measnu)(\mspaceelt,\mspaceeltii),
 which might lean in the direction of offhanded statements like,
 `You can obtain the marginal by integrating out the joint.'
 
-Also, for the following ratios of Radon-Nikodym derivatives, set:
+Also, for the following ratios of Radon-Nikodym derivatives, define:
 \begin{align*}
 p(\mspaceelt,\mspaceeltii\mid\mspaceeltiii)
-& =
+& \definedby
 \frac{j(\mspaceelt,\mspaceeltii,\mspaceeltiii)}
 {m_{\functioniii} (\mspaceeltiii)},
 \\
 p(\mspaceelt\mid\mspaceeltiii)
-& =
+& \definedby
 \frac{m_{\function,\functioniii}(\mspaceelt,\mspaceeltiii)}
 {m_{\functioniii} (\mspaceeltiii)},
 \\
 p(\mspaceeltii\mid\mspaceeltiii)
-& =
+& \definedby
 \frac{m_{\functionii,\functioniii}(\mspaceeltii,\mspaceeltiii)}
 {m_{\functioniii} (\mspaceeltiii)},
 \\
 p(\mspaceelt\mid \mspaceeltii,\mspaceeltiii)
-& =
+& \definedby
 \frac{ j( \mspaceelt, \mspaceeltii, \mspaceeltiii) }
 {m_{\functionii, \functioniii} ( \mspaceeltii,\mspaceeltiii ) }.
 \\
