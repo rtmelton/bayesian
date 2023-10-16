@@ -3506,7 +3506,7 @@ By transitivity of equality,
 \]
 and this says $\marginalone\abscont \measure$
 on $\sigmaalgebra$ with
-$\funcj = d\marginalone/d\measure$.
+$d\marginalone/d\measure = \funcj$.
 \end{proof}
 
 
@@ -8040,10 +8040,105 @@ p(\mspaceelt\mid \mspaceeltii,\mspaceeltiii)
 \end{align*}
 \end{notn}
 
-\textbf{You have two propositions here; separate them. (1) If absolute continuity holds, then the conditional distributions are regular. This is just a corollary to earlier work. (2) If the conditional distributions are regular, then the following are equivalent.}
 
-\textbf{Look, if $\mu$ and $\nu$ are \textsigma\hyp{}finite, then $\mu\times\nu$ is
-\textsigma\hyp{}finite. It just is. Remove the statement. Get some sleep.}
+\begin{prop}\label{abs_cont_reg}
+Let
+$(\uspace,\uspacesig,\measlambda)$
+be a probability space, and let functions
+$\function:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$,
+$\functionii:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$,
+and
+$\functioniii:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
+be measurable, with \textsigma-finite reference measures
+$\measure$, $\measureii$, and $\measureiv$ on respective \textsigma-algebras
+$\sigmaalgebra$, $\sigmaalgebraii$, and $\sigmaalgebraiii$.
+Set $\sigalg{H}=\preimage{\funch}(\sigmaalgebraiii)$.
+If
+$\measureiii\circ\preimage{(\function,\functionii,\functioniii)}
+\abscont
+(\measure\times\measureii\times\measureiv)^*$ on
+$\productsig{\sigmaalgebra}{\sigmaalgebraii,\sigmaalgebraiii}$,
+then the conditional distributions
+$\condprobop{\sigalg{H}}\circ \preimage{\funcf}$,
+$\condprobop{\sigalg{H}}\circ \preimage{\funcg}$,
+and
+$\condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)}$
+are regular.
+\end{prop}
+
+\begin{proof}
+Set
+$\sigalg{F}=\preimage{\funcf}(\sigmaalgebra)$,
+and $\sigalg{G}=\preimage{\funcg}(\sigmaalgebraii)$.
+
+
+Verify that if
+\[
+\measlambda\circ\preimage{(\function,\functionii,\functioniii)}
+\abscont
+(\measmu\times\measnu\times\measrho)^*
+\]
+on
+$\productsig{\sigmaalgebra}{\sigmaalgebraii,\sigmaalgebraiii}
+=
+\productsig{\sigmaalgebra}{\productsig{\sigmaalgebraii}{\sigmaalgebraiii}}$,
+then by applying the proof of Proposition~\ref{marginal_abscont}, you get
+\[
+\measlambda\circ \preimage{(\funcg,\funch)}
+\abscont
+(\measnu\times\measrho)^*
+\]
+on
+$\productsig{\sigmaalgebraii}{\sigmaalgebraiii}$.
+In particular, by applying the proof, you show
+\[
+\frac{d(\measlambda\circ \preimage{(\funcg,\funch)})}{d(\measnu\times\measrho)^*}
+:\measurespaceii\times\measurespaceiii \to  \R
+:(\mspaceeltii,\mspaceeltiii)\mapsto
+\int_\measurespace
+\frac{d(\measlambda\circ\preimage{(\function,\functionii,\functioniii)})}
+{d(\measmu\times\measnu\times\measrho)^*}
+(\mspaceelt,\mspaceeltii,\mspaceeltiii)\,d\measmu(\mspaceelt).
+\]
+Then by Proposition~\ref{joint_abscont},
+\[
+\measlambda\circ \preimage{(\funcg,\funch)}
+\abscont
+\bigl((\measlambda\circ\preimage{\funcg})
+\times
+(\measlambda\circ\preimage{\funch})\bigr)^*,
+\]
+and so by Proposition~\ref{absolute_continuity_regular},
+the conditional distribution
+$\condprobop{\sigalg{H}}\circ \preimage{\funcg}$
+is regular.
+
+Symmetrically, the conditional distribution
+$\condprobop{\sigalg{H}}\circ \preimage{\funcf}$
+must also be regular.
+
+To show that
+$\condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)}$
+is regular, again, by Proposition~\ref{joint_abscont},
+\[
+\measlambda\circ \preimage{(\funcf, \funcg, \funch)}
+\abscont
+\bigl((\measlambda\circ\preimage{(\funcf,\funcg)})
+\times
+(\measlambda\circ\preimage{\funch})\bigr)^*
+\]
+on
+$\productsig{\sigmaalgebra}{\sigmaalgebraii,\sigmaalgebraiii}
+=
+\productsig{\productsig{\sigmaalgebra}{\sigmaalgebraii}}{\sigmaalgebraiii}$,
+and so by Proposition~\ref{absolute_continuity_regular},
+the conditional distribution
+$\condprobop{\sigalg{H}}\circ \preimage{(\funcf,\funcg)}$
+is regular.
+\end{proof}
+
+
+
 
 \begin{prop}\label{conditional_independence_equivalence}
 Let
@@ -8056,9 +8151,7 @@ $\functioniii:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
 be measurable, with \textsigma-finite reference measures
 $\measure$, $\measureii$, and $\measureiv$ on respective \textsigma-algebras
 $\sigmaalgebra$, $\sigmaalgebraii$, and $\sigmaalgebraiii$.
-Let $\measmu\times\measnu$ be a \textsigma\hyp{}finite measure on
-$\productsig{\sigmaalgebra}{\sigmaalgebraii}$, and
-set $\sigalg{H}=\preimage{\funch}(\sigmaalgebraiii)$.
+Set $\sigalg{H}=\preimage{\funch}(\sigmaalgebraiii)$.
 Let
 $\measureiii\circ\preimage{(\function,\functionii,\functioniii)}
 \abscont
@@ -8115,77 +8208,8 @@ $(\measlambda\circ\preimage{\funch})$\hyp{}almost all $\mspaceeltiii\in\measures
 Set 
 $\sigalg{F}=\preimage{\funcf}(\sigmaalgebra)$, 
 and $\sigalg{G}=\preimage{\funcg}(\sigmaalgebraii)$.
-
-We first look at why the conditional distributions
-$\condprobop{\sigalg{H}}\circ \preimage{\funcf}$,
-$\condprobop{\sigalg{H}}\circ \preimage{\funcg}$,
-and
-$\condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)}$
-are regular.
-Verify that if
-\[
-\measlambda\circ\preimage{(\function,\functionii,\functioniii)}
-\abscont
-(\measmu\times\measnu\times\measrho)^*
-\]
-on
-$\productsig{\sigmaalgebra}{\sigmaalgebraii,\sigmaalgebraiii}
-=
-\productsig{\sigmaalgebra}{\productsig{\sigmaalgebraii}{\sigmaalgebraiii}}$,
-then by applying the proof of Proposition~\ref{marginal_abscont}, you get
-\[
-\measlambda\circ \preimage{(\funcg,\funch)}
-\abscont
-(\measnu\times\measrho)^*
-\]
-on
-$\productsig{\sigmaalgebraii}{\sigmaalgebraiii}$.
-In particular, by applying the proof, you show
-\[
-\frac{d(\measlambda\circ \preimage{(\funcg,\funch)})}{d(\measnu\times\measrho)^*}
-:\measurespaceii\times\measurespaceiii \to  \R
-:(\mspaceeltii,\mspaceeltiii)\mapsto
-\int_\measurespace
-\frac{d(\measlambda\circ\preimage{(\function,\functionii,\functioniii)})}
-{d(\measmu\times\measnu\times\measrho)^*}
-(\mspaceelt,\mspaceeltii,\mspaceeltiii)\,d\measmu(\mspaceelt).
-\]
-Then by Proposition~\ref{joint_abscont},
-\[
-\measlambda\circ \preimage{(\funcg,\funch)}
-\abscont
-\bigl((\measlambda\circ\preimage{\funcg})
-\times
-(\measlambda\circ\preimage{\funch})\bigr)^*,
-\]
-and so by Proposition~\ref{absolute_continuity_regular},
-the conditional distribution
-$\condprobop{\sigalg{H}}\circ \preimage{\funcg}$
-is regular.
-
-Similarly, the conditional distribution
-$\condprobop{\sigalg{H}}\circ \preimage{\funcf}$
-must also be regular.
-
-To show that
-$\condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)}$
-is regular, again, by Proposition~\ref{joint_abscont},
-\[
-\measlambda\circ \preimage{(\funcf, \funcg, \funch)}
-\abscont
-\bigl((\measlambda\circ\preimage{(\funcf,\funcg)})
-\times
-(\measlambda\circ\preimage{\funch})\bigr)^*
-\]
-on
-$\productsig{\sigmaalgebra}{\sigmaalgebraii,\sigmaalgebraiii}
-=
-\productsig{\productsig{\sigmaalgebra}{\sigmaalgebraii}}{\sigmaalgebraiii}$,
-and so by Proposition~\ref{absolute_continuity_regular},
-the conditional distribution
-$\condprobop{\sigalg{H}}\circ \preimage{(\funcf,\funcg)}$
-is regular.
-
+We know the conditional distributions
+are regular by Proposition~\ref{abs_cont_reg}, so they do have corresponding Markov kernels by Proposition~\ref{equivalent_definition_regular_distribution}.
 
 
 \textbf{(1) $\Rightarrow$ (2)}\quad
