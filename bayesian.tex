@@ -8295,26 +8295,32 @@ Let
 \]
 for all $\seti\in\sigmaalgebra$, $\setii\in\sigmaalgebraii$, and
 $\measlambda^\kernast$\hyp{}almost all $\uspaceelt\in\uspace$.
-Since  $\funck$, $\funcl$, and $\funcm$ are Markov kernels,
+Since  $\funck$, $\funcl$, and $\funcm$ are Markov kernels, so equalities like
+\[
+\funcm_\uspaceelt(\seti\times\setii)
+=
+\funcm^{\seti\times\setii}(\uspaceelt)
+\]
+hold, it follows that
 \[
 \funcm^{\seti\times\setii}(\uspaceelt)
 =
 \funck^\seti(\uspaceelt)
 \cdot
 \funcl^\setii(\uspaceelt)
-\quad
-\text{for
-$\measlambda^\kernast$\hyp{}almost all $\uspaceelt\in\uspace$.}
 \]
+for all $\seti\in\sigmaalgebra$, $\setii\in\sigmaalgebraii$, and
+for
+$\measlambda^\kernast$\hyp{}almost all $\uspaceelt\in\uspace$.
 Check that the function
 $\funcm^{\seti\times\setii}$
 is bounded, and is
-$(\sigalg{H},\borel_\R)$\hyp{}measurable and so
+$(\sigalg{H},\borel_\R)$\hyp{}measurable, implying it is
 $\measlambda^\kernast$\hyp{}measurable, so by Proposition~\ref{dominated_by_integrable}
 is integrable with respect to $\measlambda$. It follows that the function
 $\funck^\seti\cdot\funcl^\setii$
 is integrable with respect to $\measlambda$, even by the very Definition~\ref{integrable} of integrability.
-According to the Definition~\ref{Lp} of the product of classes,
+Then according to the Definition~\ref{Lp} of the product of classes,
 \begin{align*}
 \ellclass{\funck^\seti}{}
 \cdot
