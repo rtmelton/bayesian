@@ -663,8 +663,8 @@ One main difference: In the case of a measure on a  \textsigma\hyp{}algebra and 
 
 
 
-Statistical models only started making sense after learning Bayesian statistical models.  That is all you will find here. All of the material regarding frequentist statistics has been edited out, like when a cocoon is left behind.
-For mathematicians, this is more of a measure-theoretic companion to something  comprehensive and explanatory on applied Bayesian statistical models.  I strongly recommend Richard McElreath's \textsl{Statistical Rethinking}~\cite{sr_mcelreath_2020}.
+Statistical models only started making sense after learning Bayesian statistical models.  That is all you will find here. All of the material regarding frequentist statistics has been edited out, like when the cocoon is left behind.
+For mathematicians, this material is more of a measure-theoretic companion to something  comprehensive and explanatory on applied Bayesian statistical models.  I strongly recommend Richard McElreath's \textsl{Statistical Rethinking}~\cite{sr_mcelreath_2020}.
 
 
 One more thing.
@@ -944,7 +944,7 @@ Let $A\subseteq\measurespace$.
 We first look at the case where the outer measure of $A$  is infinite; let $\measure^*(A)=\infty$. We can take $B=\measurespace$; we know $\measurespace\in \sagb(\semiring)$ because $\mtset \in \semiring$ and algebras 
 (therefore \textsigma-algebras) are closed with respect to complements.  And outer measures are monotone, so $\measure^*(A) \leq \measure^*(\measurespace)$. But this implies that $\measure^*(\measurespace)=\infty$, so $\measure^*(A) = \measure^*(\measurespace)$, completing the proof of this case.
 
-We now look at the complementary case; let $\measure^*(A) < \infty$. For each $k\in\{1,2,\ldots\}$ there must be, according to the definition of $\measure^*(A)$, a sequence $\{A^k_1, A^k_2, \ldots \}$ of $\semiring$ whose union covers $A$, where
+We now look at the complementary case; let $\measure^*(A)$ be finite. For each $k\in\{1,2,\ldots\}$ there must be, according to the definition of $\measure^*(A)$, a sequence $\{A^k_1, A^k_2, \ldots \}$ of $\semiring$ whose union covers $A$, where
 \[
 \measure^*(A)\leq \sum_{n=1}^\infty\measure(A^k_n) < \measure^*(A) + 1/k.
 \] 
