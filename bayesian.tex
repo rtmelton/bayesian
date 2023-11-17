@@ -4200,6 +4200,54 @@ There is no intelligible sense in which the terms \emph{density} and \emph{proba
 \end{rmk}
 
 
+\section{Expected Value}
+%*********************************************************
+%*********************************************************
+\begin{defn}\label{expected_value}
+For a class $\ellclass{\function}{\measure}$ in $L_1(\measurespace, \semiring,\measure)$, the
+\term{expected value} $\expval{\ellclass{\function}{\measure}}$ of the class
+$\ellclass{\function}{\measure}$ is
+$\int\function\,d\mu$. That is, the operator $\expval$ is the linear functional defined by
+\[
+\expval:
+L_1(\measurespace, \semiring,\measure)\to\R :
+\ellclass{\function}{\measure}\mapsto \int_\measurespace \function\, d\measure.
+\]
+\end{defn}
+
+\begin{rmk}
+Let
+$\ellclass{\function}{\measure}$ be in $L_1(\measurespace, \semiring,\measure)$.
+Under the condition that some function $\funcg:\R \to\R$ is integrable with respect to
+$\measmu\circ\preimage{\funcf}$, then by a change of variable,
+\[
+\int_\measurespace (\funcg \circ \funcf)\, d\measmu
+=
+\int_\R \funcg \, d(\measmu \circ \preimage{\funcf}).
+\]
+If  $\measmu\circ\preimage{\funcf}$ is absolutely continuous with respect to Lebesgue measure
+$\measlambda$, with $p$ representing the corresponding Radon-Nikodym derivative, then
+\[
+\int_\R \funcg \, d(\measmu \circ \preimage{\funcf})
+=
+\int_\R \funcg(t) p(t) \, d\measlambda(t).
+\]
+That is,
+\[
+\int_\measurespace (\funcg \circ \funcf)\, d\measmu
+=
+\int_\R \funcg(t) p(t) \, d\measlambda(t).
+\]
+Taking $\funcg$ to be the identity function $\funcg(t)=t$,
+\[
+\int_\measurespace \funcf \, d\measmu
+=
+\int_\R t p(t) \, d\measlambda(t).
+\]
+You \emph{could} compute the expected value this way. Throw in the detail by way of Proposition~\ref{radon_nikodym_corollary}.
+\end{rmk}
+
+
 \section{Independence}
 %*********************************************************
 %*********************************************************
@@ -4285,17 +4333,8 @@ $\functioniii$ and $\functioniv$ are independent.
 
 
 
-\begin{defn}\label{expected_value}
-For a class $\ellclass{\function}{\measure}$ in $L_1(\measurespace, \semiring,\measure)$, the
-\term{expected value} $\expval{\ellclass{\function}{\measure}}$ of the class 
-$\ellclass{\function}{\measure}$ is 
-$\int\function\,d\mu$. That is, the operator $\expval$ is the linear functional defined by
-\[
-\expval: 
-L_1(\measurespace, \semiring,\measure)\to\R :
-\ellclass{\function}{\measure}\mapsto \int_\measurespace \function\, d\measure.
-\]
-\end{defn}
+
+
 
 
 
