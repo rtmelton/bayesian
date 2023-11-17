@@ -7764,13 +7764,14 @@ $\funch(\uspaceelt)=\mspaceeltiii$, as required.
 
 
 \begin{notn}
-In some of the literature, you may see the density
+In some of the literature, you might see the density
 $d \funck_\uspaceelt / d \measure$,
-where $\funch(u)=z$,
-described as representing ``the conditional distribution of $\funcf$ given $\funch = z$'' with notation such as
-$p(x\mid z)$
+where $\funch(\uspaceelt) = \mspaceeltiii$,
+described as representing ``the conditional distribution of $\funcf$ given
+$\funch = \mspaceeltiii$'' with notation such as
+$p(\mspaceelt \mid \mspaceeltiii)$
 or possibly something like
-$\measlambda_{f\vert h=z}$.
+$\measlambda_{\funcf\vert \funch = \mspaceeltiii}$.
 \end{notn}
 
 
@@ -8013,7 +8014,8 @@ m_\funch
 \end{align*}
 Vaguely, these are the densities of the joint and some of the marginals.
 We are supposing that all Radon-Nikodym derivatives in sight here exist.
-Also, by the proof of Proposition~\ref{marginal_abscont},
+
+By the proof of Proposition~\ref{marginal_abscont},
 \begin{align*}
 m_{\function,\functioniii} (\mspaceelt,\mspaceeltiii)
 & =
@@ -8034,10 +8036,10 @@ m_\funch(\mspaceeltiii)
 d(\measmu\times\measnu)(\mspaceelt,\mspaceeltii),
 \\
 \end{align*}
-which might lean in the direction of offhanded statements like,
+which could lean in the direction of offhanded statements like,
 `You can obtain the marginal by integrating out the joint.'
 
-Also, for the following ratios of Radon-Nikodym derivatives, define:
+For the following ratios of Radon-Nikodym derivatives, define:
 \begin{align*}
 p(\mspaceelt,\mspaceeltii\mid\mspaceeltiii)
 & \definedby
@@ -8060,6 +8062,28 @@ p(\mspaceelt\mid \mspaceeltii,\mspaceeltiii)
 {m_{\functionii, \functioniii} ( \mspaceeltii,\mspaceeltiii ) }.
 \\
 \end{align*}
+
+Finally, suppose we were to set
+$p(x,z) = m_{f,h}(x,z)$
+and
+$p(z) = m_h(z)$, so that
+\[
+p(x\mid z) =
+\frac{p(x,z)}{p(z)}.
+\]
+By Proposition~\ref{joint_abscont} and Proposition~\ref{conditional_density},
+if $h(u)=z$, then
+\[
+\frac{d k_u}{d \measmu}(x) = \frac{p(x,z)}{p(z)}.
+\]
+That is,
+\[
+p(x \mid z) = \frac{d k_u}{d \measmu}(x)
+\quad
+\text{for $h(u) = z$.}
+\]
+The point being that, since this has been described as representing
+``the conditional distribution of $f$ given $h=z$,'' this might add credence to the `$\vert$' symbol in expressions like $p(x\mid z)$.
 \end{notn}
 
 
