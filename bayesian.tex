@@ -4215,18 +4215,26 @@ L_1(\measurespace, \semiring,\measure)\to\R :
 \]
 \end{defn}
 
+
+
 \begin{rmk}
-Let
-$\ellclass{\function}{\measure}$ be in $L_1(\measurespace, \semiring,\measure)$.
-Under the condition that some function $\funcg:\R \to\R$ is integrable with respect to
-$\measmu\circ\preimage{\funcf}$, then by a change of variable,
+In the case that the measure
+$\measmu\circ\preimage{\funcf}$ is absolutely continuous with respect to some reference measure
+$\measlambda$ on $\borel_\R$,
+with $p$, say, representing the corresponding Radon-Nikodym derivative, then the expected value can be found by
+\[
+\int_\measurespace \funcf \, d\measmu
+=
+\int_\R t p(t) \, d\measlambda(t),
+\]
+and to see this, let $\funcg:\R \to\R$ be any function integrable with respect to
+$\measmu\circ\preimage{\funcf}$.  By a change of variable,
 \[
 \int_\measurespace (\funcg \circ \funcf)\, d\measmu
 =
 \int_\R \funcg \, d(\measmu \circ \preimage{\funcf}).
 \]
-If  $\measmu\circ\preimage{\funcf}$ is absolutely continuous with respect to a reference measure
-$\measlambda$, with $p$ representing the corresponding Radon-Nikodym derivative, then
+Then
 \[
 \int_\R \funcg \, d(\measmu \circ \preimage{\funcf})
 =
@@ -4238,15 +4246,13 @@ That is,
 =
 \int_\R \funcg(t) p(t) \, d\measlambda(t).
 \]
-Taking $\funcg$ to be the identity function $\funcg(t)=t$,
+Taking $\funcg$ to be the identity function $\funcg(t)=t$, so that
+$\funcg \bigl( \funcf(x)\bigr) = \funcf(x)$, see that
 \[
 \int_\measurespace \funcf \, d\measmu
 =
 \int_\R t p(t) \, d\measlambda(t).
 \]
-You \emph{could} compute the expected value this way.
-
-Throw in the missing detail by way of Proposition~\ref{radon_nikodym_corollary}.
 \end{rmk}
 
 
@@ -4882,7 +4888,7 @@ $\kondexpgvn{\ellclass{\function}{\measure}}{\functionii}$:
 = 
 \ellclass{r \circ \functionii}{\measure\restrictedto{\sigalg{G}}}
 \]
-Call the induced function $r$ the \term{regression function}. 
+Call the induced function $r$ the \term{regression function}.
 \end{defn}
 
 
@@ -5014,9 +5020,11 @@ is positive, linear, and contractive.
 \begin{quoting}
 \small
 The correct and complete proof of the functional equation 
-$\expval{\ellclass{\function}{\measure}} 
+\[
+\expval{\ellclass{\function}{\measure}}
 = 
-\expvalof{\condexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}}$\,
+\expvalof{\condexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}}
+\]
 in the following proposition took some effort, as tracing back through at least Proposition~\ref{integral_over_subalgebra}, shows.
 Let my early and admittedly naive attempts to try to simply throw a monotone convergence theorem at this proposition at least bring a  smile to your face. Of course there was more to it.
 \end{quoting}
