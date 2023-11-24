@@ -2428,6 +2428,25 @@ in which case
 \end{prop}
 
 
+Let us combine a change of variable with the previous proposition.
+
+\begin{prop}\label{combine}
+Let $(\measurespace, \sigmaalgebra)$ and $(\measurespaceii,\sigmaalgebraii)$ be measurable spaces, and let $\measmu$ be a finite measure on $\sigmaalgebra$.
+Also, let
+$\funcf:\measurespace\to\measurespaceii$ be
+$(\sigmaalgebra, \sigmaalgebraii)$\hyp{}measurable,
+and let $\funcg:\measurespaceii\to\R$ be integrable with respect to
+$\measmu\circ\preimage{\funcf}$.
+If $\measlambda$ is a \textsigma\hyp{}finite measure on $\sigmaalgebraii$ such that
+$\measmu\circ\preimage{\funcf} \abscont \measlambda$, then, setting
+$p = d(\measmu\circ\preimage{\funcf}) / d\measlambda$,
+\[
+\int_\measurespace (\funcg\circ\funcf)\, d\measmu
+=
+\int_\measurespaceii \funcg \cdot p \, d\measlambda.
+\]
+\end{prop}
+
 
 \begin{prop}\label{chain_rule}
 Let $(\measurespace,\sigmaalgebra)$ be a measurable space, and let 
@@ -2614,7 +2633,7 @@ completing the proof.
 \end{proof}
 
 
-For comparison with Proposition~\ref{factoring_functions}, the so-called Doob-Dynkin lemma.
+For comparison with Proposition~\ref{factoring_functions}, let us look at the so-called Doob-Dynkin lemma.
 
 \begin{propboldnote}[Doob-Dynkin]\index{Doob-Dynkin lemma}\label{doob_dynkin}
 Let the space $(\measurespaceii,\sigmaalgebraii)$ be measurable,
@@ -3654,7 +3673,7 @@ $\mspaceelt\mapsto
 defines an integrable function over $\measurespace$ with respect to $\measure$.
 Let us carry this
 a little further.  
-Since $\measonprod \abscont (\measure\times\measureii)^*$, it follows by Proposition~\ref{marginal_abscont}, that 
+Since $\measonprod \abscont (\measure\times\measureii)^*$, it follows by Proposition~\ref{marginal_abscont} that
 $\marginalone\abscont\measure$ on $\sigmaalgebra$.
 We can then apply Proposition~\ref{abscont_properties} which says that if
 $\measure^*(\seti)=0$, then $\marginalone^*(\seti)=0$ for any $\seti\in\measurespace$.
@@ -4217,41 +4236,34 @@ L_1(\measurespace, \semiring,\measure)\to\R :
 
 
 
-\begin{rmk}
-In the case that the measure
-$\measmu\circ\preimage{\funcf}$ is absolutely continuous with respect to some reference measure
-$\measlambda$ on $\borel_\R$,
-with $p$, say, representing the corresponding Radon-Nikodym derivative, then the expected value can be found by
+\begin{rmk}\label{expected_value_probability}
+In the case that
+$(\measurespace,\sigmaalgebra,\measure)$ is a probability space, and
+the probability distribution
+$\measmu\circ\preimage{\funcf}$ of $\funcf$ is absolutely continuous with respect to some
+\textsigma\hyp{}finite reference measure
+$\measlambda$ on $\borel_\R$, then,
+setting
+$p = d(\measmu\circ\preimage{\funcf})/d \measlambda$,
+the expected value of $\ellclass{\funcf}{\measure}$ can be computed by
 \[
 \int_\measurespace \funcf \, d\measmu
 =
-\int_\R t p(t) \, d\measlambda(t),
+\int_\R t \, p(t) \, d\measlambda(t),
 \]
 and to see this, let $\funcg:\R \to\R$ be any function integrable with respect to
-$\measmu\circ\preimage{\funcf}$.  By a change of variable,
+$\measmu\circ\preimage{\funcf}$.  By Proposition~\ref{combine},
 \[
 \int_\measurespace (\funcg \circ \funcf)\, d\measmu
 =
-\int_\R \funcg \, d(\measmu \circ \preimage{\funcf}).
-\]
-Then
-\[
-\int_\R \funcg \, d(\measmu \circ \preimage{\funcf})
-=
-\int_\R \funcg(t) p(t) \, d\measlambda(t).
-\]
-That is,
-\[
-\int_\measurespace (\funcg \circ \funcf)\, d\measmu
-=
-\int_\R \funcg(t) p(t) \, d\measlambda(t).
+\int_\R \funcg \, p \, d\measlambda.
 \]
 Taking $\funcg$ to be the identity function $\funcg(t)=t$, so that
 $\funcg \bigl( \funcf(x)\bigr) = \funcf(x)$, see that
 \[
 \int_\measurespace \funcf \, d\measmu
 =
-\int_\R t p(t) \, d\measlambda(t).
+\int_\R t \, p(t) \, d\measlambda(t).
 \]
 \end{rmk}
 
@@ -4467,7 +4479,7 @@ We will use the strong law of large numbers to show that the $\measure$-measure 
 \int_\measurespace (\funcg \circ \funch_1) \,d\measure 
 \right\}
 \]
-is $1$, and to complete the proof we will show that
+is $1$, and to complete the proof we will note that
 \[
 \int_\measurespace (\funcg \circ \funch_1) \,d\measure
 =
@@ -4563,57 +4575,15 @@ $\functionii\circ\functioniii_1$, it follows by the strong law of large numbers,
 \]
 of $\measurespace$ has $\measure(\seti)=1$. 
 
-Let us now show that
-\[
-\int_\measurespace (\funcg \circ \funch_1) \,d\measure
-=
-\int_\measurespaceii \funcg \, d(\measmu\circ \preimage{\funch_1}) .
-\]
-The hypothesis that
-$\functionii \in\cali{L}_1(\R, \borel_\R,\measure\circ\preimage{\functioniii_i})$
-means that Proposition~\ref{change_of_variable}  can be applied, which says that since 
-$\funch_1$ is 
-$(\sigmaalgebra,\sigmaalgebraii)$\hyp{}measurable and
-$\funcg$ is integrable with respect to 
-$\measmu \circ \preimage{\funch_1}$, it follows that 
-$\funcg \circ \funch_1$ 
-is integrable with respect to $\measmu$, and
-$\int_\measurespace (\funcg\circ\funch_1)\,d\mu
-=
-\int_\measurespaceii \funcg \, d(\measmu\circ \preimage{\funch_1})$. The picture there was
-\[
-\xymatrix@R=0pt@C=30pt{ 
-(\measurespace,\sigmaalgebra,\measure)
-\ar[r]_-{\funch_1} \ar@/^16pt/[rr]^{\funcg\, \circ\, \funch_1}
-& (\measurespaceii,\sigmaalgebraii,\measmu\circ \preimage{\funch_1}) 
-\ar[r]_-{\funcg}
-& (\R,\borel_\R), \\
-\scriptstyle{\preimage{\funch_1}(\setii)} & \scriptstyle{\setii} & \\
-}
-\]
-with
-\[
-\int_{\preimage{\funch_1}(\setii)} (\funcg \circ \funch_1) \, d\measure
-= \int_\setii \funcg \, d(\measmu\circ \preimage{\funch_1}).
-\]
 
-Finally, let us show that 
+Finally, let us note that
 \[
-\int_\measurespaceii \funcg \, d(\measmu\circ \preimage{\funch_1})
+\int_\measurespace (\funcg \circ \funch_1) \, d \measmu
 =
-\int_\measurespaceii \funcg \funcf \, d\measnu.
+\int_\measurespaceii \funcg \funcf \, d\measnu
 \]
-Again, by hypothesis, the function $\funcg$ is integrable with respect to 
-$\measmu\circ \preimage{\funch_1}$. Further, 
-$\funcf = d(\measmu\circ\preimage{\funch_1})/d\measnu$, with 
-$\measmu\circ\preimage{\funch_1}$ finite and $\measnu$ \textsigma-finite, so
-Proposition~\ref{radon_nikodym_corollary} (2) says that the function
-$\funcg\funcf$
-is integrable with respect to $\measnu$, and that
-$\int_\measurespaceii \funcg \, d(\measmu\circ \preimage{\funch_1})
-=
-\int_\measurespaceii \funcg \funcf \, d\measnu$,
-completing the proof.
+by Proposition~\ref{combine},
+which completes the proof.
 \end{proof}
 
 
@@ -7824,6 +7794,122 @@ $\measlambda_{\funcf\vert \funch = \mspaceeltiii}$.
 \end{notn}
 
 
+\begin{notn}\label{densities}
+Let
+$(\uspace,\uspacesig,\measlambda)$ be a probability space, with functions
+$\funcf:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$,
+$\funcg:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$
+and
+$\funch:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
+measurable.
+Let $\measmu$, $\measnu$, and $\measrho$ be \textsigma\hyp{}finite reference measures on
+$\sigmaalgebra$, $\sigmaalgebraii$, and $\sigmaalgebraiii$, respectively, and let
+$\measlambda\circ\preimage{(\funcf,\funcg,\funch)}
+\abscont
+(\measure\times\measureii\times\measureiv)^*$ on
+$\productsig{\sigmaalgebra,\sigmaalgebraii}{\sigmaalgebraiii}$.
+
+With a decision about notation that I am sure to regret, set:
+\begin{align*}
+j
+& =
+\frac{d (\measlambda\circ\preimage{(\funcf,\funcg,\funch)})}
+{d(\measmu\times\measnu\times\measrho)^*}
+:
+\measurespace\times\measurespaceii\times\measurespaceiii\to\R,
+\\
+m_{\funcf,\funch}
+& =
+\frac{d (\measlambda\circ\preimage{(\funcf,\funch)} )}
+{d(\measmu\times\measrho)^*}:\measurespace\times\measurespaceiii\to\R,
+\\
+m_{\funcg,\funch}
+& =
+\frac{d (\measlambda\circ\preimage{(\funcg,\funch)} )}
+{d(\measmu\times\measrho)^*}:\measurespaceii\times\measurespaceiii\to\R,
+\\
+m_\funch
+& =
+\frac{d (\measlambda\circ\preimage{\funch})}
+{d \measrho}:\measurespaceiii\to\R.
+\\
+\end{align*}
+Vaguely, these are the densities of the joint and some of the marginals.
+We are supposing that all Radon-Nikodym derivatives in sight here exist.
+
+By the proof of Proposition~\ref{marginal_abscont},
+\begin{align*}
+m_{\function,\functioniii} (\mspaceelt,\mspaceeltiii)
+& =
+\int_\measurespaceii
+\funcj(\mspaceelt,\mspaceeltii,\mspaceeltiii)\,
+d \measnu(\mspaceeltii),
+\\
+m_{\functionii,\functioniii} (\mspaceeltii,\mspaceeltiii)
+& =
+\int_\measurespace
+\funcj(\mspaceelt,\mspaceeltii,\mspaceeltiii)\,
+d \measmu(\mspaceelt),
+\\
+m_\funch(\mspaceeltiii)
+& =
+\int_{\measurespace\times\measurespaceii}
+\funcj(\mspaceelt,\mspaceeltii,\mspaceeltiii)\,
+d(\measmu\times\measnu)(\mspaceelt,\mspaceeltii),
+\\
+\end{align*}
+which could lean in the direction of offhanded statements like,
+`You can obtain the marginal by integrating out the joint.'
+
+For the following ratios of Radon-Nikodym derivatives, define:
+\begin{align*}
+p(\mspaceelt,\mspaceeltii\mid\mspaceeltiii)
+& \definedby
+\frac{j(\mspaceelt,\mspaceeltii,\mspaceeltiii)}
+{m_{\functioniii} (\mspaceeltiii)},
+\\
+p(\mspaceelt\mid\mspaceeltiii)
+& \definedby
+\frac{m_{\function,\functioniii}(\mspaceelt,\mspaceeltiii)}
+{m_{\functioniii} (\mspaceeltiii)},
+\\
+p(\mspaceeltii\mid\mspaceeltiii)
+& \definedby
+\frac{m_{\functionii,\functioniii}(\mspaceeltii,\mspaceeltiii)}
+{m_{\functioniii} (\mspaceeltiii)},
+\\
+p(\mspaceelt\mid \mspaceeltii,\mspaceeltiii)
+& \definedby
+\frac{ j( \mspaceelt, \mspaceeltii, \mspaceeltiii) }
+{m_{\functionii, \functioniii} ( \mspaceeltii,\mspaceeltiii ) }.
+\\
+\end{align*}
+
+Finally, suppose we were to set
+$p(x,z) = m_{f,h}(x,z)$
+and
+$p(z) = m_h(z)$, so that
+\[
+p(x\mid z) =
+\frac{p(x,z)}{p(z)}.
+\]
+By Proposition~\ref{joint_abscont} and Proposition~\ref{conditional_density},
+if $h(u)=z$, then
+\[
+\frac{d k_u}{d \measmu}(x) = \frac{p(x,z)}{p(z)}.
+\]
+That is,
+\[
+p(x \mid z) = \frac{d k_u}{d \measmu}(x)
+\quad
+\text{for $h(u) = z$.}
+\]
+The point being that, since this has been described as representing
+``the conditional distribution of $f$ given $h=z$,'' this might add credence to the `$\vert$' symbol in expressions like $p(x\mid z)$.
+\end{notn}
+
+
+
 
 \section{Conditional Independence}
 %*********************************************************
@@ -8021,119 +8107,7 @@ $\condindep{\funcf}{\funcg}{\funch}$ may be used.
 
 
 
-\begin{notn}\label{densities}
-Let
-$(\uspace,\uspacesig,\measlambda)$ be a probability space, with functions
-$\funcf:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$,
-$\funcg:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$
-and
-$\funch:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
-measurable.
-Let $\measmu$, $\measnu$, and $\measrho$ be \textsigma\hyp{}finite reference measures on
-$\sigmaalgebra$, $\sigmaalgebraii$, and $\sigmaalgebraiii$, respectively, and let
-$\measlambda\circ\preimage{(\funcf,\funcg,\funch)}
-\abscont
-(\measure\times\measureii\times\measureiv)^*$ on
-$\productsig{\sigmaalgebra,\sigmaalgebraii}{\sigmaalgebraiii}$.
 
-With a decision about notation that I am sure to regret, set:
-\begin{align*}
-j
-& =
-\frac{d (\measlambda\circ\preimage{(\funcf,\funcg,\funch)})}
-{d(\measmu\times\measnu\times\measrho)^*}
-:
-\measurespace\times\measurespaceii\times\measurespaceiii\to\R,
-\\
-m_{\funcf,\funch}
-& =
-\frac{d (\measlambda\circ\preimage{(\funcf,\funch)} )}
-{d(\measmu\times\measrho)^*}:\measurespace\times\measurespaceiii\to\R,
-\\
-m_{\funcg,\funch}
-& =
-\frac{d (\measlambda\circ\preimage{(\funcg,\funch)} )}
-{d(\measmu\times\measrho)^*}:\measurespaceii\times\measurespaceiii\to\R,
-\\
-m_\funch
-& =
-\frac{d (\measlambda\circ\preimage{\funch})}
-{d \measrho}:\measurespaceiii\to\R.
-\\
-\end{align*}
-Vaguely, these are the densities of the joint and some of the marginals.
-We are supposing that all Radon-Nikodym derivatives in sight here exist.
-
-By the proof of Proposition~\ref{marginal_abscont},
-\begin{align*}
-m_{\function,\functioniii} (\mspaceelt,\mspaceeltiii)
-& =
-\int_\measurespaceii
-\funcj(\mspaceelt,\mspaceeltii,\mspaceeltiii)\,
-d \measnu(\mspaceeltii),
-\\
-m_{\functionii,\functioniii} (\mspaceeltii,\mspaceeltiii)
-& =
-\int_\measurespace
-\funcj(\mspaceelt,\mspaceeltii,\mspaceeltiii)\,
-d \measmu(\mspaceelt),
-\\
-m_\funch(\mspaceeltiii)
-& =
-\int_{\measurespace\times\measurespaceii}
-\funcj(\mspaceelt,\mspaceeltii,\mspaceeltiii)\,
-d(\measmu\times\measnu)(\mspaceelt,\mspaceeltii),
-\\
-\end{align*}
-which could lean in the direction of offhanded statements like,
-`You can obtain the marginal by integrating out the joint.'
-
-For the following ratios of Radon-Nikodym derivatives, define:
-\begin{align*}
-p(\mspaceelt,\mspaceeltii\mid\mspaceeltiii)
-& \definedby
-\frac{j(\mspaceelt,\mspaceeltii,\mspaceeltiii)}
-{m_{\functioniii} (\mspaceeltiii)},
-\\
-p(\mspaceelt\mid\mspaceeltiii)
-& \definedby
-\frac{m_{\function,\functioniii}(\mspaceelt,\mspaceeltiii)}
-{m_{\functioniii} (\mspaceeltiii)},
-\\
-p(\mspaceeltii\mid\mspaceeltiii)
-& \definedby
-\frac{m_{\functionii,\functioniii}(\mspaceeltii,\mspaceeltiii)}
-{m_{\functioniii} (\mspaceeltiii)},
-\\
-p(\mspaceelt\mid \mspaceeltii,\mspaceeltiii)
-& \definedby
-\frac{ j( \mspaceelt, \mspaceeltii, \mspaceeltiii) }
-{m_{\functionii, \functioniii} ( \mspaceeltii,\mspaceeltiii ) }.
-\\
-\end{align*}
-
-Finally, suppose we were to set
-$p(x,z) = m_{f,h}(x,z)$
-and
-$p(z) = m_h(z)$, so that
-\[
-p(x\mid z) =
-\frac{p(x,z)}{p(z)}.
-\]
-By Proposition~\ref{joint_abscont} and Proposition~\ref{conditional_density},
-if $h(u)=z$, then
-\[
-\frac{d k_u}{d \measmu}(x) = \frac{p(x,z)}{p(z)}.
-\]
-That is,
-\[
-p(x \mid z) = \frac{d k_u}{d \measmu}(x)
-\quad
-\text{for $h(u) = z$.}
-\]
-The point being that, since this has been described as representing
-``the conditional distribution of $f$ given $h=z$,'' this might add credence to the `$\vert$' symbol in expressions like $p(x\mid z)$.
-\end{notn}
 
 
 \begin{prop}\label{abs_cont_reg}
