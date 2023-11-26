@@ -4764,6 +4764,8 @@ C \mapsto \preimage{\functionii}(C)
 is surjective.
 \end{notn}
 
+In Definition~\ref{cme_sigmaalgebra}, we looked at the conditional mathematical expectation of a class defined with respect to a \textsigma\hyp{}algebra.  But a function can also define a
+\textsigma\hyp{}algebra, and we now look at that case.
 
 
 \begin{defn}\label{cme_function}
@@ -4771,9 +4773,10 @@ is surjective.
 Let $(\measurespace, \sigmaalgebra,\measure)$ be a probability space, and let
 $\ellclass{\function}{\measure}\in L_1(\measurespace, \sigmaalgebra,\measure)$.
 Let $(\measurespaceii, \sigmaalgebraii)$ be a measurable space, and let $\functionii:\measurespace\to\measurespaceii$ be any function, where $\preimage{\functionii}:\sigmaalgebraii\to\powerset(\measurespace)$.
-Temporarily define
+Set
 \[
-\sigalg{G}\definedby
+\sigalg{G}
+=
 \preimage{\functionii}(\sigmaalgebraii)\meets\sigmaalgebra.
 \]
 Then the class 
@@ -4781,17 +4784,7 @@ $\kondexpgvn{\ellclass{\function}{\measure}}{\sigalg{G}}$
 in
 $L_1\bigl(\measurespace, \sigalg{G},\measure\restrictedto{\sigalg{G}}\bigr)$, 
 which may also be denoted by
-$\kondexpgvn{\ellclass{\function}{\measure}}{\functionii}$, is the \emph{conditional mathematical expectation of} $\ellclass{\function}{\measure}$ \emph{given the function} $\functionii$, or simply the \emph{conditional expectation} of $\ellclass{\function}{\measure}$ given $\functionii$. This defines an operator:
-\[
-\kondexpop\nolimits_{\sigalg{G}}
-:
-L_1(\measurespace, \sigmaalgebra,\measure) \to
-L_1\bigl(\measurespace, 
-\sigalg{G},
-\measure\restrictedto{\sigalg{G}}
-\bigr):
-\ellclass{\function}{\measure}\mapsto \kondexpgvn{\ellclass{\function}{\measure}}{\functionii}.
-\]
+$\kondexpgvn{\ellclass{\function}{\measure}}{\functionii}$, is the \emph{conditional mathematical expectation of} $\ellclass{\function}{\measure}$ \emph{given the function} $\functionii$, or simply the \emph{conditional expectation} of $\ellclass{\function}{\measure}$ given $\functionii$.
 We use this definition of $\kondexpgvn{\ellclass{\function}{\measure}}{\functionii}$ because it is precisely the definition of conditional mathematical expectation as set down in Kolmogorov~\cite{fottop_kolmogorov_1956}. 
 
 In what follows, the fact that 
@@ -4817,17 +4810,18 @@ L_1
 \bigr)
 \] 
 with 
-\[\kondexpgvn{\ellclass{\function}{\measure}}{\functionii} 
-= 
+\begin{align*}
+\kondexpgvn{\ellclass{\function}{\measure}}{\functionii}
+& =
 r\circ \functionii + 
 \cali{N}_1\bigl(
 \measurespace, 
 \sigalg{G},
 \measure\restrictedto{\sigalg{G}}
-\bigr)
-= 
+\bigr) \\
+& =
 \ellclass{r \circ \functionii}{\measure\restrictedto{\sigalg{G}}}
-\]
+\end{align*}
 and with the representative  $r$ being an $(\sigmaalgebra^{(\functionii)},\borel_\R)$\hyp{}measurable function,
 as illustrated in the following diagram, letting the function $e$ be any representative of the class 
 $\kondexpgvn{\ellclass{\function}{\measure}}{\functionii}$:
@@ -4864,14 +4858,15 @@ Call the induced function $r$ the \term{regression function}.
 
 \begin{discussion}
 In a special case of Definition~\ref{cme_function}, if the function $\functionii:\measurespace\to\measurespaceii$ is known to be $(\sigmaalgebra, \sigmaalgebraii)$\hyp{}measurable, then 
-$\sigmaalgebra^{(\functionii)} = \sigmaalgebraii$ and
+\[
+\sigmaalgebra^{(\functionii)} = \sigmaalgebraii
+\]
+and
 \[
 \sigalg{G}
-\definedby
-\preimage{\functionii}(\sigmaalgebraii)\meets\sigmaalgebra 
 = \preimage{\functionii}(\sigmaalgebraii).
 \]
-Which means in this case that the conditional expectation 
+In this case, the conditional expectation
 $\kondexpgvn{\ellclass{\function}{\measure}}{\functionii}$ 
 of 
 $\ellclass{\function}{\measure}$ given the function $\functionii$ denotes the same class as the conditional expectation 
@@ -4942,8 +4937,8 @@ $\ellclass{\functionii}{\measure} \in L_1(\measurespace, \sigmaalgebra,\measure)
 \end{prop}
 
 \begin{rmk}
-For each class $\ellclass{\functionii}{\measure}\in L_1(\measurespace, \sigmaalgebra,\measure)$, the class
-$\condexpsub{\ellclass{\functionii}{\measure}}{\sigmaalgebraii}\in L_1(\measurespace, \sigmaalgebra,\measure)$ has a $(\sigmaalgebraii, \borel_\R)$\hyp{}measurable representative, and to see this, 
+For each class $\ellclass{\functionii}{\measure}$ in $L_1(\measurespace, \sigmaalgebra,\measure)$, the class
+$\condexpsub{\ellclass{\functionii}{\measure}}{\sigmaalgebraii}$ in $L_1(\measurespace, \sigmaalgebra,\measure)$ has a $(\sigmaalgebraii, \borel_\R)$\hyp{}measurable representative, and to see this,
 say the function 
 $e\in \cali{L}_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$ 
 is the $(\sigmaalgebraii, \borel_\R)$\hyp{}measurable representative of the class
@@ -7292,7 +7287,7 @@ $\sigmaalgebra$ given $\sigalg{G}$ is regular, as required.
 %*********************************************************
 %*********************************************************
 \begin{rmk}
-The following two propositions are supporting lemmas for the conditional independence equivalences given in Proposition~\ref{conditional_independence_equivalence}.
+Proposition~\ref{joint_decomposition} and Proposition~\ref{conditional_density} are supporting lemmas for the conditional independence equivalences given in Proposition~\ref{conditional_independence_equivalence}.
 \end{rmk}
 
 \begin{propboldnote}\label{joint_decomposition}
@@ -7579,6 +7574,22 @@ By transitivity of equality then,
 \]
 as required.
 \end{proof}
+
+
+\begin{prop}
+Let
+$(\uspace,\uspacesig,\measlambda)$ be a probability space,
+and let
+$(\measurespace, \sigmaalgebra)$
+and
+$(\measurespaceii,\sigmaalgebraii)$ be measurable spaces.
+Let functions
+$\funcf:\uspace\to\measurespace$
+and
+$\funcg:\uspace\to\measurespaceii$
+be measurable.
+\end{prop}
+
 
 
 \begin{prop}\label{conditional_density}
