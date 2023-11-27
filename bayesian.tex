@@ -7576,19 +7576,89 @@ as required.
 \end{proof}
 
 
-\begin{prop}
+\begin{rmk}
+Just as in Remark~\ref{expected_value_probability} where the expected value could be computed as an integral with respect to a probability distribution, the regression function can be computed with respect to a probability measure corresponding to a conditional distribution.
+
+Recall from Definition~\ref{cme_function} how the regression function $r$ was defined.
 Let
-$(\uspace,\uspacesig,\measlambda)$ be a probability space,
-and let
-$(\measurespace, \sigmaalgebra)$
-and
-$(\measurespaceii,\sigmaalgebraii)$ be measurable spaces.
+$(\uspace,\uspacesig,\measlambda)$ be a probability space.
 Let functions
 $\funcf:\uspace\to\measurespace$
 and
 $\funcg:\uspace\to\measurespaceii$
 be measurable.
-\end{prop}
+Let $\funch:\measurespaceii\to\R$.
+Setting $\sigalg{F}=\preimage{\funcf}(\sigmaalgebra)$, if
+\[
+\kondexpgvn{\ellclass{\funch\circ\funcg}{\measlambda}}{\funcf}
+=
+\ellclass{r \circ \funcf}{\measlambda\restrictedto{\sigalg{F}}}
+\]
+with the function  $r$ being an $(\sigmaalgebra,\borel_\R)$\hyp{}measurable function,
+as illustrated in the following diagram, letting the function $e$ denote any representative of the class
+$\kondexpgvn{\ellclass{\funch\circ\funcg}{\measlambda}}{\funcf}$:
+\[
+\begin{gathered}
+\xymatrix@R=16pt@C=30pt{
+(\uspace, \uspacesig)
+\ar[r]^-{\funch\circ\funcg}
+&
+(\R, \borel_\R)
+\\
+\bigl(\uspace, \sigalg{F} \bigr)
+\ar[r]^-{e}
+\ar[dr]_{\funcf}
+&
+(\R,\borel_\R)
+\\
+&
+(\measurespace, \sigmaalgebra)
+\ar@{.>}[u]_{r}
+\\
+}
+\end{gathered}
+\quad
+\text{meaning}
+\quad
+\kondexpgvn{\ellclass{\funch\circ\funcg}{\measlambda}}{\funcf}
+=
+\ellclass{r \circ \funcf}{\measlambda\restrictedto{\sigalg{F}}}
+\]
+We are calling the induced function $r$ the \term{regression function}.
+Under certain conditions, this function can be computed as
+\[
+r(\mspaceelt)
+=
+\int_\uspace (\funch\circ\funcg) \, d \funck_\uspaceelt
+\quad
+\text{where $\funcf(\uspaceelt)=\mspaceelt$}
+\]
+for $\measlambda\circ \preimage{\funcf}$ almost all $\mspaceelt\in\measurespace$.
+In this case, $\funck$ is the Markov kernel corresponding to the conditional probability distribution
+$\condprobop{\sigalg{F}}\circ \preimage{\funcg}$.
+Very roughly, this might involve two changes of variable, and an application of
+Proposition~\ref{joint_decomposition}.
+The changes of variable look like
+\[
+\int_{\preimage{\funcf}(\setiii)}
+(r\circ\funcf)\, d\measlambda
+=
+\int_\setiii r\, d(\lambda\circ\preimage{\funcf})
+\]
+and
+\[
+\int_{\preimage{\funcf}(\setiii)}
+(\funch\circ\funcg)\, d\measlambda
+=
+\int_{\setiii\times\measurespaceii}
+(\funch\circ\projectiontwo)
+\,d\bigl( \measlambda \circ \preimage{(\funcf,\funcg)} \bigr).
+\]
+It seems the only condition is the function $\funch\circ\projectiontwo$ should be integrable with respect to the joint measure
+$\measlambda \circ \preimage{(\funcf,\funcg)}$.
+
+If the idea that the regression function can be computed this way turn out to be useful, then we will come back and fill in the details.
+\end{rmk}
 
 
 
