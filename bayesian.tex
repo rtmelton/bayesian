@@ -8660,7 +8660,7 @@ given $\sigmaalgebraii$
 could possibly be a probability measure, 
 with $\function:\measurespace\to\measurespaceii$ here being any 
 $(\sigmaalgebra,\sigmaalgebraiii)$\hyp{}measurable function.
-However, a \emph{regular} conditional distribution is equivalent to a particular Markov kernel defining a whole family of probability measures on the 
+However, a \emph{regular} conditional distribution corresponds to a Markov kernel $\funck$ defining a whole family of probability measures on the
 \textsigma-algebra $\sigmaalgebraiii$:
 \[
 \xymatrix@R=16pt@C=30pt{ 
@@ -8687,9 +8687,7 @@ However, a \emph{regular} conditional distribution is equivalent to a particular
 \\
 }
 \]
-Part of the assumption that $\markovkernel$ is a Markov kernel includes the assumption that each $\markovkernel\circ \fixinthesecond{\setiii}$ is
-$\bigl(\sigmaalgebra,\borel_{[0,1]}\bigr)$\hyp{}measurable.
-By some schools of thought, a family
+By some schools of thought, just a family
 of probability measures itself, indexed by a parameter space, is considered to be a statistical experiment.
 %*************
 
@@ -8735,14 +8733,16 @@ $\preimage{\projectiontwo}:\sspacesig\to\productsig{\pspacesig}{\sspacesig}$, as
 }
 \]
 The projection $\projectionone$ 
-is $\bigl(\pspacesig,\productsig{\pspacesig}{\sspacesig}\bigr)$\hyp{}measurable, and
-induces the marginal probability distribution
+is
+$\bigl( \productsig{\pspacesig}{\sspacesig}, \pspacesig \bigr)$\hyp{}measurable,
+and induces the marginal probability distribution
 $\marginalone\definedby\measonprod\circ\preimage{\projectionone}$ of $\projectionone$ on the parameter space
 \textsigma-algebra $\pspacesig$, 
 which is called the \emph{prior probability distribution}.
 The projection $\projectiontwo$ 
-is $\bigl(\sspacesig,\productsig{\pspacesig}{\sspacesig}\bigr)$\hyp{}measurable, and 
-induces the marginal probability distribution
+is
+$\bigl(\productsig{\pspacesig}{\sspacesig}, \sspacesig \bigr)$\hyp{}measurable,
+and induces the marginal probability distribution
 $\marginaltwo\definedby\measonprod\circ\preimage{\projectiontwo}$ of $\projectiontwo$ on the sample space
 \textsigma-algebra $\sspacesig$, 
 which is called the \emph{predictive probability distribution}.
