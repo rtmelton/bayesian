@@ -9457,8 +9457,7 @@ p(\theta \mid y)
 \frac{p(\theta) \, p(y \mid \theta)}
 {p(y)}.
 \end{equation}
-Understand that expressions like these are only heuristic.
-Is there any way to interpret these symbols so that they make honest mathematical sense?
+
 
 We suppose that the symbols indicate Bayes' theorem.
 Let us substitute $\theta$ for $\pspaceelt$:
@@ -9484,23 +9483,6 @@ $\int_{\Omega} \funch(\theta)\,\funcf(\theta,y)\,d\measlambda(\theta)$ & $p(y)$ 
 \end{tabular}
 \end{center}
 
-In order for the function $\funcf(\theta,y)$ to  make sense in Bayes' theorem, as in equation (\ref{loose}), it should be written as $\funcf^y(\theta)$, since $y$ is fixed, and
-$\funcf^y : \Theta \to \R$.
-But the function $\funcf^y$ need not be a density.
-
-In order for the function
-$\funcf(\theta,y)$ to make sense as a density then, it should be written as $\funcf_\theta(y)$; this is because $\theta$ is fixed, and
-as stated in equation~\ref{as_density}:
-\[\function_\theta
-=
-d P_\theta/d\measnu,
-\]
-which is  a Radon-Nikodym derivative.
-But $\function_\theta$ is a map $\sspace\to\R$, and so $\function_\theta$ makes no sense in Bayes' theorem.
-
-The question then stands: In a heuristic expression such as (\ref{quaint}), do the authors  somehow intend that the symbols $p(y\mid\theta)$ be interpreted as some kind of density?
-
-Heuristic expressions can introduce some amusing problems.
 
 
 
