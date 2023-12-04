@@ -6297,13 +6297,13 @@ $\markovkernelii\circ\fixinthefirst{(\mspaceelt,\mspaceeltii)}
 Let $(\measurespace,\sigmaalgebra,\measure)$ be a measure space.
 Let 
 $\regular$ be a function $\Lone\to\caliLone$ which selects a representative from each equivalence class.  
-If $S$ is a set, and $\cali{F}: S \to \Lone$ is a function, then
-the collection $(\regular\circ\cali{F})(S)$ of
-$\caliLone$ functions is called a \term{version} of the function $\cali{F}$.
+If $S$ is a set, and $\cali{P}: S \to \Lone$ is a function, then
+the collection $(\regular\circ\cali{P})(S)$ of
+$\caliLone$ functions is called a \term{version} of the function $\cali{P}$.
 \[
 \xymatrix@R=16pt@C=30pt{ 
 \Lone \ar[r]^{\regular} & \caliLone \\
-S \ar[ur]_-{\ \regular\circ\cali{F}} \ar[u]^{\cali{F}} & \\
+S \ar[ur]_-{\ \regular\circ\cali{F}} \ar[u]^{\cali{P}} & \\
 }
 \]
 \end{defnboldnote}
@@ -6682,6 +6682,10 @@ If $\setii\in\sigmaalgebraii$ and $\setiii\in\sigmaalgebraiii$, then
 
 
 \begin{defnboldnote}\label{regular_conditional_distribution}
+Be forewarned that the following definition of a
+\emph{regular conditional probability distribution}
+is nothing but the definition of a regular conditional probability combined with a preimage.
+
 Let the collection
 $(\regular\circ\condprobop{\sigmaalgebraii}\circ\preimage{\function})
 (\sigmaalgebraiii)$ of $\caliLone$ functions be a version of the conditional distribution
