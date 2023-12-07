@@ -7303,63 +7303,63 @@ $(\uspace, \uspacesig, \measureiii)$
 be a probability space, and let the functions
 $\function:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$
 and
-$\functioniii:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
+$\funcg:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$
 be measurable. Set
-$\sigalg{H} = \preimage{\functioniii}(\sigmaalgebraiii)$.
-Let $\measonprod$ denote the joint measure  $\measureiii\circ\preimage{(\function,\functioniii)}$,
-and let $\marginalthree$ denote the marginal measure $\measlambda\circ\preimage{\funch}$.
+$\sigalg{G} = \preimage{\funcg}(\sigmaalgebraii)$.
+Let $\measonprod$ denote the joint measure  $\measureiii\circ\preimage{(\function,\funcg)}$,
+and let $\marginaltwo$ denote the marginal measure $\measlambda\circ\preimage{\funcg}$.
 Let the conditional distribution
 \[
-\condprobop{\sigalg{H}}\circ\, \preimage{\function}:
+\condprobop{\sigalg{G}}\circ\, \preimage{\function}:
 \sigmaalgebra \to L_1(\uspace,\uspacesig,\measureiii)
 \]
-of $\function$ on $\sigmaalgebra$ given $\sigalg{H}$
+of $\function$ on $\sigmaalgebra$ given $\sigalg{G}$
 be regular, and let
 $\funck$
 denote the corresponding Markov kernel given
-$(\uspace,\sigalg{H})$ and $(\measurespace,\sigmaalgebra)$ such that
+$(\uspace,\sigalg{G})$ and $(\measurespace,\sigmaalgebra)$ such that
 $\funck^\seti\in
-\condprobop{\sigalg{H}}\circ\, \preimage{\function}(\seti)$
+\condprobop{\sigalg{G}}\circ\, \preimage{\function}(\seti)$
 for all $\seti\in\sigmaalgebra$.
 
 If a function
-$j:\measurespace\times\measurespaceiii \to \R$
+$j:\measurespace\times\measurespaceii \to \R$
 is integrable over
-$\measurespace\times\measurespaceiii$
+$\measurespace\times\measurespaceii$
 with respect to the joint measure $\measonprod$,
 then
 \[
-\int_{\measurespace\times\measurespaceiii} \funcj \,
+\int_{\measurespace\times\measurespaceii} \funcj \,
 d \measonprod
 =
-\int_\measurespaceiii\int_\measurespace
+\int_\measurespaceii\int_\measurespace
 \funcj(\mspaceelt,\mspaceeltiii) \,
 d \funck_\uspaceelt(\mspaceelt)\,
-d \marginalthree(\mspaceeltiii),
+d \marginaltwo(\mspaceeltii),
 \]
-where  $\funch(\uspaceelt) = \mspaceeltiii$.
+where  $\funcg(\uspaceelt) = \mspaceeltii$.
 \end{propboldnote}
 
 
 \begin{proof}
 We have set
-$\sigalg{H} = \preimage{\functioniii}(\sigmaalgebraiii)$ because
+$\sigalg{G} = \preimage{\funcg}(\sigmaalgebraii)$ because
 subscripts do not suffer symbols like
-$\preimage{\functioniii}(\sigmaalgebraiii)$ or $\sagb(\functioniii)$
+$\preimage{\funcg}(\sigmaalgebraii)$ or $\sagb(\funcg)$
 well.
 Let the conditional distribution
 \[
-\condprobop{\sigalg{H}}\circ\, \preimage{\function}:
+\condprobop{\sigalg{G}}\circ\, \preimage{\function}:
 \sigmaalgebra \to L_1(\uspace,\uspacesig,\measureiii)
 \]
-of $\function$ on $\sigmaalgebra$ given $\sigalg{H}$
+of $\function$ on $\sigmaalgebra$ given $\sigalg{G}$
 be regular, and we let
 $\funck$
 denote the corresponding Markov kernel given
-$(\uspace,\sigalg{H})$ and $(\measurespace,\sigmaalgebra)$, as illustrated:
+$(\uspace,\sigalg{G})$ and $(\measurespace,\sigmaalgebra)$, as illustrated:
 \[
 \xymatrix@R=16pt@C=30pt{
-L_1(\uspace, \uspacesig, \measureiii) \ar[r]^{\condexpop{\sigalg{H}}}
+L_1(\uspace, \uspacesig, \measureiii) \ar[r]^{\condexpop{\sigalg{G}}}
 & L_1(\uspace, \uspacesig, \measureiii)
 & \uspace
 \ar[d]_-{\fixinthesecond{\seti}}
@@ -7371,9 +7371,9 @@ L_1(\uspace, \uspacesig, \measureiii) \ar[r]^{\condexpop{\sigalg{H}}}
 \\
 \uspacesig
 \ar[uu]^{Q\,\circ\,\charfunction{}}
-\ar[uur]_{\condprobop{\sigalg{H}}}
+\ar[uur]_{\condprobop{\sigalg{G}}}
 & \sigmaalgebra
-\ar[uu]_{\condprobop{\sigalg{H}}\circ \preimage{\function}}
+\ar[uu]_{\condprobop{\sigalg{G}}\circ \preimage{\function}}
 \ar[l]_{\preimage{\function}}
 & \sigmaalgebra
 \ar[u]^{\fixinthefirst{\uspaceelt}}
@@ -7384,125 +7384,125 @@ L_1(\uspace, \uspacesig, \measureiii) \ar[r]^{\condexpop{\sigalg{H}}}
 \]
 
 For each set $\seti\in\sigmaalgebra$, the function
-$\funck^\seti$ factors as some function $\funca$ composed with $\funch$,
-that is, $\funck^\seti= \funca \circ \funch$,
+$\funck^\seti$ factors as some function $\funca$ composed with $\funcg$,
+that is, $\funck^\seti= \funca \circ \funcg$,
 which was the heart of Proposition~\ref{factoring_functions}:
 \[
 \xymatrix@R=14pt@C=30pt{
-(\uspace,\sigalg{H})
+(\uspace,\sigalg{G})
 \ar[r]^-{\funck^\seti}
-\ar[dr]_{\functioniii}
+\ar[dr]_{\funcg}
 & \bigl([0,1],\borel_{[0,1]}\bigr) \\
- & (\measurespaceiii,\sigmaalgebraiii) \ar@{.>}[u]_{\funca}\\
+ & (\measurespaceii,\sigmaalgebraii) \ar@{.>}[u]_{\funca}\\
 }
 \]
 The evaluation
 $\funck^\seti(\uspaceelt)
 =
-a\bigl(\funch(\uspaceelt)\bigr)$
+a\bigl(\funcg(\uspaceelt)\bigr)$
 may be restated as
 $\funck^\seti(\uspaceelt)
 =
-a\bigl(\mspaceeltiii)$
+a\bigl(\mspaceeltii)$
 if
-$\funch(\uspaceelt)
+$\funcg(\uspaceelt)
 =
-\mspaceeltiii$.
+\mspaceeltii$.
 Since $\funck^\seti(\uspaceelt) = \funck_\uspaceelt(\seti),$
 we can write
 \[
-a(\mspaceeltiii)=\funck_\uspaceelt(\seti) \text{ for } \mspaceeltiii = \funch(\uspaceelt).
+a(\mspaceeltii)=\funck_\uspaceelt(\seti) \text{ for } \mspaceeltii = \funcg(\uspaceelt).
 \]
 
 It is sufficient to show that the required equality holds for characteristic functions of the form
 $\funcj
 =
-\charfunction{\seti\times\setiii}$
+\charfunction{\seti\times\setii}$
 with
 $\seti\in\sigmaalgebra$
 and
-$\setiii\in\sigmaalgebraiii$.
+$\setii\in\sigmaalgebraii$.
 Set
 $\funcj
 =
-\charfunction{\seti\times\setiii}$,
+\charfunction{\seti\times\setii}$,
 so
 \[
-\int_{\measurespace\times\measurespaceiii}
+\int_{\measurespace\times\measurespaceii}
 \funcj
 \, d\measonprod
 =
-\measlambda\bigl(\preimage{\funcf}(\seti)\meets \preimage{\funch}(\setiii)\bigr).
+\measlambda\bigl(\preimage{\funcf}(\seti)\meets \preimage{\funcg}(\setii)\bigr).
 \]
 By Proposition~\ref{conditional_probability_of_a_set},
 \[
-\measlambda\bigl(\preimage{\funcf}(\seti)\meets \preimage{\funch}(\setiii)\bigr)
+\measlambda\bigl(\preimage{\funcf}(\seti)\meets \preimage{\funcg}(\setii)\bigr)
 =
-\inducedint_{\preimage{\funch}(\setiii)}
-\condprobop{\sigalg{H}}\circ\, \preimage{\function}(\seti)
+\inducedint_{\preimage{\funcg}(\setii)}
+\condprobop{\sigalg{G}}\circ\, \preimage{\function}(\seti)
 \, d\measlambda.
 \]
 The hypothesis that the conditional distribution
 \[
-\condprobop{\sigalg{H}}\circ\, \preimage{\function}:
+\condprobop{\sigalg{G}}\circ\, \preimage{\function}:
 \sigmaalgebra \to L_1(\uspace,\uspacesig,\measureiii)
 \]
-of $\function$ on $\sigmaalgebra$ given $\sigalg{H}$
+of $\function$ on $\sigmaalgebra$ given $\sigalg{G}$
 is regular means that
 $\funck^\seti
 \in
-\condprobop{\sigalg{H}}\circ\, \preimage{\function}(\seti),$
+\condprobop{\sigalg{G}}\circ\, \preimage{\function}(\seti),$
 so
 \[
-\inducedint_{\preimage{\funch}(\setiii)}
-\condprobop{\sigalg{H}}\circ\, \preimage{\function}(\seti)
+\inducedint_{\preimage{\funcg}(\setii)}
+\condprobop{\sigalg{G}}\circ\, \preimage{\function}(\seti)
 \, d\measlambda
 =
-\int_{\preimage{\funch}(\setiii)}
+\int_{\preimage{\funcg}(\setii)}
 \funck^\seti \, d\measlambda,
 \]
-and with $\funck^\seti = a\circ \funch$,
+and with $\funck^\seti = a\circ \funcg$,
 \[
-\int_{\preimage{\funch}(\setiii)}
+\int_{\preimage{\funcg}(\setii)}
 \funck^\seti \, d\measlambda
 =
-\int_{\preimage{\funch}(\setiii)}
-( a\circ\funch ) \, d\measlambda.
+\int_{\preimage{\funcg}(\setii)}
+( a\circ\funcg ) \, d\measlambda.
 \]
 Use the fact that
 \begin{align*}
-\charfunction{\preimage{\funch}(\setiii)}{}\cdot{}(a\circ\funch)
+\charfunction{\preimage{\funcg}(\setii)}{}\cdot{}(a\circ\funcg)
 & =
-(\charfunction{\setiii}{}\circ{} \funch)\cdot(a\circ\funch) \\
+(\charfunction{\setii}{}\circ{} \funcg)\cdot(a\circ\funcg) \\
 & =
-(\charfunction{\setiii}{}\cdot{} a)\circ \funch \\
+(\charfunction{\setii}{}\cdot{} a)\circ \funcg \\
 \end{align*}
 and write
 \[
-\int_{\preimage{\funch}(\setiii)}
-( a\circ\funch ) \, d\measlambda
+\int_{\preimage{\funcg}(\setii)}
+( a\circ\funcg ) \, d\measlambda
 =
 \int_\uspace
-(\charfunction{\setiii}{}\cdot{} a)\circ \funch
+(\charfunction{\setii}{}\cdot{} a)\circ \funcg
 \, d\measlambda.
 \]
 Apply a change of variable:
 \begin{align*}
 \int_\uspace
-(\charfunction{\setiii}{}\cdot{} a)\circ \funch
+(\charfunction{\setii}{}\cdot{} a)\circ \funcg
 \, d\measlambda
 & =
-\int_\measurespaceiii
-(\charfunction{\setiii}{}\cdot{} a)\, d\marginalthree \\
+\int_\measurespaceii
+(\charfunction{\setii}{}\cdot{} a)\, d\marginaltwo \\
 & =
-\int_\measurespaceiii
-\charfunction{\setiii}(\mspaceeltiii)
+\int_\measurespaceii
+\charfunction{\setii}(\mspaceeltii)
 \cdot
-a(\mspaceeltiii)\, d\marginalthree(\mspaceeltiii).
+a(\mspaceeltii)\, d\marginaltwo(\mspaceeltii).
 \end{align*}
 We know that
 \[
-a(\mspaceeltiii)
+a(\mspaceeltii)
 =
 \funck_\uspaceelt(\seti)
 =
@@ -7510,74 +7510,74 @@ a(\mspaceeltiii)
 \charfunction{\seti} (\mspaceelt)
 \, d\funck_\uspaceelt (\mspaceelt)
 \]
-for $\mspaceeltiii = \funch(\uspaceelt)$.
-By substitution for $a(\mspaceeltiii)$:
+for $\mspaceeltii = \funcg(\uspaceelt)$.
+By substitution for $a(\mspaceeltii)$:
 \[
-\int_\measurespaceiii
-\charfunction{\setiii}(\mspaceeltiii)
+\int_\measurespaceii
+\charfunction{\setii}(\mspaceeltii)
 \cdot
-a(\mspaceeltiii)\, d\marginalthree(\mspaceeltiii)
+a(\mspaceeltii)\, d\marginaltwo(\mspaceeltii)
 =
-\int_\measurespaceiii
-\charfunction{\setiii}(\mspaceeltiii)
+\int_\measurespaceii
+\charfunction{\setii}(\mspaceeltii)
 \left(\int_\measurespace
 \charfunction{\seti} (\mspaceelt)
 \, d\funck_\uspaceelt (\mspaceelt)\right)
-   d\marginalthree (\mspaceeltiii).
+   d\marginaltwo (\mspaceeltii).
 \]
 By linearity of the integral, we can rewrite:
 \[
-\int_\measurespaceiii
-\charfunction{\setiii}(\mspaceeltiii)
+\int_\measurespaceii
+\charfunction{\setii}(\mspaceeltii)
 \left(\int_\measurespace
 \charfunction{\seti} (\mspaceelt)
 \, d\funck_\uspaceelt (\mspaceelt)\right)
-   d\marginalthree (\mspaceeltiii)
+   d\marginaltwo (\mspaceeltii)
 =
-\int_\measurespaceiii
+\int_\measurespaceii
 \int_\measurespace
 \charfunction{\seti} (\mspaceelt)
-\charfunction{\setiii}(\mspaceeltiii)
+\charfunction{\setii}(\mspaceeltii)
 \, d\funck_\uspaceelt (\mspaceelt)
-\, d\marginalthree (\mspaceeltiii).
+\, d\marginaltwo (\mspaceeltii).
 \]
 And since
 $\charfunction{\seti} (\mspaceelt)
-\charfunction{\setiii}(\mspaceeltiii)
+\charfunction{\setii}(\mspaceeltii)
 =
-\charfunction{\seti\times\setiii}(\mspaceelt,\mspaceeltiii)$:
+\charfunction{\seti\times\setii}(\mspaceelt,\mspaceeltii)$:
 \begin{align*}
-\int_\measurespaceiii
+\int_\measurespaceii
 \int_\measurespace
 \charfunction{\seti} (\mspaceelt)
-\charfunction{\setiii}(\mspaceeltiii)
+\charfunction{\setii}(\mspaceeltii)
 \, d\funck_\uspaceelt (\mspaceelt)
-\, d\marginalthree (\mspaceeltiii)
+\, d\marginaltwo (\mspaceeltii)
 & =
-\int_\measurespaceiii
+\int_\measurespaceii
 \int_\measurespace
-\charfunction{\seti\times\setiii}
-(\mspaceelt,\mspaceeltiii)
+\charfunction{\seti\times\setii}
+(\mspaceelt,\mspaceeltii)
 \, d\funck_\uspaceelt (\mspaceelt)
-\, d\marginalthree (\mspaceeltiii) \\
+\, d\marginaltwo (\mspaceeltii) \\
 & =
-\int_\measurespaceiii
+\int_\measurespaceii
 \int_\measurespace
-\funcj (\mspaceelt,\mspaceeltiii)
+\funcj (\mspaceelt,\mspaceeltii)
 \, d\funck_\uspaceelt (\mspaceelt)
-\, d\marginalthree (\mspaceeltiii).
+\, d\marginaltwo (\mspaceeltii).
 \end{align*}
 By transitivity of equality then,
 \[
-\int_{\measurespace\times\measurespaceiii}
+\int_{\measurespace\times\measurespaceii}
 \funcj
 \, d\measonprod
 =
-\int_\measurespaceiii
+\int_\measurespaceii
 \int_\measurespace
-\funcj (\mspaceelt,\mspaceeltiii)
+\funcj (\mspaceelt,\mspaceeltii)
 \, d\funck_\uspaceelt (\mspaceelt)
-\, d\marginalthree (\mspaceeltiii),
+\, d\marginaltwo (\mspaceeltii),
 \]
 as required.
 \end{proof}
@@ -7608,7 +7608,7 @@ $\kondexpgvn{\ellclass{\funch\circ\funcg}{\measlambda}}{\funcf}$:
 \begin{gathered}
 \xymatrix@R=16pt@C=30pt{
 (\uspace, \uspacesig)
-\ar[r]^-{\funch\circ\funcg}
+\ar[r]^-{\funch\,\circ\,\funcg}
 &
 (\R, \borel_\R)
 \\
