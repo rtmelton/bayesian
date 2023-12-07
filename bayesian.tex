@@ -7675,49 +7675,49 @@ $(\uspace, \uspacesig, \measureiii)$
 be a probability space, and let functions
 $\function:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$
 and
-$\functioniii:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
+$\funcg:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$
 be measurable. Set
-$\sigalg{H} = \preimage{\functioniii}(\sigmaalgebraiii)$.
-Let $\measonprod$ denote the joint measure $\measureiii\circ\preimage{(\function,\functioniii)}$,
-and let $\marginalthree$ denote the marginal measure $\measlambda\circ\preimage{\funch}$.
-Let $\measmu$ be a \textsigma\hyp{}finite reference measure on
+$\sigalg{G} = \preimage{\funcg}(\sigmaalgebraii)$.
+Let $\measonprod$ denote the joint measure $\measureiii\circ\preimage{(\function,\funcg)}$,
+and let $\marginaltwo$ denote the marginal measure $\measlambda\circ\preimage{\funcg}$.
+Let $\measmu$ be a \textsigma\hyp{}finite  measure on
 $\sigmaalgebra$.
 
 If the joint measure
-$\measonprod\abscont (\measmu\times\marginalthree)^*$, where
+$\measonprod\abscont (\measmu\times\marginaltwo)^*$, where
 $\funck$
 denotes the corresponding Markov kernel given
-$(\uspace,\sigalg{H})$ and $(\measurespace,\sigmaalgebra)$ such that
+$(\uspace,\sigalg{G})$ and $(\measurespace,\sigmaalgebra)$ such that
 $\funck^\seti\in
-\condprobop{\sigalg{H}}\circ\, \preimage{\function}(\seti)$
+\condprobop{\sigalg{G}}\circ\, \preimage{\function}(\seti)$
 for all $\seti\in\sigmaalgebra$,
 then
-for $\marginalthree^*$\hyp{}almost all $\mspaceeltiii\in\measurespaceiii$, each measure
+for $\marginaltwo^*$\hyp{}almost all $\mspaceeltii\in\measurespaceii$, each measure
 $\funck_\uspaceelt$
-on $\sigmaalgebra$ such that $\funch(\uspaceelt) = \mspaceeltiii$
+on $\sigmaalgebra$ such that $\funcg(\uspaceelt) = \mspaceeltii$
 has the following density function with respect to the measure
 $\measure$:
 \[
 \frac{d \funck_\uspaceelt}{d \measure}
 :\measurespace\to\R
 :\mspaceelt\mapsto
-\frac{d\measonprod}{d(\measure\times\marginalthree)^*}
-( \mspaceelt,\mspaceeltiii ).
+\frac{d\measonprod}{d(\measure\times\marginaltwo)^*}
+( \mspaceelt,\mspaceeltii ).
 \]
 \end{prop}
 
 
 \begin{proof}
 Let
-$\measonprod\abscont (\measmu\times\marginalthree)^*$, with a reminder that $\measmu$ is a reference measure on $\sigmaalgebra$, and $\marginalthree$ is a marginal measure on
-$\sigmaalgebraiii$.
+$\measonprod\abscont (\measmu\times\marginaltwo)^*$, with a reminder that $\measmu$ is a reference measure on $\sigmaalgebra$, and $\marginaltwo$ is a marginal measure on
+$\sigmaalgebraii$.
 We are letting
 $\funck$
 denote the corresponding Markov kernel given
-$(\uspace,\sigalg{H})$ and $(\measurespace,\sigmaalgebra)$, as illustrated:
+$(\uspace,\sigalg{G})$ and $(\measurespace,\sigmaalgebra)$, as illustrated:
 \[
 \xymatrix@R=16pt@C=30pt{
-L_1(\uspace, \uspacesig, \measureiii) \ar[r]^{\condexpop{\sigalg{H}}}
+L_1(\uspace, \uspacesig, \measureiii) \ar[r]^{\condexpop{\sigalg{G}}}
 & L_1(\uspace, \uspacesig, \measureiii)
 & \uspace
 \ar[d]_-{\fixinthesecond{\seti}}
@@ -7729,9 +7729,9 @@ L_1(\uspace, \uspacesig, \measureiii) \ar[r]^{\condexpop{\sigalg{H}}}
 \\
 \uspacesig
 \ar[uu]^{Q\,\circ\,\charfunction{}}
-\ar[uur]_{\condprobop{\sigalg{H}}}
+\ar[uur]_{\condprobop{\sigalg{G}}}
 & \sigmaalgebra
-\ar[uu]_{\condprobop{\sigalg{H}}\circ \preimage{\function}}
+\ar[uu]_{\condprobop{\sigalg{G}}\circ \preimage{\function}}
 \ar[l]_{\preimage{\function}}
 & \sigmaalgebra
 \ar[u]^{\fixinthefirst{\uspaceelt}}
@@ -7741,113 +7741,113 @@ L_1(\uspace, \uspacesig, \measureiii) \ar[r]^{\condexpop{\sigalg{H}}}
 }
 \]
 It is sufficient to show that
-for $\marginalthree^*$\hyp{}almost all $\mspaceeltiii\in\measurespaceiii$,
+for $\marginaltwo^*$\hyp{}almost all $\mspaceeltii\in\measurespaceii$,
 if $\seti\in\sigmaalgebra$, and
-$\mspaceeltiii = \funch(\uspaceelt)$,
+$\mspaceeltii = \funcg(\uspaceelt)$,
 then
 \[
 \funck_\uspaceelt(\seti)
 =
 \int_\seti
-\frac{d\measonprod}{d(\measure\times\marginalthree)^*}
-( \mspaceelt, \mspaceeltiii )
+\frac{d\measonprod}{d(\measure\times\marginaltwo)^*}
+( \mspaceelt, \mspaceeltii )
 \,d\measmu(\mspaceelt).
 \]
 
 Let
 $\seti\in\sigmaalgebra$
 and
-$\setiii\in\sigmaalgebraiii$.
+$\setii\in\sigmaalgebraii$.
 Then
-$\charfunction{\seti\times\setiii}$
+$\charfunction{\seti\times\setii}$
 is integrable with respect to the joint measure
 $\measonprod$.
 Since
-$\measonprod \abscont (\measmu\times\marginalthree)^*$,
+$\measonprod \abscont (\measmu\times\marginaltwo)^*$,
 it follows by Proposition~\ref{radon_nikodym_corollary} that
 \[
-\int_{\measurespace\times\measurespaceiii}
-\charfunction{\seti\times\setiii}
+\int_{\measurespace\times\measurespaceii}
+\charfunction{\seti\times\setii}
 \, d\measonprod
 =
-\int_{\measurespace\times\measurespaceiii}
-\charfunction{\seti\times\setiii}
-\frac{d\measonprod}{d(\measure\times\marginalthree)^*}
-d(\measmu\times\marginalthree).
+\int_{\measurespace\times\measurespaceii}
+\charfunction{\seti\times\setii}
+\frac{d\measonprod}{d(\measure\times\marginaltwo)^*}
+d(\measmu\times\marginaltwo).
 \]
 By Fubini's Theorem~\ref{fubini},
 \[
-\int_{\measurespace\times\measurespaceiii}
-\charfunction{\seti\times\setiii}
-\frac{d\measonprod}{d(\measure\times\marginalthree)^*}
-d(\measmu\times\marginalthree)
+\int_{\measurespace\times\measurespaceii}
+\charfunction{\seti\times\setii}
+\frac{d\measonprod}{d(\measure\times\marginaltwo)^*}
+d(\measmu\times\marginaltwo)
 =
-\int_{\measurespaceiii}
+\int_{\measurespaceii}
 \int_{\measurespace}
-\charfunction{\seti\times\setiii}
-\frac{d\measonprod}{d(\measure\times\marginalthree)^*}
+\charfunction{\seti\times\setii}
+\frac{d\measonprod}{d(\measure\times\marginaltwo)^*}
 d \measmu
-\, d \marginalthree .
+\, d \marginaltwo .
 \]
 But also, by Proposition~\ref{joint_decomposition},
 \[
-\int_{\measurespace\times\measurespaceiii}
-\charfunction{\seti\times\setiii}
+\int_{\measurespace\times\measurespaceii}
+\charfunction{\seti\times\setii}
 \, d \measonprod
 =
-\int_\measurespaceiii\int_\measurespace
-\charfunction{\seti\times\setiii}
-(\mspaceelt,\mspaceeltiii)
+\int_\measurespaceii\int_\measurespace
+\charfunction{\seti\times\setii}
+(\mspaceelt,\mspaceeltii)
 \, d \funck_\uspaceelt(\mspaceelt)
-\, d \marginalthree(\mspaceeltiii),
+\, d \marginaltwo(\mspaceeltii),
 \]
-where  $\funch(\uspaceelt) = \mspaceeltiii$.
+where  $\funcg(\uspaceelt) = \mspaceeltii$.
 By transitivity of equality, this shows that
 \[
-\int_{\measurespaceiii}
+\int_{\measurespaceii}
 \int_{\measurespace}
-\charfunction{\seti\times\setiii}
-\frac{d\measonprod}{d(\measure\times\marginalthree)^*}
+\charfunction{\seti\times\setii}
+\frac{d\measonprod}{d(\measure\times\marginaltwo)^*}
 d \measmu
-\, d \marginalthree
+\, d \marginaltwo
 =
-\int_\measurespaceiii
+\int_\measurespaceii
 \int_\measurespace
-\charfunction{\seti\times\setiii}
-(\mspaceelt,\mspaceeltiii)
+\charfunction{\seti\times\setii}
+(\mspaceelt,\mspaceeltii)
 \, d \funck_\uspaceelt(\mspaceelt)
-\, d \marginalthree(\mspaceeltiii),
+\, d \marginaltwo(\mspaceeltii),
 \]
-where  $\funch(\uspaceelt) = \mspaceeltiii$.
+where  $\funcg(\uspaceelt) = \mspaceeltii$.
 We can rewrite this as integration over sets:
 \[
-\int_{\setiii}
+\int_{\setii}
 \int_{\seti}
-\frac{d\measonprod}{d(\measure\times\marginalthree)^*}
+\frac{d\measonprod}{d(\measure\times\marginaltwo)^*}
 d \measmu
-\, d \marginalthree
+\, d \marginaltwo
 =
-\int_\setiii
+\int_\setii
 \int_\seti
 1_\measurespace
 (\mspaceelt)
 \, d \funck_\uspaceelt(\mspaceelt)
-\, d \marginalthree(\mspaceeltiii),
+\, d \marginaltwo(\mspaceeltii),
 \]
-where  $\funch(\uspaceelt) = \mspaceeltiii$.
-Since this is true for all $\setiii\in\sigmaalgebraiii$, it follows by Proposition~\ref{equal_function_test} that
+where  $\funcg(\uspaceelt) = \mspaceeltii$.
+Since this is true for all $\setii\in\sigmaalgebraii$, it follows by Proposition~\ref{equal_function_test} that
 \[
 \int_{\seti}
-\frac{d\measonprod}{d(\measure\times\marginalthree)^*}
-(\mspaceelt,\mspaceeltiii)
+\frac{d\measonprod}{d(\measure\times\marginaltwo)^*}
+(\mspaceelt,\mspaceeltii)
 d \measmu(\mspaceelt)
 =
 \int_\seti
 1_\measurespace
 \, d \funck_\uspaceelt
 \]
-for $\marginalthree^*$\hyp{}almost all $\mspaceeltiii\in\measurespaceiii$, and where
-$\funch(\uspaceelt)=\mspaceeltiii$.
+for $\marginaltwo^*$\hyp{}almost all $\mspaceeltii\in\measurespaceii$, and where
+$\funcg(\uspaceelt)=\mspaceeltii$.
 See that
 \[
 \int_\seti
@@ -7861,12 +7861,12 @@ This means we have shown that
 \funck_\uspaceelt(\seti)
 =
 \int_{\seti}
-\frac{d\measonprod}{d(\measure\times\marginalthree)^*}
-(\mspaceelt,\mspaceeltiii)
+\frac{d\measonprod}{d(\measure\times\marginaltwo)^*}
+(\mspaceelt,\mspaceeltii)
 d \measmu(\mspaceelt)
 \]
-for $\marginalthree^*$\hyp{}almost all $\mspaceeltiii\in\measurespaceiii$, and where
-$\funch(\uspaceelt)=\mspaceeltiii$, as required.
+for $\marginaltwo^*$\hyp{}almost all $\mspaceeltii\in\measurespaceii$, and where
+$\funcg(\uspaceelt)=\mspaceeltii$, as required.
 \end{proof}
 
 
