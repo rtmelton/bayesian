@@ -3870,7 +3870,7 @@ And, for future reference:
 
 
 
-\begin{prop}\label{mixed_abscont}
+\begin{prop}\label{mixed_implies_marginal}
 Let
 $(\measurespace, \sigmaalgebra)$
 and
@@ -4111,7 +4111,8 @@ If a function $\function:\measurespace\to\measurespaceii$ is
 $(\sigmaalgebra, \sigmaalgebraii)$\hyp{}measurable, where 
 $\preimage{\function}:\sigmaalgebraii\to\sigmaalgebra$,
 then the induced probability measure 
-$\measure\circ\preimage{\function}$ on $\sigmaalgebraii$,
+$\measure\circ\preimage{\function}$ on
+the \textsigma\hyp{}algebra  $\sigmaalgebraii$ of the codomain of $\funcf$,
 defined by 
 \[
 \measure\circ\preimage{\function} 
@@ -4134,6 +4135,7 @@ and illustrated
 is called the 
 \term{probability distribution}\index{distribution} of $\function$ on 
 $\sigmaalgebraii$, or simply the \emph{probability distribution} of $\function$.
+It is a probability measure composed with a preimage: $\measmu\circ\preimage{\funcf}$.
 \end{defn}
 
 
@@ -6683,7 +6685,7 @@ If $\setii\in\sigmaalgebraii$ and $\setiii\in\sigmaalgebraiii$, then
 
 \begin{defnboldnote}\label{regular_conditional_distribution}
 The definition of a
-\emph{regular conditional probability distribution}
+regular conditional probability \emph{distribution}
 is nothing other than Definition~\ref{regular_version} of a regular conditional probability combined with a preimage.
 
 Let the collection
@@ -7706,7 +7708,7 @@ $\measure$:
 
 \begin{proof}
 Let
-$\measonprod\abscont (\measmu\times\marginalthree)^*$, with a gentle reminder that $\measmu$ is a reference measure on $\sigmaalgebra$, and $\marginalthree$ is a marginal measure on
+$\measonprod\abscont (\measmu\times\marginalthree)^*$, with a reminder that $\measmu$ is a reference measure on $\sigmaalgebra$, and $\marginalthree$ is a marginal measure on
 $\sigmaalgebraiii$.
 We are letting
 $\funck$
@@ -9337,7 +9339,7 @@ The fact that the function
 $\funcg$
 equals
 $d\measonprod/d(\prior\times\predictive)^*$
-follows by Proposition~\ref{mixed_abscont}.
+follows by Proposition~\ref{mixed_implies_marginal}.
 \end{proof}
 
 
