@@ -195,6 +195,7 @@ label=#1}
 \newtheorem{discussion}[thm]{Discussion}
 \newtheorem{postmortem}[thm]{Post-Mortem}
 \newtheorem{premortem}[thm]{Pre-Mortem}
+\newtheorem{observation}[thm]{Observation}
 %************************************
 \newtheoremstyle{bfnoteitalic}%
 {}{}%
@@ -3530,14 +3531,14 @@ $d\marginalone/d\measure = \funcj$.
 
 
 \begin{prop}\label{joint_abscont}
-Let 
+Let
 $(\measurespace, \sigmaalgebra)$
 and
 $(\measurespaceii, \sigmaalgebraii)$
 be measurable spaces, and let $\measure$ and $\measureii$
 be \textsigma-finite measures on  respective \textsigma-algebras
 $\sigmaalgebra$ and $\sigmaalgebraii$.
-Let $\measonprod$ be a finite measure on 
+Let $\measonprod$ be a finite measure on
 $\productsig{\sigmaalgebra}{\sigmaalgebraii}$.
 If\,
 $\measonprod \abscont (\measure\times\measureii)^*$
@@ -3867,6 +3868,92 @@ And, for future reference:
 \,d\marginalone(\mspaceelt).
 \]
 \end{proof}
+
+
+
+\begin{prop}\label{bayes_rule}
+Let
+$(\measurespace, \sigmaalgebra)$
+and
+$(\measurespaceii, \sigmaalgebraii)$
+be measurable spaces, and let $\measure$ and $\measureii$
+be \textsigma-finite measures on respective \textsigma-algebras
+$\sigmaalgebra$ and $\sigmaalgebraii$.
+Let $\measonprod$ be a finite measure on
+$\productsig{\sigmaalgebra}{\sigmaalgebraii}$.
+If $\,\measonprod \abscont (\measure\times\measureii)^*$ on
+$\productsig{\sigmaalgebra}{\sigmaalgebraii}$,
+then
+\[
+\dfrac{d\joint}{d(\measmu\times\marginaltwo)^*}(\mspaceelt,\mspaceeltii)
+=
+\dfrac{
+\dfrac{d\joint}{d(\marginalone\times\measnu)^*}(\mspaceelt,\mspaceeltii)
+\cdot
+\dfrac{d\marginalone}{d\measmu}(\mspaceelt)
+}
+{
+\displaystyle\int_\measurespace
+\dfrac{d\joint}{d(\marginalone\times\measnu)^*}(\mspaceelt,\mspaceeltii)
+\cdot
+\dfrac{d\marginalone}{d\measmu}(\mspaceelt)\,
+d\measmu(\mspaceelt)
+}.
+\]
+\end{prop}
+
+\begin{proof}
+This just combines Proposition~\ref{marginal_abscont} and Proposition~\ref{joint_abscont}.
+
+It follows from Proposition~\ref{joint_abscont} that
+\[
+\dfrac{d\joint}{d(\measmu\times\marginaltwo)^*}(\mspaceelt,\mspaceeltii)
+=
+\dfrac{
+\dfrac{d\joint}{d(\marginalone\times\measnu)^*}(\mspaceelt,\mspaceeltii)
+\cdot
+\dfrac{d\marginalone}{d\measmu}(\mspaceelt)
+}
+{
+\dfrac{d \marginaltwo\lilstrut}
+{d\measnu}(\mspaceeltii)
+}.
+\]
+We will simply make a substitution for
+$d\marginaltwo / d\measnu$.
+By Proposition~\ref{marginal_abscont},
+\[
+\frac{d \marginaltwo}
+{d\measnu}(\mspaceeltii)
+=
+\int_{\measurespace}
+\frac{d\joint}{d(\measmu\times\measnu)^*}
+(\mspaceelt,\mspaceeltii)
+\,d\measmu(\mspaceelt)
+\]
+and by Proposition~\ref{joint_abscont},
+\[
+\frac{d\joint}{d(\measmu\times\measnu)^*}
+(\mspaceelt,\mspaceeltii)
+=
+\dfrac{d\joint}{d(\marginalone\times\measnu)^*}(\mspaceelt,\mspaceeltii)
+\cdot
+\dfrac{d\marginalone}{d\measmu}(\mspaceelt),
+\]
+so
+\[
+\frac{d \marginaltwo}
+{d\measnu}(\mspaceeltii)
+=
+\displaystyle\int_\measurespace
+\dfrac{d\joint}{d(\marginalone\times\measnu)^*}(\mspaceelt,\mspaceeltii)
+\cdot
+\dfrac{d\marginalone}{d\measmu}(\mspaceelt)\,
+d\measmu(\mspaceelt),
+\]
+as required.
+\end{proof}
+
 
 
 
