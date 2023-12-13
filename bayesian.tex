@@ -3327,84 +3327,14 @@ $\preimage{\projectiontwo}(\setii) = \measurespace\times\setii$.
 In case  $(\measurespace,\sigmaalgebra,\measmu)$ and
 $(\measurespaceii,\sigmaalgebraii,\measnu)$ are already measure spaces, we might refer to the measures
 $\measmu$ and $\measnu$ as \textbf{reference}\index{reference measure} measures, with the understanding that the reference measures are usually not the same as the marginal measures.
-
-The remaining propositions in this chapter are all stated in terms of joint, marginal, and reference measures.
 \end{defn}
 
 
-\begin{prop}\label{induced_marginals}
-Let $\measlambda$ be a measure on a \textsigma-algebra
-$\uspacesig$,
-and let
-$(\funcf,\funcg):\uspace\to \measurespace  \times \measurespaceii $
-be a
-$\bigl(\uspacesig,\productsig{\sigmaalgebra}{\sigmaalgebraii}\bigr)$\hyp{}measurable
-function.
-Let the joint
-$\measonprod 
-=
-\measlambda\circ\preimage{(\funcf,\funcg)}$,
-and let the marginal
-$\marginalone
-=
-\measonprod\circ\preimage{\projectionone}$
-and the marginal
-$\marginaltwo
-=
-\measonprod\circ\preimage{\projectiontwo}$.
-Then
-\[
-\marginalone
-= 
-\measlambda\circ\preimage{\funcf}
-\]
-and
-\[
-\marginaltwo
-=
-\measlambda\circ\preimage{\funcg}
-\]
-as illustrated:
-\[
-\xymatrix@R=16pt@C=30pt{ 
- & \measurespace
- \\
- \uspace 
- \ar[ur]^{\funcf}
- \ar[dr]_{\funcg}
- \ar[r]^{\funcf, \funcg} &
- \measurespace \times \measurespaceii  \ar[u]_\projectionone \ar[d]^\projectiontwo
- \\
- & \measurespaceii  \\
-}
-\qquad
-\xymatrix@R=16pt@C=34pt{ 
- & & \sigmaalgebra
- \ar[dl]_{\preimage{\funcf}}
- \ar[d]^{\preimage{\projectionone}}
- \ar@/_10pt/[lld]_{\makebox[0pt][r]{$\scriptstyle{\marginalone} = $}\measlambda\circ\preimage{\funcf}}
- \\
- [0,\infty] & \uspacesig \ar[l]_-{\measlambda} & 
- \productsig{\sigmaalgebra}{\sigmaalgebraii} 
- \ar[l]_{\preimage{(\funcf,\funcg)}}
- \\
- & & \sigmaalgebraii
-  \ar[u]_{\preimage{\projectiontwo}}
-  \ar[ul]^{\preimage{\funcg}}
-  \ar@/^10pt/[llu]^{\makebox[0pt][r]{$\scriptstyle{\marginaltwo} = $}\measlambda\circ\preimage{\funcg}}
-  \\
-}
-\]
-\end{prop}
+\begin{rmk}
+In the remaining propositions of this section, the only assumption about the joint measure $\measonprod$ on $\productsig{\sigmaalgebra}{\sigmaalgebraii}$ is that it is a finite measure.  We assume this much since we will be taking Radon-Nikodym derivatives with respect to \textsigma\hyp{}finite measures.
+\end{rmk}
 
-\begin{proof}
-This is just ``set theory.''  For example, while showing
-$\measonprod \circ \preimage{\projectionone}
-=
-\measlambda\circ\preimage{\funcf}$,
-you might use the fact that 
-$\preimage{\projectionone}(S) = S\times \measurespaceii $ for any $S\subseteq \measurespace $.
-\end{proof}
+
 
 
 
@@ -7029,6 +6959,82 @@ $\setiii\in\sigmaalgebraiii$, as required.
 Proposition~\ref{equivalent_definition_regular_distribution} says that to each regular conditional distribution there corresponds a particular Markov kernel. We will call that kernel the
 \term{corresponding Markov kernel}.
 \end{defn}
+
+
+\begin{prop}\label{induced_marginals}
+Let $\measlambda$ be a measure on a \textsigma-algebra
+$\uspacesig$,
+and let
+$(\funcf,\funcg):\uspace\to \measurespace  \times \measurespaceii $
+be a
+$\bigl(\uspacesig,\productsig{\sigmaalgebra}{\sigmaalgebraii}\bigr)$\hyp{}measurable
+function.
+Let the joint
+$\measonprod
+=
+\measlambda\circ\preimage{(\funcf,\funcg)}$,
+and let the marginal
+$\marginalone
+=
+\measonprod\circ\preimage{\projectionone}$
+and the marginal
+$\marginaltwo
+=
+\measonprod\circ\preimage{\projectiontwo}$.
+Then
+\[
+\marginalone
+=
+\measlambda\circ\preimage{\funcf}
+\]
+and
+\[
+\marginaltwo
+=
+\measlambda\circ\preimage{\funcg}
+\]
+as illustrated:
+\[
+\xymatrix@R=16pt@C=30pt{
+ & \measurespace
+ \\
+ \uspace
+ \ar[ur]^{\funcf}
+ \ar[dr]_{\funcg}
+ \ar[r]^{\funcf, \funcg} &
+ \measurespace \times \measurespaceii  \ar[u]_\projectionone \ar[d]^\projectiontwo
+ \\
+ & \measurespaceii  \\
+}
+\qquad
+\xymatrix@R=16pt@C=34pt{
+ & & \sigmaalgebra
+ \ar[dl]_{\preimage{\funcf}}
+ \ar[d]^{\preimage{\projectionone}}
+ \ar@/_10pt/[lld]_{\makebox[0pt][r]{$\scriptstyle{\marginalone} = $}\measlambda\circ\preimage{\funcf}}
+ \\
+ [0,\infty] & \uspacesig \ar[l]_-{\measlambda} &
+ \productsig{\sigmaalgebra}{\sigmaalgebraii}
+ \ar[l]_{\preimage{(\funcf,\funcg)}}
+ \\
+ & & \sigmaalgebraii
+  \ar[u]_{\preimage{\projectiontwo}}
+  \ar[ul]^{\preimage{\funcg}}
+  \ar@/^10pt/[llu]^{\makebox[0pt][r]{$\scriptstyle{\marginaltwo} = $}\measlambda\circ\preimage{\funcg}}
+  \\
+}
+\]
+\end{prop}
+
+\begin{proof}
+This is just ``set theory.''  For example, while showing
+$\measonprod \circ \preimage{\projectionone}
+=
+\measlambda\circ\preimage{\funcf}$,
+you might use the fact that
+$\preimage{\projectionone}(S) = S\times \measurespaceii $ for any $S\subseteq \measurespace $.
+\end{proof}
+
 
 
 
