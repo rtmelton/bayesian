@@ -3919,24 +3919,6 @@ and
 (\mspaceelt,\mspaceeltii)}
 {\dfrac{d\marginaltwo\lilstrut}{d\measnu}(\mspaceeltii)}.
 \]
-Consequently,
-\[
-\int_\seti
-\frac{d\measonprod}{d(\marginalone\times\marginaltwo)^*}
-(\mspaceelt,\mspaceeltii)\,d\marginalone(\mspaceelt)
-=
-\frac{\displaystyle
-\int_\seti
-\dfrac{d\measonprod}{d(\marginalone\times\measnu)^*}(\mspaceelt,\mspaceeltii)
-\,d\marginalone(\mspaceelt)
-}
-{\displaystyle
-\int_\measurespace
-\dfrac{d\measonprod\lilstrut}{d(\marginalone\times\measnu)^*}(\mspaceelt,\mspaceeltii)
-\,d\marginalone(\mspaceelt)
-}
-\]
-for all $\seti\in\sigmaalgebra$.
 Likewise,
 if\,
 $\measonprod \abscont (\measmu\times\marginaltwo)^*$, then
@@ -3960,29 +3942,48 @@ and
 (\mspaceelt,\mspaceeltii)}
 {\dfrac{d\marginalone\lilstrut}{d\measmu}(\mspaceelt)}.
 \]
-Consequently,
-\[
-\int_\setii
-\frac{d\measonprod}{d(\marginalone\times\marginaltwo)^*}
-(\mspaceelt,\mspaceeltii)\,d\marginaltwo(\mspaceeltii)
-=
-\frac{\displaystyle
-\int_\setii
-\dfrac{d\measonprod}{d(\measmu\times\marginaltwo)^*}(\mspaceelt,\mspaceeltii)
-\,d\marginaltwo(\mspaceeltii)
-}
-{\displaystyle
-\int_\measurespaceii
-\dfrac{d\measonprod\lilstrut}{d(\measmu\times\marginaltwo)^*}(\mspaceelt,\mspaceeltii)
-\,d\marginaltwo(\mspaceeltii)
-}
-\]
-for all $\setii\in\sigmaalgebraii$.
 \end{prop}
 
 
 \begin{proof}
 This is nothing but an application of Proposition~\ref{marginal_abscont} and Proposition~\ref{joint_abscont}. First set $\measmu=\marginalone$ and apply them, then set $\measnu=\marginaltwo$ and apply them again, noting that $\marginalone$ and $\marginaltwo$ are both finite and therefore \textsigma\hyp{}finite.
+\end{proof}
+
+
+\begin{prop}
+Let
+$(\measurespace, \sigmaalgebra)$
+and
+$(\measurespaceii, \sigmaalgebraii)$
+be measurable spaces, and let $\measure$ and $\measureii$
+be \textsigma-finite measures on  respective \textsigma-algebras
+$\sigmaalgebra$ and $\sigmaalgebraii$.
+Let $\measonprod$ be a finite measure on
+$\productsig{\sigmaalgebra}{\sigmaalgebraii}$.
+If\,
+$\measonprod \abscont (\marginalone\times\measnu)^*$, then
+\[
+\int_\seti
+\frac{d\measonprod}{d(\marginalone\times\marginaltwo)^*}
+(\mspaceelt,\mspaceeltii)\,d\marginalone(\mspaceelt)
+=
+\frac{\displaystyle
+\int_\seti
+\dfrac{d\measonprod}{d(\marginalone\times\measnu)^*}(\mspaceelt,\mspaceeltii)
+\,d\marginalone(\mspaceelt)
+}
+{\displaystyle
+\int_\measurespace
+\dfrac{d\measonprod\lilstrut}{d(\marginalone\times\measnu)^*}(\mspaceelt,\mspaceeltii)
+\,d\marginalone(\mspaceelt)
+}
+\]
+for all $\seti\in\sigmaalgebra$.
+\end{prop}
+
+
+\begin{proof}
+This is just the slightest re-statement of the first part of Proposition~\ref{mixed_implies_marginal}.
 \end{proof}
 
 
