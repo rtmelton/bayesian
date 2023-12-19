@@ -3331,7 +3331,8 @@ $\measmu$ and $\measnu$ as \textbf{reference}\index{reference measure} measures,
 
 
 \begin{rmk}
-In the remaining propositions of this section, the only assumption about the joint measure $\measonprod$ on $\productsig{\sigmaalgebra}{\sigmaalgebraii}$ is that it is a finite measure.  We assume this much since we will be taking Radon-Nikodym derivatives with respect to \textsigma\hyp{}finite measures.
+In the remaining propositions of this section,
+the only assumptions we will make about the joint measure $\measonprod$ on $\productsig{\sigmaalgebra}{\sigmaalgebraii}$ will be that it is a finite measure, and that it is absolutely continuous with respect to various product measures.
 \end{rmk}
 
 
@@ -3983,7 +3984,7 @@ for all $\seti\in\sigmaalgebra$.
 
 
 \begin{proof}
-This is the slightest possible re-statement of the first part of Proposition~\ref{mixed_implies_marginal}.
+This is the slightest possible re-statement of the first half of Proposition~\ref{mixed_implies_marginal}.
 \end{proof}
 
 
@@ -7071,6 +7072,38 @@ $\measonprod \circ \preimage{\projectionone}
 you might use the fact that
 $\preimage{\projectionone}(S) = S\times \measurespaceii $ for any $S\subseteq \measurespace $.
 \end{proof}
+
+
+
+\begin{prop}
+Let
+$(\uspace, \uspacesig, \measlambda)$
+be a probability space, with functions
+$\funcf:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$
+and
+$\funcg:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$
+measurable.
+Set
+$\sigalg{G} = \preimage{\funcg}(\sigmaalgebraii)$.
+Let $\measonprod$ denote the joint measure
+$\measlambda\circ\preimage{({\funcf,\funcg})}$,
+and let $\marginalone$  denote the marginal measure $\measonprod\circ \preimage{\projectionone}$,
+and let $\marginaltwo$ denote the marginal measure $\measonprod\circ \preimage{\projectiontwo}$.
+Let $\measnu$ be a \textsigma\hyp{}finite measure on $\sigmaalgebraii$.
+
+If the conditional distribution
+$\condprobop{\sigalg{G}}\circ \preimage{\funcf}$ of $\funcf$ on
+$\sigmaalgebra$ given $\sigalg{G}$ is regular, letting $\funck$ denote the corresponding Markov kernel,
+and if
+$\measonprod \abscont (\marginalone\times\measnu)^*$
+on
+$\productsig{\sigmaalgebra}{\sigmaalgebraii}$,
+and if
+$\funcj^\seti : \measurespaceii \to [0,1]$
+is any collection of functions such that
+$\funck^\seti = \funcj^\seti \circ \funcg$,
+then
+\end{prop}
 
 
 
