@@ -7075,7 +7075,7 @@ $\preimage{\projectionone}(S) = S\times \measurespaceii $ for any $S\subseteq \m
 
 
 
-\begin{prop}
+\begin{prop}\label{bayes_given_a_value}
 Let
 $(\uspace, \uspacesig, \measlambda)$
 be a probability space, with functions
@@ -7100,9 +7100,18 @@ on
 $\productsig{\sigmaalgebra}{\sigmaalgebraii}$,
 and if
 $\funcj^\seti : \measurespaceii \to [0,1]$
-is any collection of functions such that
+is any collection of
+$\bigl( \sigmaalgebraii,\borel_{[0,1]} \bigr)$\hyp{}measurable
+functions such that
 $\funck^\seti = \funcj^\seti \circ \funcg$,
-then
+then for $\measnu^\kernast$\hyp{}almost all $\mspaceeltii\in\measurespaceii$,
+\[
+\funcj^\seti(\mspaceeltii)
+=
+\int_\seti
+\dfrac{d\measonprod}{d(\marginalone\times\marginaltwo)^*}
+(\mspaceelt,\mspaceeltii)\, d\marginalone(\mspaceelt).
+\]
 \end{prop}
 
 
