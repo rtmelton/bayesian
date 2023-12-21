@@ -9000,73 +9000,73 @@ There are no topological restrictions imposed on the objects in this chapter. No
 
 This chapter provides the smallest possible glimpse of Bayesian statistics.
 
-Let
-$(\measurespace, \sigmaalgebra)$ and
-$(\measurespaceii, \sigmaalgebraiii)$ be measurable spaces.
 Suppose
-$(\measurespace,\sigmaalgebra,\measure)$
-is a probability space, and let $\sigmaalgebraii$ be a \textsigma-subalgebra of
-$\sigmaalgebra$.
+$(\uspace, \uspacesig)$ and
+$(\measurespace, \sigmaalgebra)$ are measurable spaces.
+Let
+$(\uspace,\uspacesig,\measlambda)$
+be a probability space, and let $\sigalg{G}$ be a \textsigma-subalgebra of
+$\uspacesig$.
 The conditional probability
 $
-\condprobop{\sigmaalgebraii}:
-\sigmaalgebra \to
-L_1(\measurespace,\sigmaalgebra,\measure)
+\condprobop{\sigalg{G}}:
+\uspacesig \to
+L_1(\uspace,\uspacesig,\measlambda)
 $
-given $\sigmaalgebraii$
+on $\uspacesig$ given $\sigalg{G}$
 could not possibly be a probability measure since the  codomain
-of $\condprobop{\sigmaalgebraii}$ is quotient space
-$L_1(\measurespace,\sigmaalgebra,\measure)$ rather than the interval $[0,1]$.
+of the conditional probability $\condprobop{\sigalg{G}}$ is the quotient space
+$L_1(\uspace,\uspacesig,\measlambda)$ rather than the interval $[0,1]$.
 For the same reason, no conditional distribution
-${\condprobop{\sigmaalgebraii}}\circ \preimage{\function}
-: \sigmaalgebraiii \to L_1(\measurespace,\sigmaalgebra,\measure)$
-given $\sigmaalgebraii$
+${\condprobop{\sigalg{G}}}\circ \preimage{\funcf}
+: \sigmaalgebra \to L_1(\uspace,\uspacesig,\measlambda)$
+of $\funcf$ on $\sigmaalgebra$ given $\sigalg{G}$
 could possibly be a probability measure,
-with $\function:\measurespace\to\measurespaceii$ here being any
-$(\sigmaalgebra,\sigmaalgebraiii)$\hyp{}measurable function.
+with $\funcf:\uspace\to\measurespace$ here being any
+$(\uspacesig,\sigmaalgebra)$\hyp{}measurable function.
 However, a \emph{regular} conditional distribution corresponds to a Markov kernel $\funck$ defining a whole family of probability measures on the
-\textsigma-algebra $\sigmaalgebraiii$:
+\textsigma-algebra $\sigmaalgebra$:
 \[
 \xymatrix@R=16pt@C=30pt{
-\Lone \ar[r]^{\condexpop{\sigmaalgebraii}}
-& \Lone
-& \measurespace
-\ar[d]_-{\fixinthesecond{\setiii}}
-\ar[dr]^{\qquad\text{$\markovkernel\circ\fixinthesecond{\setiii} \in \condprobop{\sigmaalgebraii}\circ \preimage{\function}(\setiii)$}}
+L_1(\uspace,\uspacesig,\measlambda)
+\ar[r]^{\condexpop{\sigalg{G}}}
+& L_1(\uspace,\uspacesig,\measlambda)
+& \uspace
+\ar[d]_-{\fixinthesecond{\seti}}
+\ar[dr]^{\qquad\text{$\funck\circ\fixinthesecond{\seti} \in \condprobop{\sigalg{G}}\circ \preimage{\funcf}(\seti)$}}
 \\
 &
-& \measurespace\times\sigmaalgebraiii \ar[r]^{\markovkernel}
+& \uspace\times\sigmaalgebra \ar[r]^{\funck}
 & [0,1]
 \\
-\sigmaalgebra
+\uspacesig
 \ar[uu]^{Q\,\circ\, \charfunction{}}
-\ar[uur]^{\condprobop{\sigmaalgebraii}}
-& \sigmaalgebraiii
-\ar[uu]_{\condprobop{\sigmaalgebraii}\circ \preimage{\function}}
-\ar[l]_{\preimage{\function}}
-& \sigmaalgebraiii
+\ar[uur]^{\condprobop{\sigalg{G}}}
+& \sigmaalgebra
+\ar[uu]_{\condprobop{\sigalg{G}}\circ \preimage{\funcf}}
+\ar[l]_{\preimage{\funcf}}
+& \sigmaalgebra
 \ar[ur]_{\qquad\text{probability measure}}
-\ar[u]^{\fixinthefirst{\mspaceelt}}
+\ar[u]^{\fixinthefirst{\uspaceelt}}
 &
 \\
 }
 \]
 By some schools of thought, just a family
 of probability measures itself, indexed by a parameter space, is considered to be a statistical experiment.
-%*************
 
 Let
-$(\uspace,\uspacesig,\measlambda)$
+\[
+\bigl(\pspace\times\sspace,
+\productsig{\pspacesig}{\sspacesig},
+\measonprod\bigr)
+\]
 be a probability space.
-Call the measurable space
-$(\measurespace, \sigmaalgebra)$
-the \emph{attribute space}, or \emph{parameter space}, and call the measurable space
-$(\measurespaceii, \sigmaalgebraii)$
-the \emph{sample space}.
-
-***************
-
-Let $\funcf$ and $\funcg$ denote the respective coordinate projections of
+The measure $\measonprod$ is called the \emph{joint}.
+Call the measurable space $(\pspace, \pspacesig)$ the \emph{attribute space}, or \emph{parameter space}, and call the measurable space
+$(\sspace, \sspacesig)$ the
+\emph{sample space}.
+Let $\projectionone$ and $\projectiontwo$ denote the respective coordinate projections of
 $\pspace\times\sspace$ onto $\pspace$ and $\sspace$. Also let $\preimage{\projectionone}$ and
 $\preimage{\projectiontwo}$ denote the respective induced maps
 $\preimage{\projectionone}:\pspacesig\to\productsig{\pspacesig}{\sspacesig}$
@@ -9096,6 +9096,7 @@ $\preimage{\projectiontwo}:\sspacesig\to\productsig{\pspacesig}{\sspacesig}$, as
 \\
 }
 \]
+
 The projection $\projectionone$
 is
 $\bigl( \productsig{\pspacesig}{\sspacesig}, \pspacesig \bigr)$\hyp{}measurable,
@@ -9125,75 +9126,260 @@ and
 \quad \text{for all $\sspaceset\in\sspacesig$}.
 \]
 
-Set $\sigalg{F} = \preimage{\projectionone}(\sigmaalgebra)$.
-The  conditional distribution
+
+Let functions
+$\function:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$
+and
+$\functionii:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$
+be measurable, as illustrated by the following commutative diagrams:
+\[
+\xymatrix@R=16pt@C=34pt{
+ & \measurespace
+ \\
+ \uspace
+ \ar[ur]^{\funcf}
+ \ar[dr]_{\funcg}
+ \ar[r]^{\funcf, \funcg} &
+ \measurespace \times \measurespaceii  \ar[u]_\projectionone \ar[d]^\projectiontwo
+ \\
+ & \measurespaceii  \\
+}
+\qquad
+\xymatrix@R=18pt@C=34pt{
+ & & \sigmaalgebra
+ \ar[dl]_{\preimage{\funcf}}
+ \ar[d]^{\preimage{\projectionone}}
+ \ar@/_10pt/[lld]_{\marginalone}
+ \\
+ [0,1] & \uspacesig \ar[l]_-{\measlambda} &
+ \productsig{\sigmaalgebra}{\sigmaalgebraii}
+ \ar[l]_{\hskip8pt \preimage{(\funcf,\funcg)}}
+ \\
+ & & \sigmaalgebraii
+  \ar[u]_{\preimage{\projectiontwo}}
+  \ar[ul]^{\preimage{\funcg}}
+  \ar@/^10pt/[llu]^{\marginaltwo}
+  \\
+}
+\]
+Set $\sigalg{F} = \preimage{\funcf}(\sigmaalgebra)$.
+Call the  conditional distribution
 $\condprobop{\sigalg{F}}
 \circ\,
-\preimage{\projectiontwo}$ of
-$\projectiontwo$
+\preimage{\funcg}$ of
+$\funcg$
 on $\sspacesig$
-given $\sigalg{F}$ is called the \term{sampling
+given $\sigalg{F}$ the \term{sampling
 conditional distribution}, as illustrated:
 \[
 \xymatrix@R=40pt{
-L_1 \bigl(\pspace\times\sspace,
-\productsig{\pspacesig}{\sspacesig},
-\measonprod\bigr) \ar[r]^-{\condexpop{\sigalg{F}}}
-& L_1 \bigl(\pspace\times\sspace,
-\productsig{\pspacesig}{\sspacesig},
-\measonprod\bigr)
+L_1(\uspace,\uspacesig,\measlambda)
+\ar[r]^-{\condexpop{\sigalg{F}}}
+& L_1(\uspace,\uspacesig,\measlambda)
 \\
-\productsig{\pspacesig}{\sspacesig}
+\uspacesig
 \ar[u]^-{Q\, \circ\, \charfunction{}} \ar[ur]_{\condprobop{\sigalg{F}}}
 & \sspacesig
-\ar[l]^-{\preimage\projectiontwo}
-\ar[u]_{
-\genfrac{}{}{0pt}{1}
-%outer numerator:
-{\condprobop{\sigalg{F}}
-\circ\,
-\preimage{\projectiontwo}}
-%outer denominator:
-{\genfrac{}{}{0pt}{1}{\text{sampling}\hfill}{\text{cond'l dist.}\hfill}}
-}% end \ar[u]
+\ar[l]^-{\preimage{\funcg}}
+\ar[u]_{\condprobop{\sigalg{F}}\circ\,\preimage{\funcg}}
 }% end \xymatrix
 \]
 
-Set $\sigalg{G} = \preimage{\projectiontwo}(\sigmaalgebraii)$.
-The  conditional distribution
+Set $\sigalg{G} = \preimage{\funcg}(\sigmaalgebraii)$.
+Call the  conditional distribution
 $\condprobop{\sigalg{G}}
 \circ\,
-\preimage{\projectionone}$ of
-$\projectionone$
+\preimage{\funcf}$ of
+$\funcf$
 on $\pspacesig$
-given $\sigalg{G}$ is called the \term{posterior conditional distribution}, as illustrated:
+given $\sigalg{G}$ the \term{posterior conditional distribution}, as illustrated:
 \[
 \xymatrix@R=40pt{
-L_1 \bigl(\pspace\times\sspace,
-\productsig{\pspacesig}{\sspacesig},
-\measonprod\bigr)
+L_1(\uspace,\uspacesig,\measlambda)
 \ar[r]^-{\condexpop{\sigalg{G}}}
-& L_1 \bigl(\pspace\times\sspace,
-\productsig{\pspacesig}{\sspacesig},
-\measonprod\bigr)
+& L_1(\uspace,\uspacesig,\measlambda)
 \\
-\productsig{\pspacesig}{\sspacesig}
+\uspacesig
 \ar[u]^-{Q\, \circ\, \charfunction{}} \ar[ur]_{\condprobop{\sigalg{G}}}
 & \pspacesig
-\ar[l]^-{\preimage\projectionone}
-\ar[u]_{
-\genfrac{}{}{0pt}{1}
-%outer numerator:
-{\condprobop{\sigalg{G}}
-\circ\,
-\preimage{\projectionone}}
-%outer denominator:
-{\genfrac{}{}{0pt}{1}{\text{posterior}\hfill}{\text{cond'l dist.}\hfill}}
-}% end \ar[u]
+\ar[l]^-{\preimage{\funcf}}
+\ar[u]_{\condprobop{\sigalg{G}} \circ\, \preimage{\funcf}}
 }% end \xymatrix
 \]
 
+The sampling and posterior conditional distributions could not possibly be probability measures, and this should be clear since their codomains are $L_1$ spaces rather than
+the interval $[0,1]$.
+However, were they \emph{regular} conditional distributions, then they would induce whole families of probability measures on the parameter and sample space \textsigma-algebras.
+What measure-theoretic conditions might be sufficient to imply that these conditional distributions are regular?
 
+
+One simple condition is when
+$\measonprod\abscont (\marginalone\times\marginaltwo)^*$.
+Then both the sampling conditional distribution and the posterior conditional distribution are regular. This is just an application of Proposition~\ref{absolute_continuity_regular}.
+
+
+Here, in turn, is a measure-theoretic condition sufficient to imply that
+$\measonprod\abscont (\marginalone\times\marginaltwo)^*$.
+Suppose
+$\{ P_\mspaceelt :\mspaceelt\in\measurespace \}$
+is a family of probability measures on the sample space \textsigma-algebra
+$\sigmaalgebraii$,
+and suppose that the \textsigma\hyp{}algebra $\sigmaalgebra$ is such that for each
+$\setii\in\sigmaalgebraii$, the function defined by
+\[
+P^\setii
+:\measurespace \to [0,1]
+:\mspaceelt \mapsto P_\mspaceelt(\setii)
+\]
+is $\bigl(\sigmaalgebra,\borel_{[0,1]}\bigr)$\hyp{}measurable.
+Further suppose the joint probability measure $\joint$  is defined in terms of
+a given probability measure $\wouldbeprior$ on the parameter space \textsigma-algebra
+$\pspacesig$ by
+\[
+\measonprod(\pspaceset\times\sspaceset)
+=
+\int_\pspaceset P^\sspaceset(\pspaceelt)
+\, d\wouldbeprior(\pspaceelt)
+\quad
+\text{for all $\sspaceset\in\sspacesig$ and all $\pspaceset \in \pspacesig$.}
+\]
+Then, by Proposition~\ref{not_a_product_measure}, the given measure $\wouldbeprior$ must actually equal the marginal
+$\prior$.
+If also $\measnu$ is a \textsigma-finite measure on $\sspacesig$
+such that each
+$P_\pspaceelt\abscont \measnu$, and if
+$\funcf : \pspace\times\sspace\to\R$ is a
+$\bigl(\productsig{\pspacesig}{\sspacesig},\borel_\R\bigr)$\hyp{}measurable function
+such that each $\funcf_\pspaceelt$ is equal to the Radon-Nikodym derivative:
+\begin{equation}\label{as_density}
+\function_\pspaceelt
+=
+d P_\pspaceelt/d\measnu,
+\end{equation}
+then
+$\joint \abscont (\prior \times\measnu)^*$
+with
+$\function
+=
+d\measonprod/d(\prior \times\measnu)^*$,
+and consequently
+$\measonprod\abscont (\prior\times\predictive)^*$.
+Further, if the function
+$\funcg: \pspace\times\sspace\to\R$ is defined by setting
+\[\functionii(\pspaceelt,\sspaceelt)
+=
+\frac
+{\function(\pspaceelt,\sspaceelt)}
+{\int_\pspace \function(\pspaceelt,\sspaceelt)\,
+d\prior(\pspaceelt)},
+\]
+then
+$\functionii
+=
+d\measonprod/d(\prior\times\predictive)^*$.
+This implies that $\predictive \abscont \measnu$ on $\sspacesig$, for if $\sspaceset\in\sspacesig$, then
+\[
+\predictive(\sspaceset)
+= \measonprod(\pspace \times \sspaceset)
+= \int_{\pspace \times \sspaceset} \function \, d(\prior\times\measnu)
+= \int_\sspaceset\left( \int_\pspace \function(\pspaceelt, \sspaceelt)\,d\prior(x)\right) d\measnu(\sspaceelt).
+\]
+This says
+\[
+\frac{d\predictive}{d\measnu}:
+\sspace\to\R:
+\sspaceelt\mapsto \int_\pspace \function(\pspaceelt,\sspaceelt)\,d\prior(x).
+\]
+
+The family $\{ P_\pspaceelt :\pspaceelt\in\pspace \}$ of probability measures on the sample space \textsigma-algebra $\sspacesig$ must satisfy
+\[
+P_\pspaceelt(\sspaceset)
+=
+\int_\sspaceset \functionii(\pspaceelt,\sspaceelt)
+\, d\predictive(\sspaceelt)
+\quad \text{for all $\sspaceset\in\sspacesig$},
+\]
+and a family $\{ \prior_\sspaceelt :\sspaceelt\in\sspace \}$ of probability measures on the parameter space \textsigma-algebra $\pspacesig$, defined for those
+$\sspaceelt\in\sspace$ such that $\funcf^\sspaceelt$ is integrable with respect to $\prior$, is defined by
+\begin{equation}\label{bayes_eq}
+\prior_\sspaceelt(\pspaceset)
+=
+\int_\pspaceset \functionii(\pspaceelt,\sspaceelt)
+\, d\prior(\pspaceelt)
+\quad \text{for all $\pspaceset\in\pspacesig$},
+\end{equation}
+or equivalently by
+\[
+\frac{d\prior_\sspaceelt}{d\prior}
+:\pspace\to\R
+:\pspaceelt
+\mapsto
+\frac
+{\function(\pspaceelt,\sspaceelt)}
+{\int_\pspace \function(\pspaceelt,\sspaceelt)\,
+d\prior(\pspaceelt)}.
+\]
+The equality~(\ref{bayes_eq}) may also be  seen as
+Bayes' Theorem\index{Bayes' Theorem@Bayes' Theorem}
+in the case where there is a \textsigma-finite measure $\measlambda$ on $\pspacesig$
+with $\prior \abscont \measlambda$, say with density function
+$\functioniii
+=
+d\prior/d\measlambda
+\in\cali{L}_1(\pspace, \pspacesig,\measlambda)$. In this case,
+\[
+\prior_{\sspaceelt}(\pspaceset)
+=
+\frac
+{\displaystyle
+\int_\pspaceset \function(\pspaceelt,\sspaceelt)\functioniii(\pspaceelt)
+\,d\measlambda(\pspaceelt)
+}
+{\displaystyle
+\int_{\pspace} \function(\pspaceelt,\sspaceelt)\functioniii(\pspaceelt)
+\,d\measlambda(\pspaceelt)
+}
+\quad
+\text{for all $\pspaceset\in\pspacesig$,}
+\]
+or equivalently,
+\begin{align*}\label{bayes_theorem}
+\frac{d\prior_\sspaceelt}{d\measlambda}:
+\pspace\to\R:
+\pspaceelt
+& \mapsto
+\frac{\function(\pspaceelt,\sspaceelt)\functioniii(\pspaceelt)}
+{\displaystyle
+\int_{\pspace} \function(\pspaceelt,\sspaceelt)\functioniii(\pspaceelt)
+\,d\measlambda(\pspaceelt)}
+\\
+& =
+\frac{\function^\sspaceelt(\pspaceelt)\functioniii(\pspaceelt)}
+{\displaystyle
+\int_{\pspace} \function^\sspaceelt(\pspaceelt)\functioniii(\pspaceelt)
+\,d\measlambda(\pspaceelt)}
+,\\
+\end{align*}
+where $\function(\pspaceelt,\sspaceelt)$, or in particular $\function^{\sspaceelt}$, might be referred to as ``the likelihood,'' illustrated in the following diagram:
+\[
+\xymatrix@R=16pt@C=30pt{
+\pspace \ar[dr]^{\function^\sspaceelt\quad \rlap{\emph{\scriptsize the likelihood}}}
+& \\
+\pspace\times\sspace
+\ar[u]^{\projectionone}
+\ar[d]_{\projectiontwo}
+\ar[r]^{\function}
+& \R \\
+\sspace
+\ar[ur]_{\function_\pspaceelt \quad \rlap{\emph{\scriptsize Radon-Nikodym derivative}}}
+&
+}
+\]
+
+The collection
+$\{\function^\sspaceelt:\sspaceelt\in\sspace \}$
+of likelihood functions $\pspace\to\R$ is indexed by the sample space
+$\sspace$, which is one way that a particular sample $\sspaceelt$ may be used in applications; the sample itself determines the likelihood function by indexing into the collection. It is interesting how the sample\index{sample}, or \term{observation}, or \term{data}, can be seen as selecting a likelihood function from a collection, and warrants further thought. On the other hand, you always need information\index{information} to make an intelligent selection. Perhaps that is all there is to it.
 
 
 
