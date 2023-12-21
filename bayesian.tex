@@ -7165,6 +7165,16 @@ $\funck^\seti = \funcj^\seti \circ \funcg$, as illustrated:
 \scriptstyle{\preimage{\funcg}(\setii)} & \scriptstyle{\setii} & \\
 }
 \]
+With
+$\measonprod\abscont(\marginalone\times\measnu)^*$,
+we can apply Proposition~\ref{marginal_abscont} to get
+$\marginaltwo\abscont\measnu$ on $\sigmaalgebraii$.
+And in turn, we can apply the Radon-Nikodym corollary, namely Proposition~\ref{radon_nikodym_corollary} to get
+\[
+\int_\setii \funcj^\seti  \dfrac{d\marginaltwo}{d\measnu} \, d \measnu
+=
+\int_\setii \funcj^\seti \, d \marginaltwo.
+\]
 Applying a change of variable according to Proposition~\ref{change_of_variable},
 \[
 \int_\setii \funcj^\seti \, d \marginaltwo
@@ -7196,16 +7206,6 @@ $\measonprod =
 \measlambda\bigl(\preimage{\funcg}(\setii)\meets\preimage{\funcf}(\seti)\bigr)
 =
 \measonprod(\seti\times\setii).
-\]
-With
-$\measonprod\abscont(\marginalone\times\measnu)^*$,
-we can apply Proposition~\ref{marginal_abscont} to get
-$\marginaltwo\abscont\measnu$ on $\sigmaalgebraii$.
-And in turn, we can apply the Radon-Nikodym corollary, namely Proposition~\ref{radon_nikodym_corollary} to get
-\[
-\int_\setii \funcj^\seti \, d \marginaltwo
-=
-\int_\setii \funcj^\seti  \dfrac{d\marginaltwo}{d\measnu} \, d \measnu.
 \]
 By transitivity of equality, we have shown so far that
 \[
@@ -8982,6 +8982,216 @@ $\mspaceeltiii\in\measurespaceiii$.
 Divide both sides of (3) by $p(\mspaceeltii\mid\mspaceeltiii)$.
 \end{proof}
 
+
+
+
+\chapter{Bayesian Statistics Re-Write}\label{bayesian_statistics_rewrite}
+%*********************************************************
+%*********************************************************
+%*********************************************************
+%*********************************************************
+\textbf{This is to supercede Chapter~\ref{bayesian_statistics},
+currently entitled \emph{Bayesian Statistics.}}
+
+\lettrine{S}{tatistics} is a mathematical analysis of guesswork. This kind of guesswork is called inductive inference.
+Its purpose is to identify a probability distribution or a conditional distribution. The particular kind of guesswork we will use is considered \emph{Bayesian} since it involves a parameter that induces a  probability distribution. A parameter here is just a measurable function.
+
+There are no topological restrictions imposed on the objects in this chapter. No Borel space conditions, no separable conditions.  We rely instead upon measure-theoretic conditions.
+
+This chapter provides the smallest possible glimpse of Bayesian statistics.
+
+Let
+$(\measurespace, \sigmaalgebra)$ and
+$(\measurespaceii, \sigmaalgebraiii)$ be measurable spaces.
+Suppose
+$(\measurespace,\sigmaalgebra,\measure)$
+is a probability space, and let $\sigmaalgebraii$ be a \textsigma-subalgebra of
+$\sigmaalgebra$.
+The conditional probability
+$
+\condprobop{\sigmaalgebraii}:
+\sigmaalgebra \to
+L_1(\measurespace,\sigmaalgebra,\measure)
+$
+given $\sigmaalgebraii$
+could not possibly be a probability measure since the  codomain
+of $\condprobop{\sigmaalgebraii}$ is quotient space
+$L_1(\measurespace,\sigmaalgebra,\measure)$ rather than the interval $[0,1]$.
+For the same reason, no conditional distribution
+${\condprobop{\sigmaalgebraii}}\circ \preimage{\function}
+: \sigmaalgebraiii \to L_1(\measurespace,\sigmaalgebra,\measure)$
+given $\sigmaalgebraii$
+could possibly be a probability measure,
+with $\function:\measurespace\to\measurespaceii$ here being any
+$(\sigmaalgebra,\sigmaalgebraiii)$\hyp{}measurable function.
+However, a \emph{regular} conditional distribution corresponds to a Markov kernel $\funck$ defining a whole family of probability measures on the
+\textsigma-algebra $\sigmaalgebraiii$:
+\[
+\xymatrix@R=16pt@C=30pt{
+\Lone \ar[r]^{\condexpop{\sigmaalgebraii}}
+& \Lone
+& \measurespace
+\ar[d]_-{\fixinthesecond{\setiii}}
+\ar[dr]^{\qquad\text{$\markovkernel\circ\fixinthesecond{\setiii} \in \condprobop{\sigmaalgebraii}\circ \preimage{\function}(\setiii)$}}
+\\
+&
+& \measurespace\times\sigmaalgebraiii \ar[r]^{\markovkernel}
+& [0,1]
+\\
+\sigmaalgebra
+\ar[uu]^{Q\,\circ\, \charfunction{}}
+\ar[uur]^{\condprobop{\sigmaalgebraii}}
+& \sigmaalgebraiii
+\ar[uu]_{\condprobop{\sigmaalgebraii}\circ \preimage{\function}}
+\ar[l]_{\preimage{\function}}
+& \sigmaalgebraiii
+\ar[ur]_{\qquad\text{probability measure}}
+\ar[u]^{\fixinthefirst{\mspaceelt}}
+&
+\\
+}
+\]
+By some schools of thought, just a family
+of probability measures itself, indexed by a parameter space, is considered to be a statistical experiment.
+%*************
+
+Let
+$(\uspace,\uspacesig,\measlambda)$
+be a probability space.
+Call the measurable space
+$(\measurespace, \sigmaalgebra)$
+the \emph{attribute space}, or \emph{parameter space}, and call the measurable space
+$(\measurespaceii, \sigmaalgebraii)$
+the \emph{sample space}.
+
+***************
+
+Let $\funcf$ and $\funcg$ denote the respective coordinate projections of
+$\pspace\times\sspace$ onto $\pspace$ and $\sspace$. Also let $\preimage{\projectionone}$ and
+$\preimage{\projectiontwo}$ denote the respective induced maps
+$\preimage{\projectionone}:\pspacesig\to\productsig{\pspacesig}{\sspacesig}$
+and
+$\preimage{\projectiontwo}:\sspacesig\to\productsig{\pspacesig}{\sspacesig}$, as illustrated:
+\[
+\xymatrix@R=16pt@C=30pt{
+\pspace
+&
+&
+\pspacesig
+\ar[d]^-{\preimage{\projectionone}}
+\ar[dl]_-{\marginalone}
+& \seti \ar@{|->}[d]
+\\
+\pspace\times\sspace \ar[u]^-{\projectionone} \ar[d]_-{\projectiontwo} &
+[0,1] &
+\productsig{\pspacesig}{\sspacesig}  \ar[l]_\measonprod
+& \seti\times\sspace
+\\
+\sspace
+&
+&
+\sspacesig
+\ar[u]_-{\preimage{\projectiontwo}}
+\ar[ul]^-{\marginaltwo}
+\\
+}
+\]
+The projection $\projectionone$
+is
+$\bigl( \productsig{\pspacesig}{\sspacesig}, \pspacesig \bigr)$\hyp{}measurable,
+and induces the marginal probability distribution
+$\marginalone\definedby\measonprod\circ\preimage{\projectionone}$ of $\projectionone$ on the parameter space
+\textsigma-algebra $\pspacesig$,
+which is called the \emph{prior probability distribution}.
+The projection $\projectiontwo$
+is
+$\bigl(\productsig{\pspacesig}{\sspacesig}, \sspacesig \bigr)$\hyp{}measurable,
+and induces the marginal probability distribution
+$\marginaltwo\definedby\measonprod\circ\preimage{\projectiontwo}$ of $\projectiontwo$ on the sample space
+\textsigma-algebra $\sspacesig$,
+which is called the \emph{predictive probability distribution}.
+Consequently:
+\[
+\prior(\pspaceset)
+= ( \measonprod\circ\preimage{\projectionone} ) (\pspaceset)
+= \measonprod(\pspaceset\times\sspace)
+\quad \text{for all $\pspaceset\in\pspacesig$},
+\]
+and
+\[
+\predictive(\sspaceset)
+= ( \measonprod\circ\preimage{\projectiontwo} ) (\sspaceset)
+= \measonprod(\pspace\times\sspaceset)
+\quad \text{for all $\sspaceset\in\sspacesig$}.
+\]
+
+Set $\sigalg{F} = \preimage{\projectionone}(\sigmaalgebra)$.
+The  conditional distribution
+$\condprobop{\sigalg{F}}
+\circ\,
+\preimage{\projectiontwo}$ of
+$\projectiontwo$
+on $\sspacesig$
+given $\sigalg{F}$ is called the \term{sampling
+conditional distribution}, as illustrated:
+\[
+\xymatrix@R=40pt{
+L_1 \bigl(\pspace\times\sspace,
+\productsig{\pspacesig}{\sspacesig},
+\measonprod\bigr) \ar[r]^-{\condexpop{\sigalg{F}}}
+& L_1 \bigl(\pspace\times\sspace,
+\productsig{\pspacesig}{\sspacesig},
+\measonprod\bigr)
+\\
+\productsig{\pspacesig}{\sspacesig}
+\ar[u]^-{Q\, \circ\, \charfunction{}} \ar[ur]_{\condprobop{\sigalg{F}}}
+& \sspacesig
+\ar[l]^-{\preimage\projectiontwo}
+\ar[u]_{
+\genfrac{}{}{0pt}{1}
+%outer numerator:
+{\condprobop{\sigalg{F}}
+\circ\,
+\preimage{\projectiontwo}}
+%outer denominator:
+{\genfrac{}{}{0pt}{1}{\text{sampling}\hfill}{\text{cond'l dist.}\hfill}}
+}% end \ar[u]
+}% end \xymatrix
+\]
+
+Set $\sigalg{G} = \preimage{\projectiontwo}(\sigmaalgebraii)$.
+The  conditional distribution
+$\condprobop{\sigalg{G}}
+\circ\,
+\preimage{\projectionone}$ of
+$\projectionone$
+on $\pspacesig$
+given $\sigalg{G}$ is called the \term{posterior conditional distribution}, as illustrated:
+\[
+\xymatrix@R=40pt{
+L_1 \bigl(\pspace\times\sspace,
+\productsig{\pspacesig}{\sspacesig},
+\measonprod\bigr)
+\ar[r]^-{\condexpop{\sigalg{G}}}
+& L_1 \bigl(\pspace\times\sspace,
+\productsig{\pspacesig}{\sspacesig},
+\measonprod\bigr)
+\\
+\productsig{\pspacesig}{\sspacesig}
+\ar[u]^-{Q\, \circ\, \charfunction{}} \ar[ur]_{\condprobop{\sigalg{G}}}
+& \pspacesig
+\ar[l]^-{\preimage\projectionone}
+\ar[u]_{
+\genfrac{}{}{0pt}{1}
+%outer numerator:
+{\condprobop{\sigalg{G}}
+\circ\,
+\preimage{\projectionone}}
+%outer denominator:
+{\genfrac{}{}{0pt}{1}{\text{posterior}\hfill}{\text{cond'l dist.}\hfill}}
+}% end \ar[u]
+}% end \xymatrix
+\]
 
 
 
