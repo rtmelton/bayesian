@@ -3063,7 +3063,7 @@ as illustrated:
 \end{notn}
  
  
- \begin{prop}\label{measurable_out_of_product}
+\begin{prop}\label{measurable_out_of_product}
 Let 
 $(\measurespace,\sigmaalgebra)$,
 $(\measurespaceii,\sigmaalgebraii)$, and
@@ -3085,6 +3085,25 @@ $(\sigmaalgebraii,\sigmaalgebraiii)$\hyp{}measurable for each
 $\mspaceelt\in\measurespace$.
 \end{prop}
  
+
+\begin{prop}\label{measurable_into_product}
+Let
+$(\measurespace,\sigmaalgebra)$,
+$(\measurespaceii,\sigmaalgebraii)$, and
+$(\measurespaceiii,\sigmaalgebraiii)$
+be measurable spaces.
+Let
+$\funcg
+:\measurespaceiii \to \measurespace\times\measurespaceii$.
+Then the function $\funcg$ is
+$(\sigmaalgebraiii, \productsig{\sigmaalgebra}{\sigmaalgebraii} )$\hyp{}measurable
+if and only if both
+$\projectionone\circ\funcg : \measurespaceiii \to \measurespace$
+is $(\sigmaalgebraiii,\sigmaalgebra)$\hyp{}measureable
+and
+$\projectiontwo\circ\funcg : \measurespaceiii \to \measurespaceii$
+is $(\sigmaalgebraiii,\sigmaalgebraii)$\hyp{}measureable.
+\end{prop}
 
 
 \begin{defn}\label{section_functions}
