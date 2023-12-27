@@ -7448,7 +7448,7 @@ First step, define a map
 $\funcj:\measurespaceii\times\sigmaalgebra\to \R$. By hypothesis,
 $\measonprod \abscont (\marginalone\times\marginaltwo)^*$, and since the measure
 $\measonprod$ is finite, and the measure $(\marginalone\times\marginaltwo)^*$ is also finite, therefore \textsigma\hyp{}finite, we can take the Radon-Nikodym derivative
-$d\measonprod / d(\marginalone\times\marginaltwo)^*$, and define a map as follows:
+$d\measonprod / d(\marginalone\times\marginaltwo)^*$, and define the map as follows:
 \[
 \funcj
 :\measurespaceii\times\sigmaalgebra\to \R
@@ -7472,63 +7472,105 @@ which is illustrated in a fashion similar to a Markov kernel:
 \\
 }
 \]
-Verify that the map $\funcj$ makes sense; the representative function
-$d\,\measonprod/(\marginalone\times\marginaltwo)^*$
-is integrable with respect to the measure
-$\marginalone\times\marginaltwo$, and this means that, by Fubini's, the iterated integrals exist and, in particular, for each
-$\seti\in\sigmaalgebra$,
-the map $\funcj^\seti$ defined by
-\[
-\funcj^\seti:
-\measurespaceii\to \R
-:\mspaceeltii\mapsto
-\int_\seti
-\dfrac{d\,\measonprod}{d(\marginalone\times\marginaltwo)^*}
-(\mspaceelt,\mspaceeltii)\, d\marginalone(\mspaceelt)
-\]
-defines an integrable function over
-$\measurespaceii$ with respect to the measure $\marginaltwo$.
-
-By Proposition~\ref{sigma_algebra_measurable}, each $\funcj^\seti$ can also be taken
-$(\sigmaalgebraii,\borel_\R)$\hyp{}measurable.
-Let us show that we can redefine the codomain of each
-$\funcj^\seti$ to be $[0,1]$ rather than all of $\R$.
 
 By Proposition~\ref{almost_a_measure},
-\[
-\funcj^\measurespace:
-\measurespaceii\to\R:\mspaceeltii\mapsto
-\int_\measurespace \dfrac{d\,\measonprod}{d(\marginalone\times\marginaltwo)^*}
-(\mspaceelt,\mspaceeltii)
-\,d\marginalone(\mspaceelt)
-=
-1
-\]
+$j^\measurespace(\mspaceeltii) = 1$
 for $\marginaltwo^\kernast$\hyp{}almost all  $\mspaceeltii\in\measurespaceii$; say for all
 $\mspaceeltii\in\measurespaceii$ except for  those
 $\mspaceeltii$ in a $\marginaltwo^\kernast$\hyp{}null subset $N$ of
 $\measurespaceii$.
-From the fact that each $\seti\subseteq\measurespace$, it follows that
+The set inclusion
+$\seti\subseteq\measurespace$
+implies the inequality
+$\funcj^\seti \leq
+\funcj^\measurespace$,
+and so $0 \leq \funcj_\mspaceeltii \leq 1$ for all $\mspaceeltii \notin N$.
+It means that we can redefine the codomain of each such $\funcj_\mspaceeltii$ to be the interval $[0,1]$, and it implies that each such $\funcj_\mspaceeltii$ is a probability measure.
+Fix $\mspaceeltiii\in\measurespaceii$ with $\mspaceeltiii\notin N$, so $\funcj_\mspaceeltiii$ is a probability measure. For each
+$\mspaceeltii \in N$,
+redefine
+$\funcj_\mspaceeltii(\seti)
+\definedby
+\funcj_\mspaceeltiii(\seti)$,
+so now all the $\funcj_\mspaceeltii$ are probability measures.
+In summary,
 \[
-\funcj_\mspaceeltii :\sigmaalgebra \to [0,1]
-: \seti \mapsto
-\int_\seti
+\funcj_\mspaceeltii
+:\sigmaalgebra \to [0,1]
+:\seti \mapsto
+\begin{cases}
+\displaystyle \int_\seti
 \dfrac{d\,\measonprod}{d(\marginalone\times\marginaltwo)^*}
 (\mspaceelt,\mspaceeltii)\, d\marginalone(\mspaceelt)
+& \text{if $\mspaceeltii\notin N$}
+\\
+\funcj_\mspaceeltiii(\seti) \quad\text{for that fixed $\mspaceeltiii$}
+& \text{if $\mspaceeltii \in N$}
+\\
+\end{cases}
 \]
-is a probability measure for all $\mspaceeltii\in N\comp$.
-Let us simply redefine $\funcj^\measurespace$ to equal $1$ on the
-$\marginaltwo^*$\hyp{}null
-set $N$.  Then we can take the codomain of all the $\funcj^\seti$ to be $[0,1]$,
-with each $\funcj^\seti$ now
-$\bigl( \sigmaalgebraii, \borel_{[0,1]} \bigr)$\hyp{}measurable,
-and the corresponding $\funcj_\mspaceeltii$ are still probability measures for all
-$\mspaceeltii\in N\comp$.
 
-\textbf{Check that redefining $\funcj^\measurespace$ to equal $1$ on the
-$\marginaltwo^*$\hyp{}null
-set $N$ is correct.  My hunch is that I have missed something essential here.
-If $j_y$ is a probability measure off $N$, why not do the usual, and redefine in terms of one of these?}
+The representative function
+$d\,\measonprod/(\marginalone\times\marginaltwo)^*$
+is integrable with respect to the measure
+$\marginalone\times\marginaltwo$, and this means  by Fubini's~\ref{fubini} that the iterated integrals exist and in particular for each
+$\seti\in\sigmaalgebra$,
+the map $\funcj^\seti$ defines an integrable function over
+$\measurespaceii$ with respect to the measure $\marginaltwo$.
+By Proposition~\ref{sigma_algebra_measurable}, each $\funcj^\seti$ can be taken
+$(\sigmaalgebraii,\borel_\R)$\hyp{}measurable.
+We can redefine the codomain of each
+$\funcj^\seti$ to be $[0,1]$ rather than all of $\R$
+by modifying each function $\funcj^\seti$ on that $\marginaltwo^\kernast$\hyp{}null set $N$.
+Redefine
+$\funcj^\seti(\mspaceeltii)
+\definedby
+\funcj^\seti(\mspaceeltiii)$ if $\mspaceeltii \in N$,
+where the
+$\mspaceeltiii\in\measurespaceii$ with $\mspaceeltiii\notin N$
+is the same fixed element from the previous paragraph.
+We know that
+$\funcj^\seti(\mspaceeltiii)= \funcj_\mspaceeltiii(\seti)$ by their definitions,
+and
+$\funcj_\mspaceeltiii(\seti) \in [0,1]$
+implies
+$\funcj^\seti(\mspaceeltiii) \in [0,1]$,
+so the codomain of each $j^\seti$ can be taken $[0,1]$. And each such function $\funcj^\seti$ is
+$\bigl( \sigmaalgebraii, \borel_{[0,1]} \bigr)$\hyp{}measurable.
+In summary,
+\[
+\funcj^\seti
+:\measurespaceii \to [0,1]
+:\mspaceeltii \mapsto
+\begin{cases}
+\displaystyle \int_\seti
+\dfrac{d\,\measonprod}{d(\marginalone\times\marginaltwo)^*}
+(\mspaceelt,\mspaceeltii)\, d\marginalone(\mspaceelt)
+& \text{if $\mspaceeltii\notin N$}
+\\
+\funcj^\seti(\mspaceeltiii)  \quad\text{for that fixed $\mspaceeltiii$}
+& \text{if $\mspaceeltii \in N$}
+\\
+\end{cases}
+\]
+
+This gives us a Markov kernel:
+\[
+\xymatrix@R=16pt@C=30pt{
+\measurespaceii
+\ar[d]_-{\fixinthesecond{\seti}}
+\ar[dr]^{\funcj^\seti} &
+\\
+\measurespaceii\times\sigmaalgebra \ar[r]^{\funcj} & [0,1]
+\\
+\sigmaalgebra
+\ar[ur]_{\funcj_\mspaceeltii}
+\ar[u]^{\fixinthefirst{\mspaceeltii}} &
+\\
+}
+\]
+
+\textbf{Since you now have the Markov kernel $\funcj$, the remainder of the proof simplifies.}
 
 Second step, we will work towards defining a map
 $\funck: \uspace\times \sigmaalgebra \to [0,1]$.
