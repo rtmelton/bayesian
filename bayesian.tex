@@ -7085,237 +7085,6 @@ $\preimage{\projectionone}(S) = S\times \measurespaceii $ for any $S\subseteq \m
 \end{proof}
 
 
-\textbf{The hypothesis $\measonprod \abscont (\marginalone\times\measnu)^*$ in the following proposition implies that the conditional distribution
-$\condprobop{\sigalg{G}}\circ \preimage{\funcf}$ of $\funcf$ on
-$\sigmaalgebra$ given $\sigalg{G}$ is regular.
-You want to re\hyp{}write the statement of the theorem, and in turn modify the proof.}
-
-
-\begin{prop}\label{bayes_mark_one}
-Let
-$(\uspace, \uspacesig, \measlambda)$
-be a probability space, with functions
-$\funcf:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$
-and
-$\funcg:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$
-measurable.
-Set
-$\sigalg{G} = \preimage{\funcg}(\sigmaalgebraii)$.
-Let $\measonprod$ denote the joint measure
-$\measlambda\circ\preimage{({\funcf,\funcg})}$,
-and let $\marginalone$  denote the marginal measure $\measonprod\circ \preimage{\projectionone}$,
-and let $\marginaltwo$ denote the marginal measure $\measonprod\circ \preimage{\projectiontwo}$.
-Let $\measnu$ be a \textsigma\hyp{}finite measure on $\sigmaalgebraii$.
-
-If the conditional distribution
-$\condprobop{\sigalg{G}}\circ \preimage{\funcf}$ of $\funcf$ on
-$\sigmaalgebra$ given $\sigalg{G}$ is regular, letting $\funck$ denote the corresponding Markov kernel,
-and if
-$\measonprod \abscont (\marginalone\times\measnu)^*$
-on
-$\productsig{\sigmaalgebra}{\sigmaalgebraii}$,
-and if
-$\funcj^\seti : \measurespaceii \to [0,1]$
-is any collection of
-$\bigl( \sigmaalgebraii,\borel_{[0,1]} \bigr)$\hyp{}measurable
-functions such that
-$\funck^\seti = \funcj^\seti \circ \funcg$,
-then for $\measnu^\kernast$\hyp{}almost all $\mspaceeltii\in\measurespaceii$,
-\[
-\funcj^\seti(\mspaceeltii)
-=
-\int_\seti
-\dfrac{d\measonprod}{d(\marginalone\times\marginaltwo)^*}
-(\mspaceelt,\mspaceeltii)\, d\marginalone(\mspaceelt).
-\]
-\end{prop}
-
-\begin{proof}
-Let the conditional distribution
-$\condprobop{\sigalg{G}}\circ \preimage{\funcf}$ of $\funcf$ on
-$\sigmaalgebra$ given $\sigalg{G}$ be regular, which means that
-$\funck^\seti \in \condprobop{\sigalg{G}}\circ \preimage{\funcf}(\seti)$ for all
-$\seti\in\sigmaalgebra$. Illustrated as:
-\[%conditional probability markov
-\xymatrix@R=16pt@C=30pt{
-L_1(\uspace, \uspacesig, \measureiii) \ar[r]^{\condexpop{\sigalg{G}}}
-& L_1(\uspace, \uspacesig, \measureiii)
-& \uspace
-\ar[d]_-{\fixinthesecond{\seti}}
-\ar[dr]^{\funck^\seti}
-\\
-&
-& \uspace\times\sigmaalgebra \ar[r]^{\funck}
-& [0,1]
-\\
-\uspacesig
-\ar[uu]^{Q\,\circ\,\charfunction{}}
-\ar[uur]_{\condprobop{\sigalg{G}}}
-& \sigmaalgebra
-\ar[uu]_{\condprobop{\sigalg{G}}\circ \preimage{\function}}
-\ar[l]_{\preimage{\function}}
-& \sigmaalgebra
-\ar[u]^{\fixinthefirst{\uspaceelt}}
-\ar[ur]_{\funck_\uspaceelt}
-&
-\\
-}
-\]
-Let
-$\measonprod \abscont (\marginalone\times\measnu)^*$
-on
-$\productsig{\sigmaalgebra}{\sigmaalgebraii}$,
-and let
-$\funcj^\seti : \measurespaceii \to [0,1]$
-be any collection of
-$\bigl( \sigmaalgebraii,\borel_{[0,1]} \bigr)$\hyp{}measurable
-functions such that
-$\funck^\seti = \funcj^\seti \circ \funcg$, as illustrated:
-\[
-\xymatrix@R=0pt@C=30pt{
-(\uspace,\sigalg{G})
-\ar[r]_-{\funcg} \ar@/^16pt/[rr]^{\funck^\seti}
-& (\measurespaceii,\sigmaalgebraii)
-\ar[r]_-{\funcj^\seti}
-& \bigl( [0,1], \borel_{[0,1]} \bigr) \\
-\scriptstyle{\preimage{\funcg}(\setii)} & \scriptstyle{\setii} & \\
-}
-\]
-With
-$\measonprod\abscont(\marginalone\times\measnu)^*$,
-we can apply Proposition~\ref{marginal_abscont} to get
-$\marginaltwo\abscont\measnu$ on $\sigmaalgebraii$.
-And in turn, we can apply the Radon-Nikodym corollary, namely Proposition~\ref{radon_nikodym_corollary} to get
-\[
-\int_\setii \funcj^\seti  \dfrac{d\marginaltwo}{d\measnu} \, d \measnu
-=
-\int_\setii \funcj^\seti \, d \marginaltwo.
-\]
-Applying a change of variable according to Proposition~\ref{change_of_variable},
-\[
-\int_\setii \funcj^\seti \, d \marginaltwo
-=
-\int_{\preimage{\funcg}(\setii)}
-\funck^\seti \, d\measlambda.
-\]
-With
-$\funck^\seti \in \condprobop{\sigalg{G}}\circ \preimage{\funcf}(\seti)$,
-it follows that
-\[
-\int_{\preimage{\funcg}(\setii)}
-\funck^\seti \, d\measlambda
-=
-\inducedint_{\preimage{\funcg}(\setii)}
-(\condprobop{\sigalg{G}}\circ \preimage{\funcf})(\seti)\,d\measlambda.
-\]
-By Proposition~\ref{conditional_probability_of_a_set},
-\[
-\inducedint_{\preimage{\funcg}(\setii)}
-(\condprobop{\sigalg{G}}\circ \preimage{\funcf})(\seti)\,d\measlambda
-=
-\measlambda\bigl(\preimage{\funcg}(\setii)\meets\preimage{\funcf}(\seti)\bigr).
-\]
-Since
-$\measonprod =
-\measlambda\circ\preimage{({\funcf,\funcg})}$,
-\[
-\measlambda\bigl(\preimage{\funcg}(\setii)\meets\preimage{\funcf}(\seti)\bigr)
-=
-\measonprod(\seti\times\setii).
-\]
-By transitivity of equality, we have shown so far that
-\[
-\measonprod(\seti\times\setii)
-=
-\int_\setii \funcj^\seti  \dfrac{d\marginaltwo}{d\measnu} \, d \measnu.
-\]
-
-Again, with
-$\measonprod\abscont(\marginalone\times\measnu)^*$,
-we can apply Fubini's Theorem~\ref{fubini} to get
-\[
-\measonprod(\seti\times\setii)
-=
-\int_\setii
-\int_\seti
-\dfrac{d\measonprod}{d(\marginalone\times\measnu)^*}
-\, d\marginalone
-\, d\measnu.
-\]
-This says that
-\[
-\int_\setii
-\left( \funcj^\seti  \dfrac{d\marginaltwo}{d\measnu} \right)
-d \measnu
-=
-\int_\setii
-\left(
-\int_\seti
-\dfrac{d\measonprod}{d(\marginalone\times\measnu)^*}
-\, d\marginalone
-\right)
-d\measnu
-\]
-for all $\setii\in\sigmaalgebraii$.
-By Proposition~\ref{uniqueness_radon_nikodym},
-\[
-\funcj^\seti(\mspaceeltii)  \dfrac{d\marginaltwo}{d\measnu}(\mspaceeltii)
-=
-\int_\seti
-\dfrac{d\measonprod}{d(\marginalone\times\measnu)^*}(\mspaceelt,\mspaceeltii)
-\, d\marginalone(\mspaceelt)
-\]
-for $\measnu^\kernast$\hyp{}almost all $\mspaceeltii\in\measurespaceii$,
-and by Proposition~\ref{marginal_abscont},
-\[
-\frac{d \marginaltwo}
-{d\measnu}(\mspaceeltii)
-=
-\int_{\measurespace}
-\frac{d\measonprod}{d(\marginalone\times\measnu)^*}
-(\mspaceelt,\mspaceeltii)\,d\marginalone(\mspaceelt),
-\]
-so
-\[
-\funcj^\seti(\mspaceeltii)
-=
-\dfrac{\displaystyle \int_\seti
-\dfrac{d\measonprod}{d(\marginalone\times\measnu)^*}(\mspaceelt,\mspaceeltii)
-\, d\marginalone(\mspaceelt)}
-{\displaystyle\int_{\measurespace}
-\frac{d\measonprod\lilstrut}{d(\marginalone\times\measnu)^*}
-(\mspaceelt,\mspaceeltii)\,d\marginalone(\mspaceelt)}
-\]
-for $\measnu^\kernast$\hyp{}almost all $\mspaceeltii\in\measurespaceii$.
-By Proposition~\ref{mixed_implies_half},
-\[
-\int_\seti
-\frac{d\measonprod}{d(\marginalone\times\marginaltwo)^*}
-(\mspaceelt,\mspaceeltii)\,d\marginalone(\mspaceelt)
-=
-\frac{\displaystyle
-\int_\seti
-\dfrac{d\measonprod}{d(\marginalone\times\measnu)^*}(\mspaceelt,\mspaceeltii)
-\,d\marginalone(\mspaceelt)
-}
-{\displaystyle
-\int_\measurespace
-\dfrac{d\measonprod\lilstrut}{d(\marginalone\times\measnu)^*}(\mspaceelt,\mspaceeltii)
-\,d\marginalone(\mspaceelt)
-}
-\]
-so
-\[
-\funcj^\seti(\mspaceeltii)
-=
-\int_\seti
-\frac{d\measonprod}{d(\marginalone\times\marginaltwo)^*}
-(\mspaceelt,\mspaceeltii)\,d\marginalone(\mspaceelt)
-\]
-for $\measnu^\kernast$\hyp{}almost all $\mspaceeltii\in\measurespaceii$,
-as required.
-\end{proof}
-
 
 \begin{prop}\label{marginal_implies_regular}
 Let
@@ -7540,9 +7309,242 @@ Verify that
 $\funck^\seti \in \condprobop{\sigalg{G}}\circ \preimage{\funcf}(\seti)$ for each $\seti\in\sigmaalgebra$, so the collection of $\funck^\seti$ is a version of
 $\condprobop{\sigalg{G}}\circ \preimage{\funcf}$. It follows by Proposition~\ref{equivalent_definition_regular_distribution} that
 $\condprobop{\sigalg{G}}\circ \preimage{\funcf}$ is regular, as required.
-
-
 \end{proof}
+
+
+
+\begin{prop}\label{mixed_implies_bayes}
+Let
+$(\uspace, \uspacesig, \measlambda)$
+be a probability space, with functions
+$\funcf:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$
+and
+$\funcg:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$
+measurable.
+Set
+$\sigalg{G} = \preimage{\funcg}(\sigmaalgebraii)$.
+Let $\measonprod$ denote the joint measure
+$\measlambda\circ\preimage{({\funcf,\funcg})}$,
+and let $\marginalone$  denote the marginal measure $\measonprod\circ \preimage{\projectionone}$,
+and let $\marginaltwo$ denote the marginal measure $\measonprod\circ \preimage{\projectiontwo}$.
+Let $\measnu$ be a \textsigma\hyp{}finite measure on $\sigmaalgebraii$.
+
+Let
+$\measonprod \abscont (\marginalone\times\measnu)^*$
+on
+$\productsig{\sigmaalgebra}{\sigmaalgebraii}$,
+and let $\funck$ denote the Markov kernel corresponding to the regular conditional distribution
+$\condprobop{\sigalg{G}}\circ \preimage{\funcf}$ of $\funcf$ on
+$\sigmaalgebra$ given $\sigalg{G}$.
+If
+$\funcj^\seti : \measurespaceii \to [0,1]$
+is any collection of
+$\bigl( \sigmaalgebraii,\borel_{[0,1]} \bigr)$\hyp{}measurable
+functions such that
+$\funck^\seti = \funcj^\seti \circ \funcg$,
+then for $\measnu^\kernast$\hyp{}almost all $\mspaceeltii\in\measurespaceii$,
+\[
+\funcj^\seti(\mspaceeltii)
+=
+\int_\seti
+\dfrac{d\measonprod}{d(\marginalone\times\marginaltwo)^*}
+(\mspaceelt,\mspaceeltii)\, d\marginalone(\mspaceelt).
+\]
+\end{prop}
+
+\begin{proof}
+With
+$\measonprod \abscont (\marginalone\times\measnu)^*$
+on
+$\productsig{\sigmaalgebra}{\sigmaalgebraii}$,
+it follows by Proposition~\ref{mixed_implies_marginal} that
+$\measonprod \abscont (\marginalone\times\marginaltwo)^*$,
+and so by Proposition~\ref{marginal_implies_regular},
+the conditional distribution
+$\condprobop{\sigalg{G}}\circ \preimage{\funcf}$ of $\funcf$ on
+$\sigmaalgebra$ given $\sigalg{G}$
+is regular.
+We are letting $\funck$ denote the Markov kernel corresponding to
+$\condprobop{\sigalg{G}}\circ \preimage{\funcf}$,
+illustrated as:
+\[%conditional probability markov
+\xymatrix@R=16pt@C=30pt{
+L_1(\uspace, \uspacesig, \measureiii) \ar[r]^{\condexpop{\sigalg{G}}}
+& L_1(\uspace, \uspacesig, \measureiii)
+& \uspace
+\ar[d]_-{\fixinthesecond{\seti}}
+\ar[dr]^{\funck^\seti}
+\\
+&
+& \uspace\times\sigmaalgebra \ar[r]^{\funck}
+& [0,1]
+\\
+\uspacesig
+\ar[uu]^{Q\,\circ\,\charfunction{}}
+\ar[uur]_{\condprobop{\sigalg{G}}}
+& \sigmaalgebra
+\ar[uu]_{\condprobop{\sigalg{G}}\circ \preimage{\function}}
+\ar[l]_{\preimage{\function}}
+& \sigmaalgebra
+\ar[u]^{\fixinthefirst{\uspaceelt}}
+\ar[ur]_{\funck_\uspaceelt}
+&
+\\
+}
+\]
+Let
+$\funcj^\seti : \measurespaceii \to [0,1]$
+be any collection of
+$\bigl( \sigmaalgebraii,\borel_{[0,1]} \bigr)$\hyp{}measurable
+functions such that
+$\funck^\seti = \funcj^\seti \circ \funcg$, as illustrated:
+\[
+\xymatrix@R=0pt@C=30pt{
+(\uspace,\sigalg{G})
+\ar[r]_-{\funcg} \ar@/^16pt/[rr]^{\funck^\seti}
+& (\measurespaceii,\sigmaalgebraii)
+\ar[r]_-{\funcj^\seti}
+& \bigl( [0,1], \borel_{[0,1]} \bigr) \\
+\scriptstyle{\preimage{\funcg}(\setii)} & \scriptstyle{\setii} & \\
+}
+\]
+With
+$\measonprod\abscont(\marginalone\times\measnu)^*$,
+we can apply Proposition~\ref{marginal_abscont} to get
+$\marginaltwo\abscont\measnu$ on $\sigmaalgebraii$.
+And in turn, we can apply the Radon-Nikodym corollary, namely Proposition~\ref{radon_nikodym_corollary} to get
+\[
+\int_\setii \funcj^\seti  \dfrac{d\marginaltwo}{d\measnu} \, d \measnu
+=
+\int_\setii \funcj^\seti \, d \marginaltwo.
+\]
+Applying a change of variable according to Proposition~\ref{change_of_variable},
+\[
+\int_\setii \funcj^\seti \, d \marginaltwo
+=
+\int_{\preimage{\funcg}(\setii)}
+\funck^\seti \, d\measlambda.
+\]
+With
+$\funck^\seti \in \condprobop{\sigalg{G}}\circ \preimage{\funcf}(\seti)$,
+it follows that
+\[
+\int_{\preimage{\funcg}(\setii)}
+\funck^\seti \, d\measlambda
+=
+\inducedint_{\preimage{\funcg}(\setii)}
+(\condprobop{\sigalg{G}}\circ \preimage{\funcf})(\seti)\,d\measlambda.
+\]
+By Proposition~\ref{conditional_probability_of_a_set},
+\[
+\inducedint_{\preimage{\funcg}(\setii)}
+(\condprobop{\sigalg{G}}\circ \preimage{\funcf})(\seti)\,d\measlambda
+=
+\measlambda\bigl(\preimage{\funcg}(\setii)\meets\preimage{\funcf}(\seti)\bigr).
+\]
+Since
+$\measonprod =
+\measlambda\circ\preimage{({\funcf,\funcg})}$,
+\[
+\measlambda\bigl(\preimage{\funcg}(\setii)\meets\preimage{\funcf}(\seti)\bigr)
+=
+\measonprod(\seti\times\setii).
+\]
+By transitivity of equality, we have shown so far that
+\[
+\measonprod(\seti\times\setii)
+=
+\int_\setii \funcj^\seti  \dfrac{d\marginaltwo}{d\measnu} \, d \measnu.
+\]
+
+Again, with
+$\measonprod\abscont(\marginalone\times\measnu)^*$,
+we can apply Fubini's Theorem~\ref{fubini} to get
+\[
+\measonprod(\seti\times\setii)
+=
+\int_\setii
+\int_\seti
+\dfrac{d\measonprod}{d(\marginalone\times\measnu)^*}
+\, d\marginalone
+\, d\measnu.
+\]
+This says that
+\[
+\int_\setii
+\left( \funcj^\seti  \dfrac{d\marginaltwo}{d\measnu} \right)
+d \measnu
+=
+\int_\setii
+\left(
+\int_\seti
+\dfrac{d\measonprod}{d(\marginalone\times\measnu)^*}
+\, d\marginalone
+\right)
+d\measnu
+\]
+for all $\setii\in\sigmaalgebraii$.
+By Proposition~\ref{uniqueness_radon_nikodym},
+\[
+\funcj^\seti(\mspaceeltii)  \dfrac{d\marginaltwo}{d\measnu}(\mspaceeltii)
+=
+\int_\seti
+\dfrac{d\measonprod}{d(\marginalone\times\measnu)^*}(\mspaceelt,\mspaceeltii)
+\, d\marginalone(\mspaceelt)
+\]
+for $\measnu^\kernast$\hyp{}almost all $\mspaceeltii\in\measurespaceii$,
+and by Proposition~\ref{marginal_abscont},
+\[
+\frac{d \marginaltwo}
+{d\measnu}(\mspaceeltii)
+=
+\int_{\measurespace}
+\frac{d\measonprod}{d(\marginalone\times\measnu)^*}
+(\mspaceelt,\mspaceeltii)\,d\marginalone(\mspaceelt),
+\]
+so
+\[
+\funcj^\seti(\mspaceeltii)
+=
+\dfrac{\displaystyle \int_\seti
+\dfrac{d\measonprod}{d(\marginalone\times\measnu)^*}(\mspaceelt,\mspaceeltii)
+\, d\marginalone(\mspaceelt)}
+{\displaystyle\int_{\measurespace}
+\frac{d\measonprod\lilstrut}{d(\marginalone\times\measnu)^*}
+(\mspaceelt,\mspaceeltii)\,d\marginalone(\mspaceelt)}
+\]
+for $\measnu^\kernast$\hyp{}almost all $\mspaceeltii\in\measurespaceii$.
+By Proposition~\ref{mixed_implies_half},
+\[
+\int_\seti
+\frac{d\measonprod}{d(\marginalone\times\marginaltwo)^*}
+(\mspaceelt,\mspaceeltii)\,d\marginalone(\mspaceelt)
+=
+\frac{\displaystyle
+\int_\seti
+\dfrac{d\measonprod}{d(\marginalone\times\measnu)^*}(\mspaceelt,\mspaceeltii)
+\,d\marginalone(\mspaceelt)
+}
+{\displaystyle
+\int_\measurespace
+\dfrac{d\measonprod\lilstrut}{d(\marginalone\times\measnu)^*}(\mspaceelt,\mspaceeltii)
+\,d\marginalone(\mspaceelt)
+}
+\]
+so
+\[
+\funcj^\seti(\mspaceeltii)
+=
+\int_\seti
+\frac{d\measonprod}{d(\marginalone\times\marginaltwo)^*}
+(\mspaceelt,\mspaceeltii)\,d\marginalone(\mspaceelt)
+\]
+for $\measnu^\kernast$\hyp{}almost all $\mspaceeltii\in\measurespaceii$,
+as required.
+\end{proof}
+
+
+
 
 
 
