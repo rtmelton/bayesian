@@ -4697,11 +4697,10 @@ with respect to the \textsigma-algebra
 $\sigmaalgebraii$, or simply the \emph{conditional expectation} of
 $\lebclass{\function}$ with respect to $\sigmaalgebraii$,
 is the unique class in
-$L_1(\measurespace, \sigmaalgebra,\measure)$ from which
-any representative function
+$L_1(\measurespace, \sigmaalgebra,\measure)$
+having a $(\sigmaalgebraii,\borel_\R)$\hyp{}measurable representative function
 $\funcg$
-%in $\cali{L}_1(\measurespace, \sigmaalgebra,\measure)$
-satisfies the equation
+such that
 %
 \[
 \int_\setii \function\, d\measure 
@@ -4709,10 +4708,6 @@ satisfies the equation
 \int_\setii \functionii\, d\measure 
 \quad\text{for all $\setii \in \sigmaalgebraii$}.
 \]
-Such a representative function
-$\funcg$ from the class
-$\condexpsub{{\lebclass{\function}}}{\sigmaalgebraii}$
-can be chosen to be $(\sigmaalgebraii,\borel_\R)$\hyp{}measurable.
 \end{defnboldnote}
 
 
@@ -4722,24 +4717,23 @@ can be chosen to be $(\sigmaalgebraii,\borel_\R)$\hyp{}measurable.
 
 \begin{thm}\label{existence_of_conditional}
 Let $(\measurespace, \sigmaalgebra,\measure)$ be a probability space, with
-$\ellclass{\function}{\measure}\in L_1(\measurespace, \sigmaalgebra,\measure)$. For every $\textsigma$-sub\-algebra $\sigmaalgebraii$ of $\sigmaalgebra$ there exists a unique class 
-$\ellclass{\functionii}{\measure\restrictedto{\sigmaalgebraii}}$
-in
-$L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$ such that
+$\ellclass{\function}{\measure}\in L_1(\measurespace, \sigmaalgebra,\measure)$. For every $\textsigma$-sub\-algebra $\sigmaalgebraii$ of $\sigmaalgebra$ there exists a unique class in
+$L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$
+having a
+$(\sigmaalgebraii, \borel_\R)$\hyp{}measurable representative function
+$\funcg$
+such that
 %
 \[
 \int_B \function\, d\measure = \int_B \functionii\, d\measure\restrictedto{\sigmaalgebraii} 
-\quad\text{for all $B \in \sigmaalgebraii$,}
+\quad\text{for all $B \in \sigmaalgebraii$.}
 \]
 %
-where we may suppose the representative function 
-$\functionii\in\cali{L}_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$
-to be $(\sigmaalgebraii, \borel_\R)$\hyp{}measurable.
 \end{thm}
 
 
 \begin{proof}
-The existence of such a  $\ellclass{\functionii}{\measure\restrictedto{\sigmaalgebraii}}$ is an application of the Radon-Nikodym theorem, and to see this, let $\measureii\restrictedto{\sigmaalgebraii}$ denote the restriction of the indefinite integral $\measureii$ of $\ellclass{\function}{\measure}$ to the $\textsigma$-subalgebra $\sigmaalgebraii$, which means that $\measureii\restrictedto{\sigmaalgebraii} :\sigmaalgebraii\to\R$ is defined by
+The existence of such a  class is an application of the Radon-Nikodym theorem, and to see this, let $\measureii\restrictedto{\sigmaalgebraii}$ denote the restriction of the indefinite integral $\measureii$ of $\ellclass{\function}{\measure}$ to the $\textsigma$-subalgebra $\sigmaalgebraii$, which means that $\measureii\restrictedto{\sigmaalgebraii} :\sigmaalgebraii\to\R$ is defined by
 \[
 \measureii\restrictedto{\sigmaalgebraii}(B) 
 =
@@ -4747,7 +4741,7 @@ The existence of such a  $\ellclass{\functionii}{\measure\restrictedto{\sigmaalg
 \quad\text{for all $B\in\sigmaalgebraii$.}
 \]
 The set function $\measureii\restrictedto{\sigmaalgebraii}$ is a finite signed measure that is absolutely continuous with respect to the $\textsigma$-finite measure $\measure\restrictedto{\sigmaalgebraii}$ on $\sigmaalgebraii$, and so by the Radon-Nikodym Theorem~\ref{radon-nikodym} there is a unique class
-$\ellclass{\functionii}{\measure\restrictedto{\sigmaalgebraii}}$ in $L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$ 
+$\ellclass{\functionii}{\measure\restrictedto{\sigmaalgebraii}}$ in $L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$
 such that
 \[
 \measureii\restrictedto{\sigmaalgebraii}(B) 
@@ -4775,6 +4769,7 @@ which may be denoted by
 $\kondexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}$ or 
 $\kondexpgvn{\ellclass{\function}{\measure}}{\sigmaalgebraii}$,
 in $L_1\bigl(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii}\bigr)$
+having a $(\sigmaalgebraii, \borel_\R)$\hyp{}measurable representative
 such that
 %
 \[
@@ -4783,12 +4778,10 @@ such that
 \inducedint_B \kondexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}\, d\measure\restrictedto{\sigmaalgebraii} 
 \quad\text{for all $B \in \sigmaalgebraii$.}
 \]
-The class $\kondexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}$, having a $(\sigmaalgebraii, \borel_\R)$\hyp{}measurable representative, is the 
+The class $\kondexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}$ is the
 \textbf{conditional expectation} of
 $\ellclass{\function}{\measure}$
-in
-$L_1\bigl(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii}\bigr)$
-with respect to the $\textsigma$-algebra $\sigmaalgebraii$. This defines an operator:
+with respect to the $\textsigma$\hyp{}subalgebra $\sigmaalgebraii$. This defines an operator:
 \[
 \kondexpop\nolimits_{\sigmaalgebraii}
 :
@@ -6794,8 +6787,7 @@ is $\bigl(\sigmaalgebraii, \borel_{[0,1]}\bigr)$\hyp{}measurable,
 then the collection 
 $\regular\circ\condprobop{\sigmaalgebraii}\circ\preimage{\function}
 (\sigmaalgebraiii)$ 
-of 
-$\caliLone$ functions, or any such collection of 
+of functions, or any such collection of
 $\caliLone$ functions without specifying $\regular$,
 is called a regular version of the conditional distribution 
 $\condprobop{\sigmaalgebraii}\circ\preimage{\function}$ of $\function$ on 
@@ -7397,6 +7389,9 @@ L_1(\uspace, \uspacesig, \measlambda) \ar[r]^{\condexpop{\sigalg{G}}}
 \\
 }
 \]
+
+\textbf{You seem to have skipped a step. To show that a version is regular, you first need a version.}
+
 In order to show that the conditional distribution
 $\condprobop{\sigalg{G}}\circ \preimage{\funcf}$ of $\funcf$ on $\sigmaalgebra$ given $\sigalg{G}$ is regular, by the very definition, we need to show that there is a selection function
 $\regular:
@@ -7570,10 +7565,14 @@ This gives us a Markov kernel:
 }
 \]
 
-\textbf{Since you now have the Markov kernel $\funcj$, the remainder of the proof simplifies.}
-
-Second step, we will work towards defining a map
-$\funck: \uspace\times \sigmaalgebra \to [0,1]$.
+Second step, we define a map
+$\funck: \uspace\times \sigmaalgebra \to [0,1]$
+by
+\[
+\funck: \uspace\times \sigmaalgebra \to [0,1] :
+(\uspaceelt,\seti) \mapsto \funcj\bigl(\funcg(\uspaceelt),\seti\bigr),
+\]
+and check that it is a Markov kernel.
 The function $\funcg$ is
 $(\sigalg{G},\sigmaalgebraii)$\hyp{}measurable just by the very fact that
 $\sigalg{G} = \preimage{\funcg}(\sigmaalgebraii)$. And since each
@@ -7585,91 +7584,14 @@ $\bigl( \sigmaalgebraii, \borel_{[0,1]} \bigr)$\hyp{}measurable, it follows that
 :\uspaceelt \mapsto (\funcj^\seti\circ\funcg)(\uspaceelt)
 \]
 is
-$\bigl( \sigalg{G}, \borel_{[0,1]} \bigr)$\hyp{}measurable, and illustrated in the following diagram:
-\[%markov g markov
-\xymatrix@R=16pt@C=24pt{
-\uspace \ar[d]_-{\fixinthesecond{\seti}_\uspace} \ar@/^12pt/[rr]_{\funcg}
-\ar[dr]^{\funck^\seti}
-&
-& \measurespaceii \ar[d]_-{\fixinthesecond{\seti}_\measurespaceii}
-\ar[dr]^{\funcj^\seti}
-&
-\\
-\uspace\times\sigmaalgebra \ar[r]^{\funck}
-& [0,1]
-& \measurespaceii\times\sigmaalgebra \ar[r]^{\funcj}
-& [0,1]
-\\
-\sigmaalgebra \ar[u]^{\fixinthefirst{\uspaceelt}}
-\ar[ur]_{\funck_\uspaceelt}
-&
-& \sigmaalgebra \ar[u]^{\fixinthefirst{\mspaceeltii}}
-\ar[ur]_{\funcj_\mspaceeltii}
-&
-\\
-}
-\]
-The function
-$\funck: \uspace\times \sigmaalgebra \to [0,1]$
-is defined in accordance with the function $\funck^\seti$ by
-\[
-\funck: \uspace\times \sigmaalgebra \to [0,1] :
-(\uspaceelt,\seti) \mapsto \funcj\bigl(\funcg(\uspaceelt),\seti\bigr),
-\]
-and so
-$\funck_\uspaceelt(\seti)=\funcj_{\funcg(\uspaceelt)}(\seti)$.
-The required collection of $\bigl( \sigalg{G}, \borel_{[0,1]} \bigr)$\hyp{}measurable
-functions is the set $\{\funck^\seti : \seti\in\sigmaalgebra\}$.
+$\bigl( \sigalg{G}, \borel_{[0,1]} \bigr)$\hyp{}measurable.
+And each function
+$\funck_\uspaceelt : \sigmaalgebra \to [0,1]$ is a probability measure on
+$\sigmaalgebra$ since
+$\funck_\uspaceelt = \funcj_{\funcg(\uspaceelt)}$.
+This shows that $\funck$ is a Markov kernel.
 
-Now let us provide the collection of probability measures
-\[
-\sigmaalgebra\to [0,1]: \seti \mapsto
-\bigl( \regular\circ\condprobop{\sigalg{G}} \circ\preimage{\function}
-(\seti)\bigr)(\uspaceelt).
-\]
-We know that the $\funcj_\mspaceeltii$ are probability measures on $\sigmaalgebra$, except for possibly all
-$\mspaceeltii$ in the $\marginaltwo^\kernast$\hyp{}null subset $N$ of $\measurespaceii$.  What about the
-$\funck_\uspaceelt$?  Let us argue that the $\funck_\uspaceelt$ are also probability measures on $\sigmaalgebra$ except for possibly all $\uspaceelt$ in a
-${\measlambda\restrictedto{\sigalg{G}}}^\kernast$\hyp{}null subset of $\uspace$,
-which will turn out to be $\preimage{\funcg}(N)$.
 
-Let us show now that  $\preimage{\funcg}(N)$ is a
-${\measlambda\restrictedto{\sigalg{G}}}^\kernast$\hyp{}null subset of $\uspace$.
-We are supposing that the set
-$N$ is a
-$\marginaltwo^\kernast$\hyp{}null subset of $\measurespaceii$,
-but
-$\marginaltwo = \measlambda \circ \preimage{\funcg}$ by Proposition~\ref{induced_marginals}, so
-we are supposing that $N$ is a
-$\bigl(\measlambda\circ\preimage{\funcg}\bigr)^\kernast$\hyp{}null set.
-The function
-$\funcg$ is $(\uspacesig,\sigmaalgebraii)$\hyp{}measurable by hypothesis,
-so by Proposition~\ref{preimage_of_a_null_set}, the set
-$\preimage{\funcg}(N)$ is a $\measlambda^\kernast$\hyp{}null subset of $\uspace$.
-By Proposition~\ref{semiring_measurable}, every set in the \textsigma\hyp{}algebra $\sigalg{G}$ is
-${\measlambda\restrictedto{\sigalg{G}}}^\kernast$\hyp{}measurable, and therefore
-$\preimage{\funcg}(N)$ is ${\measlambda\restrictedto{\sigalg{G}}}^\kernast$\hyp{}measurable.
-It follows then by Proposition~\ref{measurable_inclusion} that
-\[
-{\measlambda\restrictedto{\sigalg{G}}}^* \bigl(\preimage{\funcg}(N)\bigr)
-=
-\lambda^\kernast\bigl(\preimage{\funcg}(N)\bigr)
-= 0,
-\]
-saying that
-$\preimage{\funcg}(N)$ is a
-${\measlambda\restrictedto{\sigalg{G}}}^\kernast$\hyp{}null subset of $\uspace$.
-
-Finally, the $\funck_\uspaceelt$ are probability measures for all $\uspaceelt$ off the
-${\measlambda\restrictedto{\sigalg{G}}}^\kernast$\hyp{}null subset
-$\preimage{\funcg}(N)$
-of $\uspace$
-since they are equal to the
-$\funcj_{\funcg(\uspaceelt)}$, which we know are probability measures, at least for all
-$\funcg(\uspaceelt)$ off $N$, or equivalently, for all $\uspaceelt$ off
-$\preimage{\funcg}(N)$.
-The required collection of probability measures is
-$\{ \funck_\uspaceelt : \uspaceelt\notin \preimage{\funcg}(N) \}$.
 
 We have shown that there is a selection function
 \[
