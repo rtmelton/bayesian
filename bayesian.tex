@@ -6369,7 +6369,7 @@ Let
 $\regular$ be a function $\Lone\to\caliLone$ which selects a representative from each equivalence class.  
 If $S$ is a set, and $\cali{P}: S \to \Lone$ is a function, then
 the collection $(\regular\circ\cali{P})(S)$ of
-$\caliLone$ functions is called a \term{version} of the function $\cali{P}$.
+$\caliLone$ functions is called a \term{version} of $\cali{P}$.
 \[
 \xymatrix@R=16pt@C=30pt{ 
 \Lone \ar[r]^{\regular} & \caliLone \\
@@ -7390,54 +7390,9 @@ L_1(\uspace, \uspacesig, \measlambda) \ar[r]^{\condexpop{\sigalg{G}}}
 }
 \]
 
-\textbf{You seem to have skipped a step. To show that a version is regular, you first need a version.}
+We will define a map
+$\funck: \uspace\times \sigmaalgebra \to [0,1]$, then show it is a Markov kernel, and then apply Proposition~\ref{equivalent_definition_regular_distribution}.
 
-In order to show that the conditional distribution
-$\condprobop{\sigalg{G}}\circ \preimage{\funcf}$ of $\funcf$ on $\sigmaalgebra$ given $\sigalg{G}$ is regular, by the very definition, we need to show that there is a selection function
-$\regular:
-L_1(\uspace,\uspacesig,\measlambda)
-\to
-\cali{L}_1(\uspace,\uspacesig,\measlambda) $
-which has the additional property that the map
-\[
-\sigmaalgebra\to [0,1]: \seti \mapsto
-\bigl( \regular\circ\condprobop{\sigalg{G}} \circ\preimage{\function}
-(\seti)\bigr)(\uspaceelt)
-\]
-is a probability measure on the \textsigma\hyp{}algebra $\sigmaalgebra$ except for possibly all
-$\uspaceelt$ in a
-${\measure\restrictedto{\sigalg{G}}}^\kernast$-null set,
-and for each
-$\seti\in\sigmaalgebra$, the map
-\[
-\uspace\to [0,1] : \uspaceelt\mapsto
-\bigl( \regular\circ\condprobop{\sigalg{G}}\circ\preimage{\function}
-(\seti)\bigr)(\uspaceelt)
-\]
-is $\bigl(\sigalg{G}, \borel_{[0,1]}\bigr)$\hyp{}measurable.
-And by definition, we can also modify all of the functions in the collection
-\[
-(\regular\circ\condprobop{\sigalg{G}}\circ\preimage{\function})
-(\sigmaalgebra)
-\subseteq
-L_1(\uspace,\uspacesig,\measlambda)
-\]
-on a fixed
-${ \measlambda\restrictedto{\sigalg{G}} }^\kernast$\hyp{}null set,
-and the new collection of functions is still considered to be a
-regular version of
-$\condprobop{\sigalg{G}}\circ\preimage{\function}$
-of $\function$
-on $\sigmaalgebra$ given $\sigalg{G}$.
-
-Let us provide the collection of
-$\bigl(\sigalg{G}, \borel_{[0,1]}\bigr)$\hyp{}measurable functions,
-\[
-\uspace\to [0,1] : \uspaceelt\mapsto
-\bigl( \regular\circ\condprobop{\sigalg{G}}\circ\preimage{\function}
-(\seti)\bigr)(\uspaceelt),
-\]
-which will be a two-step process.
 
 First step, define a map
 $\funcj:\measurespaceii\times\sigmaalgebra\to \R$. By hypothesis,
@@ -7591,48 +7546,12 @@ $\sigmaalgebra$ since
 $\funck_\uspaceelt = \funcj_{\funcg(\uspaceelt)}$.
 This shows that $\funck$ is a Markov kernel.
 
+Verify that
+$\funck^\seti \in \condprobop{\sigalg{G}}\circ \preimage{\funcf}(\seti)$ for each $\seti\in\sigmaalgebra$, so the collection of $\funck^\seti$ is a version of
+$\condprobop{\sigalg{G}}\circ \preimage{\funcf}$. It follows by Proposition~\ref{equivalent_definition_regular_distribution} that
+$\condprobop{\sigalg{G}}\circ \preimage{\funcf}$ is regular, as required.
 
 
-We have shown that there is a selection function
-\[
-\regular:
-L_1(\uspace,\uspacesig,\measlambda)
-\to
-\cali{L}_1(\uspace,\uspacesig,\measlambda)
-\]
-defined on the range of
-$\condprobop{\sigalg{G}}\circ \preimage{\funcf}$
-by
-\[
-\regular\bigl(
-\condprobop{\sigalg{G}}\circ \preimage{\funcf}(\seti)
-\bigr)
-=
-\funck^\seti
-\]
-which has the additional property that each map
-\[
-\sigmaalgebra\to [0,1]: \seti \mapsto
-\bigl( \regular\circ\condprobop{\sigalg{G}} \circ\preimage{\function}
-(\seti)\bigr)(\uspaceelt)
-= \funck_\uspaceelt(\seti)
-\]
-is a probability measure on the \textsigma\hyp{}algebra $\sigmaalgebra$ except for possibly all
-$\uspaceelt$ in the
-${\measlambda\restrictedto{\sigalg{G}}}^\kernast$-null set
-$\preimage{\funcg}(N)$,
-and for each
-$\seti\in\sigmaalgebra$, the map
-\[
-\uspace\to [0,1] : \uspaceelt\mapsto
-\bigl( \regular\circ\condprobop{\sigalg{G}}\circ\preimage{\function}
-(\seti)\bigr)(\uspaceelt)
-= \funck^\seti(\uspaceelt)
-\]
-is $\bigl(\sigalg{G}, \borel_{[0,1]}\bigr)$\hyp{}measurable.
-Therefore, the conditional distribution
-$\condprobop{\sigalg{G}}\circ \preimage{\funcf}$ of $\funcf$ on
-$\sigmaalgebra$ given $\sigalg{G}$ is regular, as required.
 \end{proof}
 
 
