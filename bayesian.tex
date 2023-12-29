@@ -3359,7 +3359,7 @@ the only assumptions we will make about the joint measure $\measonprod$ on $\pro
 
 
 
-\begin{prop}\label{marginal_abscont}
+\begin{prop}\label{reference_implies_marginals}
 Let 
 $(\measurespace, \sigmaalgebra)$
 and
@@ -3480,7 +3480,7 @@ $d\marginalone/d\measure = \funcj$.
 \end{proof}
 
 
-\begin{prop}\label{joint_abscont}
+\begin{prop}\label{reference_implies_mixed_and_marginals}
 Let
 $(\measurespace, \sigmaalgebra)$
 and
@@ -3624,7 +3624,7 @@ $\mspaceelt\mapsto
 defines an integrable function over $\measurespace$ with respect to $\measure$.
 Let us carry this
 a little further.  
-Since $\measonprod \abscont (\measure\times\measureii)^*$, it follows by Proposition~\ref{marginal_abscont} that
+Since $\measonprod \abscont (\measure\times\measureii)^*$, it follows by Proposition~\ref{reference_implies_marginals} that
 $\marginalone\abscont\measure$ on $\sigmaalgebra$.
 We can then apply Proposition~\ref{abscont_properties} which says that if
 $\measure^*(\seti)=0$, then $\marginalone^*(\seti)=0$ for any $\seti\in\measurespace$.
@@ -3853,9 +3853,9 @@ d\measmu(\mspaceelt)
 \end{prop}
 
 \begin{proof}
-This just combines Proposition~\ref{marginal_abscont} and Proposition~\ref{joint_abscont}.
+This just combines Proposition~\ref{reference_implies_marginals} and Proposition~\ref{reference_implies_mixed_and_marginals}.
 
-It follows from Proposition~\ref{joint_abscont} that
+It follows from Proposition~\ref{reference_implies_mixed_and_marginals} that
 \[
 \dfrac{d\joint}{d(\measmu\times\marginaltwo)^*}(\mspaceelt,\mspaceeltii)
 =
@@ -3871,7 +3871,7 @@ It follows from Proposition~\ref{joint_abscont} that
 \]
 We will simply make a substitution for
 $d\marginaltwo / d\measnu$.
-By Proposition~\ref{marginal_abscont},
+By Proposition~\ref{reference_implies_marginals},
 \[
 \frac{d \marginaltwo}
 {d\measnu}(\mspaceeltii)
@@ -3881,7 +3881,7 @@ By Proposition~\ref{marginal_abscont},
 (\mspaceelt,\mspaceeltii)
 \,d\measmu(\mspaceelt)
 \]
-and by Proposition~\ref{joint_abscont},
+and by Proposition~\ref{reference_implies_mixed_and_marginals},
 \[
 \frac{d\joint}{d(\measmu\times\measnu)^*}
 (\mspaceelt,\mspaceeltii)
@@ -3966,7 +3966,7 @@ and
 
 
 \begin{proof}
-This is nothing but an application of Proposition~\ref{marginal_abscont} and Proposition~\ref{joint_abscont}. First set $\measmu=\marginalone$ and apply them, then set $\measnu=\marginaltwo$ and apply them again, noting that $\marginalone$ and $\marginaltwo$ are both finite and therefore \textsigma\hyp{}finite.
+This is nothing but an application of Proposition~\ref{reference_implies_marginals} and Proposition~\ref{reference_implies_mixed_and_marginals}. First set $\measmu=\marginalone$ and apply them, then set $\measnu=\marginaltwo$ and apply them again, noting that $\marginalone$ and $\marginaltwo$ are both finite and therefore \textsigma\hyp{}finite.
 \end{proof}
 
 
@@ -4054,7 +4054,7 @@ are finite, therefore \textsigma\hyp{}finite.
 If we now set
 $\measmu = \marginalone$
 and set
-$\measnu=\marginaltwo$ and apply Proposition~\ref{marginal_abscont}, then we get:
+$\measnu=\marginaltwo$ and apply Proposition~\ref{reference_implies_marginals}, then we get:
 \[
 \frac{d \marginalone}{d\marginalone}(\mspaceelt)
 =
@@ -7410,7 +7410,7 @@ $\funck^\seti = \funcj^\seti \circ \funcg$, as illustrated:
 \]
 With
 $\measonprod\abscont(\marginalone\times\measnu)^*$,
-we can apply Proposition~\ref{marginal_abscont} to get
+we can apply Proposition~\ref{reference_implies_marginals} to get
 $\marginaltwo\abscont\measnu$ on $\sigmaalgebraii$.
 And in turn, we can apply the Radon-Nikodym corollary, namely Proposition~\ref{radon_nikodym_corollary} to get
 \[
@@ -7493,7 +7493,7 @@ By Proposition~\ref{uniqueness_radon_nikodym},
 \, d\marginalone(\mspaceelt)
 \]
 for $\measnu^\kernast$\hyp{}almost all $\mspaceeltii\in\measurespaceii$,
-and by Proposition~\ref{marginal_abscont},
+and by Proposition~\ref{reference_implies_marginals},
 \[
 \frac{d \marginaltwo}
 {d\measnu}(\mspaceeltii)
@@ -8179,7 +8179,7 @@ Stay true to yourself and use density notation that specifies which measures you
 Vaguely, these are the densities of the joint and some of the marginals.
 We are supposing that all Radon-Nikodym derivatives in sight here exist.
 
-By the proof of Proposition~\ref{marginal_abscont},
+By the proof of Proposition~\ref{reference_implies_marginals},
 \begin{align*}
 m_{\function,\functioniii} (\mspaceelt,\mspaceeltiii)
 & =
@@ -8236,7 +8236,7 @@ $p(z) = m_h(z)$, then
 p(x\mid z) =
 \frac{p(x,z)}{p(z)}.
 \]
-By Proposition~\ref{joint_abscont} and Proposition~\ref{conditional_density},
+By Proposition~\ref{reference_implies_mixed_and_marginals} and Proposition~\ref{conditional_density},
 if $h(u)=z$, then
 \[
 \frac{d k_u}{d \measmu}(x) = \frac{p(x,z)}{p(z)}.
@@ -8495,7 +8495,7 @@ on
 $\productsig{\sigmaalgebra}{\sigmaalgebraii,\sigmaalgebraiii}
 =
 \productsig{\sigmaalgebra}{\productsig{\sigmaalgebraii}{\sigmaalgebraiii}}$,
-then by applying the proof of Proposition~\ref{marginal_abscont}, you get
+then by applying the proof of Proposition~\ref{reference_implies_marginals}, you get
 \[
 \measlambda\circ \preimage{(\funcg,\funch)}
 \abscont
@@ -8513,7 +8513,7 @@ In particular, by applying the proof, you show
 {d(\measmu\times\measnu\times\measrho)^*}
 (\mspaceelt,\mspaceeltii,\mspaceeltiii)\,d\measmu(\mspaceelt).
 \]
-Then by Proposition~\ref{joint_abscont},
+Then by Proposition~\ref{reference_implies_mixed_and_marginals},
 \[
 \measlambda\circ \preimage{(\funcg,\funch)}
 \abscont
@@ -8532,7 +8532,7 @@ must also be regular.
 
 To show that
 $\condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)}$
-is regular, again, by Proposition~\ref{joint_abscont},
+is regular, again, by Proposition~\ref{reference_implies_mixed_and_marginals},
 \[
 \measlambda\circ \preimage{(\funcf, \funcg, \funch)}
 \abscont
@@ -8884,14 +8884,11 @@ Divide both sides of (3) by $p(\mspaceeltii\mid\mspaceeltiii)$.
 
 
 
-\chapter{Bayesian Statistics Re-Write}\label{bayesian_statistics_rewrite}
+\chapter{Bayesian Statistics}\label{bayesian_statistics}
 %*********************************************************
 %*********************************************************
 %*********************************************************
 %*********************************************************
-\textbf{This is to supercede Chapter~\ref{bayesian_statistics},
-currently entitled \emph{Bayesian Statistics.}}
-
 \lettrine{S}{tatistics} is a mathematical analysis of guesswork. This kind of guesswork is called inductive inference.
 Its purpose is to identify a probability distribution or a conditional distribution. The particular kind of guesswork we will use is considered \emph{Bayesian} since it involves a parameter that induces a  probability distribution. A parameter here is just a measurable function.
 
@@ -9283,830 +9280,10 @@ $\sspace$, which is one way that a particular sample $\sspaceelt$ may be used in
 
 
 
-\chapter{Bayesian Statistics}\label{bayesian_statistics}
-%*********************************************************
-%*********************************************************
-%*********************************************************
-%*********************************************************
-\textbf{You have split the details off from the main body of work.  This is not your style, and you have seen no examples of this having been done well in statistics.  Integrate the Preface and Details.}
-
-\lettrine{S}{tatistics} is a mathematical analysis of guesswork. This kind of guesswork is called inductive inference.
-Its purpose is to identify a probability distribution or a conditional distribution. The particular kind of guesswork we will use is considered \emph{Bayesian} since it involves a parameter that induces a  probability distribution. A parameter here is just a measurable function.
-
-There are no topological restrictions imposed on the objects in this chapter. No Borel space conditions, no separable conditions.  We rely instead upon measure-theoretic conditions.
-
-The following preface provides the smallest possible glimpse of Bayesian statistics.
-The details can be found in \textsf{\ref{bayesian_details} Details}.
-
-
-%***************************************************************
-%***************************************************************
-\section{Preface}\label{bayesian_preface}
-
-Let 
-$(\measurespace, \sigmaalgebra)$ and 
-$(\measurespaceii, \sigmaalgebraiii)$ be measurable spaces.
-Suppose 
-$(\measurespace,\sigmaalgebra,\measure)$
-is a probability space, and let $\sigmaalgebraii$ be a \textsigma-subalgebra of 
-$\sigmaalgebra$. 
-The conditional probability 
-$
-\condprobop{\sigmaalgebraii}:
-\sigmaalgebra \to 
-L_1(\measurespace,\sigmaalgebra,\measure)
-$
-given $\sigmaalgebraii$ 
-could not possibly be a probability measure since the  codomain
-of $\condprobop{\sigmaalgebraii}$ is quotient space
-$L_1(\measurespace,\sigmaalgebra,\measure)$ rather than the interval $[0,1]$.
-For the same reason, no conditional distribution
-${\condprobop{\sigmaalgebraii}}\circ \preimage{\function}
-: \sigmaalgebraiii \to L_1(\measurespace,\sigmaalgebra,\measure)$
-given $\sigmaalgebraii$
-could possibly be a probability measure, 
-with $\function:\measurespace\to\measurespaceii$ here being any 
-$(\sigmaalgebra,\sigmaalgebraiii)$\hyp{}measurable function.
-However, a \emph{regular} conditional distribution corresponds to a Markov kernel $\funck$ defining a whole family of probability measures on the
-\textsigma-algebra $\sigmaalgebraiii$:
-\[
-\xymatrix@R=16pt@C=30pt{ 
-\Lone \ar[r]^{\condexpop{\sigmaalgebraii}}
-& \Lone 
-& \measurespace 
-\ar[d]_-{\fixinthesecond{\setiii}} 
-\ar[dr]^{\qquad\text{$\markovkernel\circ\fixinthesecond{\setiii} \in \condprobop{\sigmaalgebraii}\circ \preimage{\function}(\setiii)$}}
-\\
-& 
-& \measurespace\times\sigmaalgebraiii \ar[r]^{\markovkernel} 
-& [0,1] 
-\\
-\sigmaalgebra 
-\ar[uu]^{Q\,\circ\, \charfunction{}} 
-\ar[uur]^{\condprobop{\sigmaalgebraii}} 
-& \sigmaalgebraiii 
-\ar[uu]_{\condprobop{\sigmaalgebraii}\circ \preimage{\function}} 
-\ar[l]_{\preimage{\function}}
-& \sigmaalgebraiii 
-\ar[ur]_{\qquad\text{probability measure}} 
-\ar[u]^{\fixinthefirst{\mspaceelt}} 
-& 
-\\
-}
-\]
-By some schools of thought, just a family
-of probability measures itself, indexed by a parameter space, is considered to be a statistical experiment.
-%*************
-
-Let
-\[
-\bigl(\pspace\times\sspace,
-\productsig{\pspacesig}{\sspacesig}, 
-\measonprod\bigr)
-\]
-be a probability space.
-The measure $\measonprod$ is called the \emph{joint}.
-Call the measurable space $(\pspace, \pspacesig)$ the \emph{attribute space}, or \emph{parameter space}, and call the measurable space
-$(\sspace, \sspacesig)$ the 
-\emph{sample space}.
-Let $\projectionone$ and $\projectiontwo$ denote the respective coordinate projections of 
-$\pspace\times\sspace$ onto $\pspace$ and $\sspace$. Also let $\preimage{\projectionone}$ and 
-$\preimage{\projectiontwo}$ denote the respective induced maps 
-$\preimage{\projectionone}:\pspacesig\to\productsig{\pspacesig}{\sspacesig}$
-and 
-$\preimage{\projectiontwo}:\sspacesig\to\productsig{\pspacesig}{\sspacesig}$, as illustrated:
-\[
-\xymatrix@R=16pt@C=30pt{ 
-\pspace
-&
-&
-\pspacesig 
-\ar[d]^-{\preimage{\projectionone}}
-\ar[dl]_-{\marginalone}
-& \seti \ar@{|->}[d]
-\\
-\pspace\times\sspace \ar[u]^-{\projectionone} \ar[d]_-{\projectiontwo} &
-[0,1] &
-\productsig{\pspacesig}{\sspacesig}  \ar[l]_\measonprod
-& \seti\times\sspace
-\\
-\sspace 
-&
-&
-\sspacesig
-\ar[u]_-{\preimage{\projectiontwo}}
-\ar[ul]^-{\marginaltwo}
-\\
-}
-\]
-The projection $\projectionone$ 
-is
-$\bigl( \productsig{\pspacesig}{\sspacesig}, \pspacesig \bigr)$\hyp{}measurable,
-and induces the marginal probability distribution
-$\marginalone\definedby\measonprod\circ\preimage{\projectionone}$ of $\projectionone$ on the parameter space
-\textsigma-algebra $\pspacesig$, 
-which is called the \emph{prior probability distribution}.
-The projection $\projectiontwo$ 
-is
-$\bigl(\productsig{\pspacesig}{\sspacesig}, \sspacesig \bigr)$\hyp{}measurable,
-and induces the marginal probability distribution
-$\marginaltwo\definedby\measonprod\circ\preimage{\projectiontwo}$ of $\projectiontwo$ on the sample space
-\textsigma-algebra $\sspacesig$, 
-which is called the \emph{predictive probability distribution}.
-Consequently:
-\[
-\prior(\pspaceset) 
-= ( \measonprod\circ\preimage{\projectionone} ) (\pspaceset)
-= \measonprod(\pspaceset\times\sspace)
-\quad \text{for all $\pspaceset\in\pspacesig$},
-\]
-and
-\[
-\predictive(\sspaceset) 
-= ( \measonprod\circ\preimage{\projectiontwo} ) (\sspaceset)
-= \measonprod(\pspace\times\sspaceset)
-\quad \text{for all $\sspaceset\in\sspacesig$}.
-\]
-
-Set $\sigalg{F} = \preimage{\projectionone}(\sigmaalgebra)$.
-The  conditional distribution
-$\condprobop{\sigalg{F}}
-\circ\,
-\preimage{\projectiontwo}$ of
-$\projectiontwo$
-on $\sspacesig$
-given $\sigalg{F}$ is called the \term{sampling
-conditional distribution}, as illustrated:
-\[
-\xymatrix@R=40pt{
-L_1 \bigl(\pspace\times\sspace,
-\productsig{\pspacesig}{\sspacesig},
-\measonprod\bigr) \ar[r]^-{\condexpop{\sigalg{F}}}
-& L_1 \bigl(\pspace\times\sspace,
-\productsig{\pspacesig}{\sspacesig},
-\measonprod\bigr)
-\\
-\productsig{\pspacesig}{\sspacesig}
-\ar[u]^-{Q\, \circ\, \charfunction{}} \ar[ur]_{\condprobop{\sigalg{F}}}
-& \sspacesig
-\ar[l]^-{\preimage\projectiontwo}
-\ar[u]_{
-\genfrac{}{}{0pt}{1}
-%outer numerator:
-{\condprobop{\sigalg{F}}
-\circ\,
-\preimage{\projectiontwo}}
-%outer denominator:
-{\genfrac{}{}{0pt}{1}{\text{sampling}\hfill}{\text{cond'l dist.}\hfill}}
-}% end \ar[u]
-}% end \xymatrix
-\]
-
-Set $\sigalg{G} = \preimage{\projectiontwo}(\sigmaalgebraii)$.
-The  conditional distribution
-$\condprobop{\sigalg{G}}
-\circ\,
-\preimage{\projectionone}$ of
-$\projectionone$
-on $\pspacesig$
-given $\sigalg{G}$ is called the \term{posterior conditional distribution}, as illustrated:
-\[
-\xymatrix@R=40pt{
-L_1 \bigl(\pspace\times\sspace,
-\productsig{\pspacesig}{\sspacesig},
-\measonprod\bigr)
-\ar[r]^-{\condexpop{\sigalg{G}}}
-& L_1 \bigl(\pspace\times\sspace,
-\productsig{\pspacesig}{\sspacesig},
-\measonprod\bigr)
-\\
-\productsig{\pspacesig}{\sspacesig}
-\ar[u]^-{Q\, \circ\, \charfunction{}} \ar[ur]_{\condprobop{\sigalg{G}}}
-& \pspacesig
-\ar[l]^-{\preimage\projectionone}
-\ar[u]_{
-\genfrac{}{}{0pt}{1}
-%outer numerator:
-{\condprobop{\sigalg{G}}
-\circ\,
-\preimage{\projectionone}}
-%outer denominator:
-{\genfrac{}{}{0pt}{1}{\text{posterior}\hfill}{\text{cond'l dist.}\hfill}}
-}% end \ar[u]
-}% end \xymatrix
-\]
-
-The sampling and posterior conditional distributions could not possibly be probability measures, and this should be clear since their codomains are $L_1$ spaces rather than 
-the interval $[0,1]$. 
-However, were they \emph{regular} conditional distributions, then they would induce whole families of probability measures on the parameter and sample space \textsigma-algebras.
-What measure-theoretic conditions might be sufficient to imply that these conditional distributions are regular?
-
-One simple condition is when
-$\measonprod\abscont (\prior\times\predictive)^*$.
-Then both the sampling conditional distribution and the posterior conditional distribution are regular. This is just an application of Proposition~\ref{marginal_implies_regular}.
-
-
-Here, in turn, is a measure-theoretic condition sufficient to imply that
-$\measonprod\abscont (\prior\times\predictive)^*$.
-Suppose
-$\{ P_\pspaceelt :\pspaceelt\in\pspace \}$
-is a family of probability measures on the sample space \textsigma-algebra
-$\sspacesig$,
-and suppose that the \textsigma\hyp{}algebra $\pspacesig$ is such that for each
-$\sspaceset\in\sspacesig$, the function
-\[
-P^\sspaceset
-:\pspace \to [0,1]
-:\pspaceelt \mapsto P_\pspaceelt(\sspaceset)
-\]
-is $\bigl(\pspacesig,\borel_{[0,1]}\bigr)$\hyp{}measurable.
-Further suppose the joint probability measure $\joint$  is defined in terms of
-a given probability measure $\wouldbeprior$ on the parameter space \textsigma-algebra
-$\pspacesig$ by
-\[
-\measonprod(\pspaceset\times\sspaceset)
-=
-\int_\pspaceset P^\sspaceset(\pspaceelt)
-\, d\wouldbeprior(\pspaceelt)
-\quad
-\text{for all $\sspaceset\in\sspacesig$ and all $\pspaceset \in \pspacesig$.}
-\]
-Then it turns out that $\wouldbeprior$ must equal the marginal $\prior$.
-If also $\measnu$ is a \textsigma-finite measure on $\sspacesig$
-such that each
-$P_\pspaceelt\abscont \measnu$, and if
-$\funcf : \pspace\times\sspace\to\R$ is a
-$\bigl(\productsig{\pspacesig}{\sspacesig},\borel_\R\bigr)$\hyp{}measurable function
-such that each $\funcf_\pspaceelt$ is equal to the Radon-Nikodym derivative:
-\begin{equation}\label{as_density}
-\function_\pspaceelt
-=
-d P_\pspaceelt/d\measnu,
-\end{equation}
-then
-$\joint \abscont (\prior \times\measnu)^*$
-with
-$\function
-=
-d\measonprod/d(\prior \times\measnu)^*$,
-and consequently
-$\measonprod\abscont (\prior\times\predictive)^*$.
-Further, if the function
-$\funcg: \pspace\times\sspace\to\R$ is defined by setting
-\[\functionii(\pspaceelt,\sspaceelt)
-=
-\frac
-{\function(\pspaceelt,\sspaceelt)}
-{\int_\pspace \function(\pspaceelt,\sspaceelt)\,
-d\prior(\pspaceelt)},
-\]
-then
-$\functionii
-=
-d\measonprod/d(\prior\times\predictive)^*$.
-This implies that $\predictive \abscont \measnu$ on $\sspacesig$, for if $\sspaceset\in\sspacesig$, then
-\[
-\predictive(\sspaceset)
-= \measonprod(\pspace \times \sspaceset) 
-= \int_{\pspace \times \sspaceset} \function \, d(\prior\times\measnu)
-= \int_\sspaceset\left( \int_\pspace \function(\pspaceelt, \sspaceelt)\,d\prior(x)\right) d\measnu(\sspaceelt).
-\]
-This says 
-\[
-\frac{d\predictive}{d\measnu}:
-\sspace\to\R:
-\sspaceelt\mapsto \int_\pspace \function(\pspaceelt,\sspaceelt)\,d\prior(x).
-\]
-
-The family $\{ P_\pspaceelt :\pspaceelt\in\pspace \}$ of probability measures on the sample space \textsigma-algebra $\sspacesig$ must satisfy
-\[
-P_\pspaceelt(\sspaceset)
-=
-\int_\sspaceset \functionii(\pspaceelt,\sspaceelt)
-\, d\predictive(\sspaceelt) 
-\quad \text{for all $\sspaceset\in\sspacesig$},
-\]
-and a family $\{ \prior_\sspaceelt :\sspaceelt\in\sspace \}$ of probability measures on the parameter space \textsigma-algebra $\pspacesig$, defined for those
-$\sspaceelt\in\sspace$ such that $\funcf^\sspaceelt$ is integrable with respect to $\prior$, is defined by
-\begin{equation}\label{bayes_eq}
-\prior_\sspaceelt(\pspaceset)
-=
-\int_\pspaceset \functionii(\pspaceelt,\sspaceelt)
-\, d\prior(\pspaceelt)
-\quad \text{for all $\pspaceset\in\pspacesig$},
-\end{equation}
-or equivalently by
-\[
-\frac{d\prior_\sspaceelt}{d\prior}
-:\pspace\to\R
-:\pspaceelt
-\mapsto
-\frac
-{\function(\pspaceelt,\sspaceelt)}
-{\int_\pspace \function(\pspaceelt,\sspaceelt)\, 
-d\prior(\pspaceelt)}.
-\]
-The equality~(\ref{bayes_eq}) may also be  seen as 
-Bayes' Theorem\index{Bayes' Theorem@Bayes' Theorem}
-in the case where there is a \textsigma-finite measure $\measlambda$ on $\pspacesig$
-with $\prior \abscont \measlambda$, say with density function
-$\functioniii
-=
-d\prior/d\measlambda
-\in\cali{L}_1(\pspace, \pspacesig,\measlambda)$. In this case,
-\[
-\prior_{\sspaceelt}(\pspaceset)
-=
-\frac
-{\displaystyle
-\int_\pspaceset \function(\pspaceelt,\sspaceelt)\functioniii(\pspaceelt) 
-\,d\measlambda(\pspaceelt)
-}
-{\displaystyle
-\int_{\pspace} \function(\pspaceelt,\sspaceelt)\functioniii(\pspaceelt)
-\,d\measlambda(\pspaceelt)
-}
-\quad
-\text{for all $\pspaceset\in\pspacesig$,}
-\]
-or equivalently,
-\begin{align*}\label{bayes_theorem}
-\frac{d\prior_\sspaceelt}{d\measlambda}:
-\pspace\to\R:
-\pspaceelt
-& \mapsto
-\frac{\function(\pspaceelt,\sspaceelt)\functioniii(\pspaceelt)}
-{\displaystyle
-\int_{\pspace} \function(\pspaceelt,\sspaceelt)\functioniii(\pspaceelt)
-\,d\measlambda(\pspaceelt)}
-\\
-& =
-\frac{\function^\sspaceelt(\pspaceelt)\functioniii(\pspaceelt)}
-{\displaystyle
-\int_{\pspace} \function^\sspaceelt(\pspaceelt)\functioniii(\pspaceelt)
-\,d\measlambda(\pspaceelt)}
-,\\
-\end{align*}
-where $\function(\pspaceelt,\sspaceelt)$, or in particular $\function^{\sspaceelt}$, might be referred to as ``the likelihood,'' illustrated in the following diagram:
-\[
-\xymatrix@R=16pt@C=30pt{ 
-\pspace \ar[dr]^{\function^\sspaceelt\quad \rlap{\emph{\scriptsize the likelihood}}}
-& \\
-\pspace\times\sspace 
-\ar[u]^{\projectionone}
-\ar[d]_{\projectiontwo}
-\ar[r]^{\function}
-& \R \\
-\sspace 
-\ar[ur]_{\function_\pspaceelt \quad \rlap{\emph{\scriptsize Radon-Nikodym derivative}}} 
-& 
-}
-\]
-
-The collection 
-$\{\function^\sspaceelt:\sspaceelt\in\sspace \}$
-of likelihood functions $\pspace\to\R$ is indexed by the sample space 
-$\sspace$, which is one way that a particular sample $\sspaceelt$ may be used in applications; the sample itself determines the likelihood function by indexing into the collection. It is interesting how the sample\index{sample}, or \term{observation}, or \term{data}, can be seen as selecting a likelihood function from a collection, and warrants further thought. On the other hand, you always need information\index{information} to make an intelligent selection. Perhaps that is all there is to it.
 
 
 
 
-%***************************************************************
-%***************************************************************
-%***************************************************************
-%***************************************************************
-\section{Details}\label{bayesian_details}
-
-
-\begin{termn}
-Let 
-$(\pspace, \pspacesig)$ and 
-$(\sspace, \sspacesig)$ be measurable spaces.
-Let
-$\bigl(\pspace\times\sspace, 
-\productsig{\pspacesig}{\sspacesig}, 
-\measonprod\bigr)$
-be a probability space.
-The measure $\measonprod$ is called the \term{joint probability measure}, or simply the \emph{joint}.
-Call the measurable space $(\pspace, \pspacesig)$ the \term{attribute space}, or
-\term{parameter space}, and call the measurable space
-$(\sspace, \sspacesig)$ the 
-\term{sample space}.
-Let $\projectionone$ and $\projectiontwo$ denote the respective coordinate projections of 
-$\pspace\times\sspace$ onto $\pspace$ and $\sspace$. Also let $\preimage{\projectionone}$ and 
-$\preimage{\projectiontwo}$ denote the respective induced maps 
-$\preimage{\projectionone}:\pspacesig\to\productsig{\pspacesig}{\sspacesig}$
-and 
-$\preimage{\projectiontwo}:\sspacesig\to\productsig{\pspacesig}{\sspacesig}$, as illustrated:
-\[
-\xymatrix@R=16pt@C=30pt{
-\pspace
-&
-&
-\pspacesig
-\ar[d]^-{\preimage{\projectionone}}
-\ar[dl]_-{\marginalone}
-& \seti \ar@{|->}[d]
-\\
-\pspace\times\sspace \ar[u]^-{\projectionone} \ar[d]_-{\projectiontwo} &
-[0,1] &
-\productsig{\pspacesig}{\sspacesig}  \ar[l]_\measonprod
-& \seti\times\sspace
-\\
-\sspace
-&
-&
-\sspacesig
-\ar[u]_-{\preimage{\projectiontwo}}
-\ar[ul]^-{\marginaltwo}
-\\
-}
-\]
-The projection $\projectionone$
-is $\bigl(\productsig{\pspacesig}{\sspacesig},\pspacesig \bigr)$\hyp{}measurable and
-induces the marginal probability distribution
-$\measonprod\circ\preimage{\projectionone}$ of $\projectionone$ on the parameter space 
-\textsigma-algebra $\pspacesig$, 
-which is called the \term{prior probability distribution}, or simply the \emph{prior}, and which we will denote by $\prior$.
-The projection $\projectiontwo$
-is $\bigl(\productsig{\pspacesig}{\sspacesig},\sspacesig\bigr)$\hyp{}measurable and
-induces the marginal probability distribution
-$\measonprod\circ\preimage{\projectiontwo}$ of $\projectiontwo$ on the sample space
-\textsigma-algebra $\sspacesig$, 
-which is called the \term{predictive probability distribution}, or simply the \emph{predictive}, and which we will denote by $\predictive$.
-Consequently:
-\[
-\prior(\pspaceset) 
-= ( \measonprod\circ\preimage{\projectionone} ) (\pspaceset)
-= \measonprod(\pspaceset\times\sspace)
-\quad \text{for all $\pspaceset\in\pspacesig$},
-\]
-and
-\[
-\predictive(\sspaceset) 
-= ( \measonprod\circ\preimage{\projectiontwo} ) (\sspaceset)
-= \measonprod(\pspace\times\sspaceset)
-\quad \text{for all $\sspaceset\in\sspacesig$}.
-\]
-\end{termn}
-
-
-\begin{notn}
-Whenever $\measurespace$, $\measurespaceii$, and 
-$\measurespaceiii$ are sets and 
-$\function
-:\measurespace\times\measurespaceii\to\measurespaceiii$ is a function, we will let 
-$\function^\mspaceeltii$ denote the map
-\[
-\function^\mspaceeltii
-:\measurespace\to\measurespaceiii: 
-\mspaceelt \mapsto \function^\mspaceeltii(\mspaceelt) 
-= \function(\mspaceelt,\mspaceeltii),
-\]
-and we will let $\function_\mspaceelt$ denote the map
-\[
-\function_\mspaceelt
-:\measurespaceii\to\measurespaceiii: 
-\mspaceeltii \mapsto \function_\mspaceelt(\mspaceeltii) 
-= \function(\mspaceelt,\mspaceeltii).
-\]
-Also, for each $\mspaceeltii\in\measurespaceii$ let
-$\fixinthesecond{\mspaceeltii}$ denote the map
-\[
-\fixinthesecond{\mspaceeltii}
-:\measurespace\to\measurespace\times\measurespaceii
-:\mspaceelt\mapsto (\mspaceelt,\mspaceeltii)
-\]
-and for each $\mspaceelt\in\measurespace$ let
-$\fixinthefirst{\mspaceelt}$ denote the map
-\[
-\fixinthefirst{\mspaceelt}
-:\measurespaceii\to\measurespace\times\measurespaceii
-:\mspaceeltii\mapsto (\mspaceelt,\mspaceeltii)
-\]
-as illustrated:
-\[
-\xymatrix@R=18pt@C=30pt{ 
-\measurespace \ar[d]_-{\fixinthesecond{\mspaceeltii}}
-\ar[dr]^{\function^\mspaceeltii}
-\\
-\measurespace\times \measurespaceii
-\ar[r]^{\function} & \measurespaceiii
-\\
-\measurespaceii
-\ar[ur]_{\function_\mspaceelt}
-\ar[u]^{\fixinthefirst{\mspaceelt}} & \\
-}
-\]
-\end{notn}
-
-\begin{prop}
-Let
-$(\measurespace, \sigmaalgebra)$
-and
-$(\measurespaceii, \sigmaalgebraii)$
-be measurable spaces.
-Let
-$\{ P_\pspaceelt :\pspaceelt\in\pspace \}$
-be a family of probability measures on the \textsigma-algebra
-$\sspacesig$,
-and let the \textsigma\hyp{}algebra $\pspacesig$ be such that for each
-$\sspaceset\in\sspacesig$, the function
-\[
-P^\sspaceset
-:\pspace \to [0,1]
-:\pspaceelt \mapsto P_\pspaceelt(\sspaceset)
-\]
-is $\bigl(\pspacesig,\borel_{[0,1]}\bigr)$\hyp{}measurable.
-Also let the joint probability measure $\joint$  be defined in terms of
-a given probability measure $\wouldbeprior$ on the \textsigma-algebra
-$\pspacesig$ by
-\[
-\measonprod(\pspaceset\times\sspaceset)
-=
-\int_\pspaceset P^\sspaceset(\pspaceelt)
-\, d\wouldbeprior(\pspaceelt)
-\quad
-\text{for all $\sspaceset\in\sspacesig$ and all $\pspaceset \in \pspacesig$.}
-\]
-If $\measnu$ is a \textsigma-finite measure on $\sspacesig$
-such that each
-$P_\pspaceelt\abscont \measnu$, and if
-$\funcf : \pspace\times\sspace\to\R$ is a
-$\bigl(\productsig{\pspacesig}{\sspacesig},\borel_\R\bigr)$\hyp{}measurable function
-such that each
-\[
-\function_\pspaceelt
-=
-d P_\pspaceelt/d\measnu,
-\]
-then
-$\joint \abscont (\prior \times\measnu)^*$
-and
-$\funcf
-=
-d\measonprod/d(\prior \times\measnu)^*$,
-and consequently
-$\measonprod\abscont (\prior\times\predictive)^*$.
-Define a function
-$\funcg: \pspace\times\sspace\to\R$ by
-\[
-\funcg
-: \pspace\times\sspace \to \R
-: (\pspaceelt,\sspaceelt) \mapsto
-\frac
-{\funcf(\pspaceelt,\sspaceelt)}
-{\int_\pspace \function(\pspaceelt,\sspaceelt)\,
-d\prior(\pspaceelt)}.
-\]
-Then
-$\funcg
-=
-d\measonprod/d(\prior\times\predictive)^*$.
-\end{prop}
-
-
-\begin{proof}
-Let $\measnu$ be a \textsigma\hyp{}finite measure on $\sigmaalgebraii$
-such that each
-$P_\pspaceelt\abscont \measnu$, and let
-$\funcf : \pspace\times\sspace\to\R$ be a
-$\bigl(\productsig{\pspacesig}{\sspacesig},\borel_\R\bigr)$\hyp{}measurable function
-such that each
-\[
-\function_\pspaceelt
-=
-d P_\pspaceelt/d\measnu.
-\]
-In order to show that
-$\funcf
-=
-d\measonprod/d(\prior \times\measnu)^*$,
-it is sufficient to show that
-$\funcf$
-is integrable with respect to
-$\prior\times\measnu$
-and that
-\[
-\measonprod(\pspaceset\times\sspaceset)
-=
-\int_{\pspaceset\times\sspaceset}
-\function \, d(\prior\times\measnu)
-\]
-for all
-$\pspaceset\times\sspaceset
-\in\productsemiring{\pspacesig}{\sspacesig}$,
-for then $\measonprod$ extends uniquely to
-$\productsig{\pspacesig}{\sspacesig}$
-by Proposition~\ref{not_a_product_measure}.
-
-To show that $\function$ is integrable with respect to
-$\prior\times\measnu$, we will apply Tonelli's Theorem~\ref{tonelli}.
-We verify two things. First, each function
-\[
-\function_\pspaceelt:\sspace\to\R
-:\sspaceelt\mapsto \function(\pspaceelt,\sspaceelt)
-\]
-is integrable over
-$\sspace$ with respect to $\measnu$ for all
-$\pspaceelt\in\pspace$,
-and this is because  we have supposed
-$\function_\pspaceelt
-=
-d\predictive_\pspaceelt/d\measnu$
-for all $\pspaceelt\in\pspace$. Second, the function
-\[
-\pspace\to\R:
-\pspaceelt\mapsto \int_\sspace\function_\pspaceelt\, d\measnu
-\]
-defines an integrable function over $\pspace$ with respect to $\prior$ since it is bounded and supposed to be
-$\bigl(\sigmaalgebra, \borel_{[0,1]}\bigr)$\hyp{}measurable, and let us now go into more detail on this.
-
-By hypothesis,
-$P^\sspaceset(\pspaceelt)
-= P_\pspaceelt(\sspaceset)$
-for all
-$\pspaceelt\in\pspace$, and
-for all $\sspaceset\in\sspacesig$, and in particular for
-$\sspace\in\sspacesig$, and  the assumption that
-$\funcf_\pspaceelt
-=
-d\predictive_\pspaceelt/d\measnu$
-for all $\pspaceelt\in\pspace$ says that
-$P_\pspaceelt(\sspaceset)
-= \int_\sspaceset\function_\pspaceelt\,d\measnu$
-for all $\sspaceset\in\sspacesig$.
-This means  that
-\[
-P^\sspaceset(\pspaceelt)
-= P_\pspaceelt(\sspaceset)
-=
-\int_\sspaceset\function_\pspaceelt\,d\measnu,
-\]
-which is bounded by 1 since each $P_\pspaceelt$ is a probability measure, and which is
-$\bigl(\sigmaalgebra, \borel_{[0,1]}\bigr)$\hyp{}measurable since we have supposed each
-$\pspaceelt\mapsto P^\sspaceset(\pspaceelt)$ to be so.
-Consequently, the function
-\[
-P^\sspace : \pspace\to\R:
-\pspaceelt \mapsto
-\int_\sspace \funcf_\pspaceelt\,d\measnu
-\]
-is integrable over $\pspace$ with respect to the measure $\prior$ on
-$\pspacesig$, and so certainly defines an integrable function over
-$\pspace$ with respect to  $\prior$.
-
-By Tonelli's Theorem~\ref{tonelli} then, the function
-$\funcf$ is integrable with respect to
-$\prior\times\measnu$ and
-\[
-\int_{\pspaceset\times\sspaceset}
-\funcf \,d(\prior\times\measnu)
-=
-\int_\pspaceset\int_\sspaceset
-\function_\pspaceelt\,
-d\measnu\,d\prior
-\]
-for all $\pspaceset\times\sspaceset
-\in\productsemiring{\pspacesig}{\sspacesig}.$
-By hypothesis,
-\[
-\measonprod(\pspaceset\times\sspaceset)
-=
-\int_\pspaceset P^\sspaceset\, d\prior,
-\]
-for this is how we defined the joint $\measonprod$,
-and so by substitution for $P^\sspaceset$:
-\[
-\int_\pspaceset P^\sspaceset\, d\prior
-=
-\int_\pspaceset
-\int_\sspaceset
-\function_\pspaceelt\,
-d\measnu\, d\prior.
-\]
-Therefore, by transitivity of equality,
-\[
-\measonprod(\pspaceset\times\sspaceset)
-=
-\int_{\pspaceset\times\sspaceset}
-\function \, d(\prior\times\measnu)
-\]
-for all $\pspaceset\times\sspaceset
-\in\productsemiring{\pspacesig}{\sspacesig}$,
-as required.
-
-The fact that the function
-$\funcg$
-equals
-$d\measonprod/d(\prior\times\predictive)^*$
-follows by Proposition~\ref{mixed_implies_marginal}.
-\end{proof}
-
-
-
-
-
-\begin{prop}
-Let
-$\bigl(\pspace\times\sspace,
-\productsig{\pspacesig}{\sspacesig},
-\measonprod\bigr)$
-be a probability space, and let
-$\measnu$ be a \textsigma-finite measure on $\sspacesig$.
-Let  $\measonprod\abscont (\prior\times\measnu)^*$ on
-$\productsig{\pspacesig}{\sspacesig}$
-with
-$\funcf
-= d\measonprod/d(\prior\times\measnu)^*$.
-Define
-\[
-\prior_\sspaceelt
-:\sigmaalgebra \to [0,1]
-:\seti \mapsto
-\frac{\int_\pspaceset \function^\sspaceelt \, d\prior}
-{\int_\pspace \function^\sspaceelt \, d\prior}
-\]
-for all $\pspaceset \in \pspacesig$,
-and for all $\sspaceelt\in\sspace$ such that
-$\function^\sspaceelt$ is integrable.
-If $\prior\abscont\measlambda$ on $\pspacesig$ with
-$\funch
-= d\prior/d\measlambda
-\in L_1(\pspace, \pspacesig, \measlambda)$,
-then
-$\prior_\sspaceelt\abscont\measlambda$ with
-\[
-\frac
-{d \prior_{\sspaceelt}}
-{d\measlambda}
-=
-\frac
-{\funcf^{\sspaceelt}\funch}
-{\int_{\pspace} \funcf^{\sspaceelt} \funch \, d\measlambda },
-\]
-or alternately
-\[
-\prior_{\sspaceelt}(\pspaceset)
-=
-\frac
-{\int_\pspaceset \funcf^{\sspaceelt}\funch \,d\measlambda}
-{\int_{\pspace} \funcf^{\sspaceelt} \funch \,d\measlambda}
-\quad
-\text{for all $\pspaceset\in\pspacesig$.}
-\]
-\end{prop}
-
-
-\begin{proof}
-Let
-$\prior\abscont\measlambda$ on $\pspacesig$ with
-$\funch
-= d\prior/d\measlambda
-\in L_1(\pspace, \pspacesig, \measlambda)$.
-By definition,
-\[
-\prior_\sspaceelt(\pspaceset) =
-\frac{\int_\pspaceset \function^\sspaceelt \, d\prior}
-{\int_\pspace \function^\sspaceelt \, d\prior},
-\]
-which implies
-\[
-\frac{d\prior_\sspaceelt}{d\prior}
-=
-\frac{\funcf^\sspaceelt}
-{\int_\pspace \function^\sspaceelt \, d\prior}
-\in L_1(\pspace, \pspacesig, \prior).
-\]
-It follows by Proposition~\ref{radon_nikodym_corollary} that
-\[
-\frac{\int_\pspaceset \function^\sspaceelt \, d\prior}
-{\int_\pspace \function^\sspaceelt \, d\prior}
-=
-\frac{\int_\pspaceset\function^\sspaceelt\functioniii\,d\measlambda}
-{\int_\pspace\function^\sspaceelt\,d\prior},
-\]
-and, again by Proposition~\ref{radon_nikodym_corollary},
-$\int_\pspace\function^\sspaceelt\,d\prior
-=
-\int_\pspace\function^\sspaceelt\functioniii\,d\measlambda$,
-so
-\[
-\frac{\int_\pspaceset\function^\sspaceelt\functioniii\,d\measlambda}
-{\int_\pspace\function^\sspaceelt\,d\prior}
-=
-\frac{\int_\pspaceset\function^\sspaceelt\functioniii\,d\measlambda}
-{\int_\pspace\function^\sspaceelt\functioniii\,d\measlambda}.
-\]
-By transitivity of equality,
-\[
-\prior_\sspaceelt(\pspaceset)
-=
-\frac{\int_\pspaceset\function^\sspaceelt\functioniii\,d\measlambda}
-{\int_\pspace\function^\sspaceelt\functioniii\,d\measlambda},
-\]
-as required.
-\end{proof}
 
 
 
@@ -12345,7 +11522,7 @@ The usefulness of this notation remains to be seen.
 
 
 \begin{prop}\label{marginal_density}
-\textbf{Explain how this proposition is vastly different than Proposition~\ref{marginal_abscont}.}
+\textbf{Explain how this proposition is vastly different than Proposition~\ref{reference_implies_marginals}.}
 Let 
 $(\uspace,\uspacesig,\measureiii)$,
 $(\measurespace,\sigmaalgebra,\measure)$, and  
