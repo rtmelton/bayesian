@@ -5563,7 +5563,7 @@ $\sigmaalgebraii$ of the \textsigma-algebra $\sigmaalgebra$ are independent with
 \condexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}
 =  
 \bigl(\expval{\ellclass{\function}{\measure}}\bigr)
-\bigl(\ellclass{\oneonomega}{\measure}\bigr) 
+\cdot \ellclass{\oneonomega}{\measure}
 \quad
 \text{in $L_1(\measurespace, \sigmaalgebra,\measure)$.}
 \]
@@ -5575,20 +5575,20 @@ In order to show that the equality
 $\condexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}
 =  
 \bigl(\expval{\ellclass{\function}{\measure}}\bigr)
-\bigl(\ellclass{\oneonomega}{\measure}\bigr)$ holds in 
+\cdot \ellclass{\oneonomega}{\measure}$ holds in
 $L_1(\measurespace, \sigmaalgebra,\measure)$, 
 it's sufficient to show that 
 $\kondexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}
 =  
 \bigl(\expval{\ellclass{\function}{\measure}}\bigr)
-\bigl(\ellclass{\oneonomega}{\measure\restrictedto\sigmaalgebraii}\bigr)$ holds in 
+\cdot \ellclass{\oneonomega}{\measure\restrictedto\sigmaalgebraii}$ holds in
 $L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto\sigmaalgebraii)$, and in turn, to show this, it's sufficient to show
 \[
 \inducedint_\setii \kondexpsub{\ellclass{\function}{\measure}} {\sigmaalgebraii} \, d\measure\restrictedto{\sigalgb}
 =
 \inducedint_\setii  
 \bigl(\expval{\ellclass{\function}{\measure}}\bigr)
-\bigl(\ellclass{\oneonomega}{\measure\restrictedto\sigmaalgebraii}\bigr)
+\cdot \ellclass{\oneonomega}{\measure\restrictedto\sigmaalgebraii}
 \, d\measure\restrictedto\sigmaalgebraii
 \quad
 \text{for all $\setii\in\sigmaalgebraii$.}
@@ -5641,7 +5641,7 @@ Consequently,
 & = 
 \inducedint_\setii
 \bigl(\expval{\ellclass{\function}{\measure}}\bigr)
-\bigl(\ellclass{\oneonomega}{\measure\restrictedto\sigmaalgebraii}\bigr)
+\cdot \ellclass{\oneonomega}{\measure\restrictedto\sigmaalgebraii}
 \, d\measure\restrictedto\sigmaalgebraii,
 \end{align*}
 as required.
@@ -5654,7 +5654,7 @@ On any probability space $(\measurespace, \sigmaalgebra,\measure)$, the $\textsi
 $\condexpsub{\ellclass{\function}{\measure}}{\sigma(\oneonomega)} 
 =  
 \bigl(\expval{\ellclass{\function}{\measure}}\bigr)
-\bigl(\ellclass{\oneonomega}{\measure}\bigr)$ for every
+\cdot \ellclass{\oneonomega}{\measure}$ for every
 $\ellclass{\function}{\measure}\in L_1(\measurespace, \sigmaalgebra,\measure)$.
 This means that any equation involving conditional mathematical expectation which holds for all
 $\textsigma$-subalgebras of $\sigmaalgebra$ must hold for expected values as well.  You may argue that this is logically backwards since the conditional mathematical expectation is a generalization of the expected value.
@@ -5670,14 +5670,14 @@ are independent, then
 \condexpsub{\ellclass{\function}{\measure}}{\sigma(\functionii)} 
 =
 \bigl(\expval{\ellclass{\function}{\measure}}\bigr)
-\bigl(\ellclass{\oneonomega}{\measure}\bigr)
+\cdot \ellclass{\oneonomega}{\measure}
 \]
 and 
 \[
 \condexpsub{\ellclass{\functionii}{\measure}}{\sigma(\function)} 
 = 
 \bigl(\expval{\ellclass{\functionii}{\measure}}\bigr)
-\bigl(\ellclass{\oneonomega}{\measure}\bigr).
+\cdot \ellclass{\oneonomega}{\measure}.
 \]
 \end{prop}
 
@@ -8131,126 +8131,6 @@ $\funcg(\uspaceelt)=\mspaceeltii$, as required.
 
 
 
-\begin{notn}\label{densities}
-Let
-$(\uspace,\uspacesig,\measlambda)$ be a probability space, with functions
-$\funcf:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$,
-$\funcg:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$
-and
-$\funch:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
-measurable.
-Let $\measmu$, $\measnu$, and $\measrho$ be \textsigma\hyp{}finite reference measures on
-$\sigmaalgebra$, $\sigmaalgebraii$, and $\sigmaalgebraiii$, respectively, and let
-$\measlambda\circ\preimage{(\funcf,\funcg,\funch)}
-\abscont
-(\measure\times\measureii\times\measureiv)^*$ on
-$\productsig{\sigmaalgebra,\sigmaalgebraii}{\sigmaalgebraiii}$.
-
-With a decision about notation that I am sure to regret, set:
-\begin{align*}
-j
-& =
-\frac{d (\measlambda\circ\preimage{(\funcf,\funcg,\funch)})}
-{d(\measmu\times\measnu\times\measrho)^*}
-:
-\measurespace\times\measurespaceii\times\measurespaceiii\to\R,
-\\
-m_{\funcf,\funch}
-& =
-\frac{d (\measlambda\circ\preimage{(\funcf,\funch)} )}
-{d(\measmu\times\measrho)^*}:\measurespace\times\measurespaceiii\to\R,
-\\
-m_{\funcg,\funch}
-& =
-\frac{d (\measlambda\circ\preimage{(\funcg,\funch)} )}
-{d(\measmu\times\measrho)^*}:\measurespaceii\times\measurespaceiii\to\R,
-\\
-m_\funch
-& =
-\frac{d (\measlambda\circ\preimage{\funch})}
-{d \measrho}:\measurespaceiii\to\R.
-\\
-\end{align*}
-\textbf{Edit: You already regret it.
-Stay true to yourself and use density notation that specifies which measures you are taking derivatives with respect to.
-}
-
-\noindent
-Vaguely, these are the densities of the joint and some of the marginals.
-We are supposing that all Radon-Nikodym derivatives in sight here exist.
-
-By the proof of Proposition~\ref{reference_implies_marginals},
-\begin{align*}
-m_{\function,\functioniii} (\mspaceelt,\mspaceeltiii)
-& =
-\int_\measurespaceii
-\funcj(\mspaceelt,\mspaceeltii,\mspaceeltiii)\,
-d \measnu(\mspaceeltii),
-\\
-m_{\functionii,\functioniii} (\mspaceeltii,\mspaceeltiii)
-& =
-\int_\measurespace
-\funcj(\mspaceelt,\mspaceeltii,\mspaceeltiii)\,
-d \measmu(\mspaceelt),
-\\
-m_\funch(\mspaceeltiii)
-& =
-\int_{\measurespace\times\measurespaceii}
-\funcj(\mspaceelt,\mspaceeltii,\mspaceeltiii)\,
-d(\measmu\times\measnu)(\mspaceelt,\mspaceeltii),
-\\
-\end{align*}
-which could lean in the direction of offhanded statements like,
-`You can obtain the marginal by integrating out the joint.'
-
-For the following ratios of Radon-Nikodym derivatives, define:
-\begin{align*}
-p(\mspaceelt,\mspaceeltii\mid\mspaceeltiii)
-& \definedby
-\frac{j(\mspaceelt,\mspaceeltii,\mspaceeltiii)}
-{m_{\functioniii} (\mspaceeltiii)},
-\\
-p(\mspaceelt\mid\mspaceeltiii)
-& \definedby
-\frac{m_{\function,\functioniii}(\mspaceelt,\mspaceeltiii)}
-{m_{\functioniii} (\mspaceeltiii)},
-\\
-p(\mspaceeltii\mid\mspaceeltiii)
-& \definedby
-\frac{m_{\functionii,\functioniii}(\mspaceeltii,\mspaceeltiii)}
-{m_{\functioniii} (\mspaceeltiii)},
-\\
-p(\mspaceelt\mid \mspaceeltii,\mspaceeltiii)
-& \definedby
-\frac{ j( \mspaceelt, \mspaceeltii, \mspaceeltiii) }
-{m_{\functionii, \functioniii} ( \mspaceeltii,\mspaceeltiii ) }.
-\\
-\end{align*}
-
-
-Finally, suppose we were to set
-$p(x,z) = m_{f,h}(x,z)$
-and
-$p(z) = m_h(z)$, then
-\[
-p(x\mid z) =
-\frac{p(x,z)}{p(z)}.
-\]
-By Proposition~\ref{reference_implies_mixed_and_marginals} and Proposition~\ref{conditional_density},
-if $h(u)=z$, then
-\[
-\frac{d k_u}{d \measmu}(x) = \frac{p(x,z)}{p(z)}.
-\]
-That is,
-\[
-p(x \mid z) = \frac{d k_u}{d \measmu}(x)
-\quad
-\text{for $h(u) = z$.}
-\]
-Since this Radon-Nikodym derivative has been described as representing
-``the conditional distribution of $f$ given $h=z$,'' this might add credence to the `$\vert$' symbol in expressions like $p(x\mid z)$, or
-$\measlambda_{\funcf\vert \funch = \mspaceeltiii}$.
-\end{notn}
 
 
 
@@ -8258,6 +8138,8 @@ $\measlambda_{\funcf\vert \funch = \mspaceeltiii}$.
 \section{Conditional Independence}
 %*********************************************************
 %*********************************************************
+
+
 
 
 \begin{defnboldnote}\label{conditionally_independent}
@@ -8286,27 +8168,25 @@ may be used.
 \end{defnboldnote}
 
 \begin{example}
-Let us try to understand conditional independence in the case where
-$\sigmaalgebraii
-=
-\{\measurespace, \mtset\}$
-and in the case where
-$\sigmaalgebraii
-=
-\sigmaalgebra$.
-We will see that in the case
+Let us try to understand conditional independence in two extreme cases, namely
+\begin{itemize}
+\item
+case
 $\sigmaalgebraii
 =
 \{\measurespace, \mtset\}$,
-conditional independence given
-$\sigmaalgebraii$ is equivalent to independence with respect to $\measure^*$, and in the case
+where conditional independence given
+$\sigmaalgebraii$ is equivalent to independence with respect to the  measure $\measure^*$, and
+\item
+case
 $\sigmaalgebraii
 =
 \sigmaalgebra$,
-all \textsigma\hyp{}subalgebras of $\sigmaalgebra$ are conditionally independent given
+where all \textsigma\hyp{}subalgebras of $\sigmaalgebra$ are conditionally independent given
 $\sigmaalgebraii$.
+\end{itemize}
 
-Let
+Case
 $\sigmaalgebraii
 =
 \{\measurespace, \mtset\}$.
@@ -8325,7 +8205,7 @@ It follows then by Proposition~\ref{conditional_is_expected} that
 \condexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}
 =
 \bigl(\expval{\ellclass{\function}{\measure}}\bigr)
-\bigl(\ellclass{1}{\measure}\bigr)
+\cdot \ellclass{1}{\measure}
 \]
 for every
 $\ellclass{\function}{\measure}\in L_1(\measurespace, \sigmaalgebra,\measure)$.
@@ -8350,17 +8230,17 @@ is equivalent by definition to
 which in turn is equivalent to
 \begin{align*}
 \bigl(\expval{\ellclass{\charfunction{\setiii\meets\setiv}}{\measure}}\bigr)
-\bigl(\ellclass{1}{\measure}\bigr)
+\cdot \ellclass{1}{\measure}
 & =
 \bigl(\expval{\ellclass{\charfunction{\setiii}}{\measure}}\bigr)
-\bigl(\ellclass{1}{\measure}\bigr)
+\cdot \ellclass{1}{\measure}
 \cdot
 \bigl(\expval{\ellclass{\charfunction{\setiv}}{\measure}}\bigr)
-\bigl(\ellclass{1}{\measure}\bigr)\\
+\cdot \ellclass{1}{\measure} \\
 & =
 \bigl(\expval{\ellclass{\charfunction{\setiii}}{\measure}}\bigr)
 \bigl(\expval{\ellclass{\charfunction{\setiv}}{\measure}}\bigr)
-\bigl(\ellclass{1}{\measure}\bigr),\\
+\cdot \ellclass{1}{\measure},\\
 \end{align*}
 implying that
 \[
@@ -8370,7 +8250,8 @@ This shows that conditional independence given
 $\sigmaalgebraii = \{\measurespace, \mtset\}$ is equivalent to independence with respect to
 $\measure^*$.
 
-Let $\sigmaalgebraii = \sigmaalgebra$.
+
+Case $\sigmaalgebraii = \sigmaalgebra$.
 Then for all $\setiii\in\sigmaalgebraiii$ and for all $\setiv\in\sigmaalgebraiv$,
 the functions
 $\charfunction{\setiii\meets\setiv}$, $\charfunction{\setiii}$,
@@ -8381,6 +8262,7 @@ It follows by Proposition~\ref{subalgebra_fixed} that the condition
 \condexpsub{\ellclass{\charfunction{\setiii\meets\setiv}}{\measure}}{\sigmaalgebraii}
 =
 \condexpsub{\ellclass{\charfunction{\setiii}}{\measure}}{\sigmaalgebraii}
+\cdot
 \condexpsub{\ellclass{\charfunction{\setiv}}{\measure}}{\sigmaalgebraii}
 \]
 is equivalent to
@@ -8388,6 +8270,7 @@ is equivalent to
 \ellclass{\charfunction{\setiii\meets\setiv}}{\measure}
 =
 \ellclass{\charfunction{\setiii}}{\measure}
+\cdot
 \ellclass{\charfunction{\setiv}}{\measure},
 \]
 which is equivalent to
@@ -8395,12 +8278,17 @@ which is equivalent to
 \charfunction{\setiii\meets\setiv}
 =
 \charfunction{\setiii}
+\cdot
 \charfunction{\setiv}
 \quad\text{$\measure^\kernast$\hyp{}almost everywhere on $\measurespace$.}
 \]
 This is always true.
 This shows that all \textsigma\hyp{}subalgebras of $\sigmaalgebra$ are conditionally independent given $\sigmaalgebra$.
 \end{example}
+
+
+
+
 
 
 \begin{notn}\label{conditionally_independent_functions}
@@ -8437,8 +8325,6 @@ given $\funch$ if
 \condindep{\preimage{\funcf}(\sigmaalgebra)}{\preimage{\funcg}(\sigmaalgebraii)}
 {\preimage{\funch}(\sigmaalgebraiii)}.
 \]
-The notation
-$\condindep{\funcf}{\funcg}{\funch}$ may be used.
 \end{notn}
 
 
@@ -8462,7 +8348,7 @@ $\function:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$,
 $\functionii:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$,
 and
 $\functioniii:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
-be measurable, with \textsigma-finite reference measures
+be measurable, with \textsigma-finite  measures
 $\measure$, $\measureii$, and $\measureiv$ on respective \textsigma-algebras
 $\sigmaalgebra$, $\sigmaalgebraii$, and $\sigmaalgebraiii$.
 Set $\sigalg{H}=\preimage{\funch}(\sigmaalgebraiii)$.
@@ -8561,7 +8447,7 @@ $\function:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$,
 $\functionii:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$,
 and
 $\functioniii:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
-be measurable, with \textsigma-finite reference measures
+be measurable, with \textsigma-finite measures
 $\measure$, $\measureii$, and $\measureiv$ on respective \textsigma-algebras
 $\sigmaalgebra$, $\sigmaalgebraii$, and $\sigmaalgebraiii$.
 Set $\sigalg{H}=\preimage{\funch}(\sigmaalgebraiii)$.
@@ -8580,11 +8466,13 @@ $\condprobop{\sigalg{H}}\circ \preimage{\funcf}$,
 $\condprobop{\sigalg{H}}\circ \preimage{\funcg}$,
 and
 $\condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)}$.
+
 The following are equivalent:
 %
 \begin{enumerate}
 \item[1)]
-$\condindep{\function}{\functionii}{\functioniii}$, 
+$\condindep{\preimage{\funcf}(\sigmaalgebra)}{\preimage{\funcg}(\sigmaalgebraii)}
+{\preimage{\funch}(\sigmaalgebraiii)}$,
 %
 \item[2)]
 $\funcm_\uspaceelt
@@ -8623,11 +8511,10 @@ $\sigalg{F}=\preimage{\funcf}(\sigmaalgebra)$,
 and $\sigalg{G}=\preimage{\funcg}(\sigmaalgebraii)$.
 We know the conditional distributions
 are regular by Proposition~\ref{abs_cont_reg}, so they do have corresponding Markov kernels by Proposition~\ref{equivalent_definition_regular_distribution}.
-
+The fact that $(1) \Leftrightarrow (2)$ is nothing more than wading through a definition or two.
 
 \textbf{(1) $\Rightarrow$ (2)}\quad
 Let
-$\condindep{\function}{\functionii}{\functioniii}$, meaning
 $\condindep{\preimage{\funcf}(\sigmaalgebra)}{\preimage{\funcg}(\sigmaalgebraii)}
 {\preimage{\funch}(\sigmaalgebraiii)}$, or using $\sigalg{H}$ in place of
 $\preimage{\funch}(\sigmaalgebraiii)$,
@@ -8765,7 +8652,8 @@ that
 (\seti\times\setii),
 \]
 which is equivalent to
-$\condindep{\function}{\functionii}{\functioniii}$,
+$\condindep{\preimage{\funcf}(\sigmaalgebra)}{\preimage{\funcg}(\sigmaalgebraii)}
+{\preimage{\funch}(\sigmaalgebraiii)}$,
 as required.\hfill\qedsymbol
 
 
@@ -9276,61 +9164,6 @@ The collection
 $\{\function^\sspaceelt:\sspaceelt\in\sspace \}$
 of likelihood functions $\pspace\to\R$ is indexed by the sample space
 $\sspace$, which is one way that a particular sample $\sspaceelt$ may be used in applications; the sample itself determines the likelihood function by indexing into the collection. It is interesting how the sample\index{sample}, or \term{observation}, or \term{data}, can be seen as selecting a likelihood function from a collection, and warrants further thought. On the other hand, you always need information\index{information} to make an intelligent selection. Perhaps that is all there is to it.
-
-
-
-
-
-
-
-
-
-
-
-
-
-%***************************************************************
-%***************************************************************
-%***************************************************************
-%***************************************************************
-\section{Common Expression}\label{common_expression}
-You see the following type of combinations of mathematical symbols in colloquial texts:
-\begin{equation}\label{quaint}
-p(\theta \mid y)
-=
-\frac{p(\theta) \, p(y \mid \theta)}
-{p(y)}.
-\end{equation}
-
-
-We suppose that the symbols indicate Bayes' theorem.
-Let us substitute $\theta$ for $\pspaceelt$:
-\begin{equation}\label{loose}
-\frac{d \prior_y}{d\measlambda}(\theta)
-=
-\frac{\funch(\theta)\,\funcf(\theta,y)}
-{\displaystyle
-\int_{\Omega} \funch(\theta)\, \funcf(\theta,y)
-\,d\measlambda(\theta)}.
-\end{equation}
-Now translate somewhat:
-\begin{center}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabular}{lll}
-\toprule
-$\displaystyle\frac{d \prior_y}{d\measlambda}(\theta)$ & $p(\theta\mid y)$ & posterior density \\
-$\funch(\theta) = \dfrac{d\prior}{d\measlambda}(\theta)$
-& $p(\theta)$ & prior density \\
-$\funcf(\theta,y)$ & $p(y\mid\theta)$ & likelihood, sort of \\
-$\int_{\Omega} \funch(\theta)\,\funcf(\theta,y)\,d\measlambda(\theta)$ & $p(y)$ & various labels \\
-\bottomrule
-\end{tabular}
-\end{center}
-
-
-
-
-
 
 
 
@@ -10226,277 +10059,7 @@ where
 
 
 
-%***************************************************************
-%***************************************************************
-\section{Toy Logistic Regression}
-Let us apply logistic regression to a very simple model.
-\begin{quoting}\small{
-The initial purpose of this ``toy'' approach was  to set up a template for dropping in a much larger model.
-The larger model was to be the Criteo display ad Kaggle challenge.
 
-The idea behind the Kaggle competition would be to predict whether or not an online advertisement will be mouse-clicked, given a data set having 13 integer\hyp{}valued features and 26 categorical features.
-There is a set of \emph{training} data, meaning we are given the feature values and also told whether the corresponding ad was clicked on. Then there is a \emph{test} set of data, meaning we are given the feature values, but need to predict whether the corresponding ad would be clicked on.
-
-Both training and test data sets have missing values.  The training data set has around 45 million rows, or observations, with 90\% of those rows having some missing value. Around 40 million missing values, at least.
-
-Another difficulty: The test set data also has many missing values.  I am not sure right now how to make predictions using data sets loaded with missing values.  There are at least two ways to approach this:
-\begin{enumerate}
-\item
-The \textsc{Measure Theoretic Method:}
-Do a full-on, measure\hyp{}theoretic analysis  of Bayesian prediction with missing values in the data set.
-Right down to the \textsigma\hyp{}algebras, which does not seem to have appeared yet in the literature. In other words, I gotta do my homework.
-\item
-The \textsc{Hell's Bells Method:}
-Statistics is already guess-work. Just use any of the existing missing values methods, and call it good.
-Why even think about the \textsigma\hyp{}algebras?
-\end{enumerate}
-Probably need to do both for comparison.
-Did I mention this was a works\hyp{}in\hyp{}progress? Back to toy logistic regression.}
-\end{quoting}
-Start with something simple.  Suppose some \textsc{feature} is a list of real values, and a function \textsc{click} represents success or failure, depending somewhat on the \textsc{feature} values. We think of \textsc{click} as representing whether a computer mouse was clicked upon.
-Write the probability model as:
-\begin{align*}
-\textsc{click}_i & \sim \text{Binomial}(1,p_i) \\
-\text{logit}(p_i) & = \alpha + \beta * \textsc{feature}_i \\
-\alpha & \sim \text{Normal}(0, 1.6) \\
-\beta & \sim \text{Normal}(0, 1.6) \\
-\end{align*}
-
-From a mathematician's point of view, we want to expose all the math to help see what is going on.
-Let $U$ denote an underlying probability space.
-Define the parameter space
-$\pspace \definedby \R^2$,
-and let
-\[
-(\alpha, \beta):
-U\to\pspace:
-u\mapsto (a,b).
-\]
-Define the sample space
-$\sspace \definedby \{0,1\}^3 $,
-and let
-\[
-\textsc{click}
-:U\to\sspace
-:u\mapsto q.
-\]
-Also let
-\[
-\textsc{feature}
-:U\to\R^3
-:u\mapsto r,
-\]
-but we treat the \textsc{feature} values as known, without error, meaning \textsc{feature} does not map to a probability distribution in our probability model.
-
-We are supposing that
-$\pspacesig = \borel_{\R^2}$ and
-$\sspacesig=\powerset(\{0,1\}^3)$, and
-$(U,\sigalg{D},Q)$ is a probability space such that the following diagrams commute:
-\[
-\xymatrix@R=16pt@C=30pt{
- & \pspace
- \\
- U \ar[ur]^{\makebox[0pt][r]{\scriptsize{$(\alpha, \beta)$}}}
- \ar[dr]_{\makebox[0pt][r]{\scriptsize{\textsc{click}}}}
- \ar[r] &
- \pspace\times\sspace \ar[u]_\projectionone \ar[d]^\projectiontwo
- \\
-  & \sspace \\
-}
-%
-%\hspace{50pt}
-\qquad
-%
-\xymatrix@R=16pt@C=30pt{
- & & \pspacesig
- \ar[dl]_{\kern45pt\makebox[0pt][r]{\scriptsize{$\preimage{(\alpha, \beta)}$}} }
- \ar[d]^{\preimage{\projectionone}}
- \ar@/_10pt/[lld]_{\kern25pt\makebox[0pt][r]{\scriptsize{$Q\,\circ\,\preimage{(\alpha,\beta)}$}}}
- \\
- [0,1] & \sigalg{D} \ar[l]_-{\ Q} &
- \productsig{\pspacesig}{\sspacesig}
- \ar[l]
- \\
- & & \sspacesig
-  \ar[u]_{\preimage{\projectiontwo}}
-  \ar[ul]^{\kern20pt\makebox[0pt][r]{\scriptsize{$\preimage{\textsc{click}}$}}}
-  \ar@/^10pt/[llu]^{\makebox[0pt][r]{\scriptsize{$Q\circ\preimage{\textsc{click}}$}}}
-  \\
-}
-\]
-
-
-Treating the \textsc{feature} values as known, meaning we consider the $r_i$ as constants,
-define $\function:\pspace\times\sspace \to \R$ by
-\begin{align*}
-\bigl((a,b),q\bigr)
-& \mapsto
-\prod_{i=1}^{3}
-\bigl( \text{logistic}(a + b\cdot r_i) \bigr)^{q_i}
-\bigl( 1 - \text{logistic}(a + b\cdot r_i) \bigr)^{1-q_i} \\
-& = \prod_{i=1}^{3}
-\text{Binomial}(q_i \vert 1, p_i),\quad
-\text{ with $p_i = \text{logistic}(a  + b\cdot r_i )$} \\
-\end{align*}
-and illustrating:
-\[
-\xymatrix@R=16pt@C=30pt{
-\pspace \ar[dr]^{\ \function^{q}\quad \rlap{\emph{\scriptsize the likelihood}}}
-& \\
-\pspace\times\sspace
-\ar[u]^{\projectionone}
-\ar[d]_{\projectiontwo}
-\ar[r]^{\function}
-& \R \\
-\sspace
-\ar[ur]_{\function_{(a,b)} \quad \rlap{\emph{\scriptsize Radon-Nikodym derivative}}}
-&
-}
-\]
-
-
-Define a family $\{P_{(a,b)}:(a,b)\in\pspace\}$ of probability measures on the sample space \textsigma-algebra
-$\sspacesig$ in terms of the indefinite integrals of the collection
-$\{ \function_{(a,b)} : (a,b)\in\pspace \}$, integrated with respect to counting measure $\kappa$ on
-$\sspacesig$:
-\begin{align*}
-P_{(a,b)} (\setii)
-& =
-\int_\setii \funcf_{(a,b)}(q)\, d\kappa \\
-& =
-\sum_{(a,b)\in\setii} f_{(a,b)}(q) \\
-& =
-\sum_{(a,b)\in\setii}
-\,
-\prod_{i=1}^{3}
-\text{Binomial}(q_i \vert 1, p_i),\quad
-\text{ with $p_i = \text{logistic}(a  + b\cdot r_i )$} \\
-\end{align*}
-Although it may be difficult to tell, each of these probability measures are really just an example of a  multivariate Bernoulli distribution, a distribution that must have been known since time immemorial.  The sum of a such a probability distribution over a sample space, in this case $\sspace$, is known to be $1$, but let us verify this.
-That is, we will verify that
-\[
-\sum_{y\in Y}\prod_{i=1}^3 p_i^{y_i}(1-p_i)^{(1-y_i)}
-=
-1
-\]
-by listing the products in Table~\ref{verify_distribution}, and then computing their sum.
-\begin{table}
-\centering
-\renewcommand{\arraystretch}{1.1}
-$\begin{array}{cccl}
-y_1 & y_2 & y_3 & \prod p_i^{y_i} (1-p_i)^{(1-y_i)} \\
-\toprule
-0 & 0 & 0 & (1-p_1)(1-p_2)(1-p_3) \\
-0 & 0 & 1 & (1-p_1)(1-p_2)p_3 \\
-0 & 1 & 0 & (1-p_1)p_2(1-p_3) \\
-0 & 1 & 1 & (1-p_1)p_2 p_3 \\
-1 & 0 & 0 & p_1 (1-p_2) (1-p_3) \\
-1 & 0 & 1 & p_1 (1-p_2) p_3 \\
-1 & 1 & 0 & p_1 p_2 (1-p_3) \\
-1 & 1 & 1 & p_1 p_2 p_3 \\
-\end{array}$
-\caption{Verify the sum of products is $1$.}\label{verify_distribution}
-\end{table}
-
-The sum of the first two lines from Table~\ref{verify_distribution}, factoring out the
-$(1 - p_1) (1 - p_2)$, is
-\[
-(1 - p_1) (1 - p_2) \bigl((1-p_3) + p_3\bigr)
-=
-(1 - p_1) (1 - p_2).
-\]
-The sum of the third and fourth lines from Table~\ref{verify_distribution}, factoring out the
-$(1-p_1)p_2$,  is
-\[
-(1-p_1)p_2\bigl((1-p_3)+p_3\bigr)
-=
-(1-p_1)p_2.
-\]
-So the sum of the first four lines from the table is
-\begin{align*}
-(1 - p_1) (1 - p_2)
-+
-(1-p_1)p_2
-& =
-(1-p_1)\bigl( (1-p_2) + p_2 \bigr) \\
-& = 1 - p_1.\\
-\end{align*}
-Similarly, the sum of the last four lines from the table is $p_1$, and so the sum of all eight lines from the table is
-$1 - p_1 + p_1 = 1$, as claimed. Yes, I know this is incredibly simple algebra, and you could have done this in your head.
-
-
-Define the prior probability measure $\rho$ on the rectangles
-$\seti\times\setii$ of the parameter space \textsigma-algebra
-$\pspacesig=\borel_{\R^2}$ by
-\begin{align*}
-\rho(\seti\times\setii)
-&=
-\text{Normal}(0,1.6)(\seti)\cdot
-\text{Normal}(0,1.6)(\setii).
-\end{align*}
-The probability distribution $\rho$ is absolutely continuous with respect to a Lebesgue measure, call it
-$\lambda$, on $\pspacesig=\borel_{\R^2}$.
-Let $\functioniii\in\cali{L}_1(\pspace,\pspacesig,\lambda)$ be defined by
-\[
-\functioniii:\R^2\to\R:(a,b)\mapsto
-\text{Normal}(a\vert 0,1.6)\cdot
-\text{Normal}(b\vert 0,1.6).
-\]
-so that $\functioniii$ represents the Radon-Nikodym derivative $d\rho/d\lambda$.
-According to Bayes' theorem, the Radon-Nikodym derivative of the posterior probability
-$\rho_{q}$ with respect to $\lambda$ has a representative, denoted here by
-$\text{Pr}(a,b\,\vert\, q)\in\cali{L}_1(\pspace, \pspacesig,\lambda)$,
-where $p_i=\text{logistic}(a + b\cdot r_i)$ and
-\begin{align*}
-&\text{Pr}(a,b\,\vert\, q) =
-\\
-& =
-\frac{\function^{q}(a,b)\,\functioniii(a,b)}
-{\int_{\pspace}\function^{q}(a,b)\,\functioniii(a,b)\,d\lambda(a,b)} \\
-& =
-\frac{
-\prod_i
-\text{Binomial}(q_i \vert 1, p_i)\,
-\text{Normal}(a\vert 0,1.6)\,
-\text{Normal}(b\vert 0,1.6)}
-{\int_{\R^2}
-\prod_i \text{Binomial}(q_i \vert 1, p_i)\,
-\text{Normal}(a\vert 0,1.6)\,
-\text{Normal}(b\vert 0,1.6)
-\,d\lambda(a,b)}.
-\end{align*}
-
-Just to see how some corresponding R code might look:
-\begin{rcode}[threepoint]
-\begin{lstlisting}
-#logistic regression on custom data
-#set up your data frame first, make three points:
-x <- c(1,2,3)
-y <- c(0,0,1)
-d <- data.frame(list(feature=x, click=y))
-
-library(rethinking)
-
-m1 <- quap(
- alist(
-  click ~ dbinom(1,p),
-  logit(p) <- a + b*feature,
-  a ~ dnorm(0, 1.6),
-  b ~ dnorm(0, 1.6)
- ), data=d
-)
-\end{lstlisting}
-\end{rcode}
-
-
-%***************************************************************
-%***************************************************************
-\section{A/B Testing: The Code for Facial Identity in the Primate Brain}
-In the paper, \textsl{The Code for Facial Identity in the Primate Brain}~\cite{tcffiitpb_chang_2017}, the authors use recordings from 205 neurons to construct a model. The model describes how facial identity might be represented in the primate brain. In this case, macaques. It is based upon the idea that when the macaque sees a face, the response of those neurons is a function of a linear combination of facial features, those features comprising a basis, or axis.
-
-Are these neurons tuned to respond to facial images projected onto various axes, or are they tuned to respond to ``exemplar'' faces? This issue is addressed in the paper, and should give us a good chance to do some Bayesian A/B testing.  That is, to compare the axis model with the exemplar model. It may also give us a chance to compare the paper's frequentist tests with Bayesian methods.
-
-To be continued.
 
 
 
