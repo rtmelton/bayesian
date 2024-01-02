@@ -8437,6 +8437,76 @@ is regular.
 \end{proof}
 
 
+%*********************************
+%*********************************
+%*********************************
+%*********************************
+%\section{Conditional Density Notation}
+\begin{notn}\label{densities}
+Let
+$(\uspace, \uspacesig, \measureiii)$
+be a probability space, with functions
+$\funcf:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$,
+$\funcg:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$
+and
+$\funch:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
+measurable.
+Let $\measmu$, $\measnu$, and $\measrho$ be \textsigma\hyp{}finite measures on
+$\sigmaalgebra$, $\sigmaalgebraii$, and $\sigmaalgebraiii$, respectively, and let
+$\measlambda\circ \preimage{(\funcf,\funcg,\funch)}
+\abscont
+(\measmu\times\measnu\times\measrho)^*$
+on
+$\textsigma(\sigmaalgebra,\sigmaalgebraii,\sigmaalgebraiii)$.
+Set:
+\begin{align*}
+\funcj
+& =
+\frac{d \bigl(\measlambda\circ \preimage{(\funcf,\funcg,\funch)}\bigr)}
+{d(\measmu\times\measnu\times\measrho)^*}
+:
+\measurespace\times\measurespaceii\times\measurespaceiii\to\R,
+\\
+%
+m_{\funcf,\funch}
+& =
+\frac{d \bigl( \measlambda\circ \preimage{(\funcf,\funch)} \bigr)}
+{d(\measmu\times\measrho)^*}
+:\measurespace\times\measurespaceiii\to\R,
+\\
+%
+m_{\funcg,\funch}
+& =
+\frac{d \bigl( \measlambda\circ\preimage{(\funcg,\funch)} \bigr)}
+{d(\measnu\times\measrho)^*}
+:\measurespaceii\times\measurespaceiii\to\R,
+\\
+%
+m_\funch
+& =
+\frac{d \bigl( \measlambda\circ\preimage{\funch} \bigr)}
+{d \measrho}
+:\measurespaceiii\to\R.
+\end{align*}
+
+The letter `$j$' was intended to roughly correspond with `joint density,' and likewise the letter
+`$m$' with `marginal density.'
+I have seen notation such as `$p(x,y\mid z)$' being used to try to indicate the quotient
+$\dfrac{\funcj(x,y,z)}{m_\funch (z)}$.
+Similarly, something like `$p(x\mid z)$', `$p(y\mid z)$', and `$p(x\mid y,z)$' might be used to try to indicate the respective quotients
+$\dfrac{m_{\funcf,\funch}(x,z)}{m_\funch (z)}$,
+$\dfrac{m_{\funcg,\funch}(y,z)}{m_\funch (z)}$,
+and
+$\dfrac{\funcj(x,y,z)}{m_{\funcg,\funch}(y,z)}$.
+Let us use that notation here.
+\end{notn}
+
+%*********************************
+%*********************************
+%*********************************
+%*********************************
+
+
 
 
 \begin{prop}\label{conditional_independence_equivalence}
@@ -8471,38 +8541,48 @@ The following are equivalent:
 %
 \begin{enumerate}
 \item[1)]
-$\condindep{\preimage{\funcf}(\sigmaalgebra)}{\preimage{\funcg}(\sigmaalgebraii)}
-{\preimage{\funch}(\sigmaalgebraiii)}$,
+\[
+\condindep{\preimage{\funcf}(\sigmaalgebra)}{\preimage{\funcg}(\sigmaalgebraii)}
+{\preimage{\funch}(\sigmaalgebraiii)},
+\]
 %
 \item[2)]
-$\funcm_\uspaceelt
+\[
+\funcm_\uspaceelt
 (\seti\times\setii)
 =
 \funck_\uspaceelt(\seti)
 \cdot
-\funcl_\uspaceelt(\setii)$\quad
+\funcl_\uspaceelt(\setii)
+\]
 for all $\seti\in\sigmaalgebra$, $\setii\in\sigmaalgebraii$, and $\measlambda^\kernast$\hyp{}almost all
 $\uspaceelt\in\uspace$,
 %
 \item[3)]
-$p(\mspaceelt,\mspaceeltii\mid\mspaceeltiii)
-= 
-p(\mspaceelt\mid\mspaceeltiii)
-\cdot
-p(\mspaceeltii\mid\mspaceeltiii)$\quad for
+\[
+p(x,y\mid z)
+=
+p(x\mid z) \cdot p(y\mid z)
+\]
+for
 $(\measmu\times\measnu)^\kernast$\hyp{}almost all
 $(x,y)\in\measurespace\times\measurespaceii$ and
-$(\measlambda\circ\preimage{\funch})$\hyp{}almost all $\mspaceeltiii\in\measurespaceiii$,
+$(\measlambda\circ\preimage{\funch})$\hyp{}almost all $\mspaceeltiii\in\measurespaceiii$, and
 %
 \item[4)]
-$p(\mspaceelt\mid \mspaceeltii,\mspaceeltiii)
-= 
-p(\mspaceelt\mid\mspaceeltiii)$\quad for
+\[
+p(x\mid y,z)
+=
+p(x\mid z)
+\]
+for
 $(\measmu\times\measnu)^\kernast$\hyp{}almost all
 $(x,y)\in\measurespace\times\measurespaceii$ and
 $(\measlambda\circ\preimage{\funch})$\hyp{}almost all $\mspaceeltiii\in\measurespaceiii$.
 \end{enumerate}
 \end{prop}
+
+
 
 
 \begin{proof}
