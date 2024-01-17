@@ -3725,9 +3725,23 @@ $d\marginalone = \funcj \, d\measure$:
 \int_\measurespace 
 \charfunction{\setiii}(\mspaceelt,\mspaceeltii) 
 \function_\mspaceelt(\mspaceeltii)
-\, d\measure(\mspaceelt).
+\, d\measure(\mspaceelt),
 \end{align*}
-Using these last two strings of equalities:
+and so
+\[
+\int_{\measurespace\times\measurespaceii}
+\charfunction{\setiii}
+\functionii
+\, d(\marginalone\times\measureii)
+=
+\int_\measurespaceii
+\int_\measurespace
+\charfunction{\setiii}(\mspaceelt,\mspaceeltii)
+\function_\mspaceelt(\mspaceeltii)
+\, d\measure(\mspaceelt)
+d\measureii(\mspaceeltii).
+\]
+It follows that
 \begin{align*}
 \int_\setiii \functionii
 \,d(\marginalone\times\measureii)
@@ -8860,7 +8874,7 @@ Divide both sides of (3) by $p(\mspaceeltii\mid\mspaceeltiii)$.
 (1) The conditional distributions induced by measurable functions on an underlying space are not tied into anything. They do not seem essential.
 (2) Are the parametrized families of probability measures half of a Markov kernel, or are they also isolated?}
 \lettrine{S}{tatistics} is a mathematical analysis of guesswork. This kind of guesswork is called inductive inference.
-Its purpose is to identify a probability distribution or a conditional distribution. The particular kind of guesswork we will use is considered \emph{Bayesian} since it involves a parameter that induces a  probability distribution. A parameter here is just a measurable function.
+Its purpose is to identify a probability distribution or a conditional distribution. The particular kind of guesswork we will use is considered \emph{Bayesian} since it involves a parameter that induces a  probability distribution. So a parameter here is just a measurable function.
 
 There are no topological restrictions imposed on the objects in this chapter. No Borel space conditions, no separable conditions.  We rely instead upon measure-theoretic conditions.
 
@@ -9098,7 +9112,7 @@ P^\setii
 :\mspaceelt \mapsto P_\mspaceelt(\setii)
 \]
 is $\bigl(\sigmaalgebra,\borel_{[0,1]}\bigr)$\hyp{}measurable.
-Further suppose the joint probability measure $\joint$  is defined in terms of
+Also suppose the joint probability measure $\joint$  is defined in terms of
 a given probability measure $\wouldbeprior$ on the parameter space \textsigma-algebra
 $\pspacesig$ by
 \[
