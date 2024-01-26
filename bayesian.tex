@@ -683,7 +683,7 @@ No attempt has been made to dumb down anything.
 %*********************************************************
 %*********************************************************
 %*********************************************************
-\lettrine{T}{\,his} is only an abbreviated review of measure theory, based upon semirings.
+\lettrine{T}{\,his} is an abbreviated review of measure theory, based upon semirings.
 Roughly, a measure on a semiring is extended to the powerset, and then restricted to the measurable subsets.  Resulting measure spaces are complete in the sense that every subset of a set of measure zero is 
 Carath\'{e}odory measurable. That is, every null set is measurable.
 It remains to be seen whether this particular notion of completeness will be sufficient.
@@ -8148,722 +8148,6 @@ $\funcg(\uspaceelt)=\mspaceeltii$, as required.
 
 
 
-\section{Conditional Independence}
-%*********************************************************
-%*********************************************************
-
-
-
-
-\begin{defnboldnote}\label{conditionally_independent}
-Let
-$(\measurespace,\sigmaalgebra,\measure)$
-be a probability space, and let $\sigmaalgebraii$ be a  $\textsigma$-subalgebra of
-$\sigmaalgebra$.
-Also, let $\sigmaalgebraiii$ and $\sigmaalgebraiv$ be \textsigma-subalgebras of $\sigmaalgebra$.
-Then $\sigmaalgebraiii$ and $\sigmaalgebraiv$ are
-\term{conditionally independent \textsigma\hyp{}subalgebras} given $\sigmaalgebraii$
-if
-\[
-\condprobsub{\setiii\meets\setiv}{\sigmaalgebraii}
-=
-\condprobsub{\setiii}{\sigmaalgebraii}
-\cdot
-\condprobsub{\setiv}{\sigmaalgebraii}
-\]
-for all $\setiii\in\sigmaalgebraiii$ and for all $\setiv\in\sigmaalgebraiv$.
-The notation
-$\condindep{\sigmaalgebraiii}{\sigmaalgebraiv}{\sigmaalgebraii}$
-may be used.
-\nomenclature[conditionally independent]
-{$\condindep{\sigmaalgebraiii}{\sigmaalgebraiv}{\sigmaalgebraii}$,}
-{the \textsigma\hyp{}algebras $\sigmaalgebraiii$ and $\sigmaalgebraiv$ are conditionally independent given $\sigmaalgebraii$}
-\end{defnboldnote}
-
-\begin{example}
-Let us try to understand conditional independence in two extreme cases, namely
-\begin{itemize}
-\item
-case
-$\sigmaalgebraii
-=
-\{\measurespace, \mtset\}$,
-where conditional independence given
-$\sigmaalgebraii$ is equivalent to independence with respect to the  measure $\measure^*$, and
-\item
-case
-$\sigmaalgebraii
-=
-\sigmaalgebra$,
-where all \textsigma\hyp{}subalgebras of $\sigmaalgebra$ are conditionally independent given
-$\sigmaalgebraii$.
-\end{itemize}
-
-Case
-$\sigmaalgebraii
-=
-\{\measurespace, \mtset\}$.
-Verify that $\{\measurespace, \mtset\}$ is independent of every
-$\textsigma$\hyp{}subalgebra of $\sigmaalgebra$ with respect to
-$\measure^*$, for if $\sigalg{T}$ were another \textsigma\hyp{}subalgebra, we see that
-\[
-\measure^*(\seti\meets\setii)
-=
-\measure^*(\seti) \cdot \measure^*(\setii)
-\quad
-\text{for all $\seti\in \sigalg{T}$ and all $\setii\in \{\measurespace, \mtset\}$.}
-\]
-It follows then by Proposition~\ref{conditional_is_expected} that
-\[
-\condexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}
-=
-\bigl(\expval{\ellclass{\function}{\measure}}\bigr)
-\cdot \ellclass{1}{\measure}
-\]
-for every
-$\ellclass{\function}{\measure}\in L_1(\measurespace, \sigmaalgebra,\measure)$.
-For
-$\setiii\in\sigmaalgebraiii$ and for $\setiv\in\sigmaalgebraiv$,
-the condition
-\[
-\condprobsub{\setiii\meets\setiv}{\sigmaalgebraii}
-=
-\condprobsub{\setiii}{\sigmaalgebraii}
-\cdot
-\condprobsub{\setiv}{\sigmaalgebraii}
-\]
-is equivalent by definition to
-\[
-\condexpsub{\ellclass{\charfunction{\setiii\meets\setiv}}{\measure}}{\sigmaalgebraii}
-=
-\condexpsub{\ellclass{\charfunction{\setiii}}{\measure}}{\sigmaalgebraii}
-\cdot
-\condexpsub{\ellclass{\charfunction{\setiv}}{\measure}}{\sigmaalgebraii},
-\]
-which in turn is equivalent to
-\begin{align*}
-\bigl(\expval{\ellclass{\charfunction{\setiii\meets\setiv}}{\measure}}\bigr)
-\cdot \ellclass{1}{\measure}
-& =
-\bigl(\expval{\ellclass{\charfunction{\setiii}}{\measure}}\bigr)
-\cdot \ellclass{1}{\measure}
-\cdot
-\bigl(\expval{\ellclass{\charfunction{\setiv}}{\measure}}\bigr)
-\cdot \ellclass{1}{\measure} \\
-& =
-\bigl(\expval{\ellclass{\charfunction{\setiii}}{\measure}}\bigr)
-\bigl(\expval{\ellclass{\charfunction{\setiv}}{\measure}}\bigr)
-\cdot \ellclass{1}{\measure},\\
-\end{align*}
-implying that
-\[
-\measure^*(\setiii\meets\setiv) = \measure^*(\setiii)\cdot\measure^*(\setiv).
-\]
-This shows that conditional independence given
-$\sigmaalgebraii = \{\measurespace, \mtset\}$ is equivalent to independence with respect to
-$\measure^*$.
-
-
-Case $\sigmaalgebraii = \sigmaalgebra$.
-Then for all $\setiii\in\sigmaalgebraiii$ and for all $\setiv\in\sigmaalgebraiv$,
-the functions
-$\charfunction{\setiii\meets\setiv}$, $\charfunction{\setiii}$,
-and $\charfunction{\setiv}$ are
-$\bigl( \sigmaalgebraii, \borel_\R \bigr)$\hyp{}measurable.
-It follows by Proposition~\ref{subalgebra_fixed} that the condition
-\[
-\condexpsub{\ellclass{\charfunction{\setiii\meets\setiv}}{\measure}}{\sigmaalgebraii}
-=
-\condexpsub{\ellclass{\charfunction{\setiii}}{\measure}}{\sigmaalgebraii}
-\cdot
-\condexpsub{\ellclass{\charfunction{\setiv}}{\measure}}{\sigmaalgebraii}
-\]
-is equivalent to
-\[
-\ellclass{\charfunction{\setiii\meets\setiv}}{\measure}
-=
-\ellclass{\charfunction{\setiii}}{\measure}
-\cdot
-\ellclass{\charfunction{\setiv}}{\measure},
-\]
-which is equivalent to
-\[
-\charfunction{\setiii\meets\setiv}
-=
-\charfunction{\setiii}
-\cdot
-\charfunction{\setiv}
-\quad\text{$\measure^\kernast$\hyp{}almost everywhere on $\measurespace$.}
-\]
-This is always true.
-This shows that all \textsigma\hyp{}subalgebras of $\sigmaalgebra$ are conditionally independent given $\sigmaalgebra$.
-\end{example}
-
-
-
-
-
-
-\begin{notn}\label{conditionally_independent_functions}
-Let
-$(\uspace,\uspacesig,\measureiii)$
-be a probability space, and let functions
-$\function:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$,
-$\functionii:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$,
-and
-$\functioniii:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
-be measurable:
-\[
-\xymatrix@R=14pt@C=30pt{
- & \measurespace \\
- \uspace
- \ar[ur]^\function
- \ar[r]^\functionii
- \ar[dr]_\functioniii
- & \measurespaceii\\
- & \measurespaceiii \\
-}
-%
-\qquad
-%
-\xymatrix@R=14pt@C=30pt{
- & \sigmaalgebra \ar[dl]_{\preimage{\function}} \\
- \uspacesig & \sigmaalgebraii \ar[l]_-{\quad \preimage{\functionii}}\\
- & \sigmaalgebraiii \ar[ul]^{\preimage{\functioniii}}\\
-}
-\]
-Say that $\funcf$ and $\funcg$ are conditionally independent
-given $\funch$ if
-\[
-\condindep{\preimage{\funcf}(\sigmaalgebra)}{\preimage{\funcg}(\sigmaalgebraii)}
-{\preimage{\funch}(\sigmaalgebraiii)}.
-\]
-\end{notn}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\begin{prop}\label{abs_cont_reg}
-Let
-$(\uspace,\uspacesig,\measlambda)$
-be a probability space, and let functions
-$\function:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$,
-$\functionii:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$,
-and
-$\functioniii:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
-be measurable, with \textsigma-finite  measures
-$\measure$, $\measureii$, and $\measureiv$ on respective \textsigma-algebras
-$\sigmaalgebra$, $\sigmaalgebraii$, and $\sigmaalgebraiii$.
-Set $\sigalg{H}=\preimage{\funch}(\sigmaalgebraiii)$.
-If
-$\measureiii\circ\preimage{(\function,\functionii,\functioniii)}
-\abscont
-(\measure\times\measureii\times\measureiv)^*$ on
-$\productsig{\sigmaalgebra}{\sigmaalgebraii,\sigmaalgebraiii}$,
-then the conditional distributions
-$\condprobop{\sigalg{H}}\circ \preimage{\funcf}$,
-$\condprobop{\sigalg{H}}\circ \preimage{\funcg}$,
-and
-$\condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)}$
-are regular.
-\end{prop}
-
-\begin{proof}
-Set
-$\sigalg{F}=\preimage{\funcf}(\sigmaalgebra)$,
-and $\sigalg{G}=\preimage{\funcg}(\sigmaalgebraii)$.
-
-
-Verify that if
-\[
-\measlambda\circ\preimage{(\function,\functionii,\functioniii)}
-\abscont
-(\measmu\times\measnu\times\measrho)^*
-\]
-on
-$\productsig{\sigmaalgebra}{\sigmaalgebraii,\sigmaalgebraiii}
-=
-\productsig{\sigmaalgebra}{\productsig{\sigmaalgebraii}{\sigmaalgebraiii}}$,
-then by applying the proof of Proposition~\ref{reference_implies_marginals}, you get
-\[
-\measlambda\circ \preimage{(\funcg,\funch)}
-\abscont
-(\measnu\times\measrho)^*
-\]
-on
-$\productsig{\sigmaalgebraii}{\sigmaalgebraiii}$.
-In particular, by applying the proof, you show
-\[
-\frac{d(\measlambda\circ \preimage{(\funcg,\funch)})}{d(\measnu\times\measrho)^*}
-:\measurespaceii\times\measurespaceiii \to  \R
-:(\mspaceeltii,\mspaceeltiii)\mapsto
-\int_\measurespace
-\frac{d(\measlambda\circ\preimage{(\function,\functionii,\functioniii)})}
-{d(\measmu\times\measnu\times\measrho)^*}
-(\mspaceelt,\mspaceeltii,\mspaceeltiii)\,d\measmu(\mspaceelt).
-\]
-Then by Proposition~\ref{reference_implies_mixed_and_marginals},
-\[
-\measlambda\circ \preimage{(\funcg,\funch)}
-\abscont
-\bigl((\measlambda\circ\preimage{\funcg})
-\times
-(\measlambda\circ\preimage{\funch})\bigr)^*,
-\]
-and so by Proposition~\ref{marginal_implies_regular},
-the conditional distribution
-$\condprobop{\sigalg{H}}\circ \preimage{\funcg}$
-is regular.
-
-Symmetrically, the conditional distribution
-$\condprobop{\sigalg{H}}\circ \preimage{\funcf}$
-must also be regular.
-
-To show that
-$\condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)}$
-is regular, again, by Proposition~\ref{reference_implies_mixed_and_marginals},
-\[
-\measlambda\circ \preimage{(\funcf, \funcg, \funch)}
-\abscont
-\bigl((\measlambda\circ\preimage{(\funcf,\funcg)})
-\times
-(\measlambda\circ\preimage{\funch})\bigr)^*
-\]
-on
-$\productsig{\sigmaalgebra}{\sigmaalgebraii,\sigmaalgebraiii}
-=
-\productsig{\productsig{\sigmaalgebra}{\sigmaalgebraii}}{\sigmaalgebraiii}$,
-and so by Proposition~\ref{marginal_implies_regular},
-the conditional distribution
-$\condprobop{\sigalg{H}}\circ \preimage{(\funcf,\funcg)}$
-is regular.
-\end{proof}
-
-
-%*********************************
-%*********************************
-%*********************************
-%*********************************
-%\section{Conditional Density Notation}
-\begin{notn}\label{densities}
-Let
-$(\uspace, \uspacesig, \measureiii)$
-be a probability space, with functions
-$\funcf:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$,
-$\funcg:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$
-and
-$\funch:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
-measurable.
-Let $\measmu$, $\measnu$, and $\measrho$ be \textsigma\hyp{}finite measures on
-$\sigmaalgebra$, $\sigmaalgebraii$, and $\sigmaalgebraiii$, respectively, and let
-$\measlambda\circ \preimage{(\funcf,\funcg,\funch)}
-\abscont
-(\measmu\times\measnu\times\measrho)^*$
-on
-$\textsigma(\sigmaalgebra,\sigmaalgebraii,\sigmaalgebraiii)$.
-Set:
-\begin{align*}
-\funcj
-& =
-\frac{d \bigl(\measlambda\circ \preimage{(\funcf,\funcg,\funch)}\bigr)}
-{d(\measmu\times\measnu\times\measrho)^*}
-:
-\measurespace\times\measurespaceii\times\measurespaceiii\to\R,
-\\
-%
-m_{\funcf,\funch}
-& =
-\frac{d \bigl( \measlambda\circ \preimage{(\funcf,\funch)} \bigr)}
-{d(\measmu\times\measrho)^*}
-:\measurespace\times\measurespaceiii\to\R,
-\\
-%
-m_{\funcg,\funch}
-& =
-\frac{d \bigl( \measlambda\circ\preimage{(\funcg,\funch)} \bigr)}
-{d(\measnu\times\measrho)^*}
-:\measurespaceii\times\measurespaceiii\to\R,
-\\
-%
-m_\funch
-& =
-\frac{d \bigl( \measlambda\circ\preimage{\funch} \bigr)}
-{d \measrho}
-:\measurespaceiii\to\R.
-\end{align*}
-
-The letter `$j$' was intended to roughly correspond with `joint density,' and likewise the letter
-`$m$' with `marginal density.'
-I have seen notation such as `$p(x,y\mid z)$' being used to try to indicate the quotient
-$\dfrac{\funcj(x,y,z)}{m_\funch (z)}$.
-Similarly, something like `$p(x\mid z)$', `$p(y\mid z)$', and `$p(x\mid y,z)$' might be used to try to indicate the respective quotients
-$\dfrac{m_{\funcf,\funch}(x,z)}{m_\funch (z)}$,
-$\dfrac{m_{\funcg,\funch}(y,z)}{m_\funch (z)}$,
-and
-$\dfrac{\funcj(x,y,z)}{m_{\funcg,\funch}(y,z)}$.
-Let us use that notation here.
-\end{notn}
-
-%*********************************
-%*********************************
-%*********************************
-%*********************************
-
-
-
-
-\begin{prop}\label{conditional_independence_equivalence}
-Let
-$(\uspace,\uspacesig,\measlambda)$
-be a probability space, and let functions
-$\function:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$,
-$\functionii:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$,
-and
-$\functioniii:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
-be measurable, with \textsigma-finite measures
-$\measure$, $\measureii$, and $\measureiv$ on respective \textsigma-algebras
-$\sigmaalgebra$, $\sigmaalgebraii$, and $\sigmaalgebraiii$.
-Set $\sigalg{H}=\preimage{\funch}(\sigmaalgebraiii)$.
-Let
-$\measureiii\circ\preimage{(\function,\functionii,\functioniii)}
-\abscont
-(\measure\times\measureii\times\measureiv)^*$ on
-$\productsig{\sigmaalgebra}{\sigmaalgebraii,\sigmaalgebraiii}$,
-and let
-$\funck$,
-$\funcl$,
-and
-$\funcm$
-be Markov kernels corresponding to the respective regular conditional distributions
-$\condprobop{\sigalg{H}}\circ \preimage{\funcf}$,
-$\condprobop{\sigalg{H}}\circ \preimage{\funcg}$,
-and
-$\condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)}$.
-
-The following are equivalent:
-%
-\begin{enumerate}
-\item[1)]
-\[
-\condindep{\preimage{\funcf}(\sigmaalgebra)}{\preimage{\funcg}(\sigmaalgebraii)}
-{\preimage{\funch}(\sigmaalgebraiii)},
-\]
-%
-\item[2)]
-\[
-\funcm_\uspaceelt
-(\seti\times\setii)
-=
-\funck_\uspaceelt(\seti)
-\cdot
-\funcl_\uspaceelt(\setii)
-\]
-for all $\seti\in\sigmaalgebra$, $\setii\in\sigmaalgebraii$, and $\measlambda^\kernast$\hyp{}almost all
-$\uspaceelt\in\uspace$,
-%
-\item[3)]
-\[
-p(x,y\mid z)
-=
-p(x\mid z) \cdot p(y\mid z)
-\]
-for
-$(\measmu\times\measnu)^\kernast$\hyp{}almost all
-$(x,y)\in\measurespace\times\measurespaceii$ and
-$(\measlambda\circ\preimage{\funch})$\hyp{}almost all $\mspaceeltiii\in\measurespaceiii$, and
-%
-\item[4)]
-\[
-p(x\mid y,z)
-=
-p(x\mid z)
-\]
-for
-$(\measmu\times\measnu)^\kernast$\hyp{}almost all
-$(x,y)\in\measurespace\times\measurespaceii$ and
-$(\measlambda\circ\preimage{\funch})$\hyp{}almost all $\mspaceeltiii\in\measurespaceiii$.
-\end{enumerate}
-\end{prop}
-
-
-
-
-\begin{proof}
-Set 
-$\sigalg{F}=\preimage{\funcf}(\sigmaalgebra)$, 
-and $\sigalg{G}=\preimage{\funcg}(\sigmaalgebraii)$.
-We know the conditional distributions
-are regular by Proposition~\ref{abs_cont_reg}, so they do have corresponding Markov kernels by Proposition~\ref{equivalent_definition_regular_distribution}.
-The fact that $(1) \Leftrightarrow (2)$ is nothing more than wading through a definition or two.
-
-\textbf{(1) $\Rightarrow$ (2)}\quad
-Let
-$\condindep{\preimage{\funcf}(\sigmaalgebra)}{\preimage{\funcg}(\sigmaalgebraii)}
-{\preimage{\funch}(\sigmaalgebraiii)}$, or using $\sigalg{H}$ in place of
-$\preimage{\funch}(\sigmaalgebraiii)$,
-\[
-\condindep{\preimage{\funcf}(\sigmaalgebra)}{\preimage{\funcg}(\sigmaalgebraii)}
-{\sigalg{H}}.
-\]
-By the very Definition~\ref{conditionally_independent} of conditionally independent \textsigma\hyp{}subalgebras,
-this is equivalent to saying
-\[
-\condprobsub{\lilstrut\preimage{\funcf}(\seti) \meets \preimage{\funcg}(\setii)}{\sigalg{H}}
-=
-\condprobsub{\lilstrut\preimage{\funcf}(\seti)}{\sigalg{H}}
-\cdot
-\condprobsub{\lilstrut\preimage{\funcg}(\setii)}{\sigalg{H}}
-\]
-for all $\seti\in\sigmaalgebra$ and for all $\setii\in\sigmaalgebraii$.
-This is an equality of classes in
-$L_1(\uspace,\uspacesig,\measureiii)$, and can be rewritten as
-\begin{equation}
-\condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)}
-(\seti\times\setii)
-=
-\condprobop{\sigalg{H}}\circ \preimage{\funcf}(\seti)
-\cdot
-\condprobop{\sigalg{H}}\circ \preimage{\funcg}(\setii).
-\end{equation}
-Recall that two classes in
-$L_1(\uspace,\uspacesig,\measureiii)$
-are equal precisely when they have representatives that are equal for
-$\measlambda^\kernast$\hyp{}almost all $\uspaceelt$ in  $\uspace$.
-Such representatives in this case are easy to find since
-the corresponding Markov kernels have the property that:
-\[
-\funcm^{\seti\times\setii} \in
-\condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)}
-(\seti\times\setii),
-\]
-\[
-\funck^\seti \in
-\condprobop{\sigalg{H}}\circ \preimage{\funcf}(\seti),
-\]
-and
-\[
-\funcl^\setii \in
-\condprobop{\sigalg{H}}\circ \preimage{\funcg}(\setii).
-\]
-It follows that
-\[
-\funcm^{\seti\times\setii}(\uspaceelt)
-=
-\funck^\seti(\uspaceelt)
-\cdot
-\funcl^\setii(\uspaceelt)
-\quad
-\text{for $\measlambda^\kernast$\hyp{}almost all $\uspaceelt\in\uspace$.}
-\]
-Since $\funck$, $\funcl$, and $\funcm$ are Markov kernels,
-\[
-\funcm_\uspaceelt(\seti\times\setii)
-=
-\funck_\uspaceelt(\seti)
-\cdot
-\funcl_\uspaceelt(\setii)
-\]
-for all $\seti\in\sigmaalgebra$, $\setii\in\sigmaalgebraii$, and for
-$\measlambda^\kernast$\hyp{}almost all $\uspaceelt\in\uspace$, as required.
-\hfill\qedsymbol
-
-\textbf{(1) $\Leftarrow$ (2)}\quad
-Let
-\[
-\funcm_\uspaceelt(\seti\times\setii)
-=
-\funck_\uspaceelt(\seti)
-\cdot
-\funcl_\uspaceelt(\setii)
-\]
-for all $\seti\in\sigmaalgebra$, $\setii\in\sigmaalgebraii$, and
-$\measlambda^\kernast$\hyp{}almost all $\uspaceelt\in\uspace$.
-Since  $\funck$, $\funcl$, and $\funcm$ are Markov kernels, so equalities like
-\[
-\funcm_\uspaceelt(\seti\times\setii)
-=
-\funcm^{\seti\times\setii}(\uspaceelt)
-\]
-hold, it follows that
-\[
-\funcm^{\seti\times\setii}(\uspaceelt)
-=
-\funck^\seti(\uspaceelt)
-\cdot
-\funcl^\setii(\uspaceelt)
-\]
-for all $\seti\in\sigmaalgebra$, $\setii\in\sigmaalgebraii$, and
-for
-$\measlambda^\kernast$\hyp{}almost all $\uspaceelt\in\uspace$.
-Check that the function
-$\funcm^{\seti\times\setii}$
-is bounded, and is
-$(\sigalg{H},\borel_\R)$\hyp{}measurable, implying it is
-$\measlambda^\kernast$\hyp{}measurable, so by Proposition~\ref{dominated_by_integrable}
-is integrable with respect to $\measlambda$. It follows that the function
-$\funck^\seti\cdot\funcl^\setii$
-is integrable with respect to $\measlambda$, even by the very Definition~\ref{integrable} of integrability.
-Then according to the Definition~\ref{Lp} of the product of classes,
-\begin{align*}
-\ellclass{\funck^\seti}{}
-\cdot
-\ellclass{\funcl^\setii}{}
-& \definedby
-\ellclass{\funck^\seti\cdot\funcl^\setii}{} \\
-& =
-\ellclass{\funcm^{\seti\times\setii}}{}. \\
-\end{align*}
-Because these Markov kernels correspond to their regular conditional distributions, and so for example
-$\ellclass{\funck^\seti}{}
-=
-\condprobop{\sigalg{H}}\circ \preimage{\funcf}(\seti)$,
-it follows from the equality
-\[
-\ellclass{\funck^\seti}{}
-\cdot
-\ellclass{\funcl^\setii}{}
-=
-\ellclass{\funcm^{\seti\times\setii}}{}
-\]
-that
-\[
-\condprobop{\sigalg{H}} \circ \preimage{\funcf}(\seti)
-\cdot
-\condprobop{\sigalg{H}} \circ \preimage{\funcg}(\setii)
-=
-\condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)}
-(\seti\times\setii),
-\]
-which is equivalent to
-$\condindep{\preimage{\funcf}(\sigmaalgebra)}{\preimage{\funcg}(\sigmaalgebraii)}
-{\preimage{\funch}(\sigmaalgebraiii)}$,
-as required.\hfill\qedsymbol
-
-
-
-\textbf{(2) $\Rightarrow$ (3)}\quad
-Let
-\[
-\funcm_\uspaceelt
-(\seti\times\setii)
-=
-\funck_\uspaceelt(\seti)
-\cdot
-\funcl_\uspaceelt(\setii)
-\]
-for all $\seti\in\sigmaalgebra$, $\setii\in\sigmaalgebraii$, and $\measlambda^\kernast$\hyp{}almost all
-$\uspaceelt\in\uspace$.
-By Proposition~\ref{conditional_density},
-\begin{align*}
-\funcm_\uspaceelt
-(\seti\times\setii)
-= &
-\int_{\seti\times\setii}
-p(\mspaceelt,\mspaceeltii\mid\mspaceeltiii)
-\,d(\measmu\times\measnu)(\mspaceelt,\mspaceeltii),
-\\
-\funck_\uspaceelt
-(\seti)
-= &
-\int_\seti p(\mspaceelt\mid\mspaceeltiii)
-\, d\measmu(\mspaceelt),
-\\
-\funcl_\uspaceelt
-(\setii)
-= &
-\int_\setii p(\mspaceeltii\mid\mspaceeltiii)
-\, d\measnu(\mspaceeltii).
-\\
-\end{align*}
-Since
-$\funcm_\uspaceelt
-(\seti\times\setii)
-=
-\funck_\uspaceelt(\seti)
-\cdot
-\funcl_\uspaceelt(\setii)$, it follows by substitution that
-\[
-\int_{\seti\times\setii}
-p(\mspaceelt,\mspaceeltii\mid\mspaceeltiii)
-\,d(\measmu\times\measnu)(\mspaceelt,\mspaceeltii)
-=
-\int_\seti p(\mspaceelt\mid\mspaceeltiii)
-\, d\measmu(\mspaceelt)
-\cdot
-\int_\setii p(\mspaceeltii\mid\mspaceeltiii)
-\, d\measnu(\mspaceeltii)
-\]
-And by Fubini's Theorem~\ref{fubini},
-\[
-\int_\seti p(\mspaceelt\mid\mspaceeltiii)
-\, d\measmu(\mspaceelt)
-\cdot
-\int_\setii p(\mspaceeltii\mid\mspaceeltiii)
-\, d\measnu(\mspaceeltii)
-=
-\int_{\seti\times\setii}
-p(\mspaceelt\mid\mspaceeltiii)\cdot
-p(\mspaceeltii\mid\mspaceeltiii)
-\, d(\measmu\times\measnu)(\mspaceelt,\mspaceeltii).
-\]
-By transitivity of equality,
-\[
-\int_{\seti\times\setii}
-p(\mspaceelt,\mspaceeltii\mid\mspaceeltiii)
-\,d(\measmu\times\measnu)(\mspaceelt,\mspaceeltii)
-=
-\int_{\seti\times\setii}
-p(\mspaceelt\mid\mspaceeltiii)\cdot
-p(\mspaceeltii\mid\mspaceeltiii)
-\, d(\measmu\times\measnu)(\mspaceelt,\mspaceeltii)
-\]
-for all $\seti\times\setii$ in the semiring
-$\productsig{\sigmaalgebra}{\sigmaalgebraii}$, and so
-by Proposition~\ref{uniqueness_radon_nikodym},
-\[
-p(\mspaceelt,\mspaceeltii\mid\mspaceeltiii)
-=
-p(\mspaceelt\mid\mspaceeltiii)\cdot
-p(\mspaceeltii\mid\mspaceeltiii)
-\]
-for $(\measmu\times\measnu)^\kernast$\hyp{}almost all $(\mspaceelt,\mspaceeltii)$ in
-$\measurespace\times\measurespaceii$.
-(But what is the qualifier on $\mspaceeltiii$? Likely
-$\marginalthree^\kernast$\hyp{}almost all
-$\mspaceeltiii\in\measurespaceiii$.)
-Although it is true that
-$\productsig{\sigmaalgebra}{\sigmaalgebraii}$
-is a \textsigma\hyp{}algebra, it is regarded here as a semiring, for that is all the structure which is actually needed.
-
-\textbf{(2) $\Leftarrow$ (3)}\quad
-Let
-\[
-p(\mspaceelt,\mspaceeltii\mid\mspaceeltiii)
-=
-p(\mspaceelt\mid\mspaceeltiii)\cdot
-p(\mspaceeltii\mid\mspaceeltiii)
-\]
-for $(\measmu\times\measnu)^\kernast$\hyp{}almost all $(\mspaceelt,\mspaceeltii)$ in
-$\measurespace\times\measurespaceii$, and for
-$\marginalthree^\kernast$\hyp{}almost all
-$\mspaceeltiii\in\measurespaceiii$.
-
-\textbf{(3) $\Leftrightarrow$ (4)}\quad
-Divide both sides of (3) by $p(\mspaceeltii\mid\mspaceeltiii)$.
-\end{proof}
-
-
-
 
 \chapter{Bayesian Statistics}\label{bayesian_statistics}
 %*********************************************************
@@ -9095,7 +8379,7 @@ What measure-theoretic conditions might be sufficient to imply that these condit
 
 One simple condition is when
 $\measonprod\abscont (\marginalone\times\marginaltwo)^*$.
-Then both the sampling conditional distribution and the posterior conditional distribution are regular. This is just what Proposition~\ref{marginal_implies_regular} says.
+Then both the sampling conditional distribution and the posterior conditional distribution are regular, which is the heart of Proposition~\ref{marginal_implies_regular}.
 
 
 Here, in turn, is a measure-theoretic condition sufficient to imply that
@@ -10157,6 +9441,724 @@ where
 
 
 
+
+
+
+\chapter{Conditional Independence}
+%*********************************************************
+%*********************************************************
+%*********************************************************
+%*********************************************************
+\lettrine{W}{e barely} touch on a few points concerning conditional independence.
+
+
+
+\begin{defnboldnote}\label{conditionally_independent}
+Let
+$(\measurespace,\sigmaalgebra,\measure)$
+be a probability space, and let $\sigmaalgebraii$ be a  $\textsigma$-subalgebra of
+$\sigmaalgebra$.
+Also, let $\sigmaalgebraiii$ and $\sigmaalgebraiv$ be \textsigma-subalgebras of $\sigmaalgebra$.
+Then $\sigmaalgebraiii$ and $\sigmaalgebraiv$ are
+\term{conditionally independent \textsigma\hyp{}subalgebras} given $\sigmaalgebraii$
+if
+\[
+\condprobsub{\setiii\meets\setiv}{\sigmaalgebraii}
+=
+\condprobsub{\setiii}{\sigmaalgebraii}
+\cdot
+\condprobsub{\setiv}{\sigmaalgebraii}
+\]
+for all $\setiii\in\sigmaalgebraiii$ and for all $\setiv\in\sigmaalgebraiv$.
+The notation
+$\condindep{\sigmaalgebraiii}{\sigmaalgebraiv}{\sigmaalgebraii}$
+may be used.
+\nomenclature[conditionally independent]
+{$\condindep{\sigmaalgebraiii}{\sigmaalgebraiv}{\sigmaalgebraii}$,}
+{the \textsigma\hyp{}algebras $\sigmaalgebraiii$ and $\sigmaalgebraiv$ are conditionally independent given $\sigmaalgebraii$}
+\end{defnboldnote}
+
+\begin{example}
+Let us try to understand conditional independence in two extreme cases, namely
+\begin{itemize}
+\item
+case
+$\sigmaalgebraii
+=
+\{\measurespace, \mtset\}$,
+where conditional independence given
+$\sigmaalgebraii$ is equivalent to independence with respect to the  measure $\measure^*$, and
+\item
+case
+$\sigmaalgebraii
+=
+\sigmaalgebra$,
+where all \textsigma\hyp{}subalgebras of $\sigmaalgebra$ are conditionally independent given
+$\sigmaalgebraii$.
+\end{itemize}
+
+Case
+$\sigmaalgebraii
+=
+\{\measurespace, \mtset\}$.
+Verify that $\{\measurespace, \mtset\}$ is independent of every
+$\textsigma$\hyp{}subalgebra of $\sigmaalgebra$ with respect to
+$\measure^*$, for if $\sigalg{T}$ were another \textsigma\hyp{}subalgebra, we see that
+\[
+\measure^*(\seti\meets\setii)
+=
+\measure^*(\seti) \cdot \measure^*(\setii)
+\quad
+\text{for all $\seti\in \sigalg{T}$ and all $\setii\in \{\measurespace, \mtset\}$.}
+\]
+It follows then by Proposition~\ref{conditional_is_expected} that
+\[
+\condexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}
+=
+\bigl(\expval{\ellclass{\function}{\measure}}\bigr)
+\cdot \ellclass{1}{\measure}
+\]
+for every
+$\ellclass{\function}{\measure}\in L_1(\measurespace, \sigmaalgebra,\measure)$.
+For
+$\setiii\in\sigmaalgebraiii$ and for $\setiv\in\sigmaalgebraiv$,
+the condition
+\[
+\condprobsub{\setiii\meets\setiv}{\sigmaalgebraii}
+=
+\condprobsub{\setiii}{\sigmaalgebraii}
+\cdot
+\condprobsub{\setiv}{\sigmaalgebraii}
+\]
+is equivalent by definition to
+\[
+\condexpsub{\ellclass{\charfunction{\setiii\meets\setiv}}{\measure}}{\sigmaalgebraii}
+=
+\condexpsub{\ellclass{\charfunction{\setiii}}{\measure}}{\sigmaalgebraii}
+\cdot
+\condexpsub{\ellclass{\charfunction{\setiv}}{\measure}}{\sigmaalgebraii},
+\]
+which in turn is equivalent to
+\begin{align*}
+\bigl(\expval{\ellclass{\charfunction{\setiii\meets\setiv}}{\measure}}\bigr)
+\cdot \ellclass{1}{\measure}
+& =
+\bigl(\expval{\ellclass{\charfunction{\setiii}}{\measure}}\bigr)
+\cdot \ellclass{1}{\measure}
+\cdot
+\bigl(\expval{\ellclass{\charfunction{\setiv}}{\measure}}\bigr)
+\cdot \ellclass{1}{\measure} \\
+& =
+\bigl(\expval{\ellclass{\charfunction{\setiii}}{\measure}}\bigr)
+\bigl(\expval{\ellclass{\charfunction{\setiv}}{\measure}}\bigr)
+\cdot \ellclass{1}{\measure},\\
+\end{align*}
+implying that
+\[
+\measure^*(\setiii\meets\setiv) = \measure^*(\setiii)\cdot\measure^*(\setiv).
+\]
+This shows that conditional independence given
+$\sigmaalgebraii = \{\measurespace, \mtset\}$ is equivalent to independence with respect to
+$\measure^*$.
+
+
+Case $\sigmaalgebraii = \sigmaalgebra$.
+Then for all $\setiii\in\sigmaalgebraiii$ and for all $\setiv\in\sigmaalgebraiv$,
+the functions
+$\charfunction{\setiii\meets\setiv}$, $\charfunction{\setiii}$,
+and $\charfunction{\setiv}$ are
+$\bigl( \sigmaalgebraii, \borel_\R \bigr)$\hyp{}measurable.
+It follows by Proposition~\ref{subalgebra_fixed} that the condition
+\[
+\condexpsub{\ellclass{\charfunction{\setiii\meets\setiv}}{\measure}}{\sigmaalgebraii}
+=
+\condexpsub{\ellclass{\charfunction{\setiii}}{\measure}}{\sigmaalgebraii}
+\cdot
+\condexpsub{\ellclass{\charfunction{\setiv}}{\measure}}{\sigmaalgebraii}
+\]
+is equivalent to
+\[
+\ellclass{\charfunction{\setiii\meets\setiv}}{\measure}
+=
+\ellclass{\charfunction{\setiii}}{\measure}
+\cdot
+\ellclass{\charfunction{\setiv}}{\measure},
+\]
+which is equivalent to
+\[
+\charfunction{\setiii\meets\setiv}
+=
+\charfunction{\setiii}
+\cdot
+\charfunction{\setiv}
+\quad\text{$\measure^\kernast$\hyp{}almost everywhere on $\measurespace$.}
+\]
+This is always true.
+This shows that all \textsigma\hyp{}subalgebras of $\sigmaalgebra$ are conditionally independent given $\sigmaalgebra$.
+\end{example}
+
+
+
+
+
+
+\begin{notn}\label{conditionally_independent_functions}
+Let
+$(\uspace,\uspacesig,\measureiii)$
+be a probability space, and let functions
+$\function:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$,
+$\functionii:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$,
+and
+$\functioniii:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
+be measurable:
+\[
+\xymatrix@R=14pt@C=30pt{
+ & \measurespace \\
+ \uspace
+ \ar[ur]^\function
+ \ar[r]^\functionii
+ \ar[dr]_\functioniii
+ & \measurespaceii\\
+ & \measurespaceiii \\
+}
+%
+\qquad
+%
+\xymatrix@R=14pt@C=30pt{
+ & \sigmaalgebra \ar[dl]_{\preimage{\function}} \\
+ \uspacesig & \sigmaalgebraii \ar[l]_-{\quad \preimage{\functionii}}\\
+ & \sigmaalgebraiii \ar[ul]^{\preimage{\functioniii}}\\
+}
+\]
+Say that $\funcf$ and $\funcg$ are conditionally independent
+given $\funch$ if
+\[
+\condindep{\preimage{\funcf}(\sigmaalgebra)}{\preimage{\funcg}(\sigmaalgebraii)}
+{\preimage{\funch}(\sigmaalgebraiii)}.
+\]
+\end{notn}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{prop}\label{abs_cont_reg}
+Let
+$(\uspace,\uspacesig,\measlambda)$
+be a probability space, and let functions
+$\function:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$,
+$\functionii:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$,
+and
+$\functioniii:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
+be measurable, with \textsigma-finite  measures
+$\measure$, $\measureii$, and $\measureiv$ on respective \textsigma-algebras
+$\sigmaalgebra$, $\sigmaalgebraii$, and $\sigmaalgebraiii$.
+Set $\sigalg{H}=\preimage{\funch}(\sigmaalgebraiii)$.
+If
+$\measureiii\circ\preimage{(\function,\functionii,\functioniii)}
+\abscont
+(\measure\times\measureii\times\measureiv)^*$ on
+$\productsig{\sigmaalgebra}{\sigmaalgebraii,\sigmaalgebraiii}$,
+then the conditional distributions
+$\condprobop{\sigalg{H}}\circ \preimage{\funcf}$,
+$\condprobop{\sigalg{H}}\circ \preimage{\funcg}$,
+and
+$\condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)}$
+are regular.
+\end{prop}
+
+\begin{proof}
+Set
+$\sigalg{F}=\preimage{\funcf}(\sigmaalgebra)$,
+and $\sigalg{G}=\preimage{\funcg}(\sigmaalgebraii)$.
+
+
+Verify that if
+\[
+\measlambda\circ\preimage{(\function,\functionii,\functioniii)}
+\abscont
+(\measmu\times\measnu\times\measrho)^*
+\]
+on
+$\productsig{\sigmaalgebra}{\sigmaalgebraii,\sigmaalgebraiii}
+=
+\productsig{\sigmaalgebra}{\productsig{\sigmaalgebraii}{\sigmaalgebraiii}}$,
+then by applying the proof of Proposition~\ref{reference_implies_marginals}, you get
+\[
+\measlambda\circ \preimage{(\funcg,\funch)}
+\abscont
+(\measnu\times\measrho)^*
+\]
+on
+$\productsig{\sigmaalgebraii}{\sigmaalgebraiii}$.
+In particular, by applying the proof, you show
+\[
+\frac{d(\measlambda\circ \preimage{(\funcg,\funch)})}{d(\measnu\times\measrho)^*}
+:\measurespaceii\times\measurespaceiii \to  \R
+:(\mspaceeltii,\mspaceeltiii)\mapsto
+\int_\measurespace
+\frac{d(\measlambda\circ\preimage{(\function,\functionii,\functioniii)})}
+{d(\measmu\times\measnu\times\measrho)^*}
+(\mspaceelt,\mspaceeltii,\mspaceeltiii)\,d\measmu(\mspaceelt).
+\]
+Then by Proposition~\ref{reference_implies_mixed_and_marginals},
+\[
+\measlambda\circ \preimage{(\funcg,\funch)}
+\abscont
+\bigl((\measlambda\circ\preimage{\funcg})
+\times
+(\measlambda\circ\preimage{\funch})\bigr)^*,
+\]
+and so by Proposition~\ref{marginal_implies_regular},
+the conditional distribution
+$\condprobop{\sigalg{H}}\circ \preimage{\funcg}$
+is regular.
+
+Symmetrically, the conditional distribution
+$\condprobop{\sigalg{H}}\circ \preimage{\funcf}$
+must also be regular.
+
+To show that
+$\condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)}$
+is regular, again, by Proposition~\ref{reference_implies_mixed_and_marginals},
+\[
+\measlambda\circ \preimage{(\funcf, \funcg, \funch)}
+\abscont
+\bigl((\measlambda\circ\preimage{(\funcf,\funcg)})
+\times
+(\measlambda\circ\preimage{\funch})\bigr)^*
+\]
+on
+$\productsig{\sigmaalgebra}{\sigmaalgebraii,\sigmaalgebraiii}
+=
+\productsig{\productsig{\sigmaalgebra}{\sigmaalgebraii}}{\sigmaalgebraiii}$,
+and so by Proposition~\ref{marginal_implies_regular},
+the conditional distribution
+$\condprobop{\sigalg{H}}\circ \preimage{(\funcf,\funcg)}$
+is regular.
+\end{proof}
+
+
+%*********************************
+%*********************************
+%*********************************
+%*********************************
+%\section{Conditional Density Notation}
+\begin{notn}\label{densities}
+Let
+$(\uspace, \uspacesig, \measureiii)$
+be a probability space, with functions
+$\funcf:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$,
+$\funcg:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$
+and
+$\funch:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
+measurable.
+Let $\measmu$, $\measnu$, and $\measrho$ be \textsigma\hyp{}finite measures on
+$\sigmaalgebra$, $\sigmaalgebraii$, and $\sigmaalgebraiii$, respectively, and let
+$\measlambda\circ \preimage{(\funcf,\funcg,\funch)}
+\abscont
+(\measmu\times\measnu\times\measrho)^*$
+on
+$\textsigma(\sigmaalgebra,\sigmaalgebraii,\sigmaalgebraiii)$.
+Set:
+\begin{align*}
+\funcj
+& =
+\frac{d \bigl(\measlambda\circ \preimage{(\funcf,\funcg,\funch)}\bigr)}
+{d(\measmu\times\measnu\times\measrho)^*}
+:
+\measurespace\times\measurespaceii\times\measurespaceiii\to\R,
+\\
+%
+m_{\funcf,\funch}
+& =
+\frac{d \bigl( \measlambda\circ \preimage{(\funcf,\funch)} \bigr)}
+{d(\measmu\times\measrho)^*}
+:\measurespace\times\measurespaceiii\to\R,
+\\
+%
+m_{\funcg,\funch}
+& =
+\frac{d \bigl( \measlambda\circ\preimage{(\funcg,\funch)} \bigr)}
+{d(\measnu\times\measrho)^*}
+:\measurespaceii\times\measurespaceiii\to\R,
+\\
+%
+m_\funch
+& =
+\frac{d \bigl( \measlambda\circ\preimage{\funch} \bigr)}
+{d \measrho}
+:\measurespaceiii\to\R.
+\end{align*}
+
+The letter `$j$' was intended to roughly correspond with `joint density,' and likewise the letter
+`$m$' with `marginal density.'
+I have seen notation such as `$p(x,y\mid z)$' being used to try to indicate the quotient
+$\dfrac{\funcj(x,y,z)}{m_\funch (z)}$.
+Similarly, something like `$p(x\mid z)$', `$p(y\mid z)$', and `$p(x\mid y,z)$' might be used to try to indicate the respective quotients
+$\dfrac{m_{\funcf,\funch}(x,z)}{m_\funch (z)}$,
+$\dfrac{m_{\funcg,\funch}(y,z)}{m_\funch (z)}$,
+and
+$\dfrac{\funcj(x,y,z)}{m_{\funcg,\funch}(y,z)}$.
+Let us use that notation here.
+\end{notn}
+
+%*********************************
+%*********************************
+%*********************************
+%*********************************
+
+
+
+
+\begin{prop}\label{conditional_independence_equivalence}
+Let
+$(\uspace,\uspacesig,\measlambda)$
+be a probability space, and let functions
+$\function:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$,
+$\functionii:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$,
+and
+$\functioniii:(\uspace,\uspacesig)\to (\measurespaceiii,\sigmaalgebraiii)$
+be measurable, with \textsigma-finite measures
+$\measure$, $\measureii$, and $\measureiv$ on respective \textsigma-algebras
+$\sigmaalgebra$, $\sigmaalgebraii$, and $\sigmaalgebraiii$.
+Set $\sigalg{H}=\preimage{\funch}(\sigmaalgebraiii)$.
+Let
+$\measureiii\circ\preimage{(\function,\functionii,\functioniii)}
+\abscont
+(\measure\times\measureii\times\measureiv)^*$ on
+$\productsig{\sigmaalgebra}{\sigmaalgebraii,\sigmaalgebraiii}$,
+and let
+$\funck$,
+$\funcl$,
+and
+$\funcm$
+be Markov kernels corresponding to the respective regular conditional distributions
+$\condprobop{\sigalg{H}}\circ \preimage{\funcf}$,
+$\condprobop{\sigalg{H}}\circ \preimage{\funcg}$,
+and
+$\condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)}$.
+
+The following are equivalent:
+%
+\begin{enumerate}
+\item[1)]
+\[
+\condindep{\preimage{\funcf}(\sigmaalgebra)}{\preimage{\funcg}(\sigmaalgebraii)}
+{\preimage{\funch}(\sigmaalgebraiii)},
+\]
+%
+\item[2)]
+\[
+\funcm_\uspaceelt
+(\seti\times\setii)
+=
+\funck_\uspaceelt(\seti)
+\cdot
+\funcl_\uspaceelt(\setii)
+\]
+for all $\seti\in\sigmaalgebra$, $\setii\in\sigmaalgebraii$, and $\measlambda^\kernast$\hyp{}almost all
+$\uspaceelt\in\uspace$,
+%
+\item[3)]
+\[
+p(x,y\mid z)
+=
+p(x\mid z) \cdot p(y\mid z)
+\]
+for
+$(\measmu\times\measnu)^\kernast$\hyp{}almost all
+$(x,y)\in\measurespace\times\measurespaceii$ and
+$(\measlambda\circ\preimage{\funch})$\hyp{}almost all $\mspaceeltiii\in\measurespaceiii$, and
+%
+\item[4)]
+\[
+p(x\mid y,z)
+=
+p(x\mid z)
+\]
+for
+$(\measmu\times\measnu)^\kernast$\hyp{}almost all
+$(x,y)\in\measurespace\times\measurespaceii$ and
+$(\measlambda\circ\preimage{\funch})$\hyp{}almost all $\mspaceeltiii\in\measurespaceiii$.
+\end{enumerate}
+\end{prop}
+
+
+
+
+\begin{proof}
+Set
+$\sigalg{F}=\preimage{\funcf}(\sigmaalgebra)$,
+and $\sigalg{G}=\preimage{\funcg}(\sigmaalgebraii)$.
+We know the conditional distributions
+are regular by Proposition~\ref{abs_cont_reg}, so they do have corresponding Markov kernels by Proposition~\ref{equivalent_definition_regular_distribution}.
+The fact that $(1) \Leftrightarrow (2)$ is nothing more than wading through a definition or two.
+
+\textbf{(1) $\Rightarrow$ (2)}\quad
+Let
+$\condindep{\preimage{\funcf}(\sigmaalgebra)}{\preimage{\funcg}(\sigmaalgebraii)}
+{\preimage{\funch}(\sigmaalgebraiii)}$, or using $\sigalg{H}$ in place of
+$\preimage{\funch}(\sigmaalgebraiii)$,
+\[
+\condindep{\preimage{\funcf}(\sigmaalgebra)}{\preimage{\funcg}(\sigmaalgebraii)}
+{\sigalg{H}}.
+\]
+By the very Definition~\ref{conditionally_independent} of conditionally independent \textsigma\hyp{}subalgebras,
+this is equivalent to saying
+\[
+\condprobsub{\lilstrut\preimage{\funcf}(\seti) \meets \preimage{\funcg}(\setii)}{\sigalg{H}}
+=
+\condprobsub{\lilstrut\preimage{\funcf}(\seti)}{\sigalg{H}}
+\cdot
+\condprobsub{\lilstrut\preimage{\funcg}(\setii)}{\sigalg{H}}
+\]
+for all $\seti\in\sigmaalgebra$ and for all $\setii\in\sigmaalgebraii$.
+This is an equality of classes in
+$L_1(\uspace,\uspacesig,\measureiii)$, and can be rewritten as
+\begin{equation}
+\condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)}
+(\seti\times\setii)
+=
+\condprobop{\sigalg{H}}\circ \preimage{\funcf}(\seti)
+\cdot
+\condprobop{\sigalg{H}}\circ \preimage{\funcg}(\setii).
+\end{equation}
+Recall that two classes in
+$L_1(\uspace,\uspacesig,\measureiii)$
+are equal precisely when they have representatives that are equal for
+$\measlambda^\kernast$\hyp{}almost all $\uspaceelt$ in  $\uspace$.
+Such representatives in this case are easy to find since
+the corresponding Markov kernels have the property that:
+\[
+\funcm^{\seti\times\setii} \in
+\condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)}
+(\seti\times\setii),
+\]
+\[
+\funck^\seti \in
+\condprobop{\sigalg{H}}\circ \preimage{\funcf}(\seti),
+\]
+and
+\[
+\funcl^\setii \in
+\condprobop{\sigalg{H}}\circ \preimage{\funcg}(\setii).
+\]
+It follows that
+\[
+\funcm^{\seti\times\setii}(\uspaceelt)
+=
+\funck^\seti(\uspaceelt)
+\cdot
+\funcl^\setii(\uspaceelt)
+\quad
+\text{for $\measlambda^\kernast$\hyp{}almost all $\uspaceelt\in\uspace$.}
+\]
+Since $\funck$, $\funcl$, and $\funcm$ are Markov kernels,
+\[
+\funcm_\uspaceelt(\seti\times\setii)
+=
+\funck_\uspaceelt(\seti)
+\cdot
+\funcl_\uspaceelt(\setii)
+\]
+for all $\seti\in\sigmaalgebra$, $\setii\in\sigmaalgebraii$, and for
+$\measlambda^\kernast$\hyp{}almost all $\uspaceelt\in\uspace$, as required.
+\hfill\qedsymbol
+
+\textbf{(1) $\Leftarrow$ (2)}\quad
+Let
+\[
+\funcm_\uspaceelt(\seti\times\setii)
+=
+\funck_\uspaceelt(\seti)
+\cdot
+\funcl_\uspaceelt(\setii)
+\]
+for all $\seti\in\sigmaalgebra$, $\setii\in\sigmaalgebraii$, and
+$\measlambda^\kernast$\hyp{}almost all $\uspaceelt\in\uspace$.
+Since  $\funck$, $\funcl$, and $\funcm$ are Markov kernels, so equalities like
+\[
+\funcm_\uspaceelt(\seti\times\setii)
+=
+\funcm^{\seti\times\setii}(\uspaceelt)
+\]
+hold, it follows that
+\[
+\funcm^{\seti\times\setii}(\uspaceelt)
+=
+\funck^\seti(\uspaceelt)
+\cdot
+\funcl^\setii(\uspaceelt)
+\]
+for all $\seti\in\sigmaalgebra$, $\setii\in\sigmaalgebraii$, and
+for
+$\measlambda^\kernast$\hyp{}almost all $\uspaceelt\in\uspace$.
+Check that the function
+$\funcm^{\seti\times\setii}$
+is bounded, and is
+$(\sigalg{H},\borel_\R)$\hyp{}measurable, implying it is
+$\measlambda^\kernast$\hyp{}measurable, so by Proposition~\ref{dominated_by_integrable}
+is integrable with respect to $\measlambda$. It follows that the function
+$\funck^\seti\cdot\funcl^\setii$
+is integrable with respect to $\measlambda$, even by the very Definition~\ref{integrable} of integrability.
+Then according to the Definition~\ref{Lp} of the product of classes,
+\begin{align*}
+\ellclass{\funck^\seti}{}
+\cdot
+\ellclass{\funcl^\setii}{}
+& \definedby
+\ellclass{\funck^\seti\cdot\funcl^\setii}{} \\
+& =
+\ellclass{\funcm^{\seti\times\setii}}{}. \\
+\end{align*}
+Because these Markov kernels correspond to their regular conditional distributions, and so for example
+$\ellclass{\funck^\seti}{}
+=
+\condprobop{\sigalg{H}}\circ \preimage{\funcf}(\seti)$,
+it follows from the equality
+\[
+\ellclass{\funck^\seti}{}
+\cdot
+\ellclass{\funcl^\setii}{}
+=
+\ellclass{\funcm^{\seti\times\setii}}{}
+\]
+that
+\[
+\condprobop{\sigalg{H}} \circ \preimage{\funcf}(\seti)
+\cdot
+\condprobop{\sigalg{H}} \circ \preimage{\funcg}(\setii)
+=
+\condprobop{\sigalg{H}} \circ \preimage{(\funcf,\funcg)}
+(\seti\times\setii),
+\]
+which is equivalent to
+$\condindep{\preimage{\funcf}(\sigmaalgebra)}{\preimage{\funcg}(\sigmaalgebraii)}
+{\preimage{\funch}(\sigmaalgebraiii)}$,
+as required.\hfill\qedsymbol
+
+
+
+\textbf{(2) $\Rightarrow$ (3)}\quad
+Let
+\[
+\funcm_\uspaceelt
+(\seti\times\setii)
+=
+\funck_\uspaceelt(\seti)
+\cdot
+\funcl_\uspaceelt(\setii)
+\]
+for all $\seti\in\sigmaalgebra$, $\setii\in\sigmaalgebraii$, and $\measlambda^\kernast$\hyp{}almost all
+$\uspaceelt\in\uspace$.
+By Proposition~\ref{conditional_density},
+\begin{align*}
+\funcm_\uspaceelt
+(\seti\times\setii)
+= &
+\int_{\seti\times\setii}
+p(\mspaceelt,\mspaceeltii\mid\mspaceeltiii)
+\,d(\measmu\times\measnu)(\mspaceelt,\mspaceeltii),
+\\
+\funck_\uspaceelt
+(\seti)
+= &
+\int_\seti p(\mspaceelt\mid\mspaceeltiii)
+\, d\measmu(\mspaceelt),
+\\
+\funcl_\uspaceelt
+(\setii)
+= &
+\int_\setii p(\mspaceeltii\mid\mspaceeltiii)
+\, d\measnu(\mspaceeltii).
+\\
+\end{align*}
+Since
+$\funcm_\uspaceelt
+(\seti\times\setii)
+=
+\funck_\uspaceelt(\seti)
+\cdot
+\funcl_\uspaceelt(\setii)$, it follows by substitution that
+\[
+\int_{\seti\times\setii}
+p(\mspaceelt,\mspaceeltii\mid\mspaceeltiii)
+\,d(\measmu\times\measnu)(\mspaceelt,\mspaceeltii)
+=
+\int_\seti p(\mspaceelt\mid\mspaceeltiii)
+\, d\measmu(\mspaceelt)
+\cdot
+\int_\setii p(\mspaceeltii\mid\mspaceeltiii)
+\, d\measnu(\mspaceeltii)
+\]
+And by Fubini's Theorem~\ref{fubini},
+\[
+\int_\seti p(\mspaceelt\mid\mspaceeltiii)
+\, d\measmu(\mspaceelt)
+\cdot
+\int_\setii p(\mspaceeltii\mid\mspaceeltiii)
+\, d\measnu(\mspaceeltii)
+=
+\int_{\seti\times\setii}
+p(\mspaceelt\mid\mspaceeltiii)\cdot
+p(\mspaceeltii\mid\mspaceeltiii)
+\, d(\measmu\times\measnu)(\mspaceelt,\mspaceeltii).
+\]
+By transitivity of equality,
+\[
+\int_{\seti\times\setii}
+p(\mspaceelt,\mspaceeltii\mid\mspaceeltiii)
+\,d(\measmu\times\measnu)(\mspaceelt,\mspaceeltii)
+=
+\int_{\seti\times\setii}
+p(\mspaceelt\mid\mspaceeltiii)\cdot
+p(\mspaceeltii\mid\mspaceeltiii)
+\, d(\measmu\times\measnu)(\mspaceelt,\mspaceeltii)
+\]
+for all $\seti\times\setii$ in the semiring
+$\productsig{\sigmaalgebra}{\sigmaalgebraii}$, and so
+by Proposition~\ref{uniqueness_radon_nikodym},
+\[
+p(\mspaceelt,\mspaceeltii\mid\mspaceeltiii)
+=
+p(\mspaceelt\mid\mspaceeltiii)\cdot
+p(\mspaceeltii\mid\mspaceeltiii)
+\]
+for $(\measmu\times\measnu)^\kernast$\hyp{}almost all $(\mspaceelt,\mspaceeltii)$ in
+$\measurespace\times\measurespaceii$.
+(But what is the qualifier on $\mspaceeltiii$? Likely
+$\marginalthree^\kernast$\hyp{}almost all
+$\mspaceeltiii\in\measurespaceiii$.)
+Although it is true that
+$\productsig{\sigmaalgebra}{\sigmaalgebraii}$
+is a \textsigma\hyp{}algebra, it is regarded here as a semiring, for that is all the structure which is actually needed.
+
+\textbf{(2) $\Leftarrow$ (3)}\quad
+Let
+\[
+p(\mspaceelt,\mspaceeltii\mid\mspaceeltiii)
+=
+p(\mspaceelt\mid\mspaceeltiii)\cdot
+p(\mspaceeltii\mid\mspaceeltiii)
+\]
+for $(\measmu\times\measnu)^\kernast$\hyp{}almost all $(\mspaceelt,\mspaceeltii)$ in
+$\measurespace\times\measurespaceii$, and for
+$\marginalthree^\kernast$\hyp{}almost all
+$\mspaceeltiii\in\measurespaceiii$.
+
+\textbf{(3) $\Leftrightarrow$ (4)}\quad
+Divide both sides of (3) by $p(\mspaceeltii\mid\mspaceeltiii)$.
+\end{proof}
 
 
 
