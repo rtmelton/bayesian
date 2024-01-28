@@ -6089,7 +6089,7 @@ $\setii\in\sigmaalgebraii$ there is a commutative diagram, only one of which wil
 \measurespace\times\sigmaalgebraii \ar[r]^{\markovkernel} & [0,1] \\
 \sigmaalgebraii 
 \ar[ur]_-{\makebox[0pt][l]
-{\scriptsize{$\markovkernel_\uspaceelt$
+{\scriptsize{$\markovkernel_\mspaceelt$
 \quad probability measure}}}
 \ar[u]^{\fixinthefirst{\mspaceelt}} & \\
 }
@@ -6099,6 +6099,13 @@ $\fixinthesecond{\setii}_\measurespace$,
 could be used in case more than one kernel
 is involved.
 
+We will say that any map
+$\measurespace\times\sigmaalgebraii\to \R$
+or
+$\measurespace\times\sigmaalgebraii\to [0,1]$
+\term{defines a Markov kernel}
+if it its range is $[0,1]$ except for possibly those $\mspaceelt$ in some null subset of
+$\measurespace$ and if it can be redefined on that null subset, together with a possible redefinition of the codomain, in such a way that it satisfies the above definition.
 
 A Markov kernel given measurable spaces 
 $(\measurespace, \sigmaalgebra)$ and 
@@ -7098,75 +7105,38 @@ $\preimage{\projectionone}(S) = S\times \measurespaceii $ for any $S\subseteq \m
 \end{proof}
 
 
-
-\begin{prop}\label{marginal_implies_regular}
-Let
-$(\uspace, \uspacesig, \measlambda)$
-be a probability space, with functions
-$\funcf:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$
-and
-$\funcg:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$
-measurable.
-Set
-$\sigalg{G} = \preimage{\funcg}(\sigmaalgebraii)$.
-Let $\measonprod$ denote the joint measure
-$\measlambda\circ\preimage{({\funcf,\funcg})}$,
-and let $\marginalone$  denote the marginal measure $\measonprod\circ \preimage{\projectionone}$,
-and let $\marginaltwo$ denote the marginal measure $\measonprod\circ \preimage{\projectiontwo}$.
-
+\begin{prop}\label{marginal_implies_markov}
 If\,
 $\measonprod \abscont (\marginalone\times\marginaltwo)^*$
 on
 $\productsig{\sigmaalgebra}{\sigmaalgebraii}$,
-then the conditional distribution
-$\condprobop{\sigalg{G}}\circ \preimage{\funcf}$ of $\funcf$ on
-$\sigmaalgebra$ given $\sigalg{G}$ is regular, and symmetrically, setting
-$\sigalg{F} = \preimage{\funcf}(\sigmaalgebra)$, the conditional distribution
-$\condprobop{\sigalg{F}}\circ \preimage{\funcg}$ of $\funcg$ on
-$\sigmaalgebraii$ given $\sigalg{F}$ is regular.
+then the map
+\[
+\measurespaceii\times\sigmaalgebra\to \R
+:(\mspaceeltii,\seti)\mapsto
+\int_\seti
+\dfrac{d\,\measonprod}{d(\marginalone\times\marginaltwo)^*}
+(\mspaceelt,\mspaceeltii)\, d\marginalone(\mspaceelt)
+\]
+defines a Markov kernel
+$(\measurespaceii,\sigmaalgebraii)\transition (\measurespace, \sigmaalgebra)$,
+and symmetrically, the map
+\[
+\measurespace\times\sigmaalgebra\to \R
+:(\mspaceelt,\setii)\mapsto
+\int_\setii
+\dfrac{d\,\measonprod}{d(\marginalone\times\marginaltwo)^*}
+(\mspaceelt,\mspaceeltii)\, d\marginaltwo(\mspaceeltii)
+\]
+defines a Markov kernel
+$(\measurespace,\sigmaalgebra)\transition (\measurespaceii, \sigmaalgebraii)$.
 \end{prop}
 
+
 \begin{proof}
-Let $\joint \abscont (\marginalone\times\marginaltwo)^*$.
-We have set
-$\joint = \measlambda\circ\preimage{({\funcf,\funcg})}$:
-\[
-\xymatrix@R=16pt@C=34pt{
- & \measurespace
- \\
- \uspace
- \ar[ur]^{\funcf}
- \ar[dr]_{\funcg}
- \ar[r]^{\funcf, \funcg} &
- \measurespace \times \measurespaceii  \ar[u]_\projectionone \ar[d]^\projectiontwo
- \\
- & \measurespaceii  \\
-}
-\qquad
-\xymatrix@R=18pt@C=34pt{
- & & \sigmaalgebra
- \ar[dl]_{\preimage{\funcf}}
- \ar[d]^{\preimage{\projectionone}}
- \ar@/_10pt/[lld]_{\marginalone}
- \\
- [0,1] & \uspacesig \ar[l]_-{\measlambda} &
- \productsig{\sigmaalgebra}{\sigmaalgebraii}
- \ar[l]_{\hskip8pt \preimage{(\funcf,\funcg)}}
- \\
- & & \sigmaalgebraii
-  \ar[u]_{\preimage{\projectiontwo}}
-  \ar[ul]^{\preimage{\funcg}}
-  \ar@/^10pt/[llu]^{\marginaltwo}
-  \\
-}
-\]
-
-We will define a map
-$\funck: \uspace\times \sigmaalgebra \to [0,1]$, then show it is a Markov kernel, and then apply Proposition~\ref{equivalent_definition_regular_distribution}.
-
-
-But first step, define a map
-$\funcj:\measurespaceii\times\sigmaalgebra\to \R$. By hypothesis,
+We will only show the first part, namely that we get a Markov kernel
+$(\measurespaceii,\sigmaalgebraii)\transition (\measurespace,\sigmaalgebra)$.
+By hypothesis,
 $\measonprod \abscont (\marginalone\times\marginaltwo)^*$, and since the measure
 $\measonprod$ is finite, and the measure $(\marginalone\times\marginaltwo)^*$ is also finite, therefore \textsigma\hyp{}finite, we can take the Radon-Nikodym derivative
 $d\measonprod / d(\marginalone\times\marginaltwo)^*$, and define:
@@ -7193,7 +7163,9 @@ which is illustrated in a fashion similar to a Markov kernel:
 \\
 }
 \]
-We will show this map can be redefined, resulting in a  Markov kernel.
+At this stage, we can only say that the codomain of $\funcj$ is $\R$.
+We will show this map can be redefined on a subset of $\measurespaceii$ of
+$\marginaltwo^\kernast$\hyp{}measure zero, resulting in a  Markov kernel.
 
 By Proposition~\ref{almost_a_measure},
 $j^\measurespace(\mspaceeltii) = 1$
@@ -7276,7 +7248,8 @@ In summary,
 \end{cases}
 \]
 
-This gives us a Markov kernel:
+This gives us a Markov kernel
+$(\measurespaceii,\sigmaalgebraii)\transition (\measurespace,\sigmaalgebra)$:
 \[
 \xymatrix@R=16pt@C=30pt{
 \measurespaceii
@@ -7291,38 +7264,130 @@ This gives us a Markov kernel:
 \\
 }
 \]
+as required.
+\end{proof}
 
-Second step, we define a map
-$\funck: \uspace\times \sigmaalgebra \to [0,1]$
-by
-\[
-\funck: \uspace\times \sigmaalgebra \to [0,1] :
-(\uspaceelt,\seti) \mapsto \funcj\bigl(\funcg(\uspaceelt),\seti\bigr),
-\]
-and check that it is a Markov kernel.
-The function $\funcg$ is
-$(\sigalg{G},\sigmaalgebraii)$\hyp{}measurable just by the very fact that
-$\sigalg{G} = \preimage{\funcg}(\sigmaalgebraii)$. And since each
-$\funcj^\seti$ is
-$\bigl( \sigmaalgebraii, \borel_{[0,1]} \bigr)$\hyp{}measurable, it follows that the composition
-\[
-\funck^\seti\definedby\funcj^\seti\circ\funcg
-: \uspace \to [0,1]
-:\uspaceelt \mapsto (\funcj^\seti\circ\funcg)(\uspaceelt)
-\]
-is
-$\bigl( \sigalg{G}, \borel_{[0,1]} \bigr)$\hyp{}measurable.
-And each function
-$\funck_\uspaceelt : \sigmaalgebra \to [0,1]$ is a probability measure on
-$\sigmaalgebra$ since
-$\funck_\uspaceelt = \funcj_{\funcg(\uspaceelt)}$.
-This shows that $\funck$ is a Markov kernel.
 
+\begin{prop}\label{markov_composition_measurable}
+If
+$\funcj: \measurespaceii \times \sigmaalgebra \to [0,1]$
+is a Markov kernel
+$(\measurespaceii,\sigmaalgebraii) \transition (\measurespace, \sigmaalgebra)$,
+and if $\funcg : (\uspace, \sigalg{G}) \to (\measurespaceii, \sigmaalgebraii)$ is measurable, then
+\[
+\funck:\uspace\times\sigmaalgebra \to [0,1]
+:(\uspaceelt,\seti) \mapsto \funcj \bigl( \funcg(\uspaceelt), \seti \bigr)
+\]
+is a Markov kernel
+$(\uspace,\sigalg{G}) \transition (\measurespace, \sigmaalgebra)$.
+\end{prop}
+
+
+\begin{prop}\label{marginal_implies_regular}
+Let
+$(\uspace, \uspacesig, \measlambda)$
+be a probability space, with functions
+$\funcf:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$
+and
+$\funcg:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$
+measurable.
+Set
+$\sigalg{G} = \preimage{\funcg}(\sigmaalgebraii)$.
+Let $\measonprod$ denote the joint measure
+$\measlambda\circ\preimage{({\funcf,\funcg})}$,
+and let $\marginalone$  denote the marginal measure $\measonprod\circ \preimage{\projectionone}$,
+and let $\marginaltwo$ denote the marginal measure $\measonprod\circ \preimage{\projectiontwo}$.
+
+If\,
+$\measonprod \abscont (\marginalone\times\marginaltwo)^*$
+on
+$\productsig{\sigmaalgebra}{\sigmaalgebraii}$,
+then the conditional distribution
+$\condprobop{\sigalg{G}}\circ \preimage{\funcf}$ of $\funcf$ on
+$\sigmaalgebra$ given $\sigalg{G}$ is regular, and symmetrically, setting
+$\sigalg{F} = \preimage{\funcf}(\sigmaalgebra)$, the conditional distribution
+$\condprobop{\sigalg{F}}\circ \preimage{\funcg}$ of $\funcg$ on
+$\sigmaalgebraii$ given $\sigalg{F}$ is regular.
+\end{prop}
+
+\begin{proof}
+Let $\joint \abscont (\marginalone\times\marginaltwo)^*$.
+We have set
+$\joint = \measlambda\circ\preimage{({\funcf,\funcg})}$:
+\[
+\xymatrix@R=16pt@C=34pt{
+ & \measurespace
+ \\
+ \uspace
+ \ar[ur]^{\funcf}
+ \ar[dr]_{\funcg}
+ \ar[r]^{\funcf, \funcg} &
+ \measurespace \times \measurespaceii  \ar[u]_\projectionone \ar[d]^\projectiontwo
+ \\
+ & \measurespaceii  \\
+}
+\qquad
+\xymatrix@R=18pt@C=34pt{
+ & & \sigmaalgebra
+ \ar[dl]_{\preimage{\funcf}}
+ \ar[d]^{\preimage{\projectionone}}
+ \ar@/_10pt/[lld]_{\marginalone}
+ \\
+ [0,1] & \uspacesig \ar[l]_-{\measlambda} &
+ \productsig{\sigmaalgebra}{\sigmaalgebraii}
+ \ar[l]_{\hskip8pt \preimage{(\funcf,\funcg)}}
+ \\
+ & & \sigmaalgebraii
+  \ar[u]_{\preimage{\projectiontwo}}
+  \ar[ul]^{\preimage{\funcg}}
+  \ar@/^10pt/[llu]^{\marginaltwo}
+  \\
+}
+\]
+
+We will define a map
+$\funck: \uspace\times \sigmaalgebra \to [0,1]$, then show it is a Markov kernel, and then apply Proposition~\ref{equivalent_definition_regular_distribution}.
+
+
+By Proposition~\ref{marginal_implies_markov}, the map
+\[
+\funcj
+:\measurespaceii\times\sigmaalgebra\to \R
+:(\mspaceeltii,\seti)\mapsto
+\int_\seti
+\dfrac{d\,\measonprod}{d(\marginalone\times\marginaltwo)^*}
+(\mspaceelt,\mspaceeltii)\, d\marginalone(\mspaceelt)
+\]
+defines the Markov kernel:
+\[
+\xymatrix@R=16pt@C=30pt{
+\measurespaceii
+\ar[d]_-{\fixinthesecond{\seti}}
+\ar[dr]^{\funcj^\seti} &
+\\
+\measurespaceii\times\sigmaalgebra \ar[r]^{\funcj} & \R
+\\
+\sigmaalgebra
+\ar[ur]_{\funcj_\mspaceeltii}
+\ar[u]^{\fixinthefirst{\mspaceeltii}} &
+\\
+}
+\]
+By hypothesis, the function
+$\funcg:\uspace\to\measurespace$ is $(\uspacesig,\sigmaalgebraii)$\hyp{}measurable, and therefore $(\sigalg{G}, \sigmaalgebraii)$\hyp{}measurable since
+$\sigalg{G} = \preimage{\funcg}(\sigmaalgebraii)$. By Proposition~\ref{markov_composition_measurable}, the map
+\[
+\funck:\uspace\times\sigmaalgebra \to [0,1]
+:(\uspaceelt,\seti) \mapsto \funcj \bigl( \funcg(\uspaceelt), \seti \bigr)
+\]
+is a Markov kernel
+$(\uspace,\sigalg{G}) \transition (\measurespace, \sigmaalgebra)$.
 Verify that
 $\funck^\seti \in \condprobop{\sigalg{G}}\circ \preimage{\funcf}(\seti)$ for each $\seti\in\sigmaalgebra$, so the collection of $\funck^\seti$ is a version of
 $\condprobop{\sigalg{G}}\circ \preimage{\funcf}$. It follows by Proposition~\ref{equivalent_definition_regular_distribution} that
 $\condprobop{\sigalg{G}}\circ \preimage{\funcf}$ is regular, as required.
 \end{proof}
+
 
 
 
@@ -8162,7 +8227,7 @@ Its purpose is to identify a probability distribution or a conditional distribut
 
 There are no topological restrictions imposed on the objects in this chapter. No Borel space conditions, no separable conditions.  We rely instead upon measure-theoretic conditions.
 
-This chapter is intended to provide the smallest possible, coherent glimpse of Bayesian statistics.
+This chapter is intended to provide the smallest possible coherent glimpse of Bayesian statistics.
 
 Suppose
 $(\uspace, \uspacesig)$ and
