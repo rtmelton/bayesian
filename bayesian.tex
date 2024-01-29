@@ -8219,11 +8219,8 @@ $\funcg(\uspaceelt)=\mspaceeltii$, as required.
 %*********************************************************
 %*********************************************************
 %*********************************************************
-\textbf{You have introduced two logical problems.
-(1) The conditional distributions induced by measurable functions on an underlying space are not tied into anything. They do not seem essential.
-(2) Are the parametrized families of probability measures half of a Markov kernel, or are they also isolated?}
 \lettrine{S}{tatistics} is a mathematical analysis of guesswork. This kind of guesswork is called inductive inference.
-Its purpose is to identify a probability distribution or a conditional distribution. The particular kind of guesswork we will use is considered \emph{Bayesian} since it involves a parameter that induces a  probability distribution. So a parameter here is just a measurable function.
+Its purpose is to identify a probability distribution or a conditional distribution. The particular kind of guesswork we will use is considered \emph{Bayesian} since it involves a parameter that induces a  probability distribution. A parameter here is just a measurable function.
 
 There are no topological restrictions imposed on the objects in this chapter. No Borel space conditions, no separable conditions.  We rely instead upon measure-theoretic conditions.
 
@@ -8356,83 +8353,59 @@ and
 \]
 
 
-Let functions
-$\function:(\uspace,\uspacesig)\to (\measurespace,\sigmaalgebra)$
-and
-$\functionii:(\uspace,\uspacesig)\to (\measurespaceii,\sigmaalgebraii)$
-be measurable, as illustrated by the following commutative diagrams:
-\[
-\xymatrix@R=16pt@C=34pt{
- & \measurespace
- \\
- \uspace
- \ar[ur]^{\funcf}
- \ar[dr]_{\funcg}
- \ar[r]^{\funcf, \funcg} &
- \measurespace \times \measurespaceii  \ar[u]_\projectionone \ar[d]^\projectiontwo
- \\
- & \measurespaceii  \\
-}
-\qquad
-\xymatrix@R=18pt@C=34pt{
- & & \sigmaalgebra
- \ar[dl]_{\preimage{\funcf}}
- \ar[d]^{\preimage{\projectionone}}
- \ar@/_10pt/[lld]_{\marginalone}
- \\
- [0,1] & \uspacesig \ar[l]_-{\measlambda} &
- \productsig{\sigmaalgebra}{\sigmaalgebraii}
- \ar[l]_{\hskip8pt \preimage{(\funcf,\funcg)}}
- \\
- & & \sigmaalgebraii
-  \ar[u]_{\preimage{\projectiontwo}}
-  \ar[ul]^{\preimage{\funcg}}
-  \ar@/^10pt/[llu]^{\marginaltwo}
-  \\
-}
-\]
-Set $\sigalg{F} = \preimage{\funcf}(\sigmaalgebra)$.
+
+
 Call the  conditional distribution
-$\condprobop{\sigalg{F}}
+$\condprobop{\preimage{\projectionone}(\sigmaalgebra)}
 \circ\,
-\preimage{\funcg}$ of
-$\funcg$
+\preimage{\projectiontwo}$ of
+$\projectiontwo$
 on $\sspacesig$
-given $\sigalg{F}$ the \term{sampling
+given $\preimage{\projectionone}(\sigmaalgebra)$ the \term{sampling
 conditional distribution}, as illustrated:
 \[
 \xymatrix@R=40pt{
-L_1(\uspace,\uspacesig,\measlambda)
-\ar[r]^-{\condexpop{\sigalg{F}}}
-& L_1(\uspace,\uspacesig,\measlambda)
+L_1(
+\measurespace\times\measurespaceii,
+\productsig{\sigmaalgebra}{\sigmaalgebraii},
+\measonprod)
+\ar[r]^-{\condexpop{\preimage{\projectionone}(\sigmaalgebra)}}
+& L_1(\measurespace\times\measurespaceii,
+\productsig{\sigmaalgebra}{\sigmaalgebraii},
+\measonprod)
 \\
-\uspacesig
-\ar[u]^-{Q\, \circ\, \charfunction{}} \ar[ur]_{\condprobop{\sigalg{F}}}
+\productsig{\sigmaalgebra}{\sigmaalgebraii}
+\ar[u]^-{Q\, \circ\, \charfunction{}}
+\ar[ur]_{\condprobop{\preimage{\projectionone}(\sigmaalgebra)}}
 & \sspacesig
-\ar[l]^-{\preimage{\funcg}}
-\ar[u]_{\condprobop{\sigalg{F}}\circ\,\preimage{\funcg}}
+\ar[l]^-{\preimage{\projectiontwo}}
+\ar[u]_{\condprobop{\preimage{\projectionone}(\sigmaalgebra)}\circ\,\preimage{\projectiontwo}}
 }% end \xymatrix
 \]
 
-Set $\sigalg{G} = \preimage{\funcg}(\sigmaalgebraii)$.
+
 Call the  conditional distribution
-$\condprobop{\sigalg{G}}
+$\condprobop{\preimage{\projectiontwo}(\sigmaalgebraii)}
 \circ\,
-\preimage{\funcf}$ of
-$\funcf$
+\preimage{\projectionone}$ of
+$\projectionone$
 on $\pspacesig$
-given $\sigalg{G}$ the \term{posterior conditional distribution}, as illustrated:
+given $\preimage{\projectiontwo}(\sigmaalgebraii)$ the \term{posterior conditional distribution}, as illustrated:
 \[
 \xymatrix@R=40pt{
-L_1(\uspace,\uspacesig,\measlambda)
-\ar[r]^-{\condexpop{\sigalg{G}}}
-& L_1(\uspace,\uspacesig,\measlambda)
+L_1(\measurespace\times\measurespaceii,
+\productsig{\sigmaalgebra}{\sigmaalgebraii},
+\measonprod)
+\ar[r]^-{\condexpop{\preimage{\projectiontwo}(\sigmaalgebraii)}}
+& L_1(\measurespace\times\measurespaceii,
+\productsig{\sigmaalgebra}{\sigmaalgebraii},
+\measonprod)
 \\
-\uspacesig
-\ar[u]^-{Q\, \circ\, \charfunction{}} \ar[ur]_{\condprobop{\sigalg{G}}}
+\productsig{\sigmaalgebra}{\sigmaalgebraii}
+\ar[u]^-{Q\, \circ\, \charfunction{}} \ar[ur]_{\condprobop{\preimage{\projectiontwo}(\sigmaalgebraii)}}
 & \pspacesig
-\ar[l]^-{\preimage{\funcf}}
-\ar[u]_{\condprobop{\sigalg{G}} \circ\, \preimage{\funcf}}
+\ar[l]^-{\preimage{\projectionone}}
+\ar[u]_{\condprobop{\preimage{\projectiontwo}(\sigmaalgebraii)} \circ\, \preimage{\projectionone}}
 }% end \xymatrix
 \]
 
