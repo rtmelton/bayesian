@@ -8295,9 +8295,18 @@ $(\sspace, \sspacesig)$ the
 Let $\projectionone$ and $\projectiontwo$ denote the respective coordinate projections of
 $\pspace\times\sspace$ onto $\pspace$ and $\sspace$. Also let $\preimage{\projectionone}$ and
 $\preimage{\projectiontwo}$ denote the respective induced maps
-$\preimage{\projectionone}:\pspacesig\to\productsig{\pspacesig}{\sspacesig}$
+\[
+\preimage{\projectionone}
+:\pspacesig\to\productsig{\pspacesig}{\sspacesig}
+:\seti \mapsto \seti\times\measurespaceii
+\]
 and
-$\preimage{\projectiontwo}:\sspacesig\to\productsig{\pspacesig}{\sspacesig}$, as illustrated:
+\[
+\preimage{\projectiontwo}
+:\sspacesig\to\productsig{\pspacesig}{\sspacesig}
+:\setii \mapsto \measurespace\times\setii,
+\]
+as illustrated:
 \[
 \xymatrix@R=16pt@C=30pt{
 \pspace
@@ -8445,7 +8454,7 @@ $\pspacesig$ by
 \quad
 \text{for all $\sspaceset\in\sspacesig$ and all $\pspaceset \in \pspacesig$.}
 \]
-Then, by Proposition~\ref{not_a_product_measure}, the given measure $\wouldbeprior$ must actually equal the marginal
+Then, by Proposition~\ref{not_a_product_measure}, the given measure $\wouldbeprior$ is the marginal
 $\prior$.
 If also $\measnu$ is a \textsigma-finite measure on $\sspacesig$
 such that each
@@ -8464,7 +8473,7 @@ with
 $\function
 =
 d\measonprod/d(\prior \times\measnu)^*$,
-and consequently
+and so by Proposition~\ref{mixed_implies_marginal},
 $\measonprod\abscont (\prior\times\predictive)^*$.
 Further, if the function
 $\funcg: \pspace\times\sspace\to\R$ is defined by setting
@@ -8479,19 +8488,7 @@ then
 $\functionii
 =
 d\measonprod/d(\prior\times\predictive)^*$.
-This implies that $\predictive \abscont \measnu$ on $\sspacesig$, for if $\sspaceset\in\sspacesig$, then
-\[
-\predictive(\sspaceset)
-= \measonprod(\pspace \times \sspaceset)
-= \int_{\pspace \times \sspaceset} \function \, d(\prior\times\measnu)
-= \int_\sspaceset\left( \int_\pspace \function(\pspaceelt, \sspaceelt)\,d\prior(x)\right) d\measnu(\sspaceelt).
-\]
-This says
-\[
-\frac{d\predictive}{d\measnu}:
-\sspace\to\R:
-\sspaceelt\mapsto \int_\pspace \function(\pspaceelt,\sspaceelt)\,d\prior(x).
-\]
+
 
 The family $\{ P_\pspaceelt :\pspaceelt\in\pspace \}$ of probability measures on the sample space \textsigma-algebra $\sspacesig$ must satisfy
 \[
