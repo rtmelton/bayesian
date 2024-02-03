@@ -3983,6 +3983,38 @@ This is nothing but an application of Proposition~\ref{reference_implies_margina
 \end{proof}
 
 
+\begin{prop}\label{mixed_implies_miracle}
+Let
+$(\measurespace, \sigmaalgebra)$
+and
+$(\measurespaceii, \sigmaalgebraii)$
+be measurable spaces,
+and let $\measnu$
+be a \textsigma-finite measure on $\sigmaalgebraii$.
+Let $\measonprod$ be a finite measure on
+$\productsig{\sigmaalgebra}{\sigmaalgebraii}$.
+If\,
+$\measonprod \abscont (\marginalone\times\measnu)^*$, then
+\[
+\int_\setii
+\dfrac{d\measonprod}{d(\marginalone\times\measnu)^*}(\mspaceelt,\mspaceeltii)
+\, d\measnu(\mspaceeltii)
+=
+\int_\setii
+\dfrac{d\measonprod}{d(\marginalone\times\marginaltwo)^*}(\mspaceelt,\mspaceeltii)
+\, d\marginaltwo(\mspaceeltii)
+\]
+for all $\setii \in \sigmaalgebraii$.
+\end{prop}
+
+\begin{proof}
+This is just a corollary to the first half of Proposition~\ref{mixed_implies_marginal}
+with a change of measure according to
+$d\marginaltwo = (d\marginaltwo / d\measnu)\, d\measnu$.
+\end{proof}
+
+
+
 \begin{prop}\label{mixed_implies_half}
 Let
 $(\measurespace, \sigmaalgebra)$
@@ -8219,6 +8251,8 @@ $\funcg(\uspaceelt)=\mspaceeltii$, as required.
 %*********************************************************
 %*********************************************************
 %*********************************************************
+\textbf{Fix the Markov kernels.}
+
 \lettrine{S}{tatistics} is a mathematical analysis of guesswork. This kind of guesswork is called inductive inference.
 Its purpose is to identify a probability distribution or a conditional distribution. The particular kind of guesswork we will use is considered \emph{Bayesian} since it involves a parameter that induces a  probability distribution. A parameter here is just a measurable function.
 
@@ -8444,24 +8478,28 @@ P^\setii
 \]
 is $\bigl(\sigmaalgebra,\borel_{[0,1]}\bigr)$\hyp{}measurable.
 Also suppose the joint probability measure $\joint$  is defined in terms of
-a given probability measure $\wouldbeprior$ on the parameter space \textsigma-algebra
+a given \emph{prior} probability measure $\wouldbeprior$ on the parameter space \textsigma-algebra
 $\pspacesig$ by
 \[
 \measonprod(\pspaceset\times\sspaceset)
-=
+\definedby
 \int_\pspaceset P^\sspaceset(\pspaceelt)
 \, d\wouldbeprior(\pspaceelt)
 \quad
 \text{for all $\sspaceset\in\sspacesig$ and all $\pspaceset \in \pspacesig$.}
 \]
-Then, by Proposition~\ref{not_a_product_measure}, the given measure $\wouldbeprior$ is the marginal
+Then, by Proposition~\ref{not_a_product_measure}, the given \emph{prior} probability measure
+$\wouldbeprior$ must equal the marginal, or \emph{prior}, probability distribution
 $\prior$.
 If also $\measnu$ is a \textsigma-finite measure on $\sspacesig$
 such that each
 $P_\pspaceelt\abscont \measnu$, and if
 $\funcf : \pspace\times\sspace\to\R$ is a
 $\bigl(\productsig{\pspacesig}{\sspacesig},\borel_\R\bigr)$\hyp{}measurable function
-such that each $\funcf_\pspaceelt$ is equal to the Radon-Nikodym derivative:
+such that each
+$\funcf_\pspaceelt:
+\measurespaceii\to\R$
+is equal to the Radon-Nikodym derivative:
 \begin{equation}\label{as_density}
 \function_\pspaceelt
 =
@@ -8487,7 +8525,8 @@ d\prior(\pspaceelt)},
 then
 $\functionii
 =
-d\measonprod/d(\prior\times\predictive)^*$.
+d\measonprod/d(\prior\times\predictive)^*$
+by Proposition~\ref{mixed_implies_marginal}.
 
 
 The family $\{ P_\pspaceelt :\pspaceelt\in\pspace \}$ of probability measures on the sample space \textsigma-algebra $\sspacesig$ must satisfy
@@ -8498,8 +8537,10 @@ P_\pspaceelt(\sspaceset)
 \, d\predictive(\sspaceelt)
 \quad \text{for all $\sspaceset\in\sspacesig$},
 \]
-and a family $\{ \prior_\sspaceelt :\sspaceelt\in\sspace \}$ of probability measures on the parameter space \textsigma-algebra $\pspacesig$, defined for those
-$\sspaceelt\in\sspace$ such that $\funcf^\sspaceelt$ is integrable with respect to $\prior$, is defined by
+by Proposition~\ref{mixed_implies_miracle},
+and the family $\{ \prior_\sspaceelt :\sspaceelt\in\sspace \}$ of probability measures on the parameter space \textsigma-algebra $\pspacesig$, defined for those
+$\sspaceelt\in\sspace$ such that $\funcf^\sspaceelt$ is integrable with respect to
+$\prior$, is defined by
 \begin{equation}\label{bayes_eq}
 \prior_\sspaceelt(\pspaceset)
 =
