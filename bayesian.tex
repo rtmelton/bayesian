@@ -617,7 +617,7 @@ label=#1}
 
 
 \addchap{Preface}
-\lettrine{T}{\,hese} notes were never initially intended for anyone else to look at.
+\lettrine{T}{\,hese} notes were not initially intended for anyone else to look at.
 I am working to make them easier on the eyes.
 
 Feel free to contact me. I am willing to share ideas.
@@ -1737,9 +1737,12 @@ The $\range {\overline \phi} = \range \phi$ and the $\kernel {\overline \phi} =(
 
 
 \begin{rmk}
-The $L_p(\measurespace, \semiring, \measure)$ spaces can be comparable; for example, let $(\measurespace, \semiring, \measure)$ be a finite measure space, then the quotient space $L_2(\measurespace, \semiring, \measure)$ is a vector subspace of the quotient space
-$L_1(\measurespace, \semiring, \measure)$. This is the heart of the correspondence theorem, stated in Proposition~\ref{correspondence_theorem},  which extends to vector spaces, and it would be necessary that 
-$\cali{N}_2(\measurespace, \semiring, \measure) = \cali{N}_1(\measurespace, \semiring, \measure)$
+The $L_p(\measurespace, \semiring, \measure)$ spaces can be comparable; for example, let
+$(\measurespace, \semiring, \measure)$ be a finite measure space, then the quotient space $L_2(\measurespace, \semiring, \measure)$ is a vector subspace of the quotient space
+$L_1(\measurespace, \semiring, \measure)$. This is the heart of the correspondence theorem, stated in Proposition~\ref{correspondence_theorem},  which extends to vector spaces, and it would be necessary that the kernel
+$\cali{N}_2(\measurespace, \semiring, \measure)$
+be equal to
+$\cali{N}_1(\measurespace, \semiring, \measure)$
 in order for the proposition to apply.
 The result then that 
 $L_2(\measurespace, \semiring, \measure)$ is a vector subspace of
@@ -4583,7 +4586,7 @@ then the subset of $\measurespace$ defined by
 \int_\measurespaceii \functionii \function \,d\measnu 
 \right\}
 \]
-has $\measure(\seti) = 1$.
+is such that  $\measure(\seti) = 1$.
 \end{prop}
 
 \begin{proof}
@@ -4723,7 +4726,8 @@ which completes the proof.
 
 We are supposing that the `$\sigmaalgebra$' in any probability space $(\measurespace, \sigmaalgebra,\measure)$ is a
 $\textsigma$-algebra, as opposed to merely a semi-ring.
-The reason for supposing this is because the Radon-Nikodym theorem applies to measurable spaces.
+The reason for supposing this is because the Radon-Nikodym theorem applies to measurable spaces, such as
+$(\measurespace, \sigmaalgebra)$.
 
 
 \begin{defnboldnote}
@@ -4734,7 +4738,7 @@ The reason for supposing this is because the Radon-Nikodym theorem applies to me
 \nomenclature[conditional expectation a]{$\condexpsub{{\lebclass{\funcf}}}{\sigmaalgebraii}$}{conditional expectation in $L_1(\measurespace, \sigmaalgebra,\measure)$}
 Let $(\measurespace, \sigmaalgebra,\measure)$ be a probability space.
 For each class
-$\lebclass{\function}$ in $L_1(\measurespace, \sigmaalgebra,\measure)$,
+$\lebclass{\funcf}$ in $L_1(\measurespace, \sigmaalgebra,\measure)$,
 the \textbf{conditional mathematical expectation}
 $\condexpsub{{\lebclass{\funcf}}}{\sigmaalgebraii}$
 of $\lebclass{\funcf}$
@@ -4748,14 +4752,48 @@ $\funcg$
 such that
 %
 \[
-\int_\setii \function\, d\measure 
+\int_\setii \funcf\, d\measure
 = 
-\int_\setii \functionii\, d\measure 
+\int_\setii \funcg\, d\measure
 \quad\text{for all $\setii \in \sigmaalgebraii$}.
 \]
 \end{defnboldnote}
 
 
+
+\begin{rmk}
+\label{idempotent}
+Should a class
+$\lebclass{\funcf}$
+in $L_1(\measurespace, \sigmaalgebra,\measure)$
+have a $(\sigmaalgebraii,\borel_\R)$\hyp{}measurable representative,
+say the function $\funcf$ itself is $(\sigmaalgebraii,\borel_\R)$\hyp{}measurable,
+then
+$\condexpsub{{\lebclass{\funcf}}}{\sigmaalgebraii}
+=
+\lebclass{\funcf}$
+since trivially
+\[
+\int_\setii \funcf\, d\measure
+=
+\int_\setii \funcf\, d\measure
+\quad\text{for all $\setii \in \sigmaalgebraii$}.
+\]
+Since by definition the class
+$\condexpsub{{\lebclass{\funcf}}}{\sigmaalgebraii}$ does have a
+$(\sigmaalgebraii,\borel_\R)$\hyp{}measurable representative function,
+it follows that
+$\condexpop{\sigmaalgebraii } (\condexpsub{ \lebclass{\funcf} }{ \sigmaalgebraii })
+=
+\condexpsub{ \lebclass{\funcf} }{ \sigmaalgebraii }.$
+Another way of saying this is that
+$\condexpop{\sigmaalgebraii}\circ\condexpop{\sigmaalgebraii}
+=
+\condexpop{\sigmaalgebraii}$
+on $L_1 (\measurespace, \sigmaalgebra,\measure)$, or rather, the operator
+$\condexpop{\sigmaalgebraii}$ is idempotent
+on $L_1 (\measurespace, \sigmaalgebra,\measure)$.
+\end{rmk}
 
 
 
@@ -5790,15 +5828,15 @@ $e$
 in
 $\cali{L}_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$
 represent the class 
-$\kondexpsub{\ellclass{\functionii}{\measure}}{B}$
+$\kondexpsub{\ellclass{\functionii}{\measure}}{\sigalg{B}}$
 of the quotient space
 $L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$.
-It means that the equivalence classes
+This says that the equivalence classes
 $\ellclass{e}{\measure\restrictedto{\sigmaalgebraii}}$
 and
-$\kondexpsub{\ellclass{\functionii}{\measure}}{B}$ of
+$\kondexpsub{\ellclass{\functionii}{\measure}}{\sigalg{B}}$ of
 $L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$
-are the same.
+are actually the same.
 Let the set
 $C\in\measurable{\Psubstar{\sigmaalgebraii}}$,
 and so by Proposition~\ref{measurable_inclusion}, $C$ is also in
@@ -10241,6 +10279,342 @@ Divide both sides of (3) by $p(\mspaceeltii\mid\mspaceeltiii)$.
 
 
 
+%***************************************************************
+%***************************************************************
+\chapter{Expectation Operators as Projections}
+%\section{Orthogonal Projections}
+%\input{chapters/orthogonalprojections}
+\newcommand{\proj}{\mathfrak{Proj}}
+\newcommand{\projsub}[1]{\mathop{\proj\kern-1pt}\nolimits_#1}
+\newcommand{\projgvn}[2]
+{\mathop{\proj}\nolimits(#2,#1)}
+\newcommand{\raum}[1]{\mathfrak{#1}}
+\newcommand{\inner}[2]{\left\langle#1,#2\right\rangle}
+\newcommand{\hilbertspace}{\mathfrak{H}}
+\newcommand{\hilbertsubspace}{\mathfrak{M}}
+\newcommand{\helt}{x}
+\newcommand{\heltii}{y}
+\newcommand{\hortho}{e_1}
+\newcommand{\horthoii}{e_2}
+\newcommand{\horthoi}{e_i}
+\newcommand{\horthon}{e_n}
+
+\lettrine{A}{n orthogonal} projection on a Hilbert space is a linear idempotent whose kernel is orthogonal to its range.
+There is a one-to-one correspondence between the closed subspaces of a Hilbert space and its orthogonal projections.
+Let $\hilbertspace$ be a Hilbert space, and let $\hilbertsubspace$ be a closed subspace of $\hilbertspace$. To each $\helt\in\hilbertspace$ there corresponds a unique element of $\hilbertsubspace$, denoted here by
+$\proj(\helt)$,  such that
+$\helt-\proj(\helt) \perp \hilbertsubspace$.
+The map $\hilbertspace \to \hilbertspace$ defined by
+$\helt\mapsto \proj(\helt)$ is called the orthogonal projection of
+$\hilbertspace$ onto $\hilbertsubspace$ along ${\hilbertsubspace}^\perp$, or simply the
+\emph{orthogonal projection of $\boldsymbol{\hilbertspace}$
+onto $\boldsymbol{\hilbertsubspace}$}.
+
+Orthogonal projections are contractive in the sense that any nonzero orthogonal projection on a Hilbert space has norm equal to 1.
+For $\helt$ and $\heltii$ in $\hilbertspace$, we let
+$\inner{\helt}{\heltii}$ denote their inner product.
+
+\begin{prop}
+Let $\hilbertspace$ be a Hilbert space, and let $\hilbertsubspace$ be a closed subspace of $\hilbertspace$, where $\proj :\hilbertspace \to \hilbertspace$ is the orthogonal projection of $\hilbertspace$ onto $\hilbertsubspace$. Fix $\helt\in \hilbertspace$. Then $\proj(\helt)$ is that element of $\hilbertsubspace$ which is closest to $\helt$, meaning that
+\[
+\norm{\helt-\proj(\helt)}<\norm{\helt-\heltii}
+\]
+for all $\heltii$ in the subspace $\hilbertsubspace$ such that
+$\proj(\helt)\neq \heltii$.
+\end{prop}
+
+
+
+\begin{prop}
+Let $\{\hortho, \horthoii, \ldots, \horthon\}$ be an orthonormal set in a Hilbert space $\hilbertspace$, and let $\proj:\hilbertspace \to \hilbertspace$ be the orthogonal projection of $\hilbertspace$ onto the
+$\raum{Span}\{\hortho, \horthoii, \ldots, \horthon\}$.
+Fix $\helt\in\hilbertspace$. Then
+$\proj(\helt) = \sum_{i=1}^{n} \inner{\helt}{\horthoi}\horthoi$.
+That is,
+\[
+\norm{\helt - \sum_{i=1}^n a_i \horthoi} <
+\norm{\helt-\heltii}
+\]
+for all
+$\heltii$ in the $\raum{Span}\{\hortho, \horthoii, \ldots, \horthon\}$
+such that $\proj(\helt)\neq \heltii$
+if and only if  each scalar  $a_i$ equals the Fourier coefficient
+$\inner{\helt}{\horthoi}$ of $\helt$.
+\end{prop}
+
+
+
+
+
+\section{Expectation as Projection}
+\begin{quoting}
+\textbf{In order to complete this section,}
+you should look at the case in which the \textsigma\hyp{}subalgebra is generated by a finite partition.  After all, this is always the case you will be using when doing any computer modeling.
+
+It means wheeling in a decent exposition of the finite case. Use Cheng\hyp{}Shang Chang's,
+\textsl{Understanding Conditional Expectation via Vector Projection.}
+Then decide how far you want to go with this. Can you do better than
+\textsl{A Deep Dive Into How R Fits a Linear Model} from
+\cf{http://madrury.github.io/}?
+\end{quoting}
+
+\textbf{For the discussion that follows, you state that
+$\condexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}
+\in
+L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$.
+Is this correct?}
+
+%
+\begin{discussion}
+Let $(\measurespace, \sigmaalgebra,\measure)$ be a  probability space, and let
+$\sigmaalgebraii$ be a $\textsigma$-subalgebra of $\sigmaalgebra$.
+The conditional expectation operator
+$
+\condexpop{\sigmaalgebraii}$
+on
+$L_1 (\measurespace, \sigmaalgebra,\measure)$
+is idempotent; namely, if $\ellclass{\function}{\measure}\in L_1(\measurespace, \sigmaalgebra,\measure)$, then
+$\condexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}
+\in
+L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$,
+and so by Proposition~\ref{subalgebra_fixed},
+\[
+\condexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}
+=
+\condexpsub{{(\condexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}})}
+{\sigmaalgebraii}.
+\]
+That is,
+$\condexpop{\sigmaalgebraii} =
+\condexpop{\sigmaalgebraii}\circ\condexpop{\sigmaalgebraii}$
+on $L_1 (\measurespace, \sigmaalgebra,\measure)$.
+\end{discussion}
+
+\textbf{The inclusion in Discussion~\ref{not_a_subspace} is really an embedding;
+see Discussion~\ref{L1_subspace_embedding}.
+Change your subsets to embeddings.}
+
+
+\begin{discussion}\label{not_a_subspace}
+Let us see how the operator
+$\condexpop{\sigmaalgebraii}$ restricts to
+$L_2(\measurespace, \sigmaalgebra,\measure)$.
+The subspace
+$L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$
+of the  space
+$L_2(\measurespace, \sigmaalgebra,\measure)$ is closed.
+Because the operator $\condexpop{\sigmaalgebraii}$ is contractive, it follows that
+$\condexpop{\sigmaalgebraii}$ maps
+$L_2(\measurespace, \sigmaalgebra,\measure)$
+into
+$L_2(\measurespace, \sigmaalgebra,\measure)$.
+We will denote the restriction of $\condexpop{\sigmaalgebraii}$ to
+$L_2(\measurespace, \sigmaalgebra,\measure)$ by
+$\condexpop{\sigmaalgebraii}\kern-2pt\vert$.
+By definition, the range of the operator
+$\condexpop{\sigmaalgebraii}:
+L_2(\measurespace, \sigmaalgebra,\measure)
+\to
+L_2(\measurespace, \sigmaalgebra,\measure)$
+is a subspace of
+$L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$,
+but then by Proposition~\ref{subalgebra_fixed}, the subspace
+$L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$
+is fixed by
+$\condexpop{\sigmaalgebraii}$, and so the range of
+$\condexpop{\sigmaalgebraii}$
+is actually equal to
+$L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$.
+\end{discussion}
+
+
+\begin{rmk}
+Some implications are used without much fanfare; namely, if the classes $\ellclass{\function}{\measure}$ and
+$\ellclass{\functionii}{\measure}$ are in
+$L_2(\measurespace, \sigmaalgebra,\measure)$, then the product
+$\ellclass{\function}{\measure}\ellclass{\functionii}{\measure}
+= \ellclass{\function\functionii}{\measure}$ is in
+$L_1(\measurespace, \sigmaalgebra,\measure)$. This is a routine application of the Cauchy-Schwarz inequality, considered to be the $2+2$ of higher mathematics.
+\end{rmk}
+
+
+
+
+\begin{prop}\label{projection_proposition}
+Let $(\measurespace, \sigmaalgebra,\measure)$ be a  probability space, and let
+$\sigmaalgebraii$ be a $\textsigma$-subalgebra of $\sigmaalgebra$.
+The conditional expectation operator
+$
+\condexpop{\sigmaalgebraii}:
+L_2(\measurespace, \sigmaalgebra,\measure)\to
+L_2(\measurespace, \sigmaalgebra,\measure)
+$
+is  the unique orthogonal projection of the Hilbert space $L_2(\measurespace, \sigmaalgebra,\measure)$ onto the closed subspace $L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$.
+\end{prop}
+
+
+
+\begin{proof}
+To show that $\condexpop{\sigmaalgebraii}$ is the orthogonal projection of
+$L_2(\measurespace, \sigmaalgebra,\measure)$
+onto
+$L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$, we need to show that to each $\function\in L_2(\measurespace, \sigmaalgebra,\measure)$ there corresponds a unique element of
+$L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$, in this case
+$\condexpsub{\function}{\sigmaalgebraii}$,
+such that
+$\function - \condexpsub{\function}{\sigmaalgebraii} \perp \functioniii$ for all $\functioniii\in
+L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$.
+
+
+We first show that if
+$\function\in L_2(\measurespace, \sigmaalgebra,\measure)$,
+then
+$\function - \condexpsub{\function}{\sigmaalgebraii} \perp \functioniii$ for all $\functioniii\in
+L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$.
+Let
+$\function \in L_2(\measurespace, \sigmaalgebra,\measure)$.
+We must show that
+\[
+\inner{\function - \condexpsub{\function}{\sigmaalgebraii}}{\functioniii}=0
+\quad
+\text{for all
+$\functioniii\in L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$},
+\]
+which is equivalent to showing that
+\[
+\inner{\function}{\functioniii} = \inner{\condexpsub{\function}{\sigmaalgebraii}}{\functioniii}
+\quad
+\text{for all
+$\functioniii\in L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$},
+\]
+and in turn, this means showing that
+\[
+\expvalof{\function\functioniii} = \expvalof{\functioniii \condexpsub{\function}{\sigmaalgebraii}}
+\quad
+\text{
+for all
+$\functioniii\in L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$}.
+\]
+Let $\functioniii\in L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$.
+In order to apply Proposition~\ref{measurable_functions_factor_out},
+check first that
+$\function \in L_1(\measurespace, \sigmaalgebra,\measure)$, and this is because
+$\function \in L_2(\measurespace, \sigmaalgebra,\measure)$ and
+$L_2(\measurespace, \sigmaalgebra,\measure) \subseteq
+L_1(\measurespace, \sigmaalgebra,\measure)$ (since the measure space is finite).
+Next check that
+$\functioniii$ is
+$(\sigmaalgebraii, \borel_\R)$\hyp{}measurable
+since
+$\functioniii\in L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$.
+Finally check that $\function\functioniii\in L_1(\measurespace, \sigmaalgebra,\measure)$ by Cauchy-Schwarz.
+Therefore,
+since
+$\function \in L_1(\measurespace, \sigmaalgebra,\measure)$ and
+$\functioniii:\measurespace\to\R$ is $(\sigmaalgebraii, \borel_\R)$\hyp{}measurable with
+$\function\functioniii\in L_1(\measurespace, \sigmaalgebra,\measure)$,
+it follows by Proposition~\ref{measurable_functions_factor_out} that
+$\expvalof{\function\functioniii} = \expvalof{\functioniii \condexpsub{\function}{\sigmaalgebraii}}$, as required.
+
+We now show the uniqueness part; namely we show that if
+$\function\in L_2(\measurespace, \sigmaalgebra,\measure)$, then
+$\condexpsub{\function}{\sigmaalgebraii}$ is the
+unique element of
+$L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$
+such that
+$\function - \condexpsub{\function}{\sigmaalgebraii} \perp \functioniii$ for all $\functioniii\in
+L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$.
+Let
+$\function\in L_2(\measurespace, \sigmaalgebra,\measure)$,
+and suppose that there is a
+$\functionii \in L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$
+having the property that
+$\function-\functionii\perp \functioniii$ for all $\functioniii\in
+L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$.
+We want to see that this implies $\functionii$ must equal
+$\condexpsub{\function}{\sigmaalgebraii}$.
+To say that
+\[
+\function-\functionii\perp \functioniii
+\quad\text{for all $\functioniii\in
+L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$}
+\]
+means saying that
+\[
+\inner{\function-\functionii}{\functioniii} = 0
+\quad\text{for all
+$\functioniii\in L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$},
+\]
+or equivalently that
+\[
+\inner{\function}{\functioniii} = \inner{\functionii}{\functioniii}
+\quad\text{for all
+$\functioniii\in L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$}.
+\]
+In terms of integrals, this says
+\[
+\int_\measurespace \function\functioniii \, d\measure
+=
+\int_\measurespace \functionii\functioniii \, d\measure
+\quad\text{
+for all
+$\functioniii\in L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$}.
+\]
+In particular, for every $B\in\sigmaalgebraii$, the characteristic function
+$\charfunction{B}$ is in
+$L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$, and so
+\[
+\int_\measurespace \function\charfunction{B} \, d\measure
+=
+\int_\measurespace \functionii\charfunction{B} \, d\measure
+\quad\text{for all
+$B\in\sigmaalgebraii$}.
+\]
+Since
+$\functionii\charfunction{B}
+\in L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$
+for every $B\in\sigmaalgebraii$, by Cauchy-Schwarz,
+it follows by Proposition~\ref{integral_over_subalgebra} that
+\[
+\int_\measurespace \functionii\charfunction{B}\, d\measure
+=
+\int_\measurespace \functionii\charfunction{B}\, d\measure\restrictedto{\sigmaalgebraii}
+\quad\text{for all
+$B\in\sigmaalgebraii$}.
+\]
+Consequently,
+\[
+\int_\measurespace \function\charfunction{B} \, d\measure
+=
+\int_\measurespace \functionii\charfunction{B} \, d\measure\restrictedto{\sigmaalgebraii}
+\quad
+\text{for all
+$B\in\sigmaalgebraii$,}
+\]
+which is the same as saying that
+\[
+\int_B \function \, d\measure
+=
+\int_B \functionii \, d\measure\restrictedto{\sigmaalgebraii}
+\quad\text{for all $B\in\sigmaalgebraii$.}
+\]
+This means that $\functionii = \condexpsub{\function}{\sigmaalgebraii}$;  in fact, this is the defining feature of $\condexpsub{\function}{\sigmaalgebraii}$, which completes the proof.
+\end{proof}
+
+
+
+\begin{example}
+Let $(\measurespace, \sigmaalgebra,\measure)$ be a  probability space, and let
+$\sigmaalgebraii$ be the smallest $\textsigma$-subalgebra of $\sigmaalgebra$, namely $\{\measurespace, \mtset\}$.
+Then the conditional expectation operator
+$\condexpop{\sigmaalgebraii} :\Lone\to\Lone$ is equal to the expected value operator $\expval$ times the class containing the constant function $\oneonomega$
+on
+$\Lone$, meaning
+$\condexpop{\sigmaalgebraii}(\ellclass{\functionii}{\measure})
+= \expval{\ellclass{\functionii}{\measure}}\cdot\ellclass{\oneonomega}{\measure}$
+for all $\ellclass{\functionii}{\measure} \in \Lone$. In this case, the closed subspace $L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$ consists of all classes that are constant $\Psubstar{\sigalgb}$-almost everywhere on $\measurespace$.
+Recall Discussion~\ref{the_cheapest_subalgebra}.
+\end{example}
 
 
 
