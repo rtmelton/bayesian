@@ -2104,7 +2104,7 @@ $\sigmaalgebra =
 \seti\comp,
 \measurespace
 \}$
-with Dirac measure $\diracmeasure{\mspaceelt}$ concentrated at a point $\mspaceelt\in\seti$, with $\seti$ non-empty, and with $\seti$ not equal to $\measurespace$. 
+with $\measure$ being Dirac measure $\diracmeasure{\mspaceelt}$ concentrated at a point $\mspaceelt\in\seti$, with $\seti$ non-empty, and with $\seti$ not equal to $\measurespace$.
 Let
 $\sigmaalgebraii = 
 \{ 
@@ -10349,81 +10349,10 @@ Then decide how far you want to go with this. Can you do better than
 \cf{http://madrury.github.io/}?
 \end{quoting}
 
-\textbf{For the discussion that follows, you state that
-$\condexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}
-\in
-L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$.
-Is this correct?} [Edit: No, it cannot possibly correct since
-$L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$
-is not a subspace of
-$L_1 (\measurespace, \sigmaalgebra,\measure)$.  That would contradict the correspondence theorem.]
-
-%
-\begin{discussion}
-Let $(\measurespace, \sigmaalgebra,\measure)$ be a  probability space, and let
-$\sigmaalgebraii$ be a $\textsigma$-subalgebra of $\sigmaalgebra$.
-The conditional expectation operator
-$
-\condexpop{\sigmaalgebraii}$
-on
-$L_1 (\measurespace, \sigmaalgebra,\measure)$
-is idempotent; namely, if $\ellclass{\function}{\measure}\in L_1(\measurespace, \sigmaalgebra,\measure)$, then
-$\condexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}
-\in
-L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$,
-and so by Remark~\ref{idempotent},
-\[
-\condexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}
-=
-\condexpsub{{(\condexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}})}
-{\sigmaalgebraii}.
-\]
-That is,
-$\condexpop{\sigmaalgebraii} =
-\condexpop{\sigmaalgebraii}\circ\condexpop{\sigmaalgebraii}$
-on $L_1 (\measurespace, \sigmaalgebra,\measure)$.
-\end{discussion}
-
-\textbf{The inclusion in Discussion~\ref{not_a_subspace} is really an embedding;
-see Discussion~\ref{L1_subspace_embedding}.
-Change your subsets to embeddings.}
-
-
-\begin{discussion}\label{not_a_subspace}
-Let us see how the operator
-$\condexpop{\sigmaalgebraii}$ restricts to
-$L_2(\measurespace, \sigmaalgebra,\measure)$.
-The subspace
-$L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$
-of the  space
-$L_2(\measurespace, \sigmaalgebra,\measure)$ is closed.
-Because the operator $\condexpop{\sigmaalgebraii}$ is contractive, it follows that
-$\condexpop{\sigmaalgebraii}$ maps
-$L_2(\measurespace, \sigmaalgebra,\measure)$
-into
-$L_2(\measurespace, \sigmaalgebra,\measure)$.
-We will denote the restriction of $\condexpop{\sigmaalgebraii}$ to
-$L_2(\measurespace, \sigmaalgebra,\measure)$ by
-$\condexpop{\sigmaalgebraii}\kern-2pt\vert$.
-By definition, the range of the operator
-$\condexpop{\sigmaalgebraii}:
-L_2(\measurespace, \sigmaalgebra,\measure)
-\to
-L_2(\measurespace, \sigmaalgebra,\measure)$
-is a subspace of
-$L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$,
-but then by Remark~\ref{idempotent}, the subspace
-$L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$
-is fixed by
-$\condexpop{\sigmaalgebraii}$, and so the range of
-$\condexpop{\sigmaalgebraii}$
-is actually equal to
-$L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$.
-\end{discussion}
 
 
 \begin{rmk}
-Some implications are used without much fanfare; namely, if the classes $\ellclass{\function}{\measure}$ and
+Some implications may be used without much fanfare; namely, if the classes $\ellclass{\function}{\measure}$ and
 $\ellclass{\functionii}{\measure}$ are in
 $L_2(\measurespace, \sigmaalgebra,\measure)$, then the product
 $\ellclass{\function}{\measure}\ellclass{\functionii}{\measure}
@@ -10438,27 +10367,44 @@ $L_1(\measurespace, \sigmaalgebra,\measure)$. This is a routine application of t
 Let $(\measurespace, \sigmaalgebra,\measure)$ be a  probability space, and let
 $\sigmaalgebraii$ be a $\textsigma$-subalgebra of $\sigmaalgebra$.
 The conditional expectation operator
-$
-\condexpop{\sigmaalgebraii}:
-L_2(\measurespace, \sigmaalgebra,\measure)\to
-L_2(\measurespace, \sigmaalgebra,\measure)
-$
-is  the unique orthogonal projection of the Hilbert space $L_2(\measurespace, \sigmaalgebra,\measure)$ onto the closed subspace $L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$.
+$\condexpop{\sigmaalgebraii}$
+restricted to
+$L_2(\measurespace, \sigmaalgebra,\measure)$
+is  the unique orthogonal projection of the Hilbert space $L_2(\measurespace, \sigmaalgebra,\measure)$ onto the closed subspace
+$\L1embedding
+\bigl(
+L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})
+\bigr)
+$.
 \end{prop}
 
 
 
 \begin{proof}
-To show that $\condexpop{\sigmaalgebraii}$ is the orthogonal projection of
-$L_2(\measurespace, \sigmaalgebra,\measure)$
-onto
-$L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$, we need to show that to each $\function\in L_2(\measurespace, \sigmaalgebra,\measure)$ there corresponds a unique element of
-$L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$, in this case
-$\condexpsub{\function}{\sigmaalgebraii}$,
+Let $\hilbertsubspace$ denote the subspace
+$\L1embedding\bigl(
+L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})
+\bigr)$.
+We will show that to each
+$\lebclass{\funcf} \in L_2(\measurespace, \sigmaalgebra,\measure)$
+there corresponds a unique element of
+$\hilbertsubspace$,
+in this case
+$\condexpsub{\lebclass{\funcf}}{\sigmaalgebraii}$,
 such that
-$\function - \condexpsub{\function}{\sigmaalgebraii} \perp \functioniii$ for all $\functioniii\in
-L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$.
+$\lebclass{\funcf} - \condexpsub{\lebclass{\funcf}}{\sigmaalgebraii}
+\perp
+\lebclass{\funch}$ for all
+$\lebclass{\funch} \in
+\hilbertsubspace $, for then the map
+$\lebclass{\funcf}
+\mapsto
+\condexpsub{\lebclass{\funcf}}{\sigmaalgebraii}$
+is the orthogonal projection of
+$L_2(\measurespace, \sigmaalgebra,\measure)$
+onto $\hilbertsubspace$, per the first paragraph of this chapter.
 
+\textbf{Clean up to here.}
 
 We first show that if
 $\function\in L_2(\measurespace, \sigmaalgebra,\measure)$,
@@ -10607,7 +10553,7 @@ $\Lone$, meaning
 $\condexpop{\sigmaalgebraii}(\ellclass{\functionii}{\measure})
 = \expval{\ellclass{\functionii}{\measure}}\cdot\ellclass{\oneonomega}{\measure}$
 for all $\ellclass{\functionii}{\measure} \in \Lone$. In this case, the closed subspace $L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$ consists of all classes that are constant $\Psubstar{\sigalgb}$-almost everywhere on $\measurespace$.
-Recall Discussion~\ref{the_cheapest_subalgebra}.
+See Discussion~\ref{the_cheapest_subalgebra}.
 \end{example}
 
 
