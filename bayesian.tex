@@ -4722,28 +4722,30 @@ which completes the proof.
 %*********************************************************
 %*********************************************************
 
-\lettrine{C}{onditional} mathematical expectation is not difficult to define, but there \emph{seems} to be a subtlety in the proof of its existence, especially when it comes to applying the Radon-Nikodym theorem.
+\lettrine{C}{onditional} mathematical expectation is not difficult to define, but there seems to be some subtlety in the proof of its existence, especially when it comes to applying the Radon-Nikodym theorem.
 
 We are supposing that the `$\sigmaalgebra$' in any probability space $(\measurespace, \sigmaalgebra,\measure)$ is a
-$\textsigma$-algebra, as opposed to merely a semi-ring.
+$\textsigma$\hyp{}algebra, as opposed to merely a semi\hyp{}ring.
 The reason for supposing this is because the Radon-Nikodym theorem applies to measurable spaces, such as
 $(\measurespace, \sigmaalgebra)$.
 
 
 \begin{defnboldnote}
 \label{cme_sigma_algebra}
-\index{conditional expectation with respect to a sigma algebra@conditional expectation with respect to a $\textsigma$-algebra}
+\index{conditional expectation with respect to a sigma algebra@conditional expectation with respect to a $\textsigma$\hyp{}algebra}
 %Do \nomenclature[prefix]{symbol}{description}
 %where prefix is used to order the symbol in the Nomenclature list.
 \nomenclature[conditional expectation a]{$\condexpsub{{\lebclass{\funcf}}}{\sigmaalgebraii}$}{conditional expectation in $L_1(\measurespace, \sigmaalgebra,\measure)$}
-Let $(\measurespace, \sigmaalgebra,\measure)$ be a probability space.
+Let $(\measurespace, \sigmaalgebra,\measure)$ be a probability space, and let
+$\sigmaalgebraii$ be a \textsigma\hyp{}subalgebra of $\sigmaalgebra$.
 For each class
 $\lebclass{\funcf}$ in $L_1(\measurespace, \sigmaalgebra,\measure)$,
 the \textbf{conditional mathematical expectation}
 $\condexpsub{{\lebclass{\funcf}}}{\sigmaalgebraii}$
 of $\lebclass{\funcf}$
-with respect to the \textsigma-algebra
-$\sigmaalgebraii$, or simply the \emph{conditional expectation} of
+with respect to
+$\sigmaalgebraii$,
+or simply the \emph{conditional expectation} of
 $\lebclass{\function}$ with respect to $\sigmaalgebraii$,
 is the unique class in
 $L_1(\measurespace, \sigmaalgebra,\measure)$
@@ -4779,7 +4781,7 @@ since trivially
 \int_\setii \funcf\, d\measure
 \quad\text{for all $\setii \in \sigmaalgebraii$}.
 \]
-Since by definition the class
+And since by definition the class
 $\condexpsub{{\lebclass{\funcf}}}{\sigmaalgebraii}$ does have a
 $(\sigmaalgebraii,\borel_\R)$\hyp{}measurable representative function,
 it follows that
@@ -5196,9 +5198,11 @@ It follows by transitivity of equality that
 = 
 \inducedint_\measurespace \condexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}\, d\measure,
 \]
-which means 
-$\expval\ellclass{\function}{\measure} = 
-\expvalof{\condexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}}$,
+which is the superior way of saying
+\[
+\expval\ellclass{\function}{\measure} =
+\expvalof{\condexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}},
+\]
 as required.
 \end{proof}
 
@@ -5987,19 +5991,6 @@ Again, the result follows by a continuity argument.
 
 
 
-
-\begin{prop}\label{subalgebra_fixed}
-Let $\sigmaalgebraii$ be a $\textsigma$-subalgebra of $\sigmaalgebra$, and let the class
-$\ellclass{\function}{\measure}\in L_1(\measurespace, \sigmaalgebra,\measure)$.  If the function $\function$ is $(\sigmaalgebraii,\borel_\R)$\hyp{}measurable, then 
-\[
-\ellclass{\function}{\measure}
-= \condexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}.
-\]
-\end{prop}
-
-\begin{proof}
-Take $\ellclass{\functionii}{\measure} = \ellclass{1_\measurespace}{\measure}$, and apply the previous proposition.
-\end{proof}
 
 
 
@@ -9684,7 +9675,7 @@ the functions
 $\charfunction{\setiii\meets\setiv}$, $\charfunction{\setiii}$,
 and $\charfunction{\setiv}$ are
 $\bigl( \sigmaalgebraii, \borel_\R \bigr)$\hyp{}measurable.
-It follows by Proposition~\ref{subalgebra_fixed} that the condition
+It follows by Remark~\ref{idempotent} that the condition
 \[
 \condexpsub{\ellclass{\charfunction{\setiii\meets\setiv}}{\measure}}{\sigmaalgebraii}
 =
@@ -10326,7 +10317,7 @@ $\proj(\helt)\neq \heltii$.
 
 
 \begin{prop}
-Let $\{\hortho, \horthoii, \ldots, \horthon\}$ be an orthonormal set in a Hilbert space $\hilbertspace$, and let $\proj:\hilbertspace \to \hilbertspace$ be the orthogonal projection of $\hilbertspace$ onto the
+Let $\{\hortho, \horthoii, \ldots, \horthon\}$ be an orthonormal set in a Hilbert space $\hilbertspace$, and let $\proj:\hilbertspace \to \hilbertspace$ be the orthogonal projection of $\hilbertspace$ onto the closed subspace
 $\raum{Span}\{\hortho, \horthoii, \ldots, \horthon\}$.
 Fix $\helt\in\hilbertspace$. Then
 $\proj(\helt) = \sum_{i=1}^{n} \inner{\helt}{\horthoi}\horthoi$.
@@ -10362,7 +10353,10 @@ Then decide how far you want to go with this. Can you do better than
 $\condexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}
 \in
 L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$.
-Is this correct?}
+Is this correct?} [Edit: No, it cannot possibly correct since
+$L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$
+is not a subspace of
+$L_1 (\measurespace, \sigmaalgebra,\measure)$.  That would contradict the correspondence theorem.]
 
 %
 \begin{discussion}
@@ -10377,7 +10371,7 @@ is idempotent; namely, if $\ellclass{\function}{\measure}\in L_1(\measurespace, 
 $\condexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}
 \in
 L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$,
-and so by Proposition~\ref{subalgebra_fixed},
+and so by Remark~\ref{idempotent},
 \[
 \condexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}
 =
@@ -10418,7 +10412,7 @@ L_2(\measurespace, \sigmaalgebra,\measure)
 L_2(\measurespace, \sigmaalgebra,\measure)$
 is a subspace of
 $L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$,
-but then by Proposition~\ref{subalgebra_fixed}, the subspace
+but then by Remark~\ref{idempotent}, the subspace
 $L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$
 is fixed by
 $\condexpop{\sigmaalgebraii}$, and so the range of
