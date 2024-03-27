@@ -2252,9 +2252,32 @@ Propositions~\ref{change_of_variable} and \ref{integral_over_subalgebra} are rea
 \end{rmk}
 
 
+\begin{prop}\label{submeasurable_step_function}
+Let $(\measurespace, \sigmaalgebra, \measmu)$ be a finite measure space, where $\sigmaalgebra$ is a $\textsigma$-algebra, and let $\sigmaalgebraii$ be a $\textsigma$-subalgebra of $\sigmaalgebra$.
+If $\ellclass{f}{\measmu}
+\in \cali{L}_1(\measurespace, \sigmaalgebra, \measmu)$, and if $f$ is
+$(\sigmaalgebraii, \borel_\R)$\hyp{}measurable, then there is a sequence
+$\{ \phi_n \}$ of
+$(\sigmaalgebraii, \borel_\R)$\hyp{}step functions with
+$\phi_n(x) \uparrow f(x)$ for all $x\in\measurespace$, where each $\phi_n$ is a sum of the form
+\[
+\sum_{i=1}^m b_i \charfunction{\setii_i}
+\]
+with each $\setii_i \in \sigmaalgebraii$.
+\end{prop}
 
-
-
+\begin{proof}
+Let $f\in\cali{L}_1(\measurespace, \sigmaalgebra, \measure)$, and let $f$ be
+$(\sigmaalgebraii, \borel_\R)$\hyp{}measurable. We can suppose that $f\geq 0$.  By Proposition~\ref{measurable_implies_simple_function_limit}, there is a sequence $\{\phi_n\}$ of $(\sigmaalgebraii, \borel_\R)$-simple functions such that
+$\phi_n(x)\geq 0$ and $\phi_n(x)\uparrow f(x)$ for all $x\in\measurespace$.
+In a finite measure space, every $(\sigmaalgebraii, \borel_\R)$-simple function is a $(\sigmaalgebraii, \borel_\R)$-step function.
+So by Definition~\ref{step_function}, every
+$\phi_n$ is a sum of the form
+\[
+\sum_{i=1}^m b_i \charfunction{\setii_i}
+\]
+with each $\setii_i \in \sigmaalgebraii$, as required.
+\end{proof}
 
 
 
@@ -2274,13 +2297,16 @@ $\ellclass{f}{\measure\restrictedto{\sigmaalgebraii}}
 
 \begin{proof}
 Let $f\in\cali{L}_1(\measurespace, \sigmaalgebra, \measure)$, and let $f$ be 
-$(\sigmaalgebraii, \borel_\R)$\hyp{}measurable. We can suppose that $f\geq 0$.  By Proposition~\ref{measurable_implies_simple_function_limit}, there is a sequence $\{\phi_n\}$ of $(\sigmaalgebraii, \borel_\R)$-simple functions such that 
+$(\sigmaalgebraii, \borel_\R)$\hyp{}measurable. We can suppose that $f\geq 0$.
+By Proposition~\ref{submeasurable_step_function}, there is a sequence
+$\{ \phi_n \}$ of
+$(\sigmaalgebraii,\borel_\R)$\hyp{}step functions such that
 $\phi_n(x)\geq 0$ and $\phi_n(x)\uparrow f(x)$ for all $x\in\measurespace$.
-In a finite measure space, every $(\sigmaalgebraii, \borel_\R)$-simple function is a $(\sigmaalgebraii, \borel_\R)$-step function.
 But every $(\sigmaalgebraii, \borel_\R)$-step function is a 
 $(\measurable{\measuresubstar{\sigmaalgebraii}},\borel_\R)$-step function since, 
 by Proposition~\ref{semiring_measurable}, every element of $\sigmaalgebraii$ is a $\measuresubstar{\sigmaalgebraii}$-measurable subset. 
-This says $\{\phi_n\}$ is a sequence of $(\measurable{\measuresubstar{\sigmaalgebraii}},\borel_\R)$-step functions with $\phi_n\uparrow f$ for all $x\in\measurespace$. In order to complete the proof that $f$ is integrable with respect to $\measure\restrictedto{\sigmaalgebraii}$, it is sufficient to show that 
+This says $\{\phi_n\}$ is a sequence of $(\measurable{\measuresubstar{\sigmaalgebraii}},\borel_\R)$-step functions with
+$\phi_n(x) \uparrow f(x)$ for all $x\in\measurespace$. In order to complete the proof that $f$ is integrable with respect to $\measure\restrictedto{\sigmaalgebraii}$, it is sufficient to show that
 $\lim \int_\measurespace \phi_n \, d \measure\restrictedto{\sigmaalgebraii} < \infty$.
 
 By Proposition ~\ref{integral_over_subalgebra}, it follows that
