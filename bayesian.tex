@@ -1478,18 +1478,31 @@ It follows that $\mspaceeltii_n(x) \uparrow f(x)$ for all $x$ in the complement 
 \end{proof}
 
 
-
 \begin{defn}\label{step_function}
-Let us say that a
-$(\measurable{\measure^\kernast}, \borel_\R)$\hyp{}simple function is a
-$(\measurable{\measure^\kernast},\borel_\R)$\hyp{}\term{step function} if it can be expressed as a linear combination of characteristic functions of $\measure^\kernast$\hyp{}measurable sets of finite measure.  For example, $\phi=\sum_{i=1}^n a_i\charfunction{A_i}$, where each $A_i$ is a $\measure^\kernast$-measurable set with $\measure^*(A_i) < \infty$, where we can suppose the $A_i$ to be pairwise disjoint.
+Let $(\measurespace,\sigmaalgebra, \measmu)$ be a measure space.
+Let us say that an
+$(\sigmaalgebra, \borel_\R)$\hyp{}simple function is an
+$(\sigmaalgebra,\borel_\R)$\hyp{}\term{step function} if it can be expressed as a linear combination of characteristic functions of subsets of $\sigmaalgebra$ of finite
+$\measmu^\kernast$\hyp{}measure.  That is,  if $\phi$ is an
+$(\sigmaalgebra, \borel_\R)$\hyp{}simple function
+having range
+$\{a_1, \ldots, a_n\}$, then
+$\phi$ is an $(\sigmaalgebra,\borel_\R)$\hyp{}\term{step function} if
+$\phi=\sum_{i=1}^n a_i\charfunction{\seti_i}$ with each
+$\seti_i \in \sigmaalgebra$, and with $\measmu^*(A_i) < \infty$,
+where we can suppose the $A_i$ to be pairwise disjoint.
+See that if more than one measure is involved, then we would have to specify.
+Is it clear that with a finite measure space, every simple function is a step function?
 \end{defn}
+
+
 
 
 
 \begin{prop}\label{sigma_finite_step_functions}
 If $(\measurespace, \semiring, \measure)$ is a $\textsigma$-finite measure space, and $f:\measurespace\to\R$ is a \mbmeasurable\ function with $f(x)\geq 0$ on $\measurespace$, 
-then there is a sequence $\{\phi_n\}$ of $(\measurable{\measure^\kernast},\borel_\R)$ step functions such that $\phi_n(x)\geq 0$ and $\phi_n(x)\uparrow f(x)$ for all $x\in\measurespace$.
+then there is a sequence $\{\phi_n\}$ of
+$(\measurable{\measure^\kernast},\borel_\R)$\hyp{}step functions such that $\phi_n(x)\geq 0$ and $\phi_n(x)\uparrow f(x)$ for all $x\in\measurespace$.
 \end{prop}
 
 
@@ -2208,7 +2221,7 @@ something better might be
 \leq
 \cali{L}_1(\measurespace, \sigmaalgebra, \measure)
 \]
-suggesting some kind of structure-preserving thing.
+to suggest some kind of structure-preserving thing.
 \end{quoting}
 
 
@@ -5799,15 +5812,18 @@ L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})\Lilst
 
 
 \begin{prop} \label{measurable_functions_factor_out}
-Let $(\measurespace, \sigmaalgebra,\measure)$ be a probability space.
-Let $\sigmaalgebraii$ be a $\textsigma$-subalgebra of $\sigmaalgebra$, and let the class
-$\ellclass{\functionii}{\measure}
-\in L_1(\measurespace, \sigmaalgebra,\measure)$.
-If $\function:\measurespace\to\R$ is a
-$(\sigmaalgebraii, \borel_\R)$\hyp{}measurable function and $\function$ is bounded 
-$\Pstar$-almost everywhere on $\measurespace$,  and if the class
-$\ellclass{\function}{\measure} \cdot \ellclass{\functionii}{\measure}
-\in L_1(\measurespace, \sigmaalgebra,\measure)$, then
+Let $(\measurespace, \sigmaalgebra,\measmu)$ be a probability space.
+Let $\sigmaalgebraii$ be a $\textsigma$-subalgebra of $\sigmaalgebra$,
+and let the classes
+$\ellclass{\funcf}{\measmu}$
+and
+$\ellclass{\funcg}{\measmu}$ be in
+$L_1(\measurespace, \sigmaalgebra,\measmu)$.
+If the function $\function:\measurespace\to\R$ is
+$(\sigmaalgebraii, \borel_\R)$\hyp{}measurable,  and if the class
+$\ellclass{\funcf}{\measmu} \cdot \ellclass{\funcg}{\measmu}$
+is in
+$L_1(\measurespace, \sigmaalgebra,\measmu)$, then
 \[
 \kondexpsub{\bigl(\ellclass{\function}{\measure} \cdot \ellclass{\functionii}{\measure}\bigr)}{\sigmaalgebraii}
 = 
@@ -10352,28 +10368,39 @@ Then decide how far you want to go with this. Can you do better than
 
 
 \begin{rmk}
-Some implications may be used without much fanfare; namely, if the classes $\ellclass{\function}{\measure}$ and
-$\ellclass{\functionii}{\measure}$ are in
-$L_2(\measurespace, \sigmaalgebra,\measure)$, then the product
-$\ellclass{\function}{\measure}\ellclass{\functionii}{\measure}
-= \ellclass{\function\functionii}{\measure}$ is in
-$L_1(\measurespace, \sigmaalgebra,\measure)$. This is a routine application of the Cauchy-Schwarz inequality, considered to be the $2+2$ of higher mathematics.
+Some implications may be used without much fanfare; namely, if the classes
+$\ellclass{\funcf}{\measmu}$ and
+$\ellclass{\funcg}{\measmu}$ are in
+$L_2(\measurespace, \sigmaalgebra,\measmu)$,
+then the product
+$\ellclass{\funcf}{\measmu}
+\ellclass{\funcg}{\measmu}
+=
+\ellclass{\funcf \funcg}{\measmu}$
+is in
+$L_1(\measurespace, \sigmaalgebra, \measmu)$.
+This is a routine application of the Cauchy-Schwarz inequality, considered to be the
+$2+2$
+of higher mathematics.
 \end{rmk}
 
 
 
 
 \begin{prop}\label{projection_proposition}
-Let $(\measurespace, \sigmaalgebra,\measure)$ be a  probability space, and let
+Let $(\measurespace, \sigmaalgebra, \measmu)$
+be a  probability space, and let
 $\sigmaalgebraii$ be a $\textsigma$-subalgebra of $\sigmaalgebra$.
 The conditional expectation operator
 $\condexpop{\sigmaalgebraii}$
 restricted to
-$L_2(\measurespace, \sigmaalgebra,\measure)$
-is  the unique orthogonal projection of the Hilbert space $L_2(\measurespace, \sigmaalgebra,\measure)$ onto the closed subspace
+$L_2(\measurespace, \sigmaalgebra,\measmu)$
+is  the unique orthogonal projection of the Hilbert space
+$L_2(\measurespace, \sigmaalgebra,\measmu)$
+onto the closed subspace
 $\L1embedding
 \bigl(
-L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})
+L_2(\measurespace, \sigmaalgebraii,\measmu\restrictedto{\sigmaalgebraii})
 \bigr)
 $.
 \end{prop}
@@ -10383,61 +10410,78 @@ $.
 \begin{proof}
 Let $\hilbertsubspace$ denote the subspace
 $\L1embedding\bigl(
-L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})
-\bigr)$.
+L_2(\measurespace, \sigmaalgebraii,\measmu\restrictedto{\sigmaalgebraii})
+\bigr)$, which is the collection of those classes of
+$L_2(\measurespace, \sigmaalgebra, \measmu)$
+which have a
+$(\sigmaalgebraii,\borel_\R)$\hyp{}measurable representative.
+
 We will show that to each
-$\lebclass{\funcf} \in L_2(\measurespace, \sigmaalgebra,\measure)$
+$\ellclass{\funcf}{\measmu}
+\in
+L_2(\measurespace, \sigmaalgebra,\measmu)$
 there corresponds a unique element of
 $\hilbertsubspace$,
 in this case
-$\condexpsub{\lebclass{\funcf}}{\sigmaalgebraii}$,
+$\condexpsub{\ellclass{\funcf}{\measmu}}{\sigmaalgebraii}$,
 such that
-$\lebclass{\funcf} - \condexpsub{\lebclass{\funcf}}{\sigmaalgebraii}
+$\ellclass{\funcf}{\measmu}
+-
+\condexpsub{\ellclass{\funcf}{\measmu}}{\sigmaalgebraii}
 \perp
-\lebclass{\funch}$ for all
-$\lebclass{\funch} \in
-\hilbertsubspace $, for then the map
-$\lebclass{\funcf}
+\ellclass{\funch}{\measmu}$ for all
+$\ellclass{\funch}{\measmu}
+\in
+\hilbertsubspace$,
+for then the map
+$\ellclass{\funcf}{\measmu}
 \mapsto
-\condexpsub{\lebclass{\funcf}}{\sigmaalgebraii}$
+\condexpsub{\ellclass{\funcf}{\measmu}}{\sigmaalgebraii}$
 is the orthogonal projection of
-$L_2(\measurespace, \sigmaalgebra,\measure)$
+$L_2(\measurespace, \sigmaalgebra,\measmu)$
 onto $\hilbertsubspace$, per the first paragraph of this chapter.
 
-\textbf{Clean up to here.}
-
-We first show that if
-$\function\in L_2(\measurespace, \sigmaalgebra,\measure)$,
-then
-$\function - \condexpsub{\function}{\sigmaalgebraii} \perp \functioniii$ for all $\functioniii\in
-L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$.
 Let
-$\function \in L_2(\measurespace, \sigmaalgebra,\measure)$.
+$\ellclass{\funcf}{\measmu}
+\in
+L_2(\measurespace, \sigmaalgebra,\measmu)$,
+and let
+$\ellclass{\funch}{\measmu}
+\in
+\hilbertsubspace$.
 We must show that
 \[
-\inner{\function - \condexpsub{\function}{\sigmaalgebraii}}{\functioniii}=0
-\quad
-\text{for all
-$\functioniii\in L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$},
+\inner{
+\ellclass{\funcf}{\measmu}
+-
+\condexpsub{\ellclass{\funcf}{\measmu}}{\sigmaalgebraii}
+}
+{\ellclass{\funch}{\measmu}}
+=
+0,
 \]
 which is equivalent to showing that
 \[
-\inner{\function}{\functioniii} = \inner{\condexpsub{\function}{\sigmaalgebraii}}{\functioniii}
-\quad
-\text{for all
-$\functioniii\in L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$},
+\inner{\ellclass{\funcf}{\measmu}}{\ellclass{\funch}{\measmu}}
+=
+\inner{\condexpsub{\ellclass{\funcf}{\measmu}}{\sigmaalgebraii}}
+{\ellclass{\funch}{\measmu}}
+,
 \]
 and in turn, this means showing that
 \[
-\expvalof{\function\functioniii} = \expvalof{\functioniii \condexpsub{\function}{\sigmaalgebraii}}
-\quad
-\text{
-for all
-$\functioniii\in L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$}.
+\expvalof{\ellclass{\funcf}{\measmu}
+\cdot
+\ellclass{\funch}{\measmu}}
+=
+\expval\bigl(
+( \condexpsub{\ellclass{\funcf}{\measmu}}{\sigmaalgebraii} )
+\cdot
+\ellclass{\funch}{\measmu}
+\bigr).
 \]
-Let $\functioniii\in L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$.
-In order to apply Proposition~\ref{measurable_functions_factor_out},
-check first that
+
+We will apply Proposition~\ref{measurable_functions_factor_out}, and in order to do this, check first that
 $\function \in L_1(\measurespace, \sigmaalgebra,\measure)$, and this is because
 $\function \in L_2(\measurespace, \sigmaalgebra,\measure)$ and
 $L_2(\measurespace, \sigmaalgebra,\measure) \subseteq
