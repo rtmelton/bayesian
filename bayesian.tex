@@ -1493,8 +1493,11 @@ $\phi$ is a $(\measurable{\measmu^\kernast},\borel_\R)$\hyp{}\term{step function
 $\phi=\sum_{i=1}^n a_i\charfunction{\seti_i}$ with each
 $\seti_i \in \measurable{\measmu^\kernast}$, and with $\measmu^*(A_i) < \infty$,
 where we can suppose the $A_i$ to be pairwise disjoint.
-See that if more than one measure is involved, then we would have to specify.
-Is it clear that with a finite measure space, every simple function is a step function?
+Is it clear that with a finite measure space,
+every
+$(\measurable{\measmu^\kernast}, \borel_\R)$\hyp{}simple
+function is a
+$(\measurable{\measmu^\kernast}, \borel_\R)$\hyp{}step function?
 \end{defn}
 
 
@@ -1567,9 +1570,43 @@ By Theorem~\ref{measurable_limits}, every upper function is \mbmeasurable.
 \end{defn}
 
 
+\begin{prop}\label{upper_function_algebra}
+If $\funcf$ and $\funcg$ are upper functions, then:
+\begin{enumerate}
+\item
+The function
+$\funcf + \funcg $ is an upper function with
+$\int(\funcf + \funcg) \, d\measmu
+=
+\int \funcf \, d\measmu + \int \funcg \, d\measmu$.
+\item
+If $0 \leq a \in \R$, then
+$a\funcf$ is an upper function and
+$\int (a\funcf) \, d\measmu
+=
+a\int \funcf \, d\measmu$.
+\item
+The functions
+$\funcf \vee \funcg$ and $\funcf \wedge \funcg$ are upper functions.
+\end{enumerate}
+\end{prop}
+
+
 \begin{prop}
-If $f$ and $g$ are upper functions such that $f\geq g$ $\measure^\kernast$-almost everywhere, then 
-$\int f \geq \int g$.
+If $f$ and $g$ are upper functions with $f\leq g$ $\measure^\kernast$-almost everywhere, then
+$\int f \leq \int g$.
+\end{prop}
+
+
+\begin{prop}\label{upper_monotone}
+If $\funcf:\measurespace\to\R$ is a function with
+$\{ \funcf_n \}$
+a sequence of upper functions such that
+$\funcf_n(x) \uparrow \funcf(x)$ for
+$\measmu^\kernast$\hyp{}almost all $x\in\measurespace$, and if
+$\lim \int \funcf_n \, d\measmu < \infty$, then
+$\funcf$ is an upper function and
+$\lim \int \funcf_n \, d\measmu = \int \funcf \, d\measmu$.
 \end{prop}
 
 
@@ -2276,12 +2313,12 @@ Propositions~\ref{change_of_variable} and \ref{integral_over_subalgebra} are rea
 
 
 \begin{prop}\label{submeasurable_step_function}
-Let $(\measurespace, \sigmaalgebra, \measmu)$ be a finite measure space, where $\sigmaalgebra$ is a $\textsigma$-algebra, and let $\sigmaalgebraii$ be a $\textsigma$-subalgebra of $\sigmaalgebra$.
+Let $(\measurespace, \sigmaalgebra, \measmu)$ be a finite measure space, where $\sigmaalgebra$ is a $\textsigma$\hyp{}algebra, and let $\sigmaalgebraii$ be a $\textsigma$\hyp{}subalgebra of $\sigmaalgebra$.
 If $\ellclass{f}{\measmu}
 \in \cali{L}_1(\measurespace, \sigmaalgebra, \measmu)$, and if $f$ is
 $(\sigmaalgebraii, \borel_\R)$\hyp{}measurable, then there is a sequence
 $\{ \phi_n \}$ of
-$(\sigmaalgebraii, \borel_\R)$\hyp{}step functions with
+$(\measurable{\measmu^\kernast}, \borel_\R)$\hyp{}step functions with
 $\phi_n(x) \uparrow f(x)$ for all $x\in\measurespace$, where each $\phi_n$ is a sum of the form
 \[
 \sum_{i=1}^m b_i \charfunction{\setii_i}
@@ -2291,15 +2328,23 @@ with each $\setii_i \in \sigmaalgebraii$.
 
 \begin{proof}
 Let $f\in\cali{L}_1(\measurespace, \sigmaalgebra, \measure)$, and let $f$ be
-$(\sigmaalgebraii, \borel_\R)$\hyp{}measurable. We can suppose that $f\geq 0$.  By Proposition~\ref{measurable_implies_simple_function_limit}, there is a sequence $\{\phi_n\}$ of $(\sigmaalgebraii, \borel_\R)$-simple functions such that
+$(\sigmaalgebraii, \borel_\R)$\hyp{}measurable. We can suppose that $f\geq 0$.  By Proposition~\ref{measurable_implies_simple_function_limit}, there is a sequence $\{\phi_n\}$ of $(\sigmaalgebraii, \borel_\R)$\hyp{}simple functions such that
 $\phi_n(x)\geq 0$ and $\phi_n(x)\uparrow f(x)$ for all $x\in\measurespace$.
-In a finite measure space, every $(\sigmaalgebraii, \borel_\R)$-simple function is a $(\sigmaalgebraii, \borel_\R)$-step function.
-So by Definition~\ref{step_function}, every
+Each
 $\phi_n$ is a sum of the form
 \[
 \sum_{i=1}^m b_i \charfunction{\setii_i}
 \]
-with each $\setii_i \in \sigmaalgebraii$, as required.
+with each $\setii_i \in \sigmaalgebraii$.
+By hypothesis,  $(\measurespace, \sigmaalgebra, \measmu)$ is a finite measure space
+finite measure space, and this means that each
+$\measmu^*(\setii_i)<\infty$.
+And since $\sigmaalgebraii\subseteq\sigmaalgebra$ by hypothesis, and
+$\sigmaalgebra \subseteq \measurable{\measmu^\kernast}$ by
+Proposition~\ref{semiring_measurable}, it follows that each
+$\setii\in\measurable{\measmu^\kernast}$, and so each $\phi_n$ is a
+$(\measurable{\measmu^\kernast}, \borel_\R)$\hyp{}step function,
+as required.
 \end{proof}
 
 
