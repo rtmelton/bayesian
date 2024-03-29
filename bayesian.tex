@@ -1480,16 +1480,18 @@ It follows that $\mspaceeltii_n(x) \uparrow f(x)$ for all $x$ in the complement 
 
 \begin{defn}\label{step_function}
 Let $(\measurespace,\sigmaalgebra, \measmu)$ be a measure space.
-Let us say that an
-$(\sigmaalgebra, \borel_\R)$\hyp{}simple function is an
-$(\sigmaalgebra,\borel_\R)$\hyp{}\term{step function} if it can be expressed as a linear combination of characteristic functions of subsets of $\sigmaalgebra$ of finite
-$\measmu^\kernast$\hyp{}measure.  That is,  if $\phi$ is an
-$(\sigmaalgebra, \borel_\R)$\hyp{}simple function
+Let us say that a
+$(\measurable{\measmu^\kernast}, \borel_\R)$\hyp{}simple
+function is a
+$(\measurable{\measmu^\kernast},\borel_\R)$\hyp{}\term{step function} if it can be expressed as a linear combination of characteristic functions of subsets of
+$\measurable{\measmu^\kernast}$ of finite
+$\measmu^\kernast$\hyp{}measure.  That is,  if $\phi$ is a
+$(\measurable{\measmu^\kernast}, \borel_\R)$\hyp{}simple function
 having range
 $\{a_1, \ldots, a_n\}$, then
-$\phi$ is an $(\sigmaalgebra,\borel_\R)$\hyp{}\term{step function} if
+$\phi$ is a $(\measurable{\measmu^\kernast},\borel_\R)$\hyp{}\term{step function} if
 $\phi=\sum_{i=1}^n a_i\charfunction{\seti_i}$ with each
-$\seti_i \in \sigmaalgebra$, and with $\measmu^*(A_i) < \infty$,
+$\seti_i \in \measurable{\measmu^\kernast}$, and with $\measmu^*(A_i) < \infty$,
 where we can suppose the $A_i$ to be pairwise disjoint.
 See that if more than one measure is involved, then we would have to specify.
 Is it clear that with a finite measure space, every simple function is a step function?
@@ -1634,8 +1636,10 @@ The collection of real functions on $\measurespace$ that can be written as the d
 
 \begin{prop}\label{dominated_by_integrable}
 If $\function:\measurespace \to \R$ be an integrable function,
-and if $\functionii:\measurespace \to \R$ is a $(\measurable{\measure^\kernast},\borel_\R)$\hyp{}measurable function with
-$0\leq \functionii \leq \function$ $\measure^\kernast$\hyp{}almost everywhere, then $\functionii$ is an integrable function.
+and if $\functionii:\measurespace \to \R$ is a
+$(\measurable{\measure^\kernast},\borel_\R)$\hyp{}measurable function with
+$0\leq \functionii \leq \function$ $\measure^\kernast$\hyp{}almost everywhere, then
+$\functionii$ is an integrable function.
 \end{prop}
 
 
@@ -1644,6 +1648,25 @@ $0\leq \functionii \leq \function$ $\measure^\kernast$\hyp{}almost everywhere, t
 Let $f:\measurespace\to\R$ be a function integrable over $\measurespace$ with respect to $\measure$.  
 Then $\int \abs{f} \,d\measure = 0$ if and only if $f=0$ $\measure^\kernast$\hyp{}almost everywhere.
 \end{prop}
+
+\begin{prop}\label{levi}
+Let $\{ \funcf_n \}$ be a sequence of functions integrable with respect to $\measmu$.
+If $\funcf_n(x) \leq \funcf_{n=1}(x)$ for
+$\measmu^\kernast$\hyp{}almost all $x\in\measurespace$,
+and if\, $\lim \int \funcf_n \, d\measmu < \infty$,
+then there is a function
+$\funcf$ integrable with respect to $\measmu$ such that
+$\funcf_n(x) \uparrow \funcf(x)$ for
+$\measmu^\kernast$\hyp{}almost all
+$x\in\measurespace$.  Consequently,
+$\int \funcf_n\, d\measmu
+\uparrow
+\int \funcf \, d\measmu$.
+\end{prop}
+
+
+%\begin{thmboldnote}[The Lebesgue Dominated Convergence Theorem]\label{tldct}
+%\end{thmboldnote}
 
 
 \begin{prop}\label{uniqueness_radon_nikodym}
@@ -5849,7 +5872,14 @@ If the function $\function:\measurespace\to\R$ is
 $(\sigmaalgebraii, \borel_\R)$\hyp{}measurable,  and if the class
 $\ellclass{\funcf}{\measmu} \cdot \ellclass{\funcg}{\measmu}$
 is in
-$L_1(\measurespace, \sigmaalgebra,\measmu)$, then
+$L_1(\measurespace, \sigmaalgebra,\measmu)$,
+and if the class
+$\ellclass{\function}{\measmu\restrictedto{\sigmaalgebraii}}
+\cdot
+\kondexpsub{\ellclass{\funcg}{\measmu}}{\sigmaalgebraii}$
+is in
+$L_1(\measurespace, \sigmaalgebraii, \measmu\restrictedto{\sigmaalgebraii})$,
+then
 \[
 \kondexpsub{\bigl(\ellclass{\function}{\measure} \cdot \ellclass{\functionii}{\measure}\bigr)}{\sigmaalgebraii}
 = 
@@ -5873,7 +5903,13 @@ Let the function $\function:\measurespace\to\R$ be
 $(\sigmaalgebraii, \borel_\R)$\hyp{}measurable,  and let the class
 $\ellclass{\funcf}{\measmu} \cdot \ellclass{\funcg}{\measmu}$
 be in
-$L_1(\measurespace, \sigmaalgebra,\measmu)$.
+$L_1(\measurespace, \sigmaalgebra,\measmu)$,
+and let the class
+$\ellclass{\function}{\measmu\restrictedto{\sigmaalgebraii}}
+\cdot
+\kondexpsub{\ellclass{\funcg}{\measmu}}{\sigmaalgebraii}$
+be in
+$L_1(\measurespace, \sigmaalgebraii, \measmu\restrictedto{\sigmaalgebraii})$.
 What does it mean to show that
 \[
 \kondexpsub{\bigl(\ellclass{\function}{\measure} \cdot \ellclass{\functionii}{\measure}\bigr)}{\sigmaalgebraii}
