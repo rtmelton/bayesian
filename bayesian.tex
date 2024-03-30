@@ -2313,9 +2313,10 @@ Propositions~\ref{change_of_variable} and \ref{integral_over_subalgebra} are rea
 
 
 \begin{prop}\label{submeasurable_step_function}
-Let $(\measurespace, \sigmaalgebra, \measmu)$ be a finite measure space, where $\sigmaalgebra$ is a $\textsigma$\hyp{}algebra, and let $\sigmaalgebraii$ be a $\textsigma$\hyp{}subalgebra of $\sigmaalgebra$.
+Let $(\measurespace, \sigmaalgebra, \measmu)$ be a finite measure space, where
+$\sigmaalgebra$ is a $\textsigma$\hyp{}algebra, and let $\sigmaalgebraii$ be a $\textsigma$\hyp{}subalgebra of $\sigmaalgebra$.
 If $\ellclass{f}{\measmu}
-\in \cali{L}_1(\measurespace, \sigmaalgebra, \measmu)$, and if $f$ is
+\in L_1(\measurespace, \sigmaalgebra, \measmu)$, and if $f$ is
 $(\sigmaalgebraii, \borel_\R)$\hyp{}measurable, then there is a sequence
 $\{ \phi_n \}$ of
 $(\measurable{\measmu^\kernast}, \borel_\R)$\hyp{}step functions with
@@ -2328,7 +2329,9 @@ with each $\setii_i \in \sigmaalgebraii$.
 
 \begin{proof}
 Let $f\in\cali{L}_1(\measurespace, \sigmaalgebra, \measure)$, and let $f$ be
-$(\sigmaalgebraii, \borel_\R)$\hyp{}measurable. We can suppose that $f\geq 0$.  By Proposition~\ref{measurable_implies_simple_function_limit}, there is a sequence $\{\phi_n\}$ of $(\sigmaalgebraii, \borel_\R)$\hyp{}simple functions such that
+$(\sigmaalgebraii, \borel_\R)$\hyp{}measurable. We can suppose that $f\geq 0$.
+With $\funcf$ being $(\sigmaalgebraii, \borel_\R)$\hyp{}measurable and nonnegative, it follows by Proposition~\ref{measurable_implies_simple_function_limit}
+that there is a sequence $\{\phi_n\}$ of $(\sigmaalgebraii, \borel_\R)$\hyp{}simple functions such that
 $\phi_n(x)\geq 0$ and $\phi_n(x)\uparrow f(x)$ for all $x\in\measurespace$.
 Each
 $\phi_n$ is a sum of the form
@@ -2336,15 +2339,15 @@ $\phi_n$ is a sum of the form
 \sum_{i=1}^m b_i \charfunction{\setii_i}
 \]
 with each $\setii_i \in \sigmaalgebraii$.
-By hypothesis,  $(\measurespace, \sigmaalgebra, \measmu)$ is a finite measure space
-finite measure space, and this means that each
+By hypothesis,  $(\measurespace, \sigmaalgebra, \measmu)$
+is a finite measure space which means that each
 $\measmu^*(\setii_i)<\infty$.
 And since $\sigmaalgebraii\subseteq\sigmaalgebra$ by hypothesis, and
 $\sigmaalgebra \subseteq \measurable{\measmu^\kernast}$ by
 Proposition~\ref{semiring_measurable}, it follows that each
-$\setii\in\measurable{\measmu^\kernast}$, and so each $\phi_n$ is a
+$\setii_i \in\measurable{\measmu^\kernast}$, and so each $\phi_n$ is a
 $(\measurable{\measmu^\kernast}, \borel_\R)$\hyp{}step function,
-as required.
+completing the proof.
 \end{proof}
 
 
@@ -2405,7 +2408,7 @@ $\lim\int_\measurespace \phi_n \, d\measure
 
 \begin{rmk}
 Let $(\measurespace,\sigmaalgebra,\measure)$ be a measure space, where $\sigmaalgebra$ is a $\textsigma$-algebra, and let $\ellclass{f}{\measure}\in L_1(\measurespace, \sigmaalgebra, \measure)$.  The representative function $f$ is necessarily \mbmeasurable. By Proposition~\ref{semiring_measurable}, we know that $\sigmaalgebra$ is a \textsigma-subalgebra of $\measurable{\measure^\kernast}$, implying that any  
-$(\sigmaalgebra, \borel_\R)$\hyp{}measurable is also a  \mbmeasurable\ function.  The converse need not hold.  That is, the function $f$ need \emph{not} also be $(\sigmaalgebra, \borel_\R)$\hyp{}measurable. Regardless, each class in 
+$(\sigmaalgebra, \borel_\R)$\hyp{}measurable function is also a  \mbmeasurable\ function.  The converse need not hold.  That is, the function $f$ need \emph{not} also be $(\sigmaalgebra, \borel_\R)$\hyp{}measurable. Regardless, each class in
 $L_1(\measurespace, \sigmaalgebra, \measure)$ \emph{does} have an
 $(\sigmaalgebra, \borel_\R)$\hyp{}measurable representative, as claimed in the following proposition, which is just a restatement of Proposition~\ref{mixing_measurable_functions} in terms of the quotient space $L_1(\measurespace, \sigmaalgebra, \measure)$. 
 \end{rmk}
