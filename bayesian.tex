@@ -1580,7 +1580,7 @@ $\int(\funcf + \funcg) \, d\measmu
 =
 \int \funcf \, d\measmu + \int \funcg \, d\measmu$.
 \item
-If $0 \leq a \in \R$, then
+If\, $0 \leq a \in \R$, then
 $a\funcf$ is an upper function and
 $\int (a\funcf) \, d\measmu
 =
@@ -5964,131 +5964,180 @@ $\ellclass{\function}{\measmu\restrictedto{\sigmaalgebraii}}
 \kondexpsub{\ellclass{\funcg}{\measmu}}{\sigmaalgebraii}$
 be in
 $L_1(\measurespace, \sigmaalgebraii, \measmu\restrictedto{\sigmaalgebraii})$.
+
 What does it mean to show that
 \[
-\kondexpsub{\bigl(\ellclass{\function}{\measure} \cdot \ellclass{\functionii}{\measure}\bigr)}{\sigmaalgebraii}
+\kondexpsub{\bigl(\ellclass{\function}{\measure}
+\cdot
+\ellclass{\functionii}{\measure}\bigr)}{\sigmaalgebraii}
 =
 \ellclass{\function}{\measure\restrictedto{\sigmaalgebraii}}
 \cdot
 \kondexpsub{\ellclass{\functionii}{\measure}}{\sigmaalgebraii}
-?\]
-
-
-Let a function
-$e$
-in
-$\cali{L}_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$
-represent the class 
-$\kondexpsub{\ellclass{\funcg}{\measmu}}{\sigalg{B}}$
-of the quotient space
-$L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$;
-that is, let
-\[
-e
-\in
-\kondexpsub{\ellclass{\funcg}{\measmu}}{\sigalg{B}}.
-\]
-This says that the equivalence classes
-$\ellclass{e}{\measure\restrictedto{\sigmaalgebraii}}$
-and
-$\kondexpsub{\ellclass{\functionii}{\measure}}{\sigalg{B}}$ of
-$L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$
-are the same; that is,
-\[
-\ellclass{e}{\measure\restrictedto{\sigmaalgebraii}}
-=
-\kondexpsub{\ellclass{\functionii}{\measure}}{\sigalg{B}}.
-\]
-
-\textbf{Okay to here. Re-do the long string of equalities below with $B$ and $C$ both in
-$\sigmaalgebraii$.  Then apply Poroposition~\ref{submeasurable_step_function} and the linearity and continuity of the integral.}
-
-Let a set
-$C\in\measurable{\Psubstar{\sigmaalgebraii}}$,
-and so by Proposition~\ref{measurable_inclusion}, $C$ is also in
-$\measurable{\measure^\kernast}$.
-It means that if a set $B$ is in
-$\sigmaalgebraii$, and so $B$ is also in $\measurable{\Psubstar{\sigmaalgebraii}}$,
-then
-$B\meets C$ is in $\measurable{\Psubstar{\sigmaalgebraii}}$,
-so expressions like
-$\inducedint_B \ellclass{\charfunction{C}\cdot e}{\measure\restrictedto{\sigmaalgebraii}}\, d\measure\restrictedto{\sigmaalgebraii}$ make sense. And
-$B\meets C$ is also in $\measurable{\measure^\kernast}$, so expressions like
-$\int_B\charfunction{C} \cdot \functionii \, d\measure$ make sense.
-See Definition~\ref{integrable} for integration over a subset.
-
-We will show that 
-\[
-\int_B\charfunction{C} \cdot \functionii \, d\measure
-=
-\inducedint_B \ellclass{\charfunction{C}\cdot e}{\measure\restrictedto{\sigmaalgebraii}}\, d\measure\restrictedto{\sigmaalgebraii}
-\]
-for all $B\in\sigmaalgebraii$, which implies, by the uniqueness of conditional mathematical expectation of
-$\ellclass{\charfunction{C} \cdot \functionii}{\measure}$ with respect to $\sigmaalgebraii$, that
-\[
-\kondexpsub{\ellclass{\charfunction{C} \cdot \functionii}{\measure}}{\sigmaalgebraii}
-=
-\ellclass{\charfunction{C}\cdot e}{\measure\restrictedto{\sigmaalgebraii}}.
-\]
-See that
-\begin{align*}
-\int_B\charfunction{C} \cdot \functionii\, d\measure
-& =
-\int_{B\meets C} \functionii\, d\measure
-&& \charfunction{B}\cdot\charfunction{C} = \charfunction{B\meets C}
-\\
-& =
-\inducedint_{B\meets C}
-\kondexpsub{\ellclass{\functionii}{\measure}}{\sigmaalgebraii}\, d\measure\restrictedto{\sigmaalgebraii}
-&& \text{Theorem~\ref{existence_of_conditional}}
-\\
-& =
-\int_{B\meets C} e \,d\measure\restrictedto{\sigmaalgebraii}
-&& e\in \kondexpsub{\ellclass{\functionii}{\measure}}{\sigmaalgebraii}
-\\
-& =
-\int_B \charfunction{C} \cdot e\, d\measure\restrictedto{\sigmaalgebraii}
-&&\charfunction{B\meets C} =  \charfunction{B}\cdot\charfunction{C}
-\\
-& =
-\inducedint_B \ellclass{\charfunction{C} \cdot e}{\measure\restrictedto{\sigmaalgebraii}}\, d\measure\restrictedto{\sigmaalgebraii}
-&& \text{Definition~\ref{Lp}.}
-\end{align*}
-This implies that
-\[
-\kondexpsub{\ellclass{\charfunction{C} \cdot \functionii}{\measure}}{\sigmaalgebraii}
-=
-\ellclass{\charfunction{C} \cdot e}{\measure\restrictedto{\sigmaalgebraii}},\]
-and since the equivalence class
-$\ellclass{\charfunction{C} \cdot e}{\measure\restrictedto{\sigmaalgebraii}}$
-can be expressed as 
-\begin{align*}
-\ellclass{\charfunction{C} \cdot e}{\measure\restrictedto{\sigmaalgebraii}}
-& =
-\ellclass{\charfunction{C}}{\measure\restrictedto{\sigmaalgebraii}}
+\,?\]
+By definition,
+$\kondexpsub{\bigl(\ellclass{\function}{\measure}
 \cdot
-\ellclass{e}{\measure\restrictedto{\sigmaalgebraii}}
-\\
-& =
-\ellclass{\charfunction{C}}{\measure\restrictedto{\sigmaalgebraii}}\kondexpsub{\ellclass{\functionii}{\measure}}{\sigmaalgebraii},
-\end{align*}
-it follows that 
+\ellclass{\functionii}{\measure}\bigr)}{\sigmaalgebraii}$
+is the unique class in
+$L_1(\measurespace, \sigmaalgebra, \measmu)$
+having a $( \sigmaalgebraii, \borel_R )$\hyp{}measurable representative such that
 \[
-\kondexpsub{
-\bigl(
-\ellclass{\charfunction{C}}{\measure} \cdot \ellclass{\functionii}{\measure}
-\bigr)}
-{\sigmaalgebraii}
+\int_\setii \funcf\funcg \,d\measmu
 =
-\ellclass{\charfunction{C}}{\measure\restrictedto{\sigmaalgebraii}}\kondexpsub{\ellclass{\functionii}{\measure}}{\sigmaalgebraii}.
+\inducedint_\setii
+\kondexpsub{\bigl(\ellclass{\function}{\measure}
+\cdot
+\ellclass{\functionii}{\measure}\bigr)}{\sigmaalgebraii}
+\, d \measmu\restrictedto{\sigmaalgebraii}
 \]
-This last equality holds for all
-$C\in\measurable{\Psubstar{\sigmaalgebraii}}$, and so by linearity for all equivalence classes of 
-$(\measurable{\Psubstar{\sigmaalgebraii}},\borel_\R)$\hyp{}measurable step functions. 
+for all $\setii\in\sigmaalgebraii$.
+So in order to show that
+\[
+\kondexpsub{\bigl(\ellclass{\function}{\measure}
+\cdot
+\ellclass{\functionii}{\measure}\bigr)}{\sigmaalgebraii}
+=
+\ellclass{\function}{\measure\restrictedto{\sigmaalgebraii}}
+\cdot
+\kondexpsub{\ellclass{\functionii}{\measure}}{\sigmaalgebraii},
+\]
+we need to show that
+\[
+\int_\setii \funcf\funcg \,d\measmu
+=
+\inducedint_\setii
+\ellclass{\function}{\measure\restrictedto{\sigmaalgebraii}}
+\cdot
+\kondexpsub{\ellclass{\functionii}{\measure}}{\sigmaalgebraii}
+\, d \measmu\restrictedto{\sigmaalgebraii}
+\]
+for all $\setii\in\sigmaalgebraii$.
+And this is equivalent to showing, letting
+$e \in
+\kondexpsub{\ellclass{\funcg}{\measmu}}{\sigalg{B}}$,
+that
+\[
+\int_\setii \funcf\funcg \,d\measmu
+=
+\int_\setii
+\funcf
+e
+\, d \measmu\restrictedto{\sigmaalgebraii}
+\]
+for all $\setii\in\sigmaalgebraii$.
+We will show that this equality holds when the function $\funcf$ is replaced by suitable step functions, and then take the limit.
 
-The conditions on $\function$ put it within the limits of linear combinations of functions like
-$\charfunction{C}$.
-The result then follows by a continuity argument, which fortunately works well in a normed space.  Not so well in a semi-normed space.
+By hypothesis,
+$\funcf\in
+L_1(\measurespace, \sigmaalgebra,\measmu)$ and
+$\funcf$ is
+$(\sigmaalgebraii, \borel_\R)$\hyp{}measurable
+so by Proposition~\ref{submeasurable_step_function}, there is a sequence
+$\{ \phi_n \}$ of
+$(\measurable{\measmu^\kernast}, \borel_\R)$\hyp{}step functions with
+$\phi_n(x) \uparrow f(x)$ for all $x\in\measurespace$, where each $\phi_n$ is a sum of the form
+\[
+\sum_{i=1}^m c_i \charfunction{\setiii_i}
+\]
+with each $\setiii_i \in \sigmaalgebraii$.
+
+
+We can suppose that both $\funcf$ and $\funcg$ are nonnegative.
+It means we can also suppose that the $\phi_n$ are also nonnegative.
+It also means the $\phi_n g$ and $\funcf \funcg$ are upper functions.
+Since
+$\phi_n \funcg \uparrow \funcf \funcg$,
+and since $\funcf\funcg$ is integrable,
+it follows by Proposition~\ref{upper_monotone}
+that
+\[
+\lim \int_\setii \phi_n \funcg\, d\measmu
+=
+\int_\setii \lim \phi_n\funcg \, d\measmu
+=
+\int_\setii \funcf \funcg \, d\measmu .
+\]
+Similarly,
+\[
+\lim \int_\setii \phi_n e \, d\measmu\restrictedto{\sigmaalgebraii}
+=
+\int_\setii \lim \phi_n e \, d\measmu\restrictedto{\sigmaalgebraii}
+=
+\int_\setii \funcf e \, d\measmu\restrictedto{\sigmaalgebraii} .
+\]
+To complete the proof then, it is sufficient to show that
+\[
+\int_\setii \phi_n \funcg \, d\measmu
+=
+\int_\setii \phi_n e \, d\measmu\restrictedto{\sigmaalgebraii},
+\]
+and since each
+$\phi_n = \sum_{i=1}^m c_i \charfunction{\setiii_i}$ with
+$\setiii_i\in\sigmaalgebraii$,
+in turn it is sufficient to show that
+\[
+\int_\setii \charfunction{\setiii} \funcg \, d\measmu
+=
+\int_\setii \charfunction{\setiii} e \, d\measmu\restrictedto{\sigmaalgebraii},
+\]
+for all $\setiii\in\sigmaalgebraii$.
+
+But
+$\kondexpsub{\ellclass{\functionii}{\measure}}{\sigmaalgebraii}$
+is the unique class in
+$L_1(\measurespace, \sigmaalgebraii, \measmu\restrictedto{\sigmaalgebraii})$
+such that
+\[
+\int_\setii \funcg \, d\measmu
+=
+\inducedint_\setii
+\kondexpsub{\ellclass{\functionii}{\measure}}{\sigmaalgebraii}
+\, d\measmu\restrictedto{\sigmaalgebraii}
+\]
+for all $\setii\in\sigmaalgebraii$.
+This means
+\[
+\int_\setii \funcg \, d\measmu
+=
+\int_\setii
+e
+\, d\measmu\restrictedto{\sigmaalgebraii}
+\]
+for all $\setii\in\sigmaalgebraii$,
+and if $\setiii\in\sigmaalgebraii$, then $\setii\meets\setiii\in\sigmaalgebraii$, so
+\[
+\int_{\setii\meets\setiii} \funcg \, d\measmu
+=
+\int_{\setii\meets\setiii}
+e
+\, d\measmu\restrictedto{\sigmaalgebraii}.
+\]
+If $\setiii\in\sigmaalgebraii$, then $\setiii$ is
+$\measurable{\measmu^\kernast}$, and so
+\[
+\int_{\setii\meets\setiii} \funcg \, d\measmu
+=
+\int_\setii \charfunction{\setiii} \funcg \, d\measmu ,
+\]
+and $\setiii$ is also
+$\measurable{\measmu\restrictedto{\sigmaalgebraii}^\kernast}$, and similarly
+\[
+\int_{\setii\meets\setiii}
+e
+\, d\measmu\restrictedto{\sigmaalgebraii}
+=
+\int_{\setii}
+\charfunction{\setiii} e
+\, d\measmu\restrictedto{\sigmaalgebraii} ,
+\]
+it follows by transitivity of equality that
+\[
+\int_\setii \charfunction{\setiii} \funcg \, d\measmu
+=
+\int_\setii \charfunction{\setiii} e \, d\measmu\restrictedto{\sigmaalgebraii},
+\]
+completing the proof.
 
 To obtain the result
 \[
