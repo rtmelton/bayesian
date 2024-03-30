@@ -5952,8 +5952,7 @@ and consequently
 \end{prop}
 
 
-\begin{proof} We will only prove the first displayed equality.
-
+\begin{proof}
 Let the function $\function:\measurespace\to\R$ be
 $(\sigmaalgebraii, \borel_\R)$\hyp{}measurable,  and let the class
 $\ellclass{\funcf}{\measmu} \cdot \ellclass{\funcg}{\measmu}$
@@ -6139,6 +6138,77 @@ it follows by transitivity of equality that
 \int_\setii \charfunction{\setiii} e \, d\measmu\restrictedto{\sigmaalgebraii},
 \]
 completing the proof.
+
+To see that the equality
+\[
+\condexpsub{\bigl(\ellclass{\function}{\measure} \cdot \ellclass{\functionii}{\measure}\bigr)}{\sigmaalgebraii}
+=
+\ellclass{\function}{\measure}
+\cdot
+\condexpsub{\ellclass{\functionii}{\measure}}{\sigmaalgebraii}
+\]
+is a consequence, recall that we are letting
+$e \in
+\kondexpsub{\ellclass{\funcg}{\measmu}}{\sigalg{B}}$.
+We have shown that
+\[
+\kondexpsub{\bigl(\ellclass{\function}{\measure} \cdot \ellclass{\functionii}{\measure}\bigr)}{\sigmaalgebraii}
+=
+\ellclass{\function}{\measure\restrictedto{\sigmaalgebraii}}
+\cdot
+\kondexpsub{\ellclass{\functionii}{\measure}}{\sigmaalgebraii},
+\]
+and we know
+\begin{align*}
+\ellclass{\function}{\measure\restrictedto{\sigmaalgebraii}}
+\cdot
+\kondexpsub{\ellclass{\functionii}{\measure}}{\sigmaalgebraii}
+& =
+\ellclass{\function}{\measure\restrictedto{\sigmaalgebraii}}
+\cdot
+\ellclass{e}{\measmu\restrictedto\sigmaalgebraii} \\
+& =
+\ellclass{\funcf e }{\measmu\restrictedto\sigmaalgebraii}
+\end{align*}
+saying that
+\[
+\kondexpsub{\bigl(\ellclass{\function}{\measure} \cdot \ellclass{\functionii}{\measure}\bigr)}{\sigmaalgebraii}
+=
+\ellclass{\funcf e }{\measmu\restrictedto\sigmaalgebraii}.
+\]
+Under the embedding $\L1embedding$,
+\[
+\kondexpsub{\bigl(\ellclass{\function}{\measure} \cdot \ellclass{\functionii}{\measure}\bigr)}{\sigmaalgebraii}
+\mapsto
+\condexpsub{\bigl(\ellclass{\function}{\measure} \cdot \ellclass{\functionii}{\measure}\bigr)}{\sigmaalgebraii}
+\]
+and
+\[
+\ellclass{\funcf e }{\measmu\restrictedto\sigmaalgebraii}
+\mapsto
+\ellclass{\funcf e}{\measmu} =
+\ellclass{\funcf}{\measmu} \cdot \ellclass{e}{\measmu},
+\]
+so
+\[
+\condexpsub{\bigl(\ellclass{\function}{\measure} \cdot \ellclass{\functionii}{\measure}\bigr)}{\sigmaalgebraii}
+=
+\ellclass{\funcf}{\measmu} \cdot \ellclass{e}{\measmu}.
+\]
+But
+$\kondexpsub{(\ellclass{\functionii}{\measure})}{\sigmaalgebraii}
+=
+\ellclass{e }{\measmu\restrictedto\sigmaalgebraii}$,
+so under the embedding
+$\condexpsub{(\ellclass{\functionii}{\measure})}{\sigmaalgebraii}
+=
+\ellclass{e }{\measmu}$, and by substitution
+\[
+\condexpsub{\bigl(\ellclass{\function}{\measure} \cdot \ellclass{\functionii}{\measure}\bigr)}{\sigmaalgebraii}
+=
+\ellclass{\funcf}{\measmu} \cdot \condexpsub{(\ellclass{\functionii}{\measure})}{\sigmaalgebraii},
+\]
+as required.
 \end{proof}
 
 
