@@ -5952,7 +5952,8 @@ and consequently
 \end{prop}
 
 
-\begin{proof}
+\begin{proof} We will only prove the first displayed equality.
+
 Let the function $\function:\measurespace\to\R$ be
 $(\sigmaalgebraii, \borel_\R)$\hyp{}measurable,  and let the class
 $\ellclass{\funcf}{\measmu} \cdot \ellclass{\funcg}{\measmu}$
@@ -6138,66 +6139,6 @@ it follows by transitivity of equality that
 \int_\setii \charfunction{\setiii} e \, d\measmu\restrictedto{\sigmaalgebraii},
 \]
 completing the proof.
-
-To obtain the result
-\[
-\condexpsub{\bigl(\ellclass{\function}{\measure} \cdot \ellclass{\functionii}{\measure}\bigr)}{\sigmaalgebraii}
-=
-\ellclass{\function}{\measure}
-\cdot
-\condexpsub{\ellclass{\functionii}{\measure}}{\sigmaalgebraii},
-\]
-we will apply the  the embedding $\L1embedding$ to both sides of the equality which we have shown:
-\[
-\kondexpsub{\ellclass{\charfunction{C} \cdot \functionii}{\measure}}{\sigmaalgebraii}
-=
-\ellclass{\charfunction{C} \cdot e}{\measure\restrictedto{\sigmaalgebraii}},
-\]
-to get:
-\[
-\L1embedding
-\kondexpsub{\ellclass{\charfunction{C} \cdot \functionii}{\measure}}{\sigmaalgebraii}
-=
-\L1embedding
-\ellclass{\charfunction{C} \cdot e}{\measure\restrictedto{\sigmaalgebraii}}.
-\]
-See that
-\[
-\L1embedding
-\kondexpsub{\ellclass{\charfunction{C} \cdot \functionii}{\measure}}{\sigmaalgebraii}
-=
-\condexpsub{\ellclass{\charfunction{C} \cdot \functionii}{\measure}}{\sigmaalgebraii}
-=
-\condexpsub{\bigl(
-\ellclass{\charfunction{C}}{\measure} \cdot \ellclass{\functionii}{\measure}
-\bigr)}
-{\sigmaalgebraii}
-\]
-and
-\[
-\L1embedding
-\ellclass{\charfunction{C} \cdot e}{\measure\restrictedto{\sigmaalgebraii}}
-=
-\ellclass{\charfunction{C} \cdot e}{\measure}
-=
-\ellclass{\charfunction{C}}{\measure} \cdot \ellclass{e}{\measure}
-=
-\ellclass{\charfunction{C}}{\measure}
-\cdot
-\condexpsub{\ellclass{\funcg}{\measure}}{\sigmaalgebraii}.
-\]
-It follows that
-\[
-\condexpsub{\bigl(
-\ellclass{\charfunction{C}}{\measure} \cdot \ellclass{\function}{\measure}
-\bigr)}
-{\sigmaalgebraii}
-=
-\ellclass{\charfunction{C}}{\measure}
-\cdot
-\condexpsub{\ellclass{\funcg}{\measure}}{\sigmaalgebraii}.
-\]
-Again, the result follows by a continuity argument.
 \end{proof}
 
 
