@@ -1688,7 +1688,7 @@ Then $\int \abs{f} \,d\measure = 0$ if and only if $f=0$ $\measure^\kernast$\hyp
 
 \begin{prop}\label{levi}
 Let $\{ \funcf_n \}$ be a sequence of functions integrable with respect to $\measmu$.
-If $\funcf_n(x) \leq \funcf_{n=1}(x)$ for
+If $\funcf_n(x) \leq \funcf_{n+1}(x)$ for
 $\measmu^\kernast$\hyp{}almost all $x\in\measurespace$,
 and if\, $\lim \int \funcf_n \, d\measmu < \infty$,
 then there is a function
@@ -6026,7 +6026,7 @@ e
 \, d \measmu\restrictedto{\sigmaalgebraii}
 \]
 for all $\setii\in\sigmaalgebraii$.
-We will show that this equality holds when the function $\funcf$ is replaced by suitable step functions, and then take the limit.
+We will show that this equality holds when the function $\funcf$ is replaced by suitable step functions, and then take limits.
 
 By hypothesis,
 $\funcf\in
@@ -10628,7 +10628,7 @@ $\ellclass{\funcf}{\measmu}
 L_2(\measurespace, \sigmaalgebra,\measmu)$
 there corresponds a unique element of
 $\hilbertsubspace$,
-in this case
+namely
 $\condexpsub{\ellclass{\funcf}{\measmu}}{\sigmaalgebraii}$,
 such that
 $\ellclass{\funcf}{\measmu}
