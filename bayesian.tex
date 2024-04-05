@@ -2163,16 +2163,7 @@ This says $f\in\cali{N}_1(\measurespace, \sigmaalgebraii, \measure\restrictedto{
 $\ellclass{f}{\measure\restrictedto{\sigmaalgebraii}} =\ellclass{0}{\measure\restrictedto{\sigmaalgebraii}}$, as required.
 \end{proof}
 
-\noindent\textbf{The statement
-``Then
-$\charfunction{\seti\comp}$
-is not in
-$\cali{N}_1(\measurespace, \sigmaalgebraii, \measure\restrictedto{\sigmaalgebraii})$
-since every function in
-$\cali{N}_1(\measurespace, \sigmaalgebraii, \measure\restrictedto{\sigmaalgebraii})$
-is required, by definition, to be
-$(\sigmaalgebraii,\borel_\R)$\hyp{}measurable.''
-is not correct.}
+
 \begin{example}\label{unequal_kernel}
 Let us show by way of example that 
 $\cali{N}_1(\measurespace, \sigmaalgebraii, \measure\restrictedto{\sigmaalgebraii})$
@@ -2186,39 +2177,52 @@ $\sigmaalgebra =
 \seti\comp,
 \measurespace
 \}$
-with $\measure$ being Dirac measure $\diracmeasure{\mspaceelt}$ concentrated at a point $\mspaceelt\in\seti$, with $\seti$ non-empty, and with $\seti$ not equal to $\measurespace$.
+with the measure $\measmu$ being Dirac measure $\diracmeasure{\mspaceelt}$ concentrated at a point $\mspaceelt\in\seti$, with $\seti$ non-empty, and with $\seti$ not equal to $\measurespace$.
 Let
 $\sigmaalgebraii = 
 \{ 
 \mtset,
 \measurespace
-\}$.  Verify that 
-$\diracmeasure{\mspaceelt}^*(\seti)=\diracmeasure{\mspaceelt}(\seti)=1$, and
-$\diracmeasure{\mspaceelt}^*(\seti\comp)=\diracmeasure{\mspaceelt}(\seti\comp)=0$.
-Then $\charfunction{\seti\comp} = 0$ $\diracmeasure{\mspaceelt}^*$-almost everywhere. 
-That is, the set of points in $\measurespace$ where $\charfunction{\seti\comp}$ is not equal to zero, namely the set 
-$\seti\comp$, is a set of $\diracmeasure{\mspaceelt}^*$-measure zero.
-Since $\charfunction{\seti\comp}$ is $(\sigmaalgebra,\borel_\R)$\hyp{}measurable, 
+\}$.
+
+Verify that the collection of
+$(\diracmeasure{x})^\kernast$\hyp{}measurable subsets of $\measurespace$ is
+$\sigmaalgebra$,
+and that the collection of
+$({\diracmeasure{x}}\restrictedto{\sigmaalgebraii})^\kernast$\hyp{}measurable subsets of
+$\measurespace$
+is
+$\sigmaalgebraii$.  The set $\seti$ is not
+$({\diracmeasure{x}}\restrictedto{\sigmaalgebraii})^\kernast$\hyp{}measurable
+since it fails to cut $\measurespace$ sharply with respect to
+$({\diracmeasure{x}}\restrictedto{\sigmaalgebraii})^*$.
+
+The only function in
+$\cali{N}_1(\measurespace,
+\sigmaalgebraii,
+{\diracmeasure{x}}\restrictedto{\sigmaalgebraii}
+)$
+is the zero function since $\mtset$ is the only set of
+$({\diracmeasure{x}}\restrictedto{\sigmaalgebraii})^\kernast$\hyp{}measure zero.
+
+But the set
+$\seti\comp$
+is a set of $(\diracmeasure{x})^\kernast$-measure zero.
+And since the function $\charfunction{\seti\comp}$ is
+$\bigl(\measurable{(\diracmeasure{\mspaceelt})^\kernast},\borel_\R\bigr)$\hyp{}measurable,
 and
-$\charfunction{\seti\comp} = 0$ $\diracmeasure{\mspaceelt}^*$-almost everywhere,
-it follows that
-$\charfunction{\seti\comp}\in
-\cali{N}_1(\measurespace, \sigmaalgebra,\diracmeasure{\mspaceelt})$.
-But $\preimage{{\charfunction{\seti\comp}}}{(\{1\})} =\seti\comp$, 
-and the set $\seti\comp$ is not in $\sigmaalgebraii$, 
-so the function 
-$\charfunction{\seti\comp}$ is not  $(\sigmaalgebraii,\borel_\R)$\hyp{}measurable. Then 
+$\charfunction{\seti\comp} = 0$ $(\diracmeasure{\mspaceelt})^\kernast$\hyp{}almost everywhere,
+it follows that the function
 $\charfunction{\seti\comp}$
-is not in 
-$\cali{N}_1(\measurespace, \sigmaalgebraii, \measure\restrictedto{\sigmaalgebraii})$
-since every function in 
-$\cali{N}_1(\measurespace, \sigmaalgebraii, \measure\restrictedto{\sigmaalgebraii})$
-is required, by definition, to be 
-$(\sigmaalgebraii,\borel_\R)$\hyp{}measurable.
-Conclude that the set
-$\cali{N}_1(\measurespace, \sigmaalgebraii, \measure\restrictedto{\sigmaalgebraii})$
-need not equal the set
-$\cali{N}_1(\measurespace, \sigmaalgebra, \measure)$.
+is in
+$\cali{N}_1(\measurespace, \sigmaalgebra,\diracmeasure{\mspaceelt})$.
+
+Conclude that
+$\cali{N}_1(\measurespace, \sigmaalgebraii,
+{\diracmeasure{x}}\restrictedto{\sigmaalgebraii})$
+need not equal
+$\cali{N}_1(\measurespace, \sigmaalgebra,
+\diracmeasure{\mspaceelt})$.
 \end{example}
 
 
