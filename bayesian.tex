@@ -2327,7 +2327,8 @@ Propositions~\ref{change_of_variable} and \ref{integral_over_subalgebra} are rea
 
 \begin{prop}\label{submeasurable_step_function}
 Let $(\measurespace, \sigmaalgebra, \measmu)$ be a finite measure space, where
-$\sigmaalgebra$ is a $\textsigma$\hyp{}algebra, and let $\sigmaalgebraii$ be a $\textsigma$\hyp{}subalgebra of $\sigmaalgebra$.
+$\sigmaalgebra$ is a $\textsigma$\hyp{}algebra, and let $\sigmaalgebraii$ be a $\textsigma$\hyp{}subalgebra of
+\,$\sigmaalgebra$.
 If $\ellclass{f}{\measmu}
 \in L_1(\measurespace, \sigmaalgebra, \measmu)$, and if $f$ is
 $(\sigmaalgebraii, \borel_\R)$\hyp{}measurable, then there is a sequence
@@ -5265,9 +5266,14 @@ is positive, linear, and contractive.
 
 
 
+\begin{prop}\label{conditional_monotone}
+\textbf{The proof of a montone convergence theorem for conditional expectation is interesting enough to include it here.}
+\end{prop}
 
-\begin{quoting}
-\small
+
+
+
+\begin{rmk}
 The correct and complete proof that
 \[
 \expval{\ellclass{\function}{\measure}}
@@ -5276,7 +5282,7 @@ The correct and complete proof that
 \]
 as in the following proposition, took some effort, as tracing back through at least Proposition~\ref{integral_over_subalgebra}, shows.
 Let my early and admittedly naive attempts to try to simply throw a monotone convergence theorem at this proposition at least bring a  smile to your face. Of course there was more to it.
-\end{quoting}
+\end{rmk}
 
 
 
@@ -5327,7 +5333,7 @@ It follows by transitivity of equality that
 = 
 \inducedint_\measurespace \condexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}\, d\measure,
 \]
-which is the superior way of saying
+or alternately,
 \[
 \expval\ellclass{\function}{\measure} =
 \expvalof{\condexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}},
