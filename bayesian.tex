@@ -1067,7 +1067,7 @@ $(\sigmaalgebra, \sigmaalgebraii)$\hyp{}measurable, we might use the notation $f
 
 
 \begin{rmk}
-An attempt at a categorical approach to measurable spaces and measurable functions which does not take into account collections of null sets would be considered a first attempt.  There is nothing wrong with first attempts. Who knows? You may end up factoring by an ideal.
+An attempt at a categorical approach to measurable spaces and measurable functions which does not take into account collections of null sets would be considered a first attempt.  There is nothing wrong with first attempts. Who knows? You might end up factoring by an ideal.
 \end{rmk}
 
 
@@ -4863,9 +4863,9 @@ which completes the proof.
 \lettrine{C}{onditional} mathematical expectation is not difficult to define, but there seems to be some subtlety in the proof of its existence, especially when it comes to applying the Radon-Nikodym theorem.
 
 We are supposing that the `$\sigmaalgebra$' in any probability space $(\measurespace, \sigmaalgebra,\measure)$ is a
-$\textsigma$\hyp{}algebra, as opposed to merely a semi\hyp{}ring.
+$\textsigma$\hyp{}algebra, as opposed to merely a semiring.
 The reason for supposing this is because the Radon-Nikodym theorem applies to measurable spaces, such as
-$(\measurespace, \sigmaalgebra)$.
+$(\measurespace, \sigmaalgebra)$, in which case $\sigmaalgebra$ is certainly a \textsigma\hyp{}algebra.
 
 
 \begin{defnboldnote}
@@ -5214,7 +5214,7 @@ L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})\Lilst
 
 %*********************************************************
 %*********************************************************
-\section{Fundamental Properties}
+\section{Properties of Expectation Operators}
 %
 
 
@@ -5262,14 +5262,27 @@ of Discussion~\ref{L1_subspace_embedding}.
 
 \begin{prop}\label{conditional_expectation_operator_linear}
 Let $\sigmaalgebraii$ be a $\textsigma$-subalgebra of $\sigmaalgebra$.
-The conditional expectation operator 
+The operators
+\[
+\kondexpop\nolimits_{\sigmaalgebraii}
+:
+L_1(\measurespace, \sigmaalgebra,\measure)
+\to
+L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii}):
+\ellclass{\funcf}{\measmu}
+\mapsto
+\kondexpsub{\ellclass{\funcf}{\measmu}}{\sigmaalgebraii}
+\]
+and
 \[
 \condexpop{\sigmaalgebraii}:
-L_1 (\measurespace, \sigmaalgebra,\measure)\to
+L_1 (\measurespace, \sigmaalgebra,\measure)
+\to
 L_1 (\measurespace, \sigmaalgebra,\measure):
-\ellclass{\function}{\measure} \mapsto 
-\condexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}\]
-is positive, linear, and contractive.
+\ellclass{\funcf}{\measmu}
+\mapsto
+\condexpsub{\ellclass{\funcf}{\measmu}}{\sigmaalgebraii}\]
+are positive, linear, and contractive.
 \end{prop}
 
 
@@ -5284,7 +5297,7 @@ The correct and complete proof that
 = 
 \expvalof{\condexpsub{\ellclass{\function}{\measure}}{\sigmaalgebraii}},
 \]
-as in the following proposition, took some effort, as tracing back through at least Proposition~\ref{integral_over_subalgebra}, shows.
+as in the following proposition, took some effort, tracing back through at least Proposition~\ref{integral_over_subalgebra}.
 Let my early and admittedly naive attempts to try to simply throw a monotone convergence theorem at this proposition at least bring a  smile to your face. Of course there was more to it.
 \end{rmk}
 
@@ -5348,11 +5361,42 @@ as required.
 
 
 
-\begin{prop}\label{conditional_monotone}
-\textbf{The proof of a monotone convergence theorem for conditional expectation is interesting enough to include here, and will be used in the projections chapter.}
-\end{prop}
 
 
+\begin{rmk}
+Proposition~\ref{L1_subalgebra_fixed} says that the following diagram commutes:
+\[
+\xymatrix@R=24pt@C40pt{
+L_1(\measurespace, \sigmaalgebra,\measure )
+\ar[dr]^{\kondexpop\nolimits_{\sigmaalgebraii}}
+\\
+L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})\Lilstrut
+\ar[r]^{\text{identity}}
+\ar@{>->}[u]^{\L1embedding}
+&
+L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})\Lilstrut
+\\
+}
+\]
+which is part of a larger commutative diagram:
+\[
+\xymatrix@R=24pt@C=40pt{
+L_1(\measurespace, \sigmaalgebra,\measure )
+\ar[r]^-{\condexpop{\sigmaalgebraii}}
+\ar[dr]^{\kondexpop\nolimits_{\sigmaalgebraii}}
+&
+L_1(\measurespace, \sigmaalgebra,\measure )
+\\
+L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})\Lilstrut
+\ar[r]^{\text{identity}}
+\ar@{>->}[u]^{\L1embedding}
+&
+L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})\Lilstrut
+\ar@{>->}[u]_{\L1embedding}
+\\
+}
+\]
+\end{rmk}
 
 \begin{prop}\label{L1_subalgebra_fixed}
 If $\sigmaalgebraii$ is a $\textsigma$-subalgebra of $\sigmaalgebra$,
@@ -5400,48 +5444,80 @@ completing the proof.
 
 
 
+
+
+%*********************************************************
+%*********************************************************
+\section{A Monotone Convergence Theorem}
+%
 \begin{rmk}
-Proposition~\ref{L1_subalgebra_fixed} says that the following diagram commutes:
-\[
-\xymatrix@R=24pt@C40pt{ 
-L_1(\measurespace, \sigmaalgebra,\measure )
-\ar[dr]^{\kondexpop\nolimits_{\sigmaalgebraii}}
-\\
-L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})\Lilstrut
-\ar[r]^{\text{identity}}
-\ar@{>->}[u]^{\L1embedding}
-&
-L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})\Lilstrut
-\\
-}
-\]
-which is part of a larger commutative diagram:
-\[
-\xymatrix@R=24pt@C=40pt{ 
-L_1(\measurespace, \sigmaalgebra,\measure )
-\ar[r]^-{\condexpop{\sigmaalgebraii}} 
-\ar[dr]^{\kondexpop\nolimits_{\sigmaalgebraii}}
-&
-L_1(\measurespace, \sigmaalgebra,\measure ) 
-\\
-L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})\Lilstrut
-\ar[r]^{\text{identity}}
-\ar@{>->}[u]^{\L1embedding}
-&
-L_1(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})\Lilstrut
-\ar@{>->}[u]_{\L1embedding}
-\\
-}
-\]
+If $\ellclass{\funcf}{\measmu}$
+is a class in
+$L_1(\measurespace, \sigmaalgebra,\measmu)$,
+then
+$\ellclass{0}{\measmu} \leq \ellclass{\funcf}{\measmu}$
+means that
+$0 \leq \funcf(\mspaceelt)$ for
+$\mu^\kernast$\hyp{}almost
+all
+$\mspaceelt \in \measurespace$.
+Equivalently,
+$\ellclass{\funcf}{\measmu} \leq \ellclass{\funcg}{\measmu}$
+means that
+$\funcf(\mspaceelt) \leq \funcg(\mspaceelt)$ for
+$\mu^\kernast$\hyp{}almost
+all
+$\mspaceelt \in \measurespace$.
+What then does
+$\ellclass{\funcf_n}{\measmu}
+\uparrow
+\ellclass{\funcf}{\measmu}$
+mean? It means that for each $n$,
+$\funcf_n(\mspaceelt) \leq \funcf_{n+1}(\mspaceelt)$ for
+$\mu^\kernast$\hyp{}almost
+all
+$\mspaceelt \in \measurespace$,
+and that
+$\funcf_n(\mspaceelt) \to \funcf(\mspaceelt)$ for
+$\mu^\kernast$\hyp{}almost
+all
+$\mspaceelt \in \measurespace$.
 \end{rmk}
 
 
+\begin{prop}\label{conditional_monotone}
+Let $(\measurespace, \sigmaalgebra,\measmu)$ be a probability space, and let
+$\sigmaalgebraii$ be a \textsigma\hyp{}subalgebra of $\sigmaalgebra$.
+Let
+$\{
+\ellclass{\funcf}{\measmu},
+\ellclass{\funcf_1}{\measmu},
+\ellclass{\funcf_2}{\measmu},
+\ldots \}$
+be a collection of classes in
+$L_1(\measurespace, \sigmaalgebra, \measmu)$.
+If\,
+$\ellclass{0}{\measmu}
+\leq
+\ellclass{\funcf_n}{\measmu}
+\uparrow
+\ellclass{\funcf}{\measmu}$,
+then
+$\ellclass{0}{\measmu\restrictedto{\sigmaalgebraii}}
+\leq
+\kondexpop_\sigmaalgebraii \ellclass{\funcf_n}{\measmu}
+\uparrow
+\kondexpop_\sigmaalgebraii \ellclass{\funcf}{\measmu}$.
+\end{prop}
+
+
+
 
 
 
 %*********************************************************
 %*********************************************************
-\section{Averaging Properties}
+\section{Atoms and Independence}
 %
 
 
@@ -5918,6 +5994,13 @@ and
 \begin{proof}
 These are just  specific instances of Proposition~\ref{conditional_is_expected}.
 \end{proof}
+
+
+
+%*********************************************************
+%*********************************************************
+\section{Measurable Functions Factor Out}
+%
 
 
 \begin{rmk}
@@ -10557,8 +10640,8 @@ $\helt-\proj(\helt) \perp \hilbertsubspace$.
 The map $\hilbertspace \to \hilbertspace$ defined by
 $\helt\mapsto \proj(\helt)$ is called the orthogonal projection of
 $\hilbertspace$ onto $\hilbertsubspace$ along ${\hilbertsubspace}^\perp$, or simply the
-\emph{orthogonal projection of $\boldsymbol{\hilbertspace}$
-onto $\boldsymbol{\hilbertsubspace}$}.
+\emph{orthogonal projection of $\hilbertspace$
+onto $\hilbertsubspace$}.
 
 Orthogonal projections are contractive in the sense that any nonzero orthogonal projection on a Hilbert space has norm equal to 1.
 For $\helt$ and $\heltii$ in $\hilbertspace$, we let
@@ -10597,28 +10680,17 @@ $\inner{\helt}{\horthoi}$ of $\helt$.
 
 
 \section{Expectation as Projection}
-\begin{quoting}
-\textbf{In order to complete this section,}
-you should look at the case in which the \textsigma\hyp{}subalgebra is generated by a finite partition.  After all, this is always the case you will be using when doing any computer modeling.
-
-It means wheeling in a decent exposition of the finite case. Use Cheng\hyp{}Shang Chang's,
-\textsl{Understanding Conditional Expectation via Vector Projection.}
-Then decide how far you want to go with this. Can you do better than
-\textsl{A Deep Dive Into How R Fits a Linear Model} from
-\cf{http://madrury.github.io/}?
-\end{quoting}
-
-
 
 \begin{rmk}
 Some implications may be used without much fanfare; namely, if the classes
 $\ellclass{\funcf}{\measmu}$ and
 $\ellclass{\funcg}{\measmu}$ are in
 $L_2(\measurespace, \sigmaalgebra,\measmu)$,
-then the product
+then the product of classes
 $\ellclass{\funcf}{\measmu}
+\cdot
 \ellclass{\funcg}{\measmu}
-=
+\definedby
 \ellclass{\funcf \funcg}{\measmu}$
 is in
 $L_1(\measurespace, \sigmaalgebra, \measmu)$.
@@ -10654,7 +10726,8 @@ $.
 Let $\hilbertsubspace$ denote the subspace
 $\L1embedding\bigl(
 L_2(\measurespace, \sigmaalgebraii,\measmu\restrictedto{\sigmaalgebraii})
-\bigr)$, which is the collection of those classes of
+\bigr)$.
+The elements of $\hilbertsubspace$ are the classes of
 $L_2(\measurespace, \sigmaalgebra, \measmu)$
 which have a
 $(\sigmaalgebraii,\borel_\R)$\hyp{}measurable representative.
@@ -10724,24 +10797,38 @@ and in turn, this means showing that
 \bigr).
 \]
 
+\textbf{Stop work here.
+Go back and finish Proposition~\ref{measurable_functions_factor_out} first.}
+
 We will apply Proposition~\ref{measurable_functions_factor_out}, and in order to do this, check first that
-$\function \in L_1(\measurespace, \sigmaalgebra,\measure)$, and this is because
-$\function \in L_2(\measurespace, \sigmaalgebra,\measure)$ and
+$\ellclass{\funcf}{\measmu} \in L_1(\measurespace, \sigmaalgebra,\measure)$, and this is because
+$\ellclass{\funcf}{\measmu} \in L_2(\measurespace, \sigmaalgebra,\measure)$, and because
 $L_2(\measurespace, \sigmaalgebra,\measure) \subseteq
-L_1(\measurespace, \sigmaalgebra,\measure)$ (since the measure space is finite).
+L_1(\measurespace, \sigmaalgebra,\measure)$ since the measure space is finite.
 Next check that
-$\functioniii$ is
+$\funch$ is
 $(\sigmaalgebraii, \borel_\R)$\hyp{}measurable
 since
-$\functioniii\in L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$.
-Finally check that $\function\functioniii\in L_1(\measurespace, \sigmaalgebra,\measure)$ by Cauchy-Schwarz.
+$\ellclass{\funch}{\measmu}\in L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$.
+Finally check that
+$\ellclass{\funcf}{\measmu} \cdot \ellclass{\funch}{\measmu}
+\in
+L_1(\measurespace, \sigmaalgebra,\measure)$ by Cauchy-Schwarz.
 Therefore,
 since
-$\function \in L_1(\measurespace, \sigmaalgebra,\measure)$ and
+$\ellclass{\funcf}{\measmu} \in L_1(\measurespace, \sigmaalgebra,\measure)$ and
 $\functioniii:\measurespace\to\R$ is $(\sigmaalgebraii, \borel_\R)$\hyp{}measurable with
-$\function\functioniii\in L_1(\measurespace, \sigmaalgebra,\measure)$,
+$\ellclass{\funcf}{\measmu}
+\cdot
+\ellclass{\funch}{\measmu}
+\in
+L_1(\measurespace, \sigmaalgebra,\measure)$,
 it follows by Proposition~\ref{measurable_functions_factor_out} that
-$\expvalof{\function\functioniii} = \expvalof{\functioniii \condexpsub{\function}{\sigmaalgebraii}}$, as required.
+$\expvalof{\ellclass{\funcf}{\measmu} \cdot \ellclass{\funch}{\measmu}}
+=
+\expvalof{\ellclass{\funch}{\measmu}
+\cdot
+\condexpsub{\ellclass{\funcf}{\measmu}}{\sigmaalgebraii}}$, as required.
 
 We now show the uniqueness part; namely we show that if
 $\function\in L_2(\measurespace, \sigmaalgebra,\measure)$, then
@@ -10749,43 +10836,43 @@ $\condexpsub{\function}{\sigmaalgebraii}$ is the
 unique element of
 $L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$
 such that
-$\function - \condexpsub{\function}{\sigmaalgebraii} \perp \functioniii$ for all $\functioniii\in
+$\function - \condexpsub{\function}{\sigmaalgebraii} \perp \ellclass{\funch}{\measmu}$ for all $\ellclass{\funch}{\measmu}\in
 L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$.
 Let
 $\function\in L_2(\measurespace, \sigmaalgebra,\measure)$,
 and suppose that there is a
 $\functionii \in L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$
 having the property that
-$\function-\functionii\perp \functioniii$ for all $\functioniii\in
+$\function-\functionii\perp \ellclass{\funch}{\measmu}$ for all $\ellclass{\funch}{\measmu}\in
 L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$.
 We want to see that this implies $\functionii$ must equal
 $\condexpsub{\function}{\sigmaalgebraii}$.
 To say that
 \[
-\function-\functionii\perp \functioniii
-\quad\text{for all $\functioniii\in
+\function-\functionii\perp \ellclass{\funch}{\measmu}
+\quad\text{for all $\ellclass{\funch}{\measmu}\in
 L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$}
 \]
 means saying that
 \[
-\inner{\function-\functionii}{\functioniii} = 0
+\inner{\function-\functionii}{\ellclass{\funch}{\measmu}} = 0
 \quad\text{for all
-$\functioniii\in L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$},
+$\ellclass{\funch}{\measmu}\in L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$},
 \]
 or equivalently that
 \[
-\inner{\function}{\functioniii} = \inner{\functionii}{\functioniii}
+\inner{\function}{\ellclass{\funch}{\measmu}} = \inner{\functionii}{\ellclass{\funch}{\measmu}}
 \quad\text{for all
-$\functioniii\in L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$}.
+$\ellclass{\funch}{\measmu}\in L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$}.
 \]
 In terms of integrals, this says
 \[
-\int_\measurespace \function\functioniii \, d\measure
+\int_\measurespace \function\ellclass{\funch}{\measmu} \, d\measure
 =
-\int_\measurespace \functionii\functioniii \, d\measure
+\int_\measurespace \functionii\ellclass{\funch}{\measmu} \, d\measure
 \quad\text{
 for all
-$\functioniii\in L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$}.
+$\ellclass{\funch}{\measmu}\in L_2(\measurespace, \sigmaalgebraii,\measure\restrictedto{\sigmaalgebraii})$}.
 \]
 In particular, for every $B\in\sigmaalgebraii$, the characteristic function
 $\charfunction{B}$ is in
