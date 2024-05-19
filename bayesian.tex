@@ -6082,7 +6082,9 @@ and consequently
 \begin{proof}
 Let the function $\function:\measurespace\to\R$ be
 $(\sigmaalgebraii, \borel_\R)$\hyp{}measurable,  and let the class
-$\ellclass{\funcf}{\measmu} \cdot \ellclass{\funcg}{\measmu}$
+$\ellclass{\funcf}{\measmu} \cdot \ellclass{\funcg}{\measmu}$,
+which equals
+$\ellclass{\funcf\funcg}{\measmu}$ by definition,
 be in
 $L_1(\measurespace, \sigmaalgebra,\measmu)$,
 and let the class
@@ -6105,9 +6107,9 @@ What does it mean to show that
 By definition,
 $\kondexpsub{\bigl(\ellclass{\function}{\measure}
 \cdot
-\ellclass{\functionii}{\measure}\bigr)}{\sigmaalgebraii}$
+\ellclass{\functionii}{\measure}\bigr)}{\sigmaalgebraii}$,
 is the unique class in
-$L_1(\measurespace, \sigmaalgebra, \measmu)$
+$L_1(\measurespace, \sigmaalgebraii, \measmu\restrictedto{\sigmaalgebraii})$
 having a $( \sigmaalgebraii, \borel_R )$\hyp{}measurable representative such that
 \[
 \int_\setii \funcf\funcg \,d\measmu
@@ -6129,7 +6131,7 @@ So in order to show that
 \cdot
 \kondexpsub{\ellclass{\functionii}{\measure}}{\sigmaalgebraii},
 \]
-we need to show that
+it is sufficient to show that
 \[
 \int_\setii \funcf\funcg \,d\measmu
 =
@@ -6171,7 +6173,7 @@ with each $\setiii_i \in \sigmaalgebraii$.
 
 
 We can suppose that both $\funcf$ and $\funcg$ are nonnegative.
-It means we can also suppose that the $\phi_n$ are also nonnegative.
+It means we can further suppose that the $\phi_n$ are also nonnegative.
 It also means the $\phi_n g$ and $\funcf \funcg$ are upper functions.
 Since
 $\phi_n \funcg \uparrow \funcf \funcg$,
