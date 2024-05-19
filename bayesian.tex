@@ -1693,7 +1693,7 @@ Let $f:\measurespace\to\R$ be a function integrable over $\measurespace$ with re
 Then $\int \abs{f} \,d\measure = 0$ if and only if $f=0$ $\measure^\kernast$\hyp{}almost everywhere.
 \end{prop}
 
-\begin{prop}\label{levi}
+\begin{thmboldnote}[Levi]\label{levi}
 Let $\{ \funcf_n \}$ be a sequence of functions integrable with respect to $\measmu$.
 If $\funcf_n(x) \leq \funcf_{n+1}(x)$ for
 $\measmu^\kernast$\hyp{}almost all $x\in\measurespace$,
@@ -1706,7 +1706,7 @@ $x\in\measurespace$.  Consequently,
 $\int \funcf_n\, d\measmu
 \uparrow
 \int \funcf \, d\measmu$.
-\end{prop}
+\end{thmboldnote}
 
 
 %\begin{thmboldnote}[The Lebesgue Dominated Convergence Theorem]\label{tldct}
@@ -5485,6 +5485,8 @@ $\mspaceelt \in \measurespace$.
 \end{rmk}
 
 
+
+
 \begin{prop}\label{conditional_monotone}
 Let $(\measurespace, \sigmaalgebra,\measmu)$ be a probability space, and let
 $\sigmaalgebraii$ be a \textsigma\hyp{}subalgebra of $\sigmaalgebra$.
@@ -5510,7 +5512,12 @@ $\ellclass{0}{\measmu\restrictedto{\sigmaalgebraii}}
 \kondexpop_\sigmaalgebraii \ellclass{\funcf}{\measmu}$.
 \end{prop}
 
-
+\begin{proof}
+Fairly simple consequence of Levi's Theorem~\ref{levi} applied to
+$\kondexpop_\sigmaalgebraii \ellclass{\funcf_n}{\measmu}$,
+and of the definition of conditional mathematical expectation.
+Will come back and transcribe my hand\hyp{}written stuff. At some point, maybe.
+\end{proof}
 
 
 
