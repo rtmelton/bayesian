@@ -5482,6 +5482,11 @@ $\funcf_n(\mspaceelt) \to \funcf(\mspaceelt)$ for
 $\mu^\kernast$\hyp{}almost
 all
 $\mspaceelt \in \measurespace$.
+
+Far better would have been to simply say,
+``Remember that
+$L_1(\measurespace, \sigmaalgebra,\measmu)$
+is a Banach lattice.''
 \end{rmk}
 
 
@@ -5516,7 +5521,6 @@ $\ellclass{0}{\measmu\restrictedto{\sigmaalgebraii}}
 Fairly simple consequence of Levi's Theorem~\ref{levi} applied to
 $\kondexpop_\sigmaalgebraii \ellclass{\funcf_n}{\measmu}$,
 and of the definition of conditional mathematical expectation.
-Will come back and transcribe my hand\hyp{}written stuff. At some point, maybe.
 \end{proof}
 
 
@@ -6054,13 +6058,13 @@ $(\sigmaalgebraii, \borel_\R)$\hyp{}measurable,  and if the class
 $\ellclass{\funcf}{\measmu} \cdot \ellclass{\funcg}{\measmu}$
 is in
 $L_1(\measurespace, \sigmaalgebra,\measmu)$,
-and if the class
-$\ellclass{\function}{\measmu\restrictedto{\sigmaalgebraii}}
+then
+$\ellclass{\function}{\measure\restrictedto{\sigmaalgebraii}}
 \cdot
-\kondexpsub{\ellclass{\funcg}{\measmu}}{\sigmaalgebraii}$
+\kondexpsub{\ellclass{\functionii}{\measure}}{\sigmaalgebraii}$
 is in
 $L_1(\measurespace, \sigmaalgebraii, \measmu\restrictedto{\sigmaalgebraii})$,
-then
+and
 \[
 \kondexpsub{\bigl(\ellclass{\function}{\measure} \cdot \ellclass{\functionii}{\measure}\bigr)}{\sigmaalgebraii}
 = 
@@ -6068,7 +6072,13 @@ then
 \cdot
 \kondexpsub{\ellclass{\functionii}{\measure}}{\sigmaalgebraii}
 ,\]
-and consequently
+and
+$\ellclass{\function}{\measure}
+\cdot
+\condexpsub{\ellclass{\functionii}{\measure}}{\sigmaalgebraii}$
+is in
+$L_1(\measurespace, \sigmaalgebra,\measmu)$,
+consequently
 \[
 \condexpsub{\bigl(\ellclass{\function}{\measure} \cdot \ellclass{\functionii}{\measure}\bigr)}{\sigmaalgebraii}
 = 
@@ -6086,15 +6096,21 @@ $\ellclass{\funcf}{\measmu} \cdot \ellclass{\funcg}{\measmu}$,
 which equals
 $\ellclass{\funcf\funcg}{\measmu}$ by definition,
 be in
-$L_1(\measurespace, \sigmaalgebra,\measmu)$,
-and let the class
-$\ellclass{\function}{\measmu\restrictedto{\sigmaalgebraii}}
-\cdot
-\kondexpsub{\ellclass{\funcg}{\measmu}}{\sigmaalgebraii}$
-be in
-$L_1(\measurespace, \sigmaalgebraii, \measmu\restrictedto{\sigmaalgebraii})$.
+$L_1(\measurespace, \sigmaalgebra,\measmu)$.
 
-What does it mean to show that
+If we already knew that the product of classes
+$\ellclass{\function}{\measure\restrictedto{\sigmaalgebraii}}
+\cdot
+\kondexpsub{\ellclass{\functionii}{\measure}}{\sigmaalgebraii}$
+existed in
+$L_1(\measurespace, \sigmaalgebraii, \measmu\restrictedto{\sigmaalgebraii})$,
+then the proof would be foolishly simple.  But it is not.
+
+Assuming momentarily that the symbols
+$\ellclass{\function}{\measure\restrictedto{\sigmaalgebraii}}
+\cdot
+\kondexpsub{\ellclass{\functionii}{\measure}}{\sigmaalgebraii}$
+make sense, then what would it mean to show that
 \[
 \kondexpsub{\bigl(\ellclass{\function}{\measure}
 \cdot
@@ -6104,6 +6120,7 @@ What does it mean to show that
 \cdot
 \kondexpsub{\ellclass{\functionii}{\measure}}{\sigmaalgebraii}
 \,?\]
+
 By definition,
 $\kondexpsub{\bigl(\ellclass{\function}{\measure}
 \cdot
@@ -6157,23 +6174,25 @@ e
 for all $\setii\in\sigmaalgebraii$.
 We will show that this equality holds when the function $\funcf$ is replaced by suitable step functions, and then take limits.
 
-By hypothesis,
-$\funcf\in
-L_1(\measurespace, \sigmaalgebra,\measmu)$ and
+By hypothesis, the class
+$\ellclass{\funcf}{\measmu}$
+is in
+$L_1(\measurespace, \sigmaalgebra,\measmu)$,
+and the function
 $\funcf$ is
 $(\sigmaalgebraii, \borel_\R)$\hyp{}measurable
 so by Proposition~\ref{submeasurable_step_function}, there is a sequence
 $\{ \phi_n \}$ of
 $(\measurable{\measmu^\kernast}, \borel_\R)$\hyp{}step functions with
-$\phi_n(x) \uparrow f(x)$ for all $x\in\measurespace$, where each $\phi_n$ is a sum of the form
+$\phi_n(x) \uparrow f(x)$ for all $x\in\measurespace$, where each $\phi_n$ is a finite sum of the form
 \[
-\sum_{i=1}^m c_i \charfunction{\setiii_i}
+\phi_n = \sum_i c_i \charfunction{\setiii_i}
 \]
 with each $\setiii_i \in \sigmaalgebraii$.
 
 
 We can suppose that both $\funcf$ and $\funcg$ are nonnegative.
-It means we can further suppose that the $\phi_n$ are also nonnegative.
+It means we can further suppose that the $\phi_n$ are nonnegative.
 It also means the $\phi_n g$ and $\funcf \funcg$ are upper functions.
 Since
 $\phi_n \funcg \uparrow \funcf \funcg$,
