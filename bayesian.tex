@@ -1395,10 +1395,13 @@ $\measure^*\bigl(\preimage{i}(A)\bigr) = (\measure\circ\preimage{i})^*(A)$, whic
 
 
 
-\begin{rmk}
-The following proposition says that two functions which are equal almost everywhere are either simultaneously measurable or not. As it should be.  
-\end{rmk}
 
+\begin{rmk}
+Underlying the mechanics of Proposition~\ref{measurable_almost_everywhere} and Theorem~\ref{measurable_limits} is the idea of what it means for a measure to be complete. This property describes a tight interplay between a measure and the collection of sets which forms its domain; let us say that a measure space is \emph{complete}\index{complete measure space} if every subset of a set of measure zero is measurable. It is almost worth ferreting this out, and then restating the proposition and theorem in these terms.   Vaguely, let $(\measurespace, \sigmaalgebra, \measure)$ be a complete measure space, where $\sigmaalgebra$ is at least an algebra of sets. Then if $f:\measurespace\to\R$ is an
+$(\sigmaalgebra,\borel_\R)$\hyp{}measurable function, and $g:\measurespace\to\R$ is a function  with $g = f$ $\measure$\hyp{}almost everywhere, then $g$ is also an
+$(\sigmaalgebra,\borel_\R)$\hyp{}measurable function. Since a measure space
+$(\measurespace, \measurable{\measure^\kernast}, \measure^*)$ is always a complete measure space, the proposition would follow. But this is a type of interference that generates problems which I do not want to solve here.
+\end{rmk}
 
 
 \begin{prop}\label{measurable_almost_everywhere}
@@ -1414,16 +1417,6 @@ $\measure^\kernast$-almost everywhere, then $\functionii$ is also \mbmeasurable.
 Let $\{f_n\}$ be a sequence of \mbmeasurable\ functions. If $f:\measurespace\to\R$ is a function such that $f_n\to f$ $\measure^\kernast$-almost everywhere, then $f$ is also \mbmeasurable.
 \end{thm}
 
-
-
-
-\begin{quoting}
-\small
-Underlying the mechanics of Proposition~\ref{measurable_almost_everywhere} and Theorem~\ref{measurable_limits} is the property of completeness. This property describes a tight interplay between a measure and the collection of sets which forms its domain; let's say a measure space is \emph{complete}\index{complete measure space} if every subset of a set of measure zero is measurable. It is almost worth ferreting this out, and then restating the proposition and theorem in these terms.   Vaguely, let $(\measurespace, \sigmaalgebra, \measure)$ be a complete measure space, where $\sigmaalgebra$ is at least an algebra of sets. Then if $f:\measurespace\to\R$ is an 
-$(\sigmaalgebra,\borel_\R)$\hyp{}measurable function, and $g:\measurespace\to\R$ is a function  with $g = f$ $\measure$\hyp{}almost everywhere, then $g$ is also an 
-$(\sigmaalgebra,\borel_\R)$\hyp{}measurable function. Since the measure space 
-$(\measurespace, \measurable{\measure^\kernast}, \measure^*)$ \emph{is} a complete measure space, the proposition would follow. But this is a type of interference that generates problems which I do not want to solve here.
-\end{quoting}
 
 
 
@@ -1446,9 +1439,12 @@ An $(\sigmaalgebra, \borel_\R)$\hyp{}measurable function  having finite range is
 
 
 \begin{prop}\label{measurable_implies_simple_function_limit}
-Let $(\measurespace, \sigmaalgebra)$ be a measurable space, and let $f:\measurespace\to\R$ be an $(\sigmaalgebra, \borel_\R)$\hyp{}measurable function such that $f(x)\geq 0$ for all $x\in\measurespace$. 
-There is a sequence $\{\phi_n\}$ of $(\sigmaalgebra, \borel_\R)$-simple functions such that $\phi_n(x)\geq 0$ and $\phi_n(x)\uparrow f(x)$ for all $x\in\measurespace$.
+Let $(\measurespace, \sigmaalgebra)$ be a measurable space, and let $f:\measurespace\to\R$, with $\funcf(x)\geq 0$ for all $x\in\measurespace$.
+If $\funcf$ is an $(\sigmaalgebra, \borel_\R)$\hyp{}measurable function, then there is a sequence
+$\{ \phi_n \}$ of $(\sigmaalgebra, \borel_\R)$\hyp{}simple functions such that
+$0 \leq \phi_n(x) \uparrow \funcf(x)$ for all $x\in\measurespace$.
 \end{prop}
+
 
 
 
@@ -1485,34 +1481,40 @@ It follows that $\mspaceeltii_n(x) \uparrow f(x)$ for all $x$ in the complement 
 \end{proof}
 
 
+
+
 \begin{defn}\label{step_function}
-Let $(\measurespace,\sigmaalgebra, \measmu)$ be a measure space.
-Let us say that a
-$(\measurable{\measmu^\kernast}, \borel_\R)$\hyp{}simple
-function is a
-$(\measurable{\measmu^\kernast},\borel_\R)$\hyp{}\term{step function} if it can be expressed as a linear combination of characteristic functions of subsets of
-$\measurable{\measmu^\kernast}$ of finite
-$\measmu^\kernast$\hyp{}measure.  That is,  if $\phi$ is a
-$(\measurable{\measmu^\kernast}, \borel_\R)$\hyp{}simple function
+Let $(\measurespace,\sigmaalgebra, \measmu)$ be a measure space, where $\sigmaalgebra$ is a
+$\textsigma$\hyp{}algebra.
+An
+$(\sigmaalgebra, \borel_\R)$\hyp{}simple
+function is an
+$(\sigmaalgebra,\borel_\R)$\hyp{}\term{step function} if its preimages all have finite measure.  That is,  if $\phi$ is an
+$(\sigmaalgebra, \borel_\R)$\hyp{}simple function
 having range
 $\{a_1, \ldots, a_n\}$, then
-$\phi$ is a $(\measurable{\measmu^\kernast},\borel_\R)$\hyp{}\term{step function} if
+$\phi$ is an $(\sigmaalgebra,\borel_\R)$\hyp{}\term{step function} if
 $\phi=\sum_{i=1}^n a_i\charfunction{\seti_i}$ with each
-$\seti_i \in \measurable{\measmu^\kernast}$, and with $\measmu^*(A_i) < \infty$,
+$\seti_i \in \sigmaalgebra$, and with each $\measmu(A_i) < \infty$,
 where we can suppose the $A_i$ to be pairwise disjoint.
 Is it clear that with a finite measure space,
 every
-$(\measurable{\measmu^\kernast}, \borel_\R)$\hyp{}simple
-function is a
-$(\measurable{\measmu^\kernast}, \borel_\R)$\hyp{}step function?
+$(\sigmaalgebra, \borel_\R)$\hyp{}simple
+function is an
+$(\sigmaalgebra, \borel_\R)$\hyp{}step function?
 \end{defn}
 
 
-
+It seems that one of the two following propositions should be redundant.  Replacing $\sigmaalgebra$ with
+$\measmu^\kernast\mhyphen\mathfrak{Meas}$
+does not quite do it.
 
 
 \begin{prop}\label{sigma_finite_step_functions}
-If $(\measurespace, \semiring, \measure)$ is a $\textsigma$-finite measure space, and $f:\measurespace\to\R$ is a \mbmeasurable\ function with $f(x)\geq 0$ on $\measurespace$, 
+Let $(\measurespace, \semiring, \measure)$ be a $\textsigma$-finite measure space, and let
+$f:\measurespace\to\R$
+with $f(x)\geq 0$ for all $x\in\measurespace$.
+If $\funcf$ is a \mbmeasurable\ function,
 then there is a sequence $\{\phi_n\}$ of
 $(\measurable{\measure^\kernast},\borel_\R)$\hyp{}step functions such that $\phi_n(x)\geq 0$ and $\phi_n(x)\uparrow f(x)$ for all $x\in\measurespace$.
 \end{prop}
@@ -1520,15 +1522,51 @@ $(\measurable{\measure^\kernast},\borel_\R)$\hyp{}step functions such that $\phi
 
 
 
+\begin{prop}\label{sigma_finite_a_measurable}
+Let $(\measurespace, \sigmaalgebra, \measure)$ be a $\textsigma$-finite measure space, where $\sigmaalgebra$ is a \textsigma\hyp{}algebra, and let
+$f:\measurespace\to\R$
+with $f(x)\geq 0$ for all $x\in\measurespace$.
+If $\funcf$ is an $(\sigmaalgebra,\borel_\R)$\hyp{}measurable function,
+then there is a sequence $\{\phi_n\}$ of
+$(\sigmaalgebra,\borel_\R)$\hyp{}step functions such that $\phi_n(x)\geq 0$ and $\phi_n(x)\uparrow f(x)$ for all $x\in\measurespace$.
+\end{prop}
+
 
 
 
 \begin{defn}\label{integral_step_function}
-Let $\phi:\measurespace\to\R$ be a $(\measurable{\measure^\kernast},\borel_\R)$-step function such that $\phi=\sum_{i=1}^{n}a_i\charfunction{A_i},$ where the range of $\phi$ is the set $\{a_1, \ldots, a_n\}$, and each $A_i=\preimage{\phi}(\{ a_i\} )$. Then the Lebesgue \emph{integral}\index{integral}  of $\phi$, denoted by $\int_\measurespace\phi\,d\measure$, or simply $\int \phi$,  is defined to be the real number
+Let $\phi:\measurespace\to\R$ be a $(\measurable{\measure^\kernast},\borel_\R)$-step function such that $\phi=\sum_{i=1}^{n}a_i\charfunction{A_i},$ where the range of $\phi$ is the set $\{a_1, \ldots, a_n\}$, and each
+$A_i \definedby \preimage{\phi}(\{ a_i\} )$
+is $\measmu^\kernast$\hyp{}measurable.
+Then the Lebesgue \emph{integral}\index{integral}  of $\phi$, denoted by $\int_\measurespace\phi\,d\measure$, or simply $\int \phi$,  is defined to be the real number
 \[
 \int_\measurespace\phi\,d\measure = \sum_{i=1}^{n}a_i\measure^*(A_i).
 \]
 \end{defn}
+
+
+\begin{discussion}\label{alternate_lebesgue_integral}
+In some texts, the Lebesgue integral is defined relative to a measure space
+$(\measurespace, \sigmaalgebra, \measure)$,
+where $\sigmaalgebra$ is a \textsigma\hyp{}algebra.
+Then, if
+$\phi:\measurespace\to\R$ is an
+$(\sigmaalgebra,\borel_\R)$-step function such that $\phi=\sum_{i=1}^{n}a_i\charfunction{A_i},$ where the range of $\phi$ is the set $\{a_1, \ldots, a_n\}$, and each
+$A_i \definedby \preimage{\phi}(\{ a_i\} )$
+is in $\sigmaalgebra$,
+the Lebesgue integral is defined to be the real number
+\[
+\int_\measurespace\phi\,d\measure = \sum_{i=1}^{n}a_i\measmu(A_i).
+\]
+The resulting integral is sufficient to integrate a class of
+$(\sigmaalgebra, \borel_\R)$\hyp{}measurable functions.
+How does the integral in Definition~\ref{integral_step_function} compare with the integral defined here?
+As a consequence of Proposition~\ref{sigma_finite_a_measurable}, if the measure space
+$(\measurespace, \sigmaalgebra, \measmu)$ is \textsigma\hyp{}finite, then for
+$(\sigmaalgebra, \borel_\R)$\hyp{}measurable functions, the two integrals agree.
+\end{discussion}
+
+
 
 
 \begin{prop}
@@ -1902,14 +1940,8 @@ $\ellclass{f}{\measure} = \ellclass{g}{\measure}$.
 
 
 
-Compare the following Proposition~\ref{step_functions_dense} (where we assume integrability) with Proposition~\ref{sigma_finite_step_functions} (where we do not assume integrability, but we do assume 
-$\textsigma$-finiteness):
-\begin{quoting}
-\small
-Proposition~\ref{sigma_finite_step_functions}.
-If $(\measurespace, \semiring, \measure)$ is a $\textsigma$-finite measure space, and $f:\measurespace\to\R$ is a \mbmeasurable\ function with $f(x)\geq 0$ on $\measurespace$, 
-then there is a sequence $\{\phi_n\}$ of $(\measurable{\measure^\kernast},\borel_\R)$ step functions such that $\phi_n(x)\geq 0$ and $\phi_n(x)\uparrow f(x)$ for all $x\in\measurespace$.
-\end{quoting}
+Compare the following Proposition~\ref{step_functions_dense}, where we assume integrability, with Proposition~\ref{sigma_finite_step_functions}, where we do not assume integrability, but we do assume
+the space is $\textsigma$-finite.
 
 
 
@@ -4464,6 +4496,9 @@ $\functionii \in\cali{L}_1(\R,\borel_\R,\lambda)$
 in this case represents the Radon-Nikodym derivative of the probability measure
 $\measmu \circ \preimage{\function}$
 with respect to Lebesgue measure $\lambda$ on $\borel_\R$.
+The assumption that the induced probability measure
+$\measmu\circ \preimage{\function}$
+is absolutely continuous with respect to Lebesgue measure $\measlambda$ is at least implied.
 Should an author write 
 \[\text{Normal}(\function\mid m,s),\] they are likely referring to the function $\functionii$ itself, and might call it the \term{density} of $\function$. 
 
@@ -4487,8 +4522,9 @@ There is no intelligible sense in which the terms \emph{density} and \emph{proba
 \begin{defn}\label{expected_value}
 For a class $\ellclass{\function}{\measure}$ in $L_1(\measurespace, \semiring,\measure)$, the
 \term{expected value} $\expval{\ellclass{\function}{\measure}}$ of the class
-$\ellclass{\function}{\measure}$ is
-$\int\function\,d\mu$. That is, the operator $\expval$ is the linear functional defined by
+$\ellclass{\function}{\measure}$ is its integral
+$\int_\measurespace\function\,d\mu$.
+The operator $\expval$ is the linear functional defined by
 \[
 \expval:
 L_1(\measurespace, \semiring,\measure)\to\R :
@@ -4502,8 +4538,8 @@ L_1(\measurespace, \semiring,\measure)\to\R :
 In the case that
 $(\measurespace,\sigmaalgebra,\measure)$ is a probability space, and
 the probability distribution
-$\measmu\circ\preimage{\funcf}$ of $\funcf$ is absolutely continuous with respect to some
-\textsigma\hyp{}finite reference measure
+$\measmu\circ\preimage{\funcf}$ of $\funcf$ is absolutely continuous with respect to a
+\textsigma\hyp{}finite measure
 $\measlambda$ on $\borel_\R$, then,
 setting
 $p = d(\measmu\circ\preimage{\funcf})/d \measlambda$,
@@ -4643,7 +4679,7 @@ $L_1(\measurespace, \semiring,\measure)$.
 For example, let 
 $\function = a\charfunction{\seti} + b\charfunction{\setii}$ and 
 $\functionii = c\charfunction{\setiii} + d\charfunction{\setiv}$ be independent with respect to $\measure^*$,
-where we suppose $\seti$, $\setii$, $\setiii$, and $\setiv$ to be disjoint and $\measure^\kernast$-measurable sets of finite measure. Then
+where we suppose $\seti$, $\setii$, $\setiii$, and $\setiv$ to be $\measure^\kernast$-measurable sets of finite measure, with $\seti$ and $\setii$ disjoint, and $\setiii$ and $\setiv$ disjoint. Then
 \begin{align*}
 \function\functionii 
 & =
